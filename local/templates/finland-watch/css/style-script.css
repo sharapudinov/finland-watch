@@ -6,7 +6,7 @@ p {line-height:1.4; margin-bottom:12px}
 
 #wrapper {width:673px; margin:50px auto}
 */
-#container-mini {
+#main-slider #container-mini {
     position:absolute !important;
      width:315px;
      height:240px; 
@@ -16,7 +16,17 @@ p {line-height:1.4; margin-bottom:12px}
      background-image:url("../sliders/bg-mini.png") ;
      background-repeat: no-repeat;
     
-     }
+}
+
+.catalog-slider-cleek-buy #container-mini {
+     width:502px;
+     height:241px;  
+     z-index: 500;
+     background-image:url("../sliders/mini-bg.png") ;
+     background-repeat: no-repeat;
+     /*outline: 1px solid red;*/
+    
+} 
 
 #container-mini .sliderbutton {
     position: absolute !important;
@@ -29,11 +39,20 @@ p {line-height:1.4; margin-bottom:12px}
     background-repeat: no-repeat;
 }
 
+
+ .catalog-slider-cleek-buy #container-mini .sliderbutton {
+    top: 110px;
+ }
+
 #slideleft {
     /*background:url(../images/icons.gif) -50px -265px no-repeat;
     outline: 1px solid blue;*/
     left: 10px;
     }
+ 
+.catalog-slider-cleek-buy  #slideleft {
+    left: 20px;
+}
     
 /*#slideleft:hover {background-position:0 -265px}*/
 
@@ -41,16 +60,30 @@ p {line-height:1.4; margin-bottom:12px}
     background-position: right 0;
     right: 10px;
     }
+    
+ .catalog-slider-cleek-buy #slideright {
+    right: 30px;
+    /*outline: 1px solid blue;*/
+ }
 
 /*#slideright:hover {background-position:-50px 90px}*/
 
 #slider-mini {
-    float:left;
+    /*float:left;*/
     position:relative; 
     overflow:auto; 
     width:315px; 
     height:240px
     }
+    
+ .catalog-slider-cleek-buy #slider-mini {
+    float:left;
+    position:relative; 
+    overflow:auto; 
+    width:502px;
+     height:241px; 
+    /* outline: 1px solid red;*/
+    }   
     
 #slider-mini ul {
     position:absolute; 
@@ -64,10 +97,27 @@ p {line-height:1.4; margin-bottom:12px}
     height:240px
     }
 
+    
+.catalog-slider-cleek-buy #slider-mini li {
+    float:left; 
+    width:502px;
+     height:241px; 
+    }   
+
 #slider-mini .content-mini {
     margin-left: 30px;
     padding: 10px 0;
     /*outline: 1px solid green;*/
+}
+
+#main-slider #slider-mini .content-mini img {
+    /*width: 185px !important;
+    height: 185px !important;
+    margin-left: -10px;*/
+}
+
+.catalog-slider-cleek-buy #slider-mini .content-mini {
+    margin-left: 25px;
 }
 
 .content-mini {
@@ -84,10 +134,21 @@ p {line-height:1.4; margin-bottom:12px}
     padding-left: 20px;
 }
 
+.catalog-slider-cleek-buy .content-mini .title-mini {
+    text-align: left;
+    margin: 20px 0 5px 175px;
+    padding-left: 0;
+    
+}
+
 .content-mini .title-mini a{
     font-size: 18px;
     color: #000000;
     text-decoration: underline;
+}
+
+.content-mini .title-mini a:hover {
+    text-decoration: none;
 }
 
 .content-mini .old-price {
@@ -99,6 +160,39 @@ p {line-height:1.4; margin-bottom:12px}
     font-family: 'GloberThinFree';
     margin-left: 183px;
     
+}
+
+.catalog-slider-cleek-buy .content-mini .old-price {
+    /*outline: 1px solid red;*/
+    margin: 0 0 20px 335px !important;
+    line-height: 1;
+}
+
+.catalog-slider-cleek-buy .content-mini .summ.red {
+    color: #ed1b24 !important;
+    text-decoration: line-through;
+}
+
+.catalog-slider-cleek-buy .content-mini .summ.red-two {
+    color: #ed1b24 !important;
+}
+
+.catalog-slider-cleek-buy .content-mini p {
+    font-family: 'GloberBoldFree', sans-serif;
+    color: ;
+}
+
+.catalog-slider-cleek-buy .content-mini .old-price {
+    margin-bottom: 6px !important;
+    font-size: 13px !important;
+}
+
+.catalog-slider-cleek-buy .content-mini .catch {
+    margin: 17px 0 0 165px;
+    padding-left: 50px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-style: italic;
 }
 
 .content-mini .old-price span.summ {
@@ -113,6 +207,31 @@ p {line-height:1.4; margin-bottom:12px}
     
 }
 
+
+.catalog-slider-cleek-buy .content-mini .link-sm {
+    margin-left: 175px;
+    margin-top: 20px;
+}
+
+.catalog-slider-cleek-buy .content-mini .link-sm .one-click {
+    font-family: 'GloberThinFree';
+    color: #ffffff;
+    background-color: #2d2d2d;
+    margin-right: 10px;
+    text-transform: none;
+    font-style: normal;
+    padding-right: 25px;
+    padding-left: 10px;
+    background-image:url("../images/click.png") ;
+    background-repeat: no-repeat;
+    background-position: right 3px;
+}
+
+.catalog-slider-cleek-buy .content-mini #rating_2 {
+    margin: 0 0 0 170px;
+    /*outline: 1px solid red;*/
+}
+
 .content-mini .link-sm a{
     font-family: 'GloberBoldFree', sans-serif;
     font-size: 14px;
@@ -124,10 +243,21 @@ p {line-height:1.4; margin-bottom:12px}
     background-color: #ed1c24;
 }
 
+.catalog-slider-cleek-buy .content-mini .link-sm .buy {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 
 .content-mini img{
     float: left;
     /*margin-right: 20px;*/
+}
+
+.catalog-slider-cleek-buy .content-mini img {
+    margin: 20px 0 0 10px;
+   /* width: 174px;
+    height: 174px;*/
 }
 
 .content-mini .new-price {
@@ -159,6 +289,27 @@ p {line-height:1.4; margin-bottom:12px}
     font-size: 13px;
 }
 
+.catalog-slider-cleek-buy .content-mini .new-price-slider {
+    position: absolute !important;
+    left: 175px;
+    top: 90px;
+    font-family: 'GloberBoldFree', sans-serif;
+}
+
+.catalog-slider-cleek-buy .content-mini .new-price-slider .new-price-p {
+    font-size: 16px !important;
+}
+
+.catalog-slider-cleek-buy .content-mini .new-price-slider .new-summ {
+    font-family: 'GloberBoldFree', sans-serif;
+    font-size: 30px;
+    padding-top: 3px;
+   
+}
+
+.catalog-slider-cleek-buy .content-mini .new-price-slider .new-summ .rouble {
+    font-size: 25px;
+}
     
 /*#slider-mini .pagination {
     position:absolute; 

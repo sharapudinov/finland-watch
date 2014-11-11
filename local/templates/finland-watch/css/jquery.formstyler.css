@@ -1,12 +1,16 @@
 
-.block-option .box.visible, .calculator-select .box.visible{
+.block-option .box.visible, .calculator-select .box.visible,
+.block-filter .box.visible
+{
 	position: static;
 	width: auto;
 	height: auto;
 	overflow: visible;
 }
 
-.block-option .jq-selectbox, .calculator-select .jq-selectbox {
+.block-option .jq-selectbox, .calculator-select .jq-selectbox,
+.block-filter .jq-selectbox
+{
 	vertical-align: middle;
 	cursor: pointer;
 }
@@ -23,6 +27,20 @@
 	font-family: Arial, sans-serif;
    overflow: hidden;
 }
+
+.block-instruction .jq-selectbox__select {
+    width: 350px;
+    height: 58px;
+	font-size: 14px;
+	background-image:url("../images/sel-main-two.png") ;
+    background-repeat: no-repeat;
+	color: #ffffff;
+	line-height: 58px;
+    text-indent: 35px;
+	font-family: Arial, sans-serif;
+   overflow: hidden;
+}
+
 
 
 .calculator-select .jq-selectbox__select {
@@ -41,6 +59,26 @@
    background-position: right 0;
 }
 
+.block-filter .jq-selectbox__select {
+    width: 232px;
+    height: 28px;
+	font-size: 14px;
+	background-image:url("../images/sel-r-m.png") ;
+    background-repeat: no-repeat;
+    background-position: right 0;
+	background-color: #1c1c1c;
+	color: #ffffff;
+	line-height: 28px;
+    text-indent: 18px;
+    border: 1px solid #595959;
+	font-family: 'GothamPro', sans-serif;
+   overflow: hidden;
+}
+
+.block-instruction .jq-selectbox__select {
+    text-indent: 20px;
+}
+
 
 
 .block-option .jq-selectbox.disabled .jq-selectbox__select, 
@@ -53,7 +91,7 @@
 
 
 .block-option .jq-selectbox__select-text, 
-.calculator-select .jq-selectbox__select-text{
+.calculator-select .jq-selectbox__select-text, .block-filter .jq-selectbox__select-text{
 	display: block;
 	width: 100%;
 	text-overflow: ellipsis;
@@ -70,7 +108,7 @@
 }
 
 .block-option .jq-selectbox__trigger, 
-.calculator-select .jq-selectbox__trigger{
+.calculator-select .jq-selectbox__trigger, .block-filter .jq-selectbox__trigger{
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -104,6 +142,20 @@
 	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
+.block-filter .jq-selectbox__dropdown {
+	top: 29px;
+	width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+    height: auto;
+	padding: 10px 0;
+	border: 1px solid #595959;
+	background: #1c1c1c;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+
 /*.block-option*/ .jq-selectbox__dropdown  input {
     display: none;
 }
@@ -118,7 +170,7 @@
 
 
 .block-option .jq-selectbox ul, 
-.calculator-select .jq-selectbox ul{
+.calculator-select .jq-selectbox ul, .block-filter .jq-selectbox ul {
 	margin: 0;
 	padding: 0;
 }
@@ -128,8 +180,14 @@
 	padding: 5px 0 6px 50px;
 	color: #000000;
 	font-size: 14px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
+
+.block-instruction .jq-selectbox li {
+    padding-left: 20px;
+    font-size: 15px;
+}
+
 
 .block-option .jq-selectbox li:before{
     position: absolute;
@@ -153,7 +211,17 @@
     
 }
 
-.calculator-select .jq-selectbox li {
+.block-instruction .jq-selectbox li:before{
+    content: "";
+    display: none;
+}
+
+.block-instruction .jq-selectbox li:hover:before {
+    content: "";
+    display: none;
+}
+
+.calculator-select .jq-selectbox li, .block-filter .jq-selectbox li{
 	min-height: 18px;
 	padding: 5px 0 6px 18px;
 	color: #ffffff;
@@ -167,16 +235,16 @@
 	color: #ed1a23;
 }
 
-.calculator-select .jq-selectbox li:hover{
+.calculator-select .jq-selectbox li:hover, .block-filter .jq-selectbox li:hover{
 	background-color: #2d2d2d;
-	color: #ffffff;
+	color: red;
 }
 
 .block-option .jq-selectbox li.disabled {
 	color: #AAA;
 }
 
-.block-option .jq-selectbox li.disabled:hover {
+.block-option .jq-selectbox li.disabled:hover, .block-instruction .jq-selectbox li.disabled:hover{
 	background: none;
 }
 
@@ -184,6 +252,11 @@
 .block-option .jq-selectbox li.option {
 	padding-left: 25px;
 }
+
+.block-instruction .jq-selectbox li.option {
+	padding-left: 15px !important;
+}
+
 
 .jq-selectbox li.selected {
 	color: #ed1a23;
@@ -196,4 +269,9 @@
     height: 3px;
     width: 3px;
     display: block;
+}
+
+.block-instruction  .jq-selectbox li.selected:before {
+    background-color: transparent;
+    display: none;
 }

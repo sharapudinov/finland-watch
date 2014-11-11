@@ -1,16 +1,18 @@
-(function($) {
-    $(function() {
-        var jcarousel = $('.jcarousel');
+jQuery.noConflict();
+
+(function(jQuery) {
+    jQuery(function() {
+        var jcarousel = jQuery('.jcarousel.slider-two');
 
         jcarousel
-            .on('jcarousel:reload jcarousel:create', function () {
+            .on('jcarousel.slider-two:reload jcarousel.slider-two:create', function () {
                 var width = jcarousel.innerWidth();
 
-                if (width >= 600) {
-                    width = width / 4;
-                } else if (width >= 350) {
-                    width = width / 2;
-                }
+                //if (width >= 600) {
+                  //  width = width / 4;
+                //} else if (width >= 350) {
+                //    width = width / 2;
+               // }
 
                 jcarousel.jcarousel('items').css('width', width + 'px');
             })
@@ -18,22 +20,22 @@
                 wrap: 'circular'
             });
 
-        $('.jcarousel-control-prev')
+        jQuery('.jcarousel-control-prev')
             .jcarouselControl({
                 target: '-=1'
             });
 
-        $('.jcarousel-control-next')
+        jQuery('.jcarousel-control-next')
             .jcarouselControl({
                 target: '+=1'
             });
 
-        $('.jcarousel-pagination')
+        jQuery('.jcarousel-pagination')
             .on('jcarouselpagination:active', 'a', function() {
-                $(this).addClass('active');
+                jQuery(this).addClass('active');
             })
             .on('jcarouselpagination:inactive', 'a', function() {
-                $(this).removeClass('active');
+                jQuery(this).removeClass('active');
             })
             .on('click', function(e) {
                 e.preventDefault();
@@ -46,3 +48,4 @@
             });
     });
 })(jQuery);
+
