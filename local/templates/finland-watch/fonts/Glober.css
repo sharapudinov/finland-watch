@@ -1,0 +1,22 @@
+
+@font-face {
+  font-family: 'GloberBoldFree';
+  src: url('GloberBoldFree.eot?#iefix') format('embedded-opentype'),  
+  url('GloberBoldFree.otf')  format('opentype'),
+	     url('GloberBoldFree.woff') format('woff'), 
+		 url('GloberBoldFree.ttf')  format('truetype'), 
+		 url('GloberBoldFree.svg#GloberBoldFree') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GloberThinFree';
+  src: url('GloberThinFree.eot?#iefix') format('embedded-opentype'),  
+  url('GloberThinFree.otf')  format('opentype'),
+	     url('GloberThinFree.woff') format('woff'), 
+		 url('GloberThinFree.ttf')  format('truetype'), 
+		 url('GloberThinFree.svg#GloberThinFree') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

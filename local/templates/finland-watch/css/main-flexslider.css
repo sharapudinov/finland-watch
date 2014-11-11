@@ -1,0 +1,219 @@
+#main-slider .flex-container {
+   height: 285px;
+   /*outline: 1px solid red;*/
+}
+
+#main-slider .flexslider {
+    width: 100%;
+	margin: 0 auto;
+	padding: 0;
+    height: 285px;
+}
+
+/* Скрываем слайды перед загрузкой ява-скрипта */
+/*.flexslider .slides > li {
+	display: none;
+	-webkit-backface-visibility: hidden;
+}*/
+
+.flexslider .slides img {
+	
+}
+
+/* Чистим предидущее изображение для .slides */
+#main-slider .slides:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+/*html[xmlns] .slides { display: block; }
+* html .slides { height: 1%; }*/
+
+#main-slider .slides ul li {
+    height: 285px;
+    width: 1750px;
+    position: relative;
+}
+
+#main-slider .slides {
+    height: 285px;
+    overflow: hidden;
+}
+
+/* Основной стиль слайдера */
+#main-slider .flexslider {
+	position: relative;
+	zoom: 1;
+
+	
+}
+
+/* Вы можете изменить под свои требования*/
+#main-slider .flex-container {
+    z-index:100;
+}
+
+#main-slider .flexslider img { 
+   /*max-width: 1598px;
+   min-width: 500px;
+   max-height: 513px;
+   min-height: 160px;
+   */
+ }
+
+
+#main-slider .flexslider .slides { zoom: 1; }
+
+#main-slider .flex-direction-nav {
+    position: absolute;
+    text-indent: -9999px;
+}
+
+
+/* Кнопки прокрутки. Управление */
+#main-slider .flexslider .flex-control-nav {
+	position: absolute !important;
+    display: inline-block;
+	width: 100%;
+	bottom: 15px;
+    z-index: 2000;
+	text-align: center;
+	margin:0;
+   /* outline: 1px solid red;*/
+}
+
+#main-slider .flex-control-nav li {
+	display: inline-block;
+	zoom: 1;
+}
+
+#main-slider .flex-control-paging {
+    
+    /*outline: 1px solid red;*/
+}
+
+#main-slider .flex-control-paging li a {
+	display: block;
+    width: 12px;
+	height: 12px;
+	cursor: pointer;
+	text-indent: -9999px;
+	margin: 0 3px;
+    z-index: 1000;
+    background-image:url(../sliders/nav-slider.png);
+    background-repeat: no-repeat;
+	background-position: -39px -68px;
+}
+
+#main-slider .flex-control-paging li a.flex-active {
+	background-position: -55px -68px;
+
+}
+
+#main-slider .flex-direction-nav {
+    width: 100%;
+    
+}
+
+#main-slider .flex-direction-nav a {
+	display: block;
+	position: absolute;
+	margin: -160px 0 0 0;
+	width: 17px;
+	height: 54px;
+	top: 50%;
+	cursor: pointer;
+	text-indent: -9999px;
+	background-image:url("../sliders/nav-slider.png") ;
+    background-repeat: no-repeat;
+    /*outline: 1px solid red;*/
+}
+
+
+#main-slider .flex-direction-nav a:before {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 17px;
+	height: 54px;
+}
+
+#main-slider .flex-direction-nav a:after {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 17px;
+	height: 54px;
+	top: 35px;
+}
+
+#main-slider .flex-direction-nav .flex-next {
+	right: -60px;
+    background-position: right 0;
+}
+
+#main-slider .flex-direction-nav .flex-next:hover {
+    background-position: right bottom;
+}
+
+#main-slider .flex-direction-nav .flex-prev {
+	left: -60px;
+}
+
+#main-slider .flex-direction-nav .flex-prev:hover {
+    background-position: 0 bottom;
+}
+
+/*.wrapper-karaoke .flex-control-paging li a {
+    background-image:url(../img/prev-next-k.png);
+    background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.wrapper-karaoke .flex-control-paging li a.flex-active {
+	background-position: right 0;
+}*/
+
+/*=============================================================================*/
+#main-slider .block-slider {
+    margin: 0 auto;
+    height: 285px;
+    /*position: absolute !important;*/
+    /*left: 14%;
+    right: 30%;
+    top: 0;*/
+    /*margin-top: -340px;*/
+    min-width: 960px;
+    z-index: 50;
+}
+
+#main-slider .block-slider .flexslider img{
+    float: left;
+    margin: 10px 65px 0 5px;
+}
+
+#main-slider .block-slider .title-slider, .block-slider .flexslider p {
+    font-family: 'GothamPro-Bold', sans-serif;
+    color: #ffffff;
+}
+
+#main-slider .block-slider .title-slider {
+    display:inline-block ;
+    width: 600px;
+    font-size: 26px;
+    padding-bottom: 10px;
+    margin: 80px 0 10px 0;
+    background-image:url("../images/l.png") ;
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+}
+
+#main-slider .block-slider .flexslider p {
+    font-size: 20px;
+    line-height: 1.2;
+}
+

@@ -1,0 +1,152 @@
+/* #########################################################
+
+HOW TO CREATE A RESPONSIVE IMAGE SLIDER [TUTORIAL]
+
+"How to create a Responsive Image Slider [Tutorial]" was specially made for DesignModo by our friend Valeriu Timbuc.
+
+Links:
+http://vtimbuc.net
+http://designmodo.com
+http://vladimirkudinov.com
+
+######################################################### */
+
+
+
+/* Browser Resets */
+/*.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  { outline: none; }
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.flexslider a img { outline: none; border: none; }
+*/
+
+.contact-slider .flex-container {
+   height: 319px;
+   /*outline: 1px solid red;*/
+}
+
+.contact-slider .flexslider {
+	margin: 0;
+	padding: 0;
+}
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+/*.flexslider .slides > li {
+	display: none;
+	-webkit-backface-visibility: hidden;
+}*/
+
+.contact-slider .flexslider .slides img {
+	/*width: 100%;*/
+	display: block;
+}
+
+/* Clearfix for the .slides element */
+.contact-slider .slides:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+/*html[xmlns] .slides { display: block; }
+* html .slides { height: 1%; }*/
+
+
+
+/* Theme Styles */
+.contact-slider .flexslider {
+	position: relative;
+	zoom: 1;
+}
+
+/* Edit it if you want */
+/*.contact-slider .flex-container {
+	min-width: 150px;
+	max-width: 960px;
+}*/
+
+.contact-slider .flexslider .slides { zoom: 1; }
+
+
+
+/* Direction Nav */
+.contact-slider .flex-direction-nav a {
+	display: block;
+	position: absolute;
+	margin: -180px 0 0 0;
+	width: 30px;
+	height: 31px;
+	top: 50%;
+	cursor: pointer;
+	text-indent: -9999px;
+	background-image:url("../sliders/next-prev.png") ;
+    background-repeat: no-repeat;
+}
+
+.contact-slider .flex-direction-nav a:before {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 28px;
+	height: 31px;
+}
+
+.contact-slider .flex-direction-nav a:after {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 28px;
+	height: 31px;
+	top: 35px;
+}
+
+.contact-slider .flex-direction-nav .flex-next {
+	right: 0;
+    background-position: right 0;
+}
+
+.contact-slider .flex-direction-nav .flex-next:hover {
+    background-position: right bottom;
+}
+
+.contact-slider .flex-direction-nav .flex-prev {
+	left: 0;
+}
+
+.contact-slider .flex-direction-nav .flex-prev:hover {
+    background-position: 0 bottom;
+}
+
+
+/* Control Nav */
+.contact-slider .flexslider .flex-control-nav {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+	margin: 0 0;
+    visibility: hidden;
+    outline: 2px solid blue;
+}
+
+.contact-slider .flex-control-nav li {
+	display: inline-block;
+	zoom: 1;
+}
+
+.contact-slider .flex-control-paging {
+    display: none;
+}
