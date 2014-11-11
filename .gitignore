@@ -1,0 +1,10 @@
+# files
+.DS_Store
+Thumbs.db
+*.sql
+/.idea/
+/upload/*
+.htaccess
+
+# core
+bitrix/*
