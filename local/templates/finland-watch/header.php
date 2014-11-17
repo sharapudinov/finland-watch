@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 IncludeTemplateLangFile($_SERVER["DOCUMENT_ROOT"]."/bitrix/templates/".SITE_TEMPLATE_ID."/header.php");
-$wizTemplateId = COption::GetOptionString("main", "wizard_template_id", "eshop_adapt_horizontal", SITE_ID);
+$wizTemplateId = COption::GetOptionString("main", "wizard_template_id", "finland-watch", SITE_ID);
 CUtil::InitJSCore();
 CJSCore::Init(array("fx"));
 $curPage = $APPLICATION->GetCurPage(true);
@@ -17,9 +17,6 @@ $curPage = $APPLICATION->GetCurPage(true);
 	$APPLICATION->ShowMeta("keywords", false, true);
 	$APPLICATION->ShowMeta("description", false, true);
 	$APPLICATION->ShowCSS(true, true);
-	?>
-	<link rel="stylesheet" type="text/css" href="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH."/colors.css")?>" />
-	<?
 	$APPLICATION->ShowHeadStrings();
 	$APPLICATION->ShowHeadScripts();
 	$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/script.js");
@@ -28,45 +25,95 @@ $curPage = $APPLICATION->GetCurPage(true);
 </head>
 <body>
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
-<?$APPLICATION->IncludeComponent("bitrix:eshop.banner", "", array());?>
-<div class="wrap" id="bx_eshop_wrap">
-	<div class="header_wrap">
-		<div class="header_wrap_container">
-			<div class="header_top_section">
-				<div class="header_top_section_container_one">
-					<div class="bx_cart_login_top">
-						<table>
-							<tr>
-								<td>
-								<?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "", array(
-										"PATH_TO_BASKET" => SITE_DIR."personal/cart/",
-										"PATH_TO_PERSONAL" => SITE_DIR."personal/",
-										"SHOW_PERSONAL_LINK" => "N",
-										"SHOW_NUM_PRODUCTS" => "Y",
-										"SHOW_TOTAL_PRICE" => "Y",
-										"SHOW_PRODUCTS" => "N",
-										"POSITION_FIXED" =>"N"
-									),
-									false,
-									array()
-								);?>
-								</td>
-								<td>
-								<?$APPLICATION->IncludeComponent("bitrix:system.auth.form", "eshop_adapt", array(
-										"REGISTER_URL" => SITE_DIR."login/",
-										"PROFILE_URL" => SITE_DIR."personal/",
-										"SHOW_ERRORS" => "N"
-									),
-									false,
-									array()
-								);?>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-				<div class="header_top_section_container_two">
-					<?$APPLICATION->IncludeComponent('bitrix:menu', "top_menu", array(
+<div id="main-wrapper">
+    <div id="wrapper">
+        <section>
+            <div id="main-header">
+
+                <div class="header">
+                   <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/company_logo.php"), false);?>
+                    <div class="block-phone-region">
+                        <div class="phone-free">
+                            <p>Бесплатный звонок по России</p>
+                            <span class="phone">
+                                <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone.php"), false);?>
+                             </span>
+                        </div>
+                        <div class="phone-region">
+                            <ul>
+                                <li class="region" title="Выбор региона"><a class="modal-city" href="#modal" >Москва и Подмосковье</a></li>
+                                <li class="call"><a class="modalbox" href="#inline">Заказать звонок</a></li>
+
+                            </ul>
+                            <div class="clear"></div>
+                            <span class="phone">
+                                <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone2.php"), false);?>
+                            </span>
+                        </div>
+                        <div class="clear"></div>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:search.title",
+                            "finland-watch",
+                            array(
+                                "NUM_CATEGORIES" => "1",
+                                "TOP_COUNT" => "5",
+                                "CHECK_DATES" => "N",
+                                "SHOW_OTHERS" => "N",
+                                "PAGE" => SITE_DIR . "catalog/",
+                                "CATEGORY_0_TITLE" => GetMessage("SEARCH_GOODS"),
+                                "CATEGORY_0" => array(
+                                    0 => "iblock_catalog",
+                                ),
+                                "CATEGORY_0_iblock_catalog" => array(
+                                    0 => "all",
+                                ),
+                                "CATEGORY_OTHERS_TITLE" => GetMessage("SEARCH_OTHER"),
+                                "SHOW_INPUT" => "Y",
+                                "INPUT_ID" => "title-search-input",
+                                "CONTAINER_ID" => "search",
+                                "PRICE_CODE" => array(
+                                    0 => "BASE",
+                                ),
+                                "SHOW_PREVIEW" => "Y",
+                                "PREVIEW_WIDTH" => "75",
+                                "PREVIEW_HEIGHT" => "75",
+                                "CONVERT_CURRENCY" => "Y",
+                                "ORDER" => "date",
+                                "USE_LANGUAGE_GUESS" => "Y",
+                                "PRICE_VAT_INCLUDE" => "Y",
+                                "PREVIEW_TRUNCATE_LEN" => "",
+                                "CURRENCY_ID" => "RUB"
+                            ),
+                            false
+                        );?>
+                    </div>
+                    <div class="login-basket">
+                        <?$APPLICATION->IncludeComponent("bitrix:system.auth.form", "finland-watch", Array(
+                                "REGISTER_URL" => SITE_DIR . "login/",    // Страница регистрации
+                                "PROFILE_URL" => SITE_DIR . "personal/",    // Страница профиля
+                                "SHOW_ERRORS" => "N",    // Показывать ошибки
+                            ),
+                            false
+                        );?>
+                        <div class="clear"></div>
+                        <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "finland-watch", Array(
+                                "PATH_TO_BASKET" => SITE_DIR . "personal/cart/",    // Страница корзины
+                                "PATH_TO_PERSONAL" => SITE_DIR . "personal/",    // Персональный раздел
+                                "SHOW_PERSONAL_LINK" => "N",    // Отображать персональный раздел
+                                "SHOW_NUM_PRODUCTS" => "Y",    // Показывать количество товаров
+                                "SHOW_TOTAL_PRICE" => "Y",    // Показывать общую сумму по товарам
+                                "SHOW_PRODUCTS" => "N",    // Показывать список товаров
+                                "POSITION_FIXED" => "N",    // Отображать корзину поверх шаблона
+                            ),
+                            false
+                        );?>
+                    </div>
+
+
+
+
+<!--
+					<?/*$APPLICATION->IncludeComponent('bitrix:menu', "top_menu", array(
 							"ROOT_MENU_TYPE" => "top",
 							"MENU_CACHE_TYPE" => "Y",
 							"MENU_CACHE_TIME" => "36000000",
@@ -76,59 +123,14 @@ $curPage = $APPLICATION->GetCurPage(true);
 							"USE_EXT" => "N",
 							"ALLOW_MULTI_SELECT" => "N"
 						)
-					);?>
-				</div>
-				<div class="clb"></div>
-			</div>  <!-- //header_top_section -->
+					);*/?>
 
-			<div class="header_inner" itemscope itemtype = "http://schema.org/LocalBusiness">
-				<?if ($curPage == SITE_DIR."index.php"):?><h1 class="site_title"><?endif?>
-					<a <?if ($curPage != SITE_DIR."index.php"):?>class="site_title"<?endif?> href="<?=SITE_DIR?>" itemprop = "name"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/company_name.php"), false);?></a>
-				<?if ($curPage == SITE_DIR."index.php"):?></h1><?endif?>
+-->
 
-				<div class="header_inner_container_one">
-					<div class="header_inner_include_aria"><span style="color: #1b5c79;">
-							<strong style="display: inline-block;padding-top: 7px;"><a style="text-decoration: none;color:#1b5c79;" href="<?=SITE_DIR?>about/contacts/" itemprop = "telephone"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone.php"), false);?></a></strong><br />
-							<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/schedule.php"), false);?></span>
-					</div>
-				</div>
 
-				<div class="header_inner_container_two">
-					<?$APPLICATION->IncludeComponent("bitrix:search.title", "visual", array(
-							"NUM_CATEGORIES" => "1",
-							"TOP_COUNT" => "5",
-							"CHECK_DATES" => "N",
-							"SHOW_OTHERS" => "N",
-							"PAGE" => SITE_DIR."catalog/",
-							"CATEGORY_0_TITLE" => GetMessage("SEARCH_GOODS") ,
-							"CATEGORY_0" => array(
-								0 => "iblock_catalog",
-							),
-							"CATEGORY_0_iblock_catalog" => array(
-								0 => "all",
-							),
-							"CATEGORY_OTHERS_TITLE" => GetMessage("SEARCH_OTHER"),
-							"SHOW_INPUT" => "Y",
-							"INPUT_ID" => "title-search-input",
-							"CONTAINER_ID" => "search",
-							"PRICE_CODE" => array(
-								0 => "BASE",
-							),
-							"SHOW_PREVIEW" => "Y",
-							"PREVIEW_WIDTH" => "75",
-							"PREVIEW_HEIGHT" => "75",
-							"CONVERT_CURRENCY" => "Y"
-						),
-						false
-					);?>
-				</div>
-
-				<div class="clb"></div>
-
-				<div class="header_inner_bottom_line_container">
-					<div class="header_inner_bottom_line">
-						<?if ($wizTemplateId == "eshop_adapt_horizontal"):?>
-						<?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_horizontal", array(
+<!--
+						<?/*if ($wizTemplateId == "eshop_adapt_horizontal"):*/?>
+						<?/*$APPLICATION->IncludeComponent("bitrix:menu", "catalog_horizontal", array(
 								"ROOT_MENU_TYPE" => "left",
 								"MENU_CACHE_TYPE" => "A",
 								"MENU_CACHE_TIME" => "36000000",
@@ -144,12 +146,9 @@ $curPage = $APPLICATION->GetCurPage(true);
 								"ALLOW_MULTI_SELECT" => "N",
 							),
 							false
-						);?>
-						<?endif?>
-					</div>
-				</div><!-- //header_inner_bottom_line_container -->
+						);*/?>
+						--><?/*endif*/?>
 
-			</div>  <!-- //header_inner -->
 			<?if ($APPLICATION->GetCurPage(true) == SITE_DIR."index.php"):?>
 				<?$APPLICATION->IncludeComponent(
 					"bitrix:main.include",
@@ -164,23 +163,16 @@ $curPage = $APPLICATION->GetCurPage(true);
 					Array('HIDE_ICONS' => 'Y')
 				);?>
 			<?endif?>
-
-		</div> <!-- //header_wrap_container -->
-	</div> <!-- //header_wrap -->
-
-	<div class="workarea_wrap">
-		<div class="worakarea_wrap_container workarea <?if ($wizTemplateId == "eshop_adapt_vertical"):?>grid1x3<?else:?>grid<?endif?>">
-			<div id="navigation">
-				<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
+<!--
+				--><?/*$APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 						"START_FROM" => "0",
 						"PATH" => "",
 						"SITE_ID" => "-"
 					),
 					false,
 					Array('HIDE_ICONS' => 'Y')
-				);?>
-			</div>
-			<div class="bx_content_section">
+				);*/?>
+
 				<?if ($curPage != SITE_DIR."index.php"):?>
 				<h1><?=$APPLICATION->ShowTitle(false);?></h1>
 				<?endif?>

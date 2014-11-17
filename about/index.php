@@ -39,6 +39,6 @@ $APPLICATION->SetTitle("О магазине");
 
 	<p>Мы всегда рады общению с нашими клиентами. Если у вас есть какие-либо пожелания, предложения, замечания, касающиеся работы нашего Интернет-магазина - пишите нам, и мы с благодарностью примем ваше мнение во внимание:</p>
 
-	<p><b>Электронная почта</b>: <a href="mailto:sharapudinov@mail.ru">sharapudinov@mail.ru</a></p>
+	<p><b>Электронная почта</b>: <a href="mailto:sale@www.ablout.ru">sale@www.ablout.ru</a></p>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

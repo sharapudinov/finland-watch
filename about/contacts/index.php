@@ -13,7 +13,7 @@ $APPLICATION->SetTitle("Задайте вопрос");
 	Array(
 		"USE_CAPTCHA" => "Y",
 		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
-		"EMAIL_TO" => "sharapudinov@mail.ru",
+		"EMAIL_TO" => "sale@www.ablout.ru",
 		"REQUIRED_FIELDS" => array(),
 		"EVENT_MESSAGE_ID" => array()
 	),

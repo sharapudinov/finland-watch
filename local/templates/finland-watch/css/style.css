@@ -18,6 +18,7 @@ Author Phone: +79787016350
 @import url(../fonts/Glober.css);
 @import url(../fonts/Rubl.css);
 @import url(../fonts/Jura.css);
+@import url(../fonts/Avalanche.css);
 
 /*================ Общие стили =====================*/
 
@@ -46,7 +47,7 @@ body {
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    /*background-color: #efefef;*/
+   
 }
 
 #main-wrapper, #main-header, #main-slider, #main-content, 
@@ -56,7 +57,7 @@ body {
     max-width: 100%;
 }
 
-.header, .main-menu-top, .block-slider, .advantages   {
+.header, .main-menu-top, .advantages   {
     width: 960px;
     margin: 0 auto;
 }
@@ -150,7 +151,6 @@ h6 {
 }
 
 .header ul li, .main-menu-top ul li {
-    /*position: relative;*/
     float: left;
 }
 
@@ -170,12 +170,10 @@ h6 {
 }
 
 .block-phone-region {
-    /*width: 700px;*/
     float: left;
     color: #ffffff;
     font-family: Arial, sans-serif;
-    /*border-right: 1px solid #595959;*/
-    /*outline: 1px solid red;*/    
+       
 }
 
 .phone-free {
@@ -197,7 +195,7 @@ h6 {
 
 .block-phone-region span {
     font-size: 26px;
-    /*outline: 1px solid red;*/
+    
 }
 
 .phone-region span {
@@ -205,7 +203,7 @@ h6 {
 }
 
 .phone-region {
-    /*text-align: center;*/
+    
     padding-top: 15px;
     width: 280px;
     float: left;
@@ -219,7 +217,7 @@ h6 {
     background-image:url("../images/icon-top.png") ;
     background-repeat: no-repeat;
     background-position: 8px 0;
-    /*outline: 1px solid red;*/
+   
 }
 
 .phone-region ul li{
@@ -293,14 +291,14 @@ h6 {
     float: left ;
     padding-left: 10px;
     margin-right: 10px;
-    /*z-index: 100;*/
+    
 }
 
 .block-search input[type=submit] {
     cursor: pointer;
     width: 45px;
     height: 38px;
-    /*z-index: 200;*/
+    
 }
 
 .login-basket {
@@ -340,7 +338,7 @@ h6 {
 }
 
 .login li a:hover, .login li.active a {
-    /*text-decoration: underline;*/
+    
     color: #0ab5fa;
 }
 
@@ -408,6 +406,12 @@ h6 {
     text-decoration: none;
 }
 
+.basket-issue a:hover {
+    background-color: #c70108;
+}
+
+
+
 /*==================////////////Верхнее меню////////////========================*/
 
 #main-menu-top {
@@ -419,7 +423,7 @@ h6 {
 
 .main-menu-top {
     height: 50px;
-   /* outline: 1px solid red;*/
+  
 }
 
 .main-menu-top ul {
@@ -460,12 +464,12 @@ h6 {
 }
 
 .main-menu-top ul li ul {
-    /*position: relative;*/
+    
 }
 
 .main-menu-top ul li ul li {
     float: none;
-    /*padding: 0 0 0 10px;*/
+    
     margin-right: 0;
     margin-left: 30px !important;
     padding-left: 15px;
@@ -502,7 +506,7 @@ h6 {
 #main-menu-top .main-menu-top ul li ul li {
     height: 20px;
     margin-bottom: 8px;
-   /* outline: 1px solid red;*/
+   
 }
 
 #main-menu-top .main-menu-top ul li ul li a {
@@ -574,7 +578,7 @@ h6 {
     background-image:url("../images/s-l.png") ;
     background-repeat: no-repeat;
     background-position: ;
-    /*outline: 1px solid red;*/
+    
 }
 
 #main-menu-top .block-hover-present img {
@@ -651,10 +655,12 @@ h6 {
     background-image:url("../sliders/slider-bg.jpg") ;
     background-repeat: no-repeat;
     background-position: center top;
+    
 }
 
 .block-slider {
     height: 285px;
+    
 }
 
 .block-advantages {
@@ -749,7 +755,7 @@ h6 {
 .block-option {
     height: 60px;
     margin-bottom: 30px;
-    /*outline: 1px solid red;*/
+   
 }
 
 .select-option {
@@ -768,7 +774,7 @@ h6 {
     padding-top: 5px;
 }
 
-/*#main-content*/ .bread-crumbs.home li{
+ .bread-crumbs.home li{
     font-family: 'GloberBoldFree', sans-serif;
     font-size: 20px;
     color: #000000;
@@ -782,20 +788,18 @@ h6 {
     background-repeat: no-repeat;
 }
 
-/**/
+
 
 /*================== Слайдеры с товаром ==================*/
 
 .slider-home {
     margin-bottom: 30px;
     height: 370px;
-    /*outline: 1px solid green;*/
 }
 
 .slider-home .bg {
     padding-top: 8px ;
     height: 365px;
-   /* outline: 1px solid red;*/
 }
 
 .slider-home .bg p {
@@ -902,7 +906,7 @@ h6 {
     font-size: 19px;
 }
 
-/*.slider-home .bg.two*/ .profit {
+ .profit {
     font-family: Arial, sans-serif;
     font-size: 12px;
     font-style: italic;
@@ -923,10 +927,9 @@ h6 {
     margin-right: 10px;
     bottom: -19px !important;
     padding-left: 20px;
-    /*margin-bottom: 0;*/
 }
 
-/*.slider-home .bg.two*/ .profit .red {
+ .profit .red {
     margin-left: 10px;
 }
 
@@ -976,10 +979,22 @@ h6 {
 #block-main-news-about {
     height: auto;
     background-color: #2d2d2d;
-    background-image:url("../images/bg-news-about.png") ;
-    background-repeat: no-repeat;
-    background-position: center bottom;
 }
+
+.bg-about {
+    position: absolute !important;
+    display: block;
+    bottom: 0;
+    right: -200px;
+}
+
+.pickup.news {
+    width: 100%;
+    background-image:url("../images/news-t-l.png")  ;
+    background-repeat: no-repeat;
+    background-position: 200px center;
+}
+
 
 
 .block-home-news {
@@ -988,10 +1003,15 @@ h6 {
     width: 960px;
 }
 
+.bg-news {
+    position: absolute !important;
+    display: block;
+    top: 0;
+    left: -250px;
+}
+
 .block-home-news .home-news  {
     width: 214px;
-    float: left;
-    margin-left: 25px;
 }
 
 .block-home-news .home-news .date-news {
@@ -1024,31 +1044,36 @@ h6 {
 
 .link-social-news {
     height: 35px;
-    
 }
 
 .link-social-news a {
+}
+
+.link-social-news ol {
     
 }
 
-/*.link-social-news ul.link-social li a {
+
+.link-social-news .link-social a {
+    width: 32px;
+    height: 32px;
     background-image:url("../images/icon-social.png") ;
     background-repeat: no-repeat;
-}*/
+}
 
-.link-social-news ul.link-social li.vk a {
+.link-social-news .link-social .vk,  .link-social-news .link-social .vk a {
     background-position: -1px bottom;
 }
 
-.link-social-news ul.link-social li.f a {
+.link-social-news .link-social .f,  .link-social-news .link-social .f a  {
     background-position: -40px bottom;
 }
 
-.link-social-news ul.link-social li.tw a {
+.link-social-news .link-social .tw, .link-social-news .link-social .tw a {
     background-position: -78px bottom;
 }
 
-.link-social-news ul.link-social li.od a {
+.link-social-news .link-social .od, .link-social-news .link-social .od a {
     background-position: -116px bottom;
 }
 
@@ -1063,7 +1088,6 @@ h6 {
     font-family: 'GothamPro', sans-serif;
     font-size: 12px;
     color: #ffffff;
-    /*outline: 1px solid red;*/
 }
 
 .main-block-about .pickup.lines {
@@ -1086,7 +1110,6 @@ h6 {
     width: 435px;
     float: left;
     margin: 0 0 0 38px;
-    /*outline: 1px solid #ffffff;*/
 }
 
 .questions {
@@ -1094,7 +1117,7 @@ h6 {
     width: 430px;
     text-align: justify;
     padding: 35px 15px 0 15px;
-    border: 1px dashed #11afeb;
+    border: 1px dashed #226179;
 }
 
 .questions .quest {
@@ -1124,7 +1147,6 @@ h6 {
 
 .calculator-block-top {
     padding: 25px 15px 20px 25px;
-    /*outline: 1px solid #ffffff;*/
     display: block;
     height: 90px;
 }
@@ -1156,7 +1178,6 @@ h6 {
     margin-right: ;
     text-align: right;
     padding-top: 5px;
-   /* outline: 1px solid red;*/
 }
 
 .calculator-select .select-option {
@@ -1177,7 +1198,6 @@ h6 {
 }
 
 .slider-namber .main {
-    /*width: 280px;*/
     float: right;
 }
 
@@ -1212,8 +1232,6 @@ h6 {
     font-size: 14px;
     color: #11b3f0;
     padding: 10px 0 10px 10px;
-    /*margin-right: 5px;*/
-    /*outline: 1px solid red;*/
 }
 
 .slider-namber .main .sliderCont {
@@ -1364,7 +1382,6 @@ h6 {
     margin: 0 auto;
     height: 240px;
     color: #ffffff;
-    /*outline: 1px solid red;*/
 }
 
 .block-footer-menu {
@@ -1438,7 +1455,7 @@ h6 {
     text-decoration: underline;
 }
 
-/*.block-footer-menu*/ ul.link-social li {
+ul.link-social li {
     float: left;
 }
 
@@ -1447,7 +1464,7 @@ ul.link-social li a {
     height: 32px;
 }
 
-/*.block-footer-menu*/ ul.link-social li a {
+ ul.link-social li a {
     background-image:url("../images/icon-social.png") ;
     background-repeat: no-repeat;
 }
@@ -1528,7 +1545,7 @@ ul.link-social li a {
 }
 
 .clear {
-    clear: both;
+    clear: both !important;
 }
   
   
@@ -1538,7 +1555,7 @@ ul.link-social li a {
    background-image:url("../images/top.png") ;
    background-repeat: no-repeat;
    position:fixed;
-   bottom:50px; /* отступ кнопки от нижнего края страницы*/
+   bottom:50px;
    right:15%;
    cursor:pointer;
    display:none;
@@ -1583,7 +1600,7 @@ ul.link-social li a {
 	display: none;
 }
 
-/*.form-sign-in*/ .radio label:before {
+.radio label:before {
 	content: "";
 	display: inline-block;
 	width: 13px;
@@ -1597,7 +1614,7 @@ ul.link-social li a {
 }
 
 
-/*.form-sign-in*/ .check-keep label:before {
+ .check-keep label:before {
 	content: "";
 	display: inline-block;
 	width: 18px;
@@ -1625,25 +1642,25 @@ ul.link-social li a {
     background-position: 0 4px;
 }
 
-/*.form-sign-in*/ .check-keep label {
+ .check-keep label {
 	margin: 8px 0;
 }
 
-/*.form-sign-in*/ .check-keep label:before {
-    /*border-radius: 3px;*/
+ .check-keep label:before {
+  
 }
 
-/*.form-sign-in*/ .radio input[type=radio]:checked + label:before {
+.radio input[type=radio]:checked + label:before {
     content: " ";
     background-position: 0 bottom;
 }
 
-/*.form-sign-in*/ .check-keep input[type=checkbox]:checked + label:before {
+.check-keep input[type=checkbox]:checked + label:before {
 	content: " ";
 	background-position: 0 bottom;
 }
  
-/*.form-sign-in*/ .check-calcul  input[type=checkbox]:checked + label:before {
+.check-calcul  input[type=checkbox]:checked + label:before {
 	content: " ";
 	background-position: 0 bottom;
 }

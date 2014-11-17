@@ -19,11 +19,11 @@
 						),
 						false
 					);?>
-					<?if (
+					<?/*if (
 						$APPLICATION->GetCurPage(false) != SITE_DIR."personal/cart/"
 						&& $APPLICATION->GetCurPage(false) != SITE_DIR."personal/order/make/"
-					):?>
-					<?$APPLICATION->IncludeComponent(
+					):*/?><!--
+					<?/*$APPLICATION->IncludeComponent(
 						"bitrix:main.include",
 						"",
 						Array(
@@ -34,17 +34,17 @@
 						),
 						false,
 						Array('HIDE_ICONS' => 'Y')
-					);?>
-					<?endif?>
+					);*/?>
+					<?/*endif*/?>
 				</div>
 				<div style="clear: both;"></div>
-				<?endif?>
-				<?if (
+				<?/*endif*/?>
+				<?/*if (
 					$wizTemplateId == "eshop_adapt_horizontal"
 					&& $APPLICATION->GetCurPage(false) != SITE_DIR."personal/cart/"
 					&& $APPLICATION->GetCurPage(false) != SITE_DIR."personal/order/make/"
-				):?>
-				<?$APPLICATION->IncludeComponent(
+				):*/?>
+				<?/*$APPLICATION->IncludeComponent(
 					"bitrix:main.include",
 					"",
 					Array(
@@ -55,8 +55,8 @@
 					),
 					false,
 					Array('HIDE_ICONS' => 'Y')
-				);?>
-				<?endif?>
+				);*/?>
+				--><?/*endif*/?>
 			</div> <!-- //worakarea_wrap_container workarea-->
 		</div> <!-- //workarea_wrap-->
 

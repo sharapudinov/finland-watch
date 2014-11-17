@@ -1,0 +1,10 @@
+
+@font-face {
+  font-family: 'Avalanche-Normal';
+  src: url('Avalanche-Normal.eot?#iefix') format('embedded-opentype'),  
+  url('Avalanche-Normal.woff') format('woff'), 
+  url('Avalanche-Normal.ttf')  format('truetype'), 
+  url('Avalanche-Normal.svg#Avalanche-Normal') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

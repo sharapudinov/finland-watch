@@ -1,6 +1,22 @@
 #main-slider .flex-container {
    height: 285px;
-   /*outline: 1px solid red;*/
+   padding: 0;
+   margin: 0;
+  /* outline: 1px solid red;*/
+}
+
+#main-slider .flex-container img.main-img {
+    position: absolute;
+    top: -10px;
+}
+
+#main-slider .flex-container .slider-content {
+    width: 960px;
+    margin: 0 auto;
+    height: 285px;
+    z-index: 5000;
+    display: block;
+    /*outline: 3px solid red;*/
 }
 
 #main-slider .flexslider {
@@ -8,16 +24,18 @@
 	margin: 0 auto;
 	padding: 0;
     height: 285px;
+    
 }
 
 /* Скрываем слайды перед загрузкой ява-скрипта */
-/*.flexslider .slides > li {
+/*#main-slider .flexslider .slides > li {
 	display: none;
 	-webkit-backface-visibility: hidden;
 }*/
 
-#main-slider .flexslider .slides img {
-	
+#main-slider .flexslider .slides img.main-img {
+	padding: 0;
+    margin-bottom: 0;
 }
 
 /* Чистим предидущее изображение для .slides */
@@ -33,15 +51,18 @@
 /*html[xmlns] .slides { display: block; }
 * html .slides { height: 1%; }*/
 
-#main-slider .slides ul li {
+#main-slider .slides  li {
     height: 285px;
     width: 1750px;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
     position: relative;
 }
 
 #main-slider .slides {
     height: 285px;
     overflow: hidden;
+    padding-top: 0 !important;
 }
 
 /* Основной стиль слайдера */
@@ -79,7 +100,7 @@
 	position: absolute !important;
     display: inline-block;
 	width: 100%;
-	bottom: 15px;
+	bottom: 10px;
     z-index: 2000;
 	text-align: center;
 	margin:0;
@@ -152,7 +173,7 @@
 }
 
 #main-slider .flex-direction-nav .flex-next {
-	right: -60px;
+	right: 17%;
     background-position: right 0;
 }
 
@@ -161,39 +182,26 @@
 }
 
 #main-slider .flex-direction-nav .flex-prev {
-	left: -60px;
+	left: 17%;
+
 }
 
 #main-slider .flex-direction-nav .flex-prev:hover {
     background-position: 0 bottom;
 }
 
-/*.wrapper-karaoke .flex-control-paging li a {
-    background-image:url(../img/prev-next-k.png);
-    background-repeat: no-repeat;
-	background-position: 0 0;
-}
-
-.wrapper-karaoke .flex-control-paging li a.flex-active {
-	background-position: right 0;
-}*/
 
 /*=============================================================================*/
 #main-slider .block-slider {
     margin: 0 auto;
     height: 285px;
-    /*position: absolute !important;*/
-    /*left: 14%;
-    right: 30%;
-    top: 0;*/
-    /*margin-top: -340px;*/
     min-width: 960px;
     z-index: 50;
 }
 
 #main-slider .block-slider .flexslider img{
     float: left;
-    margin: 10px 65px 0 5px;
+    margin: 10px 25px 0 0;
 }
 
 #main-slider .block-slider .title-slider, .block-slider .flexslider p {

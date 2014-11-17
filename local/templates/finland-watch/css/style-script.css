@@ -6,13 +6,13 @@ p {line-height:1.4; margin-bottom:12px}
 
 #wrapper {width:673px; margin:50px auto}
 */
-#main-slider #container-mini {
+#main-header #container-mini {
     position:absolute !important;
      width:315px;
      height:240px; 
      z-index: 500;
      right: 0;
-     top: 22px;
+     top: 212px;
      background-image:url("../sliders/bg-mini.png") ;
      background-repeat: no-repeat;
     
@@ -213,7 +213,7 @@ p {line-height:1.4; margin-bottom:12px}
     margin-top: 20px;
 }
 
-.catalog-slider-cleek-buy .content-mini .link-sm .one-click {
+.catalog-slider-cleek-buy .content-mini .link-sm .one-cleek {
     font-family: 'GloberThinFree';
     color: #ffffff;
     background-color: #2d2d2d;
@@ -243,9 +243,17 @@ p {line-height:1.4; margin-bottom:12px}
     background-color: #ed1c24;
 }
 
+.content-mini .link-sm a:hover {
+    background-color: #c70108;
+}
+
 .catalog-slider-cleek-buy .content-mini .link-sm .buy {
     padding-left: 30px;
     padding-right: 30px;
+}
+
+.catalog-slider-cleek-buy .content-mini .link-sm .buy:hover {
+    background-color: #c70108;
 }
 
 
