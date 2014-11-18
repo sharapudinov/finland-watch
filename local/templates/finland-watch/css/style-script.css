@@ -1,18 +1,11 @@
-/** {margin:0; padding:0}
 
-body {font:12px Verdana,Arial; color:#555; background:#ddd}
-
-p {line-height:1.4; margin-bottom:12px}
-
-#wrapper {width:673px; margin:50px auto}
-*/
-#main-header #container-mini {
+ #container-mini {
     position:absolute !important;
      width:315px;
      height:240px; 
      z-index: 500;
      right: 0;
-     top: 212px;
+     top: 22px;
      background-image:url("../sliders/bg-mini.png") ;
      background-repeat: no-repeat;
     
@@ -24,7 +17,6 @@ p {line-height:1.4; margin-bottom:12px}
      z-index: 500;
      background-image:url("../sliders/mini-bg.png") ;
      background-repeat: no-repeat;
-     /*outline: 1px solid red;*/
     
 } 
 
@@ -45,8 +37,7 @@ p {line-height:1.4; margin-bottom:12px}
  }
 
 #slideleft {
-    /*background:url(../images/icons.gif) -50px -265px no-repeat;
-    outline: 1px solid blue;*/
+    
     left: 10px;
     }
  
@@ -54,7 +45,7 @@ p {line-height:1.4; margin-bottom:12px}
     left: 20px;
 }
     
-/*#slideleft:hover {background-position:0 -265px}*/
+
 
 #slideright {
     background-position: right 0;
@@ -63,13 +54,13 @@ p {line-height:1.4; margin-bottom:12px}
     
  .catalog-slider-cleek-buy #slideright {
     right: 30px;
-    /*outline: 1px solid blue;*/
+   
  }
 
-/*#slideright:hover {background-position:-50px 90px}*/
+
 
 #slider-mini {
-    /*float:left;*/
+   
     position:relative; 
     overflow:auto; 
     width:315px; 
@@ -82,7 +73,7 @@ p {line-height:1.4; margin-bottom:12px}
     overflow:auto; 
     width:502px;
      height:241px; 
-    /* outline: 1px solid red;*/
+    
     }   
     
 #slider-mini ul {
@@ -107,14 +98,10 @@ p {line-height:1.4; margin-bottom:12px}
 #slider-mini .content-mini {
     margin-left: 30px;
     padding: 10px 0;
-    /*outline: 1px solid green;*/
+   
 }
 
-#main-slider #slider-mini .content-mini img {
-    /*width: 185px !important;
-    height: 185px !important;
-    margin-left: -10px;*/
-}
+
 
 .catalog-slider-cleek-buy #slider-mini .content-mini {
     margin-left: 25px;
@@ -163,7 +150,7 @@ p {line-height:1.4; margin-bottom:12px}
 }
 
 .catalog-slider-cleek-buy .content-mini .old-price {
-    /*outline: 1px solid red;*/
+   
     margin: 0 0 20px 335px !important;
     line-height: 1;
 }
@@ -229,7 +216,7 @@ p {line-height:1.4; margin-bottom:12px}
 
 .catalog-slider-cleek-buy .content-mini #rating_2 {
     margin: 0 0 0 170px;
-    /*outline: 1px solid red;*/
+   
 }
 
 .content-mini .link-sm a{
@@ -259,13 +246,12 @@ p {line-height:1.4; margin-bottom:12px}
 
 .content-mini img{
     float: left;
-    /*margin-right: 20px;*/
+   
 }
 
 .catalog-slider-cleek-buy .content-mini img {
     margin: 20px 0 0 10px;
-   /* width: 174px;
-    height: 174px;*/
+   
 }
 
 .content-mini .new-price {
@@ -278,7 +264,7 @@ p {line-height:1.4; margin-bottom:12px}
     font-family: 'GloberBoldFree', sans-serif;
     background-image:url("../sliders/new.png") ;
     background-repeat: no-repeat;
-    /*outline: 1px solid red;*/
+    
 }
 
 .content-mini .new-price p {
@@ -319,26 +305,3 @@ p {line-height:1.4; margin-bottom:12px}
     font-size: 25px;
 }
     
-/*#slider-mini .pagination {
-    position:absolute; 
-    display: block;
-    z-index: 1000;
-    top:40px; 
-    right:; 
-    list-style:none; 
-    height:25px;
-  outline: 1px solid red;
-}
-#slider-mini .pagination li {
-    float:left; 
-    cursor:pointer; 
-    height:8px; 
-    width:8px; 
-    background:#ccc; 
-    margin:0 4px 0 0; 
-    border:1px solid #fff
-    }
-    
-#slider-mini .pagination li:hover, li.current {
-    background:#fff
-    }*/

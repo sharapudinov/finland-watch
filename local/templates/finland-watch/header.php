@@ -29,7 +29,6 @@ $curPage = $APPLICATION->GetCurPage(true);
     <div id="wrapper">
         <section>
             <div id="main-header">
-
                 <div class="header">
                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/company_logo.php"), false);?>
                     <div class="block-phone-region">
@@ -43,7 +42,6 @@ $curPage = $APPLICATION->GetCurPage(true);
                             <ul>
                                 <li class="region" title="Выбор региона"><a class="modal-city" href="#modal" >Москва и Подмосковье</a></li>
                                 <li class="call"><a class="modalbox" href="#inline">Заказать звонок</a></li>
-
                             </ul>
                             <div class="clear"></div>
                             <span class="phone">
@@ -108,49 +106,47 @@ $curPage = $APPLICATION->GetCurPage(true);
                             false
                         );?>
                     </div>
-
-
-
-
-<!--
-					<?/*$APPLICATION->IncludeComponent('bitrix:menu', "top_menu", array(
-							"ROOT_MENU_TYPE" => "top",
-							"MENU_CACHE_TYPE" => "Y",
-							"MENU_CACHE_TIME" => "36000000",
-							"MENU_CACHE_USE_GROUPS" => "Y",
-							"MENU_CACHE_GET_VARS" => array(),
-							"MAX_LEVEL" => "1",
-							"USE_EXT" => "N",
-							"ALLOW_MULTI_SELECT" => "N"
-						)
-					);*/?>
-
--->
-
-
-<!--
-						<?/*if ($wizTemplateId == "eshop_adapt_horizontal"):*/?>
-						<?/*$APPLICATION->IncludeComponent("bitrix:menu", "catalog_horizontal", array(
-								"ROOT_MENU_TYPE" => "left",
-								"MENU_CACHE_TYPE" => "A",
-								"MENU_CACHE_TIME" => "36000000",
-								"MENU_CACHE_USE_GROUPS" => "Y",
-								"MENU_THEME" => "site",
-								"CACHE_SELECTED_ITEMS" => "N",
-								"MENU_CACHE_GET_VARS" => array(
-								),
-								"MAX_LEVEL" => "3",
-								"CHILD_MENU_TYPE" => "left",
-								"USE_EXT" => "Y",
-								"DELAY" => "N",
-								"ALLOW_MULTI_SELECT" => "N",
-							),
-							false
-						);*/?>
-						--><?/*endif*/?>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="main-menu-top">
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "finland_top_menu", Array(
+                        "ROOT_MENU_TYPE" => "top",    // Тип меню для первого уровня
+                        "MENU_CACHE_TYPE" => "Y",    // Тип кеширования
+                        "MENU_CACHE_TIME" => "36000000",    // Время кеширования (сек.)
+                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
+                        "MENU_CACHE_GET_VARS" => "",    // Значимые переменные запроса
+                        "MAX_LEVEL" => "1",    // Уровень вложенности меню
+                        "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+                    ),
+                    false
+                );?>
+            </div>
+        </section>
+           <!-- <?/* if ($wizTemplateId == "eshop_adapt_horizontal"): */?>
+                <?/*$APPLICATION->IncludeComponent("bitrix:menu", "catalog_horizontal", array(
+                        "ROOT_MENU_TYPE" => "left",
+                        "MENU_CACHE_TYPE" => "A",
+                        "MENU_CACHE_TIME" => "36000000",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_THEME" => "site",
+                        "CACHE_SELECTED_ITEMS" => "N",
+                        "MENU_CACHE_GET_VARS" => array(),
+                        "MAX_LEVEL" => "3",
+                        "CHILD_MENU_TYPE" => "left",
+                        "USE_EXT" => "Y",
+                        "DELAY" => "N",
+                        "ALLOW_MULTI_SELECT" => "N",
+                    ),
+                    false
+                );*/?>
+            --><?/* endif */?>
 
 			<?if ($APPLICATION->GetCurPage(true) == SITE_DIR."index.php"):?>
-				<?$APPLICATION->IncludeComponent(
+				<?/*$APPLICATION->IncludeComponent(
 					"bitrix:main.include",
 					"",
 					Array(
@@ -161,18 +157,19 @@ $curPage = $APPLICATION->GetCurPage(true);
 					),
 					false,
 					Array('HIDE_ICONS' => 'Y')
-				);?>
-			<?endif?>
-<!--
-				--><?/*$APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
-						"START_FROM" => "0",
-						"PATH" => "",
-						"SITE_ID" => "-"
-					),
-					false,
-					Array('HIDE_ICONS' => 'Y')
 				);*/?>
-
-				<?if ($curPage != SITE_DIR."index.php"):?>
-				<h1><?=$APPLICATION->ShowTitle(false);?></h1>
-				<?endif?>
+			<?endif?>
+        <div id="main-content">
+            <? if ($curPage != SITE_DIR . "index.php"): ?>
+                <section>
+                        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
+                            "START_FROM" => "1",
+                            "PATH" => "",
+                            "SITE_ID" => "-"
+                        ),
+                        false,
+                        Array('HIDE_ICONS' => 'Y')
+                    );?>
+                    <h1><?= $APPLICATION->ShowTitle(false); ?></h1>
+                </section>
+            <? endif ?>

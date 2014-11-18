@@ -1,210 +1,164 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-				</div> <!-- //bx_content_section-->
-				<?if ($wizTemplateId == "eshop_adapt_vertical"):?>
-				<div class="bx_sidebar">
-					<?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_vertical", array(
-							"ROOT_MENU_TYPE" => "left",
-							"MENU_CACHE_TYPE" => "A",
-							"MENU_CACHE_TIME" => "36000000",
-							"MENU_CACHE_USE_GROUPS" => "Y",
-							"CACHE_SELECTED_ITEMS" => "N",
-							"MENU_THEME" => "site",
-							"MENU_CACHE_GET_VARS" => array(
-							),
-							"MAX_LEVEL" => "3",
-							"CHILD_MENU_TYPE" => "left",
-							"USE_EXT" => "Y",
-							"DELAY" => "N",
-							"ALLOW_MULTI_SELECT" => "N"
-						),
-						false
-					);?>
-					<?/*if (
-						$APPLICATION->GetCurPage(false) != SITE_DIR."personal/cart/"
-						&& $APPLICATION->GetCurPage(false) != SITE_DIR."personal/order/make/"
-					):*/?><!--
-					<?/*$APPLICATION->IncludeComponent(
-						"bitrix:main.include",
-						"",
-						Array(
-							"AREA_FILE_SHOW" => "file",
-							"PATH" => SITE_DIR."include/viewed_product.php",
-							"AREA_FILE_RECURSIVE" => "N",
-							"EDIT_MODE" => "html",
-						),
-						false,
-						Array('HIDE_ICONS' => 'Y')
-					);*/?>
-					<?/*endif*/?>
-				</div>
-				<div style="clear: both;"></div>
-				<?/*endif*/?>
-				<?/*if (
-					$wizTemplateId == "eshop_adapt_horizontal"
-					&& $APPLICATION->GetCurPage(false) != SITE_DIR."personal/cart/"
-					&& $APPLICATION->GetCurPage(false) != SITE_DIR."personal/order/make/"
-				):*/?>
-				<?/*$APPLICATION->IncludeComponent(
-					"bitrix:main.include",
-					"",
-					Array(
-						"AREA_FILE_SHOW" => "file",
-						"PATH" => SITE_DIR."include/viewed_product.php",
-						"AREA_FILE_RECURSIVE" => "N",
-						"EDIT_MODE" => "html",
-					),
-					false,
-					Array('HIDE_ICONS' => 'Y')
-				);*/?>
-				--><?/*endif*/?>
-			</div> <!-- //worakarea_wrap_container workarea-->
-		</div> <!-- //workarea_wrap-->
+<!-- main-wrapper-->
+    </div>
 
-		<div class="bottom_wrap">
-			<div class="bottom_wrap_container">
-				<div class="bottom_container_one">
-					<div class="bx_inc_about_footer">
-						<h4><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/company_name.php"), false);?></h4>
-						<p><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/company_about.php"), false);?></p>
-						<br/><br/>
-						<a href="<?=SITE_DIR?>about/"><?=GetMessage("FOOTER_COMPANY_ABOUT")?></a>
-					</div>
-				</div>
-				<div class="bottom_container_two">
-					<?$APPLICATION->IncludeComponent(
-						"bitrix:main.include",
-						"",
-						Array(
-							"AREA_FILE_SHOW" => "file",
-							"PATH" => SITE_DIR."include/news.php",
-							"AREA_FILE_RECURSIVE" => "N",
-							"EDIT_MODE" => "html",
-						),
-						false,
-						Array('HIDE_ICONS' => 'Y')
-					);?>
-				</div>
-				<div class="bottom_container_tre">
-					<div class="bx_inc_social_footer">
-						<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/facebook_plugin.php"), false);?>
-					</div>
-				</div>
-			</div>
-		</div>  <!-- //bottom_wrap -->
+<!--				--><?//if ($wizTemplateId == "eshop_adapt_vertical"):?>
+    <section>
+        <div id="main-footer">
+            <a href="#" title="Вернуться к началу" id="toTop" class="topbutton"></a>
+            <div class="footer">
+                <div class="block-footer-menu">
+                    <h5>Доставка<br/> оплата</h5>
+                    <div class="lines-blue"></div>
+                    <?$APPLICATION->IncludeComponent("bitrix:menu", "finland_bottom_menu", array(
+                            "ROOT_MENU_TYPE" => "left",
+                            "MENU_CACHE_TYPE" => "A",
+                            "MENU_CACHE_TIME" => "36000000",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "MENU_CACHE_GET_VARS" => array(),
+                            "MAX_LEVEL" => "3",
+                            "CHILD_MENU_TYPE" => "left",
+                            "USE_EXT" => "N",
+                            "DELAY" => "N",
+                            "ALLOW_MULTI_SELECT" => "N"
+                        ),
+                        false
+                    );?>
+                    <div class="clear"></div>
+                </div>
+                <div class="block-footer-menu">
+                    <h5 class="one">Поддержка</h5>
+                    <div class="lines-blue"></div>
+                    <?$APPLICATION->IncludeComponent("bitrix:menu", "finland_bottom_menu", Array(
+                            "ROOT_MENU_TYPE" => "bottom",    // Тип меню для первого уровня
+                            "MENU_CACHE_TYPE" => "A",    // Тип кеширования
+                            "MENU_CACHE_TIME" => "36000000",    // Время кеширования (сек.)
+                            "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
+                            "MENU_CACHE_GET_VARS" => "",    // Значимые переменные запроса
+                            "MAX_LEVEL" => "3",    // Уровень вложенности меню
+                            "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
+                            "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                            "DELAY" => "N",    // Откладывать выполнение шаблона меню
+                            "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+                        ),
+                        false
+                    );?>
+                    <div class="clear"></div>
+                </div>
+                <div class="block-footer-menu">
+                    <h5>Следуйте за<br/> нами</h5>
+                    <div class="lines-blue"></div>
+                    <?
+                    $facebookLink = $APPLICATION->GetFileContent($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/socnet_facebook.php");
+                    $twitterLink = $APPLICATION->GetFileContent($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/socnet_twitter.php");
+                    $googlePlusLink = $APPLICATION->GetFileContent($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/socnet_ok.php");
+                    $vkLink = $APPLICATION->GetFileContent($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/socnet_vk.php");
+                    ?>
+                    <ul class="link-social">
+                        <? if ($facebookLink): ?>
+                            <li class="f"><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "PATH" => SITE_DIR . "include/socnet_facebook.php",
+                                        "EDIT_TEMPLATE" => "standard.php"
+                                    ),
+                                    false
+                                );?></li>
+                        <? endif ?>
+                        <? if ($twitterLink): ?>
+                            <li class="tw"><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "PATH" => SITE_DIR . "include/socnet_twitter.php",
+                                        "EDIT_TEMPLATE" => "standard.php"
+                                    ),
+                                    false
+                                );?></li>
+                        <? endif ?>
+                        <? if ($googlePlusLink): ?>
+                            <li class="od"><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "PATH" => SITE_DIR . "include/socnet_ok.php",
+                                        "EDIT_TEMPLATE" => "standard.php"
+                                    ),
+                                    false
+                                );?></li>
+                        <? endif ?>
+                        <? if (LANGUAGE_ID == "ru" && $vkLink): ?>
+                            <li class="vk"><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "PATH" => SITE_DIR . "include/socnet_vk.php",
+                                        "EDIT_TEMPLATE" => "standard.php"
+                                    ),
+                                    false
+                                );?></li>
+                        <? endif ?>
+                    </ul>
+                    <div class="clear"></div>
+                    <ul class="link-info">
+                        <li>Новая информация!</li>
+                        <li>Участие в акциях и конкурсах!</li>
 
-		<div class="footer_wrap">
-			<div class="footer_wrap_container">
-				<div class="footer_container_one">
-					<div class="bx_inc_catalog_footer">
-						<h3><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/catalog_title.php"), false);?></h3>
-						<?$APPLICATION->IncludeComponent("bitrix:menu", "bottom_menu", array(
-							"ROOT_MENU_TYPE" => "left",
-							"MENU_CACHE_TYPE" => "A",
-							"MENU_CACHE_TIME" => "36000000",
-							"MENU_CACHE_USE_GROUPS" => "Y",
-							"MENU_CACHE_GET_VARS" => array(
-							),
-							"MAX_LEVEL" => "1",
-							"USE_EXT" => "Y",
-							"DELAY" => "N",
-							"ALLOW_MULTI_SELECT" => "N"
-						),
-						false
-					);?>
-					</div>
-				</div>
-				<div class="footer_container_two">
-					<div class="bx_inc_menu_footer">
-						<h3><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/about_title.php"), false);?></h3>
-						<?$APPLICATION->IncludeComponent("bitrix:menu", "bottom_menu", array(
-							"ROOT_MENU_TYPE" => "bottom",
-							"MAX_LEVEL" => "1",
-							"MENU_CACHE_TYPE" => "A",
-							"MENU_CACHE_TIME" => "36000000",
-							"MENU_CACHE_USE_GROUPS" => "Y",
-							"MENU_CACHE_GET_VARS" => array(
-							),
-						),
-						false
-					);?>
-					</div>
-				</div>
-				<div class="footer_container_tre">
-					<div class="footer_social_icon">
-						<?
-						$facebookLink = $APPLICATION->GetFileContent($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/socnet_facebook.php");
-						$twitterLink = $APPLICATION->GetFileContent($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/socnet_twitter.php");
-						$googlePlusLink = $APPLICATION->GetFileContent($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/socnet_google.php");
-						$vkLink = $APPLICATION->GetFileContent($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/socnet_vk.php");
-						?>
-						<ul>
-						<?if ($facebookLink):?>
-						<li class="fb"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/socnet_facebook.php"), false);?></li>
-						<?endif?>
-						<?if ($twitterLink):?>
-						<li class="tw"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/socnet_twitter.php"), false);?></li>
-						<?endif?>
-						<?if ($googlePlusLink):?>
-						<li class="gp"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/socnet_google.php"), false);?></li>
-						<?endif?>
-						<?if (LANGUAGE_ID=="ru" && $vkLink):?>
-						<li class="vk"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/socnet_vk.php"), false);?></li>
-						<?endif?>
-						</ul>
-					</div>
-					<div class="footer_contact">
-						<span><?=GetMessage("FOOTER_COMPANY_PHONE")?>:</span>
-						<strong><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone.php"), false);?></strong>
-					</div>
-				</div>
-				<div class="copyright"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/copyright.php"), false);?></div>
-			</div>
-		</div>  <!-- //footer_wrap -->
+                    </ul>
+                </div>
+                <div class="block-footer-menu contacts">
+                    <h5 class="one">Контакты</h5>
+                    <div class="lines-blue"></div>
+                    <ul>
+                        <li class="address">Москва, Рязанский проспект 30/15</li>
+                        <li class="phone-text">Телефоны:</li>
+                        <li><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => SITE_DIR . "include/telephone2.php",
+                                    "EDIT_TEMPLATE" => "standard.php"
+                                ),
+                                false
+                            );?></li>
+                        <li><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => SITE_DIR . "include/telephone3.php",
+                                    "EDIT_TEMPLATE" => "standard.php"
+                                ),
+                                false
+                            );?></li>
+                        <li><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => SITE_DIR . "include/telephone4.php",
+                                    "EDIT_TEMPLATE" => "standard.php"
+                                ),
+                                false
+                            );?></li>
+                        <li class="phone-text">Почта:</li>
+                        <li><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => SITE_DIR . "include/e-mail.php",
+                                    "EDIT_TEMPLATE" => "standard.php"
+                                ),
+                                false
+                            );?></li>
 
-	</div> <!-- //wrap -->
+                    </ul>
+                    <div class="clear"></div>
 
-	<div class="notive header">
-		<a href="javascript:void(0)" onclick="eshopOpenNativeMenu()" class="gn_general_nav notive"></a>
-		<a href="<?=SITE_DIR?>personal/cart/" class="cart_link notive"></a>
-		<div class="title notive"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/company_name.php"), false);?></div>
-		<div class="clb"></div>
-	</div>
-	<div class="menu-page" id="bx_native_menu">
-		<div class="menu-items">
-		<?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_native", array(
-				"ROOT_MENU_TYPE" => "left",
-				"MENU_CACHE_TYPE" => "A",
-				"MENU_CACHE_TIME" => "36000000",
-				"MENU_CACHE_USE_GROUPS" => "Y",
-				"CACHE_SELECTED_ITEMS" => "N",
-				"MENU_CACHE_GET_VARS" => array(
-				),
-				"MAX_LEVEL" => "3",
-				"CHILD_MENU_TYPE" => "left",
-				"USE_EXT" => "Y",
-				"DELAY" => "N",
-				"ALLOW_MULTI_SELECT" => "N"
-			),
-			false
-		);?>
-		<?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_native", array(
-				"ROOT_MENU_TYPE" => "native",
-				"MENU_CACHE_TYPE" => "A",
-				"MENU_CACHE_TIME" => "36000000",
-				"MENU_CACHE_USE_GROUPS" => "Y",
-				"CACHE_SELECTED_ITEMS" => "N",
-				"MENU_CACHE_GET_VARS" => array(
-				),
-				"MAX_LEVEL" => "3",
-				"CHILD_MENU_TYPE" => "personal",
-				"USE_EXT" => "Y",
-				"DELAY" => "N",
-				"ALLOW_MULTI_SELECT" => "N"
-			),
-			false
-		);?>
-		</div>
-	</div>
-	<div class="menu_bg" id="bx_menu_bg"></div>
-</body>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="block-copyright">
+                <div class="copyright">
+                    <p class="copyright"><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                "AREA_FILE_SHOW" => "file",
+                                "PATH" => SITE_DIR . "include/copyright.php",
+                                "EDIT_TEMPLATE" => "standard.php"
+                            ),
+                            false
+                        );?></p>
+                    <div class="author-site">
+                        <a href="http://webvbi.ru/">webvbi.ru</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    </body>
 </html>

@@ -1,13 +1,14 @@
 .slider-home .wrap { 
 	   position: relative;
-       /*width: 100%;*/
+       
         margin:0 !important;
          background: transparent;
          }
     
   .slider-discount {
     float: left;
-    margin-right: 10px;
+    padding-right: 10px;
+
   }   
     
          
@@ -15,13 +16,10 @@
     width: 120px;
     margin: 0;
     padding: 5px 0 13px 10px;
-    /*margin-left: 6px;*/
-    /*background-image:url("../sliders/bg-mini-s-c.png") ;
-   background-repeat: no-repeat;*/
-   /*outline: 1px solid green;*/
+    
    background-position: center 0;
   
-     
+    
  } 
  
  .slider-discount .wrap .red {
@@ -36,10 +34,10 @@
   }  
          
 .slider-home .wrap div.slider-two    { 
-	   /*overflow:hidden;*/
+	  
         position:relative; 
         width: 960px;
-       /* height: 380px;*/
+      
          margin:0 ;
         
         }
@@ -49,8 +47,16 @@
         width: 960px;
         height: auto !important;
          margin:0 ;
-         /*outline: 1px solid red;*/
- }  
+        
+ }
+ 
+ .main-block-advantages .wrap .slider-action  {
+    position:relative; 
+        width: 960px;
+        height: auto !important;
+         margin:0 ;
+        
+ }
         
  .slider-discount .wrap div.slider-two {
     width: 90px;
@@ -58,14 +64,16 @@
     margin: 10px 0 0 15px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+
  } 
  
   .slider-discount .wrap div.slider-two.slider-blue {
     background-color: #0ab5fa;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);  
   }
   
   .slider-discount .wrap div.slider-two.slider-blue .gradient  {
-   /* display: inline-block;*/
+  
     position: absolute !important;
     bottom: 0;
     height: 37px;
@@ -158,21 +166,20 @@
    
 }
 
-/** Carousel **/
+
 
 .jcarousel {
     position: relative;
     overflow: hidden;
-    /*width: 100%;*/
-    /*height: 380px;*/
-    /*outline: 1px solid red;*/
+    
 }
 
 .slider-discount .jcarousel {
     position: relative;
-    /*overflow: hidden;*/
-    /*width: 100%;*/
+   
     height: 100px;
+
+
 }
 
 .jcarousel ul {
@@ -199,7 +206,6 @@
     height: 105px !important;
     border: none;
     background-color: transparent;
-    /*outline: 1px solid red;*/
 }
 
 .block-home-news .jcarousel li {
@@ -213,6 +219,27 @@
     background-color: transparent;
 }
 
+ .main-block-advantages .jcarousel.slider-two.slider-action ul li {
+    position: relative;
+    width: 960px !important;
+    height: auto !important;
+    border: none;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 20px;
+    background-color: transparent;
+    
+}
+
+.main-block-advantages .jcarousel.slider-two.slider-action .action-page ol li {
+    width: auto !important;
+}
+
+.block-home-news .jcarousel li ol li {
+    width: auto !important;
+}
+
+
 .slider-discount .jcarousel li img {
     width: 56px;
     height: 76px;
@@ -222,17 +249,54 @@
 .content-basket .jcarousel li {
     width: 190px;
     height: 350px;
+   
+}
+
+.content-basket .browsing {
+    top: 20%;
+}
+
+.slider-sitebar .jcarousel li {
+    width: 250px;
+    border: none;
+}
+
+.slider-sitebar.two .nal{
+    position: relative;
+    width: 70%;
+    margin-left: 5px; 
+    text-align: left;
+} 
+
+.slider-sitebar .jcarousel li:hover{
+    border: none;
+}
+
+.slider-sitebar .jcarousel-pagination {
+   
+   top: -10px;
+}
+
+.slider-sitebar .jcarousel-pagination a {
+    width: 11px ;
+    height: 10px;
+    margin: 0 2px;
+    text-indent: -9999px;
+    background-image:url("../sliders/pag.png") ;
+    background-repeat: no-repeat;
     
 }
+
+.slider-sitebar .jcarousel-pagination a.active, .slider-sitebar .jcarousel-pagination a:hover{
+    background-position: right 0;
+}
+
 
 .jcarousel li:hover {
     border: 1px solid #11afeb;
     cursor: pointer;
 }
-/*.wrap-catalog ul li {
-    margin-bottom: 15px !important;
-    outline: 1px solid red;
-}*/
+
 
 .wrap-catalog ul li:hover {
     border: 1px solid #11afeb;
@@ -252,7 +316,7 @@
     height: 219px;
 }
 
-/** Carousel Controls **/
+
 
 .jcarousel-control-prev,
 .jcarousel-control-next {
@@ -266,6 +330,8 @@
     opacity: 0.5;
 }
 
+
+
 .block-home-news .wrap .jcarousel-control-prev,
 .block-home-news .wrap .jcarousel-control-next
  {
@@ -277,17 +343,50 @@
     opacity: 1;
 }
 
+.main-block-advantages .wrap .jcarousel-control-prev,
+.main-block-advantages .wrap .jcarousel-control-next
+ {
+    position: absolute !important;
+    width: 30px;
+	height: 23px;
+    top: -112px;
+    background-image:url("../sliders/prev-next-action.png") ;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+
+
+.slider-sitebar .jcarousel-control-prev,
+.slider-sitebar .jcarousel-control-next {
+    display: block;
+	position: absolute !important;
+	width: 30px;
+	height: 31px;
+	top: 40%;
+	cursor: pointer;
+	text-indent: -9999px;
+	background-image:url("../sliders/next-prev.png") ;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+
+.slider-sitebar .jcarousel-control-next {
+    right: 0;
+}
+
+
 .block-home-news .wrap .jcarousel-control-prev:hover,
 .block-home-news .wrap .jcarousel-control-next:hover {
     opacity: 0.7;
 }
 
-.block-home-news .wrap .jcarousel-control-prev{
+.block-home-news .wrap .jcarousel-control-prev, .main-block-advantages .wrap .jcarousel-control-prev{
     right: 32px;
     background-position: 0 0;
 }
 
-.block-home-news .wrap .jcarousel-control-next {
+.block-home-news .wrap .jcarousel-control-next, .main-block-advantages .wrap .jcarousel-control-next {
     right: 0;
     background-position: right 0;
 }
@@ -304,7 +403,7 @@
     background-image:url("../sliders/left-right-mini.png") ;
     background-repeat: no-repeat;
     opacity: 0.5;
-    /*outline: 1px solid red;*/
+   
 }
 
 

@@ -2,7 +2,7 @@
    height: 285px;
    padding: 0;
    margin: 0;
-  /* outline: 1px solid red;*/
+  
 }
 
 #main-slider .flex-container img.main-img {
@@ -16,7 +16,7 @@
     height: 285px;
     z-index: 5000;
     display: block;
-    /*outline: 3px solid red;*/
+    
 }
 
 #main-slider .flexslider {
@@ -27,18 +27,14 @@
     
 }
 
-/* Скрываем слайды перед загрузкой ява-скрипта */
-/*#main-slider .flexslider .slides > li {
-	display: none;
-	-webkit-backface-visibility: hidden;
-}*/
+
 
 #main-slider .flexslider .slides img.main-img {
 	padding: 0;
     margin-bottom: 0;
 }
 
-/* Чистим предидущее изображение для .slides */
+
 #main-slider .slides:after {
 	content: ".";
 	display: block;
@@ -48,8 +44,7 @@
 	height: 0;
 }
 
-/*html[xmlns] .slides { display: block; }
-* html .slides { height: 1%; }*/
+
 
 #main-slider .slides  li {
     height: 285px;
@@ -65,7 +60,7 @@
     padding-top: 0 !important;
 }
 
-/* Основной стиль слайдера */
+
 #main-slider .flexslider {
 	position: relative;
 	zoom: 1;
@@ -73,18 +68,11 @@
 	
 }
 
-/* Вы можете изменить под свои требования*/
+
 #main-slider .flex-container {
     z-index:100;
 }
 
-#main-slider .flexslider img { 
-   /*max-width: 1598px;
-   min-width: 500px;
-   max-height: 513px;
-   min-height: 160px;
-   */
- }
 
 
 #main-slider .flexslider .slides { zoom: 1; }
@@ -95,7 +83,7 @@
 }
 
 
-/* Кнопки прокрутки. Управление */
+
 #main-slider .flexslider .flex-control-nav {
 	position: absolute !important;
     display: inline-block;
@@ -104,7 +92,7 @@
     z-index: 2000;
 	text-align: center;
 	margin:0;
-   /* outline: 1px solid red;*/
+   
 }
 
 #main-slider .flex-control-nav li {
@@ -112,10 +100,7 @@
 	zoom: 1;
 }
 
-#main-slider .flex-control-paging {
-    
-    /*outline: 1px solid red;*/
-}
+
 
 #main-slider .flex-control-paging li a {
 	display: block;
@@ -130,9 +115,8 @@
 	background-position: -39px -68px;
 }
 
-#main-slider .flex-control-paging li a.flex-active {
+#main-slider .flex-control-paging li a.flex-active, #main-slider .flex-control-paging li a:hover {
 	background-position: -55px -68px;
-
 }
 
 #main-slider .flex-direction-nav {
@@ -151,7 +135,7 @@
 	text-indent: -9999px;
 	background-image:url("../sliders/nav-slider.png") ;
     background-repeat: no-repeat;
-    /*outline: 1px solid red;*/
+   
 }
 
 

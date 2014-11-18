@@ -1,28 +1,15 @@
-/* DEMO */
-*,
-*:before,
-*:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
 .container-tab{
 	margin:auto;
 	max-width:698px;
-	/*padding:0 20px;*/
-    outline: 1px solid red;
 }
+
 /* TABS */
 .accordion-tabs {
 	*zoom: 1;
 	width: 100%;
-/*	border: 1px solid #dddddd;
-	border-radius: 0.1875em;
-	margin-bottom: 1.5em; */
 	margin-left:0;
 	padding-left:0;
-
 }
 
 .accordion-tabs:before, 
@@ -59,7 +46,7 @@
                 font-family: Arial, sans-serif;
                 font-size: 14px;
                 font-weight: bold;
-                padding: 10px 0;
+                padding: 11px 0;
                 width: 167px;
                 text-align: center;
                 background-color: #e0e0e0;
@@ -77,18 +64,18 @@
 			}
             
 			.accordion-tabs li.tab-head-cont a.is-active {
-				/*background-color: #f7f7f7;
-				border-bottom: 0; */
+				
 				color:#ed1c24;
 			}
             
 		.accordion-tabs li.tab-head-cont .text-tabs {
-			position: absolute !important;
-            padding: 30px;
+			
+            padding: 20px 30px 30px 30px;
 			background-color: #ffffff;
 			display: none;
+            width:636px;
 			overflow: hidden;
-			/*width: 100%; */
+			
 		}
         
 
@@ -111,27 +98,21 @@
 				zoom: 1;
 				*display: inline;
 				*vertical-align: auto;
-				/*border-top: 0;
-				border-top-right-radius: 0.1875em;
-				border-top-left-radius: 0.1875em; */
+				
 			} 
 			.accordion-tabs li.tab-head-cont a.is-active {
 				background-color: #ffffff;
-				/*border: 1px solid #dddddd;
-				border-bottom: 1px solid #f7f7f7;
-				margin-bottom: -1px; */
+			
 			}
+            
+            
 			.accordion-tabs li.tab-head-cont .text-tabs {
-				/*border-bottom-left-radius: 0.1875em;
-				border-bottom-right-radius: 0.1875em;
-				border: 1px solid #dddddd;*/
+				
 				float: left;
 				left: 0;
-				/*padding: 0.75em 0.809em;*/
+			
 			}
 				.accordion-tabs li.tab-head-cont section p {
-				/*	-webkit-columns: 2;
-					-moz-columns: 2;
-					columns: 2;*/
+				
 				}
 }

@@ -156,16 +156,9 @@
 }
 
 
-/*.block-option*/ .jq-selectbox__dropdown  input {
+ .jq-selectbox__dropdown  input {
     display: none;
 }
-
-/*.block-option .jq-selectbox__not-found {
-	margin: 5px;
-	padding: 5px 8px 6px;
-	background: #F0F0F0;
-	font-size: 13px;
-}*/
 
 
 
@@ -180,7 +173,7 @@
 	padding: 5px 0 6px 50px;
 	color: #000000;
 	font-size: 14px;
-	/*text-transform: uppercase;*/
+	
 }
 
 .block-instruction .jq-selectbox li {

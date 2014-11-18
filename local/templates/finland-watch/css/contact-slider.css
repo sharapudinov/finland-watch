@@ -1,38 +1,8 @@
-/* #########################################################
 
-HOW TO CREATE A RESPONSIVE IMAGE SLIDER [TUTORIAL]
-
-"How to create a Responsive Image Slider [Tutorial]" was specially made for DesignModo by our friend Valeriu Timbuc.
-
-Links:
-http://vtimbuc.net
-http://designmodo.com
-http://vladimirkudinov.com
-
-######################################################### */
-
-
-
-/* Browser Resets */
-/*.flex-container a:active,
-.flexslider a:active,
-.flex-container a:focus,
-.flexslider a:focus  { outline: none; }
-
-.slides,
-.flex-control-nav,
-.flex-direction-nav {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.flexslider a img { outline: none; border: none; }
-*/
 
 .contact-slider .flex-container {
    height: 319px;
-   /*outline: 1px solid red;*/
+  
 }
 
 .contact-slider .flexslider {
@@ -40,18 +10,13 @@ http://vladimirkudinov.com
 	padding: 0;
 }
 
-/* Hide the slides before the JS is loaded. Avoids image jumping */
-/*.flexslider .slides > li {
-	display: none;
-	-webkit-backface-visibility: hidden;
-}*/
 
 .contact-slider .flexslider .slides img {
-	/*width: 100%;*/
+	
 	display: block;
 }
 
-/* Clearfix for the .slides element */
+
 .contact-slider .slides:after {
 	content: ".";
 	display: block;
@@ -61,28 +26,19 @@ http://vladimirkudinov.com
 	height: 0;
 }
 
-/*html[xmlns] .slides { display: block; }
-* html .slides { height: 1%; }*/
 
-
-
-/* Theme Styles */
 .contact-slider .flexslider {
 	position: relative;
 	zoom: 1;
 }
 
-/* Edit it if you want */
-/*.contact-slider .flex-container {
-	min-width: 150px;
-	max-width: 960px;
-}*/
+
 
 .contact-slider .flexslider .slides { zoom: 1; }
 
 
 
-/* Direction Nav */
+
 .contact-slider .flex-direction-nav a {
 	display: block;
 	position: absolute;
@@ -131,7 +87,7 @@ http://vladimirkudinov.com
 }
 
 
-/* Control Nav */
+
 .contact-slider .flexslider .flex-control-nav {
 	position: absolute;
 	width: 100%;

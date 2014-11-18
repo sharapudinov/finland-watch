@@ -150,6 +150,71 @@ h6 {
 
 }
 
+
+/*===================== Шапка с телефонами ======================*/
+
+#phone-top {
+    z-index: 2000;
+    display: none;
+}
+
+
+.header-phones-top {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    position: fixed !important;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+    width: 100%;
+    background-color: #1c1c1c;
+}
+
+.header-phones-top ul {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.header-phones-top ul li {
+    float: left;
+    padding: 0 20px;
+    border-left: 1px solid #9a9a9a;
+}
+
+.header-phones-top ul li:first-child, .header-phones-top ul li:last-child {
+    border-left: none;
+}
+
+.header-phones-top p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #0ab5fa;
+    padding: 5px 0 15px 0;
+}
+
+.header-phones-top .phone-top {
+    font-size: 26px;
+    color: #ffffff;
+}
+
+.header-phones-top ul li a {
+    width: 115px;
+    height: 32px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 35px;
+    background-color: #ed1c24;
+    font-family: 'GloberBoldFree', sans-serif;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+/*=================================================================*/
+
 .header ul li, .main-menu-top ul li {
     float: left;
 }
@@ -358,6 +423,16 @@ h6 {
     font-family: 'Jura-Light', sans-serif;
     font-size: 16px;
     color: #ffffff;
+
+}
+
+.number-basket a {
+    width: 100%;
+    font-family: 'Jura-Light', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    
 }
 
 .basket {
@@ -406,7 +481,8 @@ h6 {
     text-decoration: none;
 }
 
-.basket-issue a:hover {
+.basket-issue a:hover, .header-phones-top ul li a:hover, 
+.write-reviews a:hover, .hover-block .link-buy a:hover, .card-price .buy-card:hover{
     background-color: #c70108;
 }
 
@@ -646,6 +722,22 @@ h6 {
     text-decoration: none;
     color: #000000;
 }
+
+/*================== / Контейнер для мини слайдера / =================================*/
+
+.minislider-home {
+    position: relative;
+    height: 0;
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+
+/*================== / Контейнер для мини слайдера - все / =================================*/
+
+
+
 
 /*==============////////////Верхний слайдер////////////========================*/
 
@@ -889,7 +981,59 @@ h6 {
 }
 
 .content-basket .slider-home .basket-home {
-    bottom: 62px;
+    bottom: 62px ;
+
+}
+
+.basket-home .here {
+    z-index: 1500;
+    width: 45px;
+    height: 33px;
+    background-image:url("../images/b-yes.png") ;
+    background-repeat: no-repeat;
+    background-position: 19px 5px;
+}
+
+.basket-home .here.yes {
+    visibility: hidden;
+}
+
+.basket-home .here.yes.active {
+    visibility: visible !important;
+}
+
+.basket-home .here:hover {
+    
+}
+
+.slider-home .browsing {
+    width: 100%;
+    height: 33px;
+    z-index: 1000;
+    display: inline-block;
+    text-align: center;
+    position: absolute !important;
+    top: 28%;
+    left: 0;
+    opacity: 0;
+}
+
+.slider-home .bg:hover .browsing{
+    opacity: 1;
+}
+
+.slider-home .browsing a{
+    width: 115px;
+    height: 20px;
+    padding-top: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'GloberBoldFree', sans-serif;
+    background-image:url("../images/red-bg.png") ;
 }
 
 .slider-home .bg.two .summ-goods {
@@ -954,20 +1098,26 @@ h6 {
     bottom: 20px;
 }
 
-.slider-home .bg .gifts, .slider-home .bg .discounts {
+.discounts, .gifts {
     position: absolute !important;
     display: inline-block;
     width: 30px;
     height: 30px;
-    right: 4px;
     z-index: 1000;
     background-image:url("../images/gifts-discounts.png") ;
     background-repeat: no-repeat;
 }
 
+.gifts {
+    background-position: 0 bottom;
+}
+
+.slider-home .bg .gifts, .slider-home .bg .discounts {
+    right: 4px;
+}
+
 .slider-home .bg .gifts {
     top: 7px;
-    background-position: 0 bottom;
 }
 
 .slider-home .bg.two .gifts {
@@ -994,8 +1144,6 @@ h6 {
     background-repeat: no-repeat;
     background-position: 200px center;
 }
-
-
 
 .block-home-news {
     margin: 0 auto;
@@ -1046,17 +1194,20 @@ h6 {
     height: 35px;
 }
 
-.link-social-news a {
+.link-social-news ol {
+    overflow: hidden;
 }
 
-.link-social-news ol {
-    
+.link-social-news ol li{
+    width: 30px;
+    height: 30px;
+    margin: 10px 3px 0 0 !important;
 }
 
 
 .link-social-news .link-social a {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     background-image:url("../images/icon-social.png") ;
     background-repeat: no-repeat;
 }
@@ -1710,5 +1861,12 @@ ul.link-social li a {
 .code-personal :-moz-placeholder { color: #0ab5fa; }
 .code-personal :-ms-input-placeholder { color: #0ab5fa; }
 .code-personal :-o-input-placeholder { color: #0ab5fa; }
+ 
+.comment-form ::-webkit-input-placeholder  { color: #000000; }
+.comment-form ::-moz-placeholder { color: #000000; }
+.comment-form :-moz-placeholder { color: #000000; }
+.comment-form :-ms-input-placeholder { color: #000000; }
+.comment-form :-o-input-placeholder { color: #000000; }
+ 
  
  /*===================================================================*/   
