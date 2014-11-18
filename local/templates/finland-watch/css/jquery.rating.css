@@ -1,0 +1,70 @@
+div.vote-wrap{
+    overflow: hidden;
+    height: 12px;
+}
+
+.rating-main div.vote-wrap {
+    height: 27px;
+}
+
+div.vote-block{
+	position: relative;
+    height: 12px;	
+}
+
+.rating-main div.vote-block {
+    height: 27px;
+}
+
+
+div.vote-hover{
+    float: left;
+    cursor:  pointer;
+    height: 12px;
+    
+}
+
+.rating-main div.vote-hover {
+    height: 27px;
+} 
+
+
+div.vote-stars{
+	position: absolute !important;
+	left: 0;
+	top: 0;
+    height: 12px;
+    
+}
+
+.rating-main div.vote-stars{
+    height: 27px;
+}
+
+div.vote-active{
+	position: absolute !important;
+	left: 0;
+	top: 0;
+    height: 12px;
+}
+
+.rating-main div.vote-active{
+    height: 27px;
+}
+
+div.vote-result{
+    display: none;
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 12px;
+    padding-left: 190px;
+   
+}
+
+div.vote-success{
+    display: none;
+    clear: both ;
+    color: #ccc;
+    font-size: 14px;
+    margin: 10px 0 0 10px;
+}
