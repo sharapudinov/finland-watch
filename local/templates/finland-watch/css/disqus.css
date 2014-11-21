@@ -1,0 +1,100 @@
+
+#service-centr-block .a_hidden{
+    display:none;
+    }
+    
+
+div.a_content{
+    width: 697px;
+    height: 388px;
+    float: right;
+    background-color: transparent;
+}
+
+ul.a_tabulator{
+    width: 260px;
+    float: left;
+    padding:0;
+}
+
+ul.a_tabulator li{
+    position:relative;
+    width:auto;
+    padding: 5px 0 13px 30px;
+    z-index:2;
+    margin-bottom: 14px;
+    
+
+}
+
+ul.a_tabulator li{
+    font-family: 'GothamPro-Medium', sans-serif;
+    font-size: 18px;
+    color: #11afeb;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+ul.a_tabulator i{
+    position:absolute;
+    overflow:hidden;
+    top:0;
+    right:0;
+    width:6px;
+    height:6px;
+}
+
+ul.a_tabulator span{
+    display:inline-block;
+    cursor:pointer;
+    border-bottom: 1px dotted;
+}
+
+ul.a_tabulator .a_active{
+    font-family: 'GothamPro-Medium', sans-serif;
+    font-size: 18px;
+    color: #11afeb;
+}
+    
+ul.a_tabulator .a_active i{
+    color:#fff;
+}
+
+ul.a_tabulator .a_active span{
+    font-family: 'GothamPro-Medium', sans-serif;
+    font-size: 18px;
+    color: #11afeb;
+    text-decoration:none;
+    display: inline-block;
+}
+
+ul.a_tabulator .a_active span:before {
+    position: absolute;
+    right: -25px;
+    top: 3px;
+    display: block;
+    content: " ";
+    width: 10px;
+    height: 20px;
+    background-image:url("../images/li-r.png") ;
+    background-repeat: no-repeat;
+}
+
+ul.a_tabulator span:hover:before {
+    position: absolute;
+    right: -25px;
+    top: 3px;
+    display: block;
+    content: " ";
+    width: 10px;
+    height: 20px;
+    background-image:url("../images/li-r.png") ;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+

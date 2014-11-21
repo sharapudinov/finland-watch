@@ -74,6 +74,7 @@
 			background-color: #ffffff;
 			display: none;
             width:636px;
+            min-height: 683px;
 			overflow: hidden;
 			
 		}

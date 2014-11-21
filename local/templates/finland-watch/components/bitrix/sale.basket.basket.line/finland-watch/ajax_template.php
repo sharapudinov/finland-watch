@@ -1,11 +1,11 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
 $this->IncludeLangFile('template.php');
 ?>
-<div class="basket">
+
 <!--	<span class="icon_cart"></span>-->
 <!--	<a href="--><?//=$arParams['PATH_TO_BASKET']?><!--">--><?//=GetMessage('TSB1_CART')?><!--</a>-->
 	<?if ($arParams['SHOW_NUM_PRODUCTS'] == 'Y' && ($arResult['NUM_PRODUCTS'] > 0 || $arParams['SHOW_EMPTY_VALUES'] == 'Y')):?>
-		<span class="number-basket"><?=$arResult['NUM_PRODUCTS']?></span>
+		<span class="number-basket"><a href="<?=$arParams['PATH_TO_BASKET']?>"><?=$arResult['NUM_PRODUCTS']?></a></span>
 	<?endif?>
     <p class="basket-link">
         <a href="<?=$arParams['PATH_TO_BASKET']?>">Корзина</a>
@@ -23,7 +23,6 @@ $this->IncludeLangFile('template.php');
 		<span class="icon_profile"></span>
 		<a class="link_profile" href="<?=$arParams['PATH_TO_PERSONAL']?>"><?=GetMessage('TSB1_PERSONAL')?></a>
 	<?endif?>
-</div>
 <?if ($arParams["SHOW_PRODUCTS"] == "Y" && $arResult['NUM_PRODUCTS'] > 0):?>
 	<div class="bx_item_listincart<?
 		$topNumber = 3;

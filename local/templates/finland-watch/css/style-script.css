@@ -12,6 +12,8 @@
 }
 
 .catalog-slider-cleek-buy #container-mini {
+    position: relative !important;
+    top: 0;
      width:502px;
      height:241px;  
      z-index: 500;

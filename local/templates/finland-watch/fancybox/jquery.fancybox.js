@@ -69,7 +69,7 @@
 			autoWidth  : false,
 
 			autoResize  : true,
-			//autoCenter  : !isTouch,
+			autoCenter  : !isTouch,
 			fitToView   : true,
 			aspectRatio : false,
 			topRatio    : 0.3,
@@ -126,7 +126,7 @@
 				prev : 'right'
 			},
 
-			scrollOutside  : true,
+			scrollOutside  : false,
 
 			// Override some properties
 			index   : 0,

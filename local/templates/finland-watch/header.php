@@ -103,6 +103,7 @@ $curPage = $APPLICATION->GetCurPage(true);
                                 "SHOW_TOTAL_PRICE" => "Y",    // Показывать общую сумму по товарам
                                 "SHOW_PRODUCTS" => "N",    // Показывать список товаров
                                 "POSITION_FIXED" => "N",    // Отображать корзину поверх шаблона
+                                "SHOW_EMPTY_VALUES" => 'Y'
                             ),
                             false
                         );?>

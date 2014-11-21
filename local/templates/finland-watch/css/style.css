@@ -268,7 +268,6 @@ h6 {
 }
 
 .phone-region {
-    
     padding-top: 15px;
     width: 280px;
     float: left;
@@ -333,13 +332,13 @@ h6 {
 
 .block-search {
     margin: 0 auto;
-    width: 460px;
+    width: 514px;
     padding-top: 8px;
 }
 
 .block-search form{
     height: 38px;
-    background-image:url("../images/search-bg.png") ;
+    background-image:url("../images/search-bg-top.png") ;
     background-repeat: no-repeat;
 }
 
@@ -351,12 +350,10 @@ h6 {
 }
 
 .block-search input[type=text] {
-    width: 390px;
+    width: 455px;
     height: 36px;
     float: left ;
     padding-left: 10px;
-    margin-right: 10px;
-    
 }
 
 .block-search input[type=submit] {
@@ -371,28 +368,51 @@ h6 {
     right: 0;
     margin-left: 20px;
     padding-top: 15px;
-    padding-bottom: 2px;
-    padding-left: 25px;
     color: #ffffff;
     float: left;
-    max-width: 200px;
-    min-width: 150px;
+    max-width: 190px;
+    min-width: 170px;
+    height: 125px;
     border-left: 1px solid #595959;
 }
 
+
+
+
 .login-basket ul {
+    position: relative;
+    height: 50px;
     overflow: hidden;
     margin-bottom: 10px;
-    margin-left: 3px;
+    margin-left: 10px;
 }
 
 .login-basket ul li{
     padding: 0 10px;
+    line-height: 1.3;
+    max-width: 90px;
+    word-wrap: break-word ;
 }
 
 .login-basket ul li:first-child {
-    padding-left: 0;
+    padding-left: 20px;
     border-right: 1px solid #0ab5fa;
+}
+
+.login-basket ul li:first-child:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 14px;
+    height: 17px;
+    background-image:url("../images/left-right.png") ;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.login-basket ul li.login-y:first-child:before {
+    background-position: right 0;
 }
 
 .login-basket ul li a{
@@ -403,11 +423,16 @@ h6 {
 }
 
 .login li a:hover, .login li.active a {
-    
     color: #0ab5fa;
 }
 
+.login .login-y  {
+    
+}
+
 .basket {
+    margin-top: 30px;
+    margin-left: 40px;
     background-image:url("../images/basket.png") ;
     background-repeat: no-repeat;
 }
@@ -653,7 +678,7 @@ h6 {
     margin-left: -6px;
     background-image:url("../images/s-l.png") ;
     background-repeat: no-repeat;
-    background-position: ;
+    /*background-position: ;*/
     
 }
 
@@ -838,7 +863,7 @@ h6 {
 
 .content {
     margin: 0 auto;
-    padding-bottom: ;
+    /*padding-bottom: ;*/
     width: 960px;
 }
 
@@ -1326,7 +1351,7 @@ h6 {
     color: #11b3f0;
     line-height: 1.3;
     margin-bottom: 19px;
-    margin-right: ;
+    /*margin-right: ;*/
     text-align: right;
     padding-top: 5px;
 }
@@ -1391,7 +1416,7 @@ h6 {
 }
 
 .block-filter .slider-namber .main .sliderCont {
-    margin-left: ;
+    /*margin-left: ;*/
 }
 
 .slider-namber .main .num-text {

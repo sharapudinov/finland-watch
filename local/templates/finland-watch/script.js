@@ -1,3 +1,4 @@
+/*
 function eshopOpenNativeMenu()
 {
 	var native_menu = BX("bx_native_menu");
@@ -40,6 +41,7 @@ window.addEventListener('resize',
 	},
 	false
 );
+*/
 
 jQuery.noConflict();
 jQuery(function() {
