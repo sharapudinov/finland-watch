@@ -1,6 +1,6 @@
 <?
 $MESS["AUTH_PLEASE_AUTH"] = "Пожалуйста, авторизуйтесь:";
-$MESS["AUTH_LOGIN"] = "Введите email:";
+$MESS["AUTH_LOGIN"] = "Введите E-mail:";
 $MESS["AUTH_PASSWORD"] = "Введите пароль:";
 $MESS["AUTH_REMEMBER_ME"] = "Запомнить меня";
 $MESS["AUTH_AUTHORIZE"] = "Войти";
