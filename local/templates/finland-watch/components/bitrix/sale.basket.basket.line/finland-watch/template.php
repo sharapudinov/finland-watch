@@ -3,7 +3,7 @@
 $style = 'basket';
 
 if ($arParams['SHOW_PRODUCTS'] == 'Y')
-	$style .= ' bx_cart_sidebar';
+	$style .= ' basket';
 
 if ($arParams['POSITION_FIXED'] == 'Y')
 {

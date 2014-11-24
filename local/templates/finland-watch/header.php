@@ -19,6 +19,7 @@ $curPage = $APPLICATION->GetCurPage(true);
 	$APPLICATION->ShowCSS(true, true);
 	$APPLICATION->ShowHeadStrings();
 	$APPLICATION->ShowHeadScripts();
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-2.1.1.min.js");
 	$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/script.js");
 	?>
 	<title><?$APPLICATION->ShowTitle()?></title>
@@ -102,6 +103,7 @@ $curPage = $APPLICATION->GetCurPage(true);
                                 "SHOW_TOTAL_PRICE" => "Y",    // Показывать общую сумму по товарам
                                 "SHOW_PRODUCTS" => "N",    // Показывать список товаров
                                 "POSITION_FIXED" => "N",    // Отображать корзину поверх шаблона
+                                "SHOW_EMPTY_VALUES" => 'Y'
                             ),
                             false
                         );?>

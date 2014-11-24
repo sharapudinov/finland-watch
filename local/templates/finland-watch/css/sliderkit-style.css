@@ -1,0 +1,131 @@
+
+ /*============================================================================*/
+.sliderkit{
+    position:relative !important;
+    overflow:hidden;
+    text-align:left;
+
+    }
+    
+.sliderkit a,
+.sliderkit a:hover{text-decoration:none;}
+
+.sliderkit img{
+    border:0;
+    display: block;
+}
+
+/*---------------------------------
+ *  Navigation
+ *---------------------------------*/
+.sliderkit .sliderkit-nav{
+    z-index:10;
+    position:absolute !important;
+    text-align:center;}
+
+/* Nav > Clip */
+.sliderkit .sliderkit-nav-clip{
+    position:relative;
+    overflow:hidden;
+    margin:0 auto;
+    }
+    
+.sliderkit .sliderkit-nav-clip ul{
+    position:relative;
+    left:0;
+    top:0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    }
+.sliderkit .sliderkit-nav-clip ul li{
+    float:left;
+    text-align: center !important;
+    outline: 1px solid red;
+    }
+.sliderkit .sliderkit-nav-clip ul li a{
+    width: 100%;
+    overflow:hidden;
+    text-align: center;
+    }
+
+
+/*---------------------------------
+ *  Panels
+ *---------------------------------*/
+.sliderkit .sliderkit-panel{
+    text-align: center !important;
+	z-index:1000;
+    position:absolute !important;
+    top: 0;
+	overflow:hidden;
+	width:375px;
+	height:297px;
+	padding-top: 20px;
+	background-color: #ffffff;
+	left: 95px;
+    outline: 1px solid green;
+}
+
+.sliderkit .sliderkit-panel img {
+	width:280px;
+	height:280px;
+    outline: 1px solid red;
+}
+
+.sliderkit .sliderkit-panel-active{z-index:5;}
+.sliderkit .sliderkit-panel-old{z-index:4;}
+
+/*---------------------------------
+ *  Photos gallery > Vertical
+ *---------------------------------*/
+.photosgallery-vertical{
+    width:470px;
+    height:317px;
+    outline: 1px solid blue;
+}
+
+/* Nav */
+.photosgallery-vertical .sliderkit-nav{
+	top:-4px;
+	left:0;
+	width:88px;
+	height:74px;
+	
+}
+
+.photosgallery-vertical .sliderkit-nav-clip{
+	left:0;
+	top:0;
+}
+
+.photosgallery-vertical .sliderkit-nav-clip ul li{
+	margin:0;
+	padding:0;
+	margin-bottom: 7px;
+	background:#ffffff;
+}
+
+.photosgallery-vertical .sliderkit-nav-clip ul li a{
+	display:block;
+	width:88px;
+	height:74px;
+	overflow:hidden;
+    text-align: center;
+}
+
+.photosgallery-vertical .sliderkit-nav-clip ul li.sliderkit-selected a{
+    padding:0;
+    border:none;
+    background:#969696;
+}
+
+.photosgallery-vertical .sliderkit-nav-clip ul li img{
+    padding-top: 5px;
+    margin-bottom:0;
+}
+
+
+
+
+

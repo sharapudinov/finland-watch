@@ -103,7 +103,13 @@
                     <h5 class="one">Контакты</h5>
                     <div class="lines-blue"></div>
                     <ul>
-                        <li class="address">Москва, Рязанский проспект 30/15</li>
+                        <li class="address"><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => SITE_DIR . "include/address.php",
+                                    "EDIT_TEMPLATE" => "standard.php"
+                                ),
+                                false
+                            );?></li>
                         <li class="phone-text">Телефоны:</li>
                         <li><?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
                                     "AREA_FILE_SHOW" => "file",
@@ -159,6 +165,7 @@
         </div>
     </section>
 </div>
+
 
     </body>
 </html>

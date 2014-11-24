@@ -63,7 +63,7 @@
         img.src = this.options.image;
         img.onload = function() {
             self.width = this.width; //Ширина одной звезды
-            self.height = this.height/3; //Высота одной звезды
+            self.height = this.height/13; //Высота одной звезды
             self.init();
         };
 		

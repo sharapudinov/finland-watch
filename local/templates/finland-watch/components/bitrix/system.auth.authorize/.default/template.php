@@ -9,19 +9,19 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 	<?if($arResult["AUTH_SERVICES"]):?>
 	<h2><?echo GetMessage("AUTH_TITLE")?></h2>
 	<?endif?>
-	<?if($arResult["AUTH_SERVICES"]):
-		$APPLICATION->IncludeComponent("bitrix:socserv.auth.form", "",
-			array(
-				"AUTH_SERVICES"=>$arResult["AUTH_SERVICES"],
-				"CURRENT_SERVICE"=>$arResult["CURRENT_SERVICE"],
-				"AUTH_URL"=>$arResult["AUTH_URL"],
-				"POST"=>$arResult["POST"],
-				"SUFFIX" => "main",
-			),
-			$component,
-			array("HIDE_ICONS"=>"Y")
-		);
-	endif;?>
+<!--	--><?//if($arResult["AUTH_SERVICES"]):
+//		$APPLICATION->IncludeComponent("bitrix:socserv.auth.form", "",
+//			array(
+//				"AUTH_SERVICES"=>$arResult["AUTH_SERVICES"],
+//				"CURRENT_SERVICE"=>$arResult["CURRENT_SERVICE"],
+//				"AUTH_URL"=>$arResult["AUTH_URL"],
+//				"POST"=>$arResult["POST"],
+//				"SUFFIX" => "main",
+//			),
+//			$component,
+//			array("HIDE_ICONS"=>"Y")
+//		);
+//	endif;?>
 	<form name="form_auth" method="post" target="_top" action="<?=SITE_DIR?>auth/<?//=$arResult["AUTH_URL"]?>" class="bx_auth_form">
 		<input type="hidden" name="AUTH_FORM" value="Y" />
 		<input type="hidden" name="TYPE" value="AUTH" />
