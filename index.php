@@ -4,20 +4,21 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 ?><!--=========== Мини слайдер ========-->
 <section>
     <div class="minislider-home">
-
-        <?$APPLICATION->IncludeComponent("bitrix:catalog.top", "finland-watch-mini-slider-old", array(
+        <?GLOBAL $arFilter;
+        $arFilter=array("PROPERTY_SPECIALOFFER"=>3)?>
+        <?$APPLICATION->IncludeComponent("bitrix:catalog.top", "finland-watch-mini-slider", array(
 	"IBLOCK_TYPE" => "catalog",
 	"IBLOCK_ID" => "2",
-	"ELEMENT_SORT_FIELD" => "",
-	"ELEMENT_SORT_ORDER" => "",
+	"ELEMENT_SORT_FIELD" => "sort",
+	"ELEMENT_SORT_ORDER" => "desc",
 	"ELEMENT_SORT_FIELD2" => "id",
 	"ELEMENT_SORT_ORDER2" => "desc",
-	"FILTER_NAME" => "",
+	"FILTER_NAME" => "arFilter",
 	"HIDE_NOT_AVAILABLE" => "N",
-	"ELEMENT_COUNT" => "3",
-	"LINE_ELEMENT_COUNT" => "3",
+	"ELEMENT_COUNT" => "5",
+	"LINE_ELEMENT_COUNT" => "5",
 	"PROPERTY_CODE" => array(
-		0 => "",
+		0 => "SPECIALOFFER",
 		1 => "",
 	),
 	"OFFERS_FIELD_CODE" => array(
@@ -74,18 +75,16 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 <!--=========== Главный слайдер ========-->
 <section>
     <div id="main-slider">
-        <?$APPLICATION->IncludeComponent(
-            "webvbi:furniture.catalog.index",
-            "finland-watch-actions-slider",
-            Array(
-                "IBLOCK_TYPE" => "news",
-                "IBLOCK_ID" => "4",
-                "IBLOCK_BINDING" => "element",
-                "CACHE_TYPE" => "A",
-                "CACHE_TIME" => "36000",
-                "CACHE_GROUPS" => "N"
-            )
-        );?>
+        <?$APPLICATION->IncludeComponent("webvbi:furniture.catalog.index", "finland-watch-actions-slider", array(
+	"IBLOCK_TYPE" => "news",
+	"IBLOCK_ID" => "4",
+	"IBLOCK_BINDING" => "element",
+	"CACHE_TYPE" => "A",
+	"CACHE_TIME" => "36000",
+	"CACHE_GROUPS" => "N"
+	),
+	false
+);?>
         <div class="block-advantages">
             <div class="shadow"></div>
             <div class="advantages">

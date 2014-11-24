@@ -15,7 +15,9 @@ $this->IncludeLangFile('template.php');
 <!--		<span class="icon_spacer"></span>-->
 		<?=GetMessage('TSB1_TOTAL_PRICE')?>
 		<?if ($arResult['NUM_PRODUCTS'] > 0 || $arParams['SHOW_EMPTY_VALUES'] == 'Y'):?>
-            <p class="basket-summ"><?=$arResult['TOTAL_PRICE']?></p>
+            <p class="basket-summ"><?=$arResult['TOTAL_PRICE']?>
+                <span class="rouble">a</span>
+            </p>
 		<?endif?>
 	<?endif?>
 	<?if ($arParams['SHOW_PERSONAL_LINK'] == 'Y'):?>

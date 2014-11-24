@@ -31,7 +31,7 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0):
     <script type="text/javascript">
         jQuery.noConflict();
         jQuery(document).ready(function () {
-            jQuery('.flexslider').flexslider({
+                jQuery('.flexslider').flexslider({
                 animation: 'shou',
                 animation: 'auto',
                 controlsContainer: '.flexslider'
