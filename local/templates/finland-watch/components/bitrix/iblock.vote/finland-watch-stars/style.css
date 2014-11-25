@@ -10,12 +10,14 @@
 .bx_item_detail_rating .bx_stars_container{
 	position: relative;
 	width: 68px;
-	height: 30px;
+	height: 13px;
 	background: #dadada;
 	background-size: 100% 100%;
+    margin-left: 17px;
+
 }
 .bx_item_detail_rating .bx_stars_bg{
-	position: absolute;
+	position: absolute!important;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -25,11 +27,11 @@
 }
 
 .bx_item_detail_rating .bx_stars_progres{
-	position: absolute;
+	position: absolute!important;
 	top: 0;
 	bottom: 0;
 	left: 0;
-	background: #e76110;
+	background: orange;
 }
 .bx_item_detail_rating .bx_stars_rating_votes{
 	color: #8d8d8d;

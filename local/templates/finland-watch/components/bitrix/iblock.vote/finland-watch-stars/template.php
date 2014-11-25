@@ -1,5 +1,4 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-//test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -49,12 +48,21 @@ $templateData = array(
 	'JS_OBJ' => $strObName,
 	'ELEMENT_ID' => $arParams["ELEMENT_ID"]
 );
-?>
+?><table align="center" class="bx_item_detail_rating">
+	<tr>
+		<td>
+			<div class="bx_item_rating">
+				<div class="bx_stars_container">
 					<div id="<?=$arJSParams["starsId"]?>" class="bx_stars_bg"></div>
 					<div id="<?=$arJSParams["progressId"]?>" class="bx_stars_progres"></div>
-
+				</div>
+			</div>
+		</td>
+		<td>
 			<span id="<?=$arJSParams["ratingId"]?>" class="bx_stars_rating_votes">(0)</span>
-
+		</td>
+	</tr>
+</table>
 <script type="text/javascript">
 BX.ready(function(){
 	window.<?=$strObName;?> = new JCIblockVoteStars(<?=CUtil::PhpToJSObject($arJSParams, false, true);?>);

@@ -7,8 +7,10 @@ $APPLICATION->SetTitle("Новая страница");
 	array(
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "2",
-		"ELEMENT_ID" => "320",
+		"ELEMENT_ID" => "319",
 		"ELEMENT_CODE" => "",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
 		"MAX_VOTE" => "5",
 		"VOTE_NAMES" => array(
 			0 => "0",
@@ -19,8 +21,6 @@ $APPLICATION->SetTitle("Новая страница");
 			5 => "",
 		),
 		"SET_STATUS_404" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
 		"DISPLAY_AS_RATING" => "vote_avg"
 	),
 	false
