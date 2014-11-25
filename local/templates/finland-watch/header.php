@@ -42,8 +42,26 @@ $curPage = $APPLICATION->GetCurPage(true);
                         <div class="phone-region">
                             <ul>
                                 <li class="region" title="Выбор региона"><a class="modal-city" href="#modal" >Москва и Подмосковье</a></li>
-                                <li class="call"><a class="modalbox" href="#inline">Заказать звонок</a></li>
+                                <li class="call"><a class="modalbox call_btn" href="#inline">Заказать звонок</a></li>
                             </ul>
+                            <?$APPLICATION->IncludeComponent(
+                                "eva:callback",
+                                ".default",
+                                array(
+                                    "USE_CAPTCHA" => "N",
+                                    "OK_TEXT" => "Спасибо, ваше сообщение принято.",
+                                    "EMAIL_TO" => "sale@www.ablout.ru",
+                                    "USE_MESSAGE_FIELD" => "N",
+                                    "SAVE_FORM_DATA" => "N",
+                                    "REQUIRED_FIELDS" => array(
+                                        0 => "NAME",
+                                        1 => "PHONE",
+                                        2 => "TIMETOCALL",
+                                    ),
+                                    "EVENT_MESSAGE_ID" => ""
+                                ),
+                                false
+                            );?>
                             <div class="clear"></div>
                             <span class="phone">
                                 <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone2.php"), false);?>
