@@ -1,4 +1,5 @@
 
+/*
 function showOverlay() {  // затемнение
 	var over = $('<div id="overlay"></div>');
 	over.appendTo('body');
@@ -10,4 +11,4 @@ function ajustScrollTop(obj) { //позиции при скролле стран
 	var clformh = $(obj).height(); // определяем высоту изображения
 	var posY = (clHght - clformh)/2+$(window).scrollTop(); // вычислям позицию верхнего левого угла блока с изображением
 	$(obj).css('top',posY).css('margin-top','0'); // позиционируем блок
-}
+}*/

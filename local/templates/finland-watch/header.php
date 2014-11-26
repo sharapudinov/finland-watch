@@ -21,6 +21,13 @@ $curPage = $APPLICATION->GetCurPage(true);
 	$APPLICATION->ShowHeadScripts();
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-2.1.1.min.js");
 	$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/script.js");
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/fancybox/jquery.fancybox.js?v=2.1.5");
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/fancybox/jquery.fancybox.pack.js");
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/fancybox/jquery.mousewheel-3.0.6.pack.js");
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-ui.js");
+
+
+
 	?>
 	<title><?$APPLICATION->ShowTitle()?></title>
 </head>
@@ -44,24 +51,7 @@ $curPage = $APPLICATION->GetCurPage(true);
                                 <li class="region" title="Выбор региона"><a class="modal-city" href="#modal" >Москва и Подмосковье</a></li>
                                 <li class="call"><a class="modalbox call_btn" href="#inline">Заказать звонок</a></li>
                             </ul>
-                            <?$APPLICATION->IncludeComponent(
-                                "eva:callback",
-                                ".default",
-                                array(
-                                    "USE_CAPTCHA" => "N",
-                                    "OK_TEXT" => "Спасибо, ваше сообщение принято.",
-                                    "EMAIL_TO" => "sale@www.ablout.ru",
-                                    "USE_MESSAGE_FIELD" => "N",
-                                    "SAVE_FORM_DATA" => "N",
-                                    "REQUIRED_FIELDS" => array(
-                                        0 => "NAME",
-                                        1 => "PHONE",
-                                        2 => "TIMETOCALL",
-                                    ),
-                                    "EVENT_MESSAGE_ID" => ""
-                                ),
-                                false
-                            );?>
+
                             <div class="clear"></div>
                             <span class="phone">
                                 <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone2.php"), false);?>

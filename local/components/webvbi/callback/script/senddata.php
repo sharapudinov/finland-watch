@@ -18,19 +18,19 @@
 		}
 		return $res;
 	}	
-	
+
 	// если скрипт вызван не через AJAX
 	if($_SERVER['HTTP_X_REQUESTED_WITH'] != 'XMLHttpRequest'){
 		exit;
 	}
-	
+
 	require ($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
 	
 	$escPOST = escapeArray($_POST);
 	
 	if($escPOST['form_type'] == 'call_ord'){
 		
-		$APPLICATION->IncludeComponent("eva:callback", ".default", array(
+		$APPLICATION->IncludeComponent("webvbi:callback", "finland-watch-callback", array(
 				"_POST" => $escPOST,
 				"USE_CAPTCHA" => $_SESSION["CMPT_PARAMS"]["USE_CAPTCHA"],
 				"OK_TEXT" => $_SESSION["CMPT_PARAMS"]["OK_TEXT"],

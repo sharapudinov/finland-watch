@@ -99,7 +99,7 @@ if($arParams["OK_TEXT"] == '')
 				$_SESSION["MF_NAME"] = htmlspecialcharsbx($_POST["user_name"]);
 				$_SESSION["MF_EMAIL"] = htmlspecialcharsbx($_POST["user_email"]);
 				
-				$arResult["OK_MESSAGE"] = "<p>".$arParams["OK_TEXT"]."</p>";
+				$arResult["OK_MESSAGE"] = "<h3 class='tetle-feedback'>".$arParams["OK_TEXT"]."</3>";
 				
 				echo $arResult["OK_MESSAGE"];
 				
