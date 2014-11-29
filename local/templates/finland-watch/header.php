@@ -37,6 +37,31 @@ $curPage = $APPLICATION->GetCurPage(true);
     <div id="wrapper">
         <section>
             <div id="main-header">
+                <div id="phone-top" class="header-phones-top">
+                    <ul>
+                        <li>
+                            <p>Бесплатный звонок по России</p>
+                            <span class="phone-top">
+                                <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone.php"), false);?>
+                            </span>
+                        </li>
+                        <li>
+                            <p>Москва</p>
+                            <span class="phone-top">
+                                <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone2.php"), false);?>
+                            </span>
+                        </li>
+                        <li>
+                            <p>Санкт-Петербург</p>
+                            <span class="phone-top">
+                                <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone3.php"), false);?>
+                            </span>
+                        </li>
+                        <li><a class="modalbox" href="#inline">заказать звонок</a></li>
+                    </ul>
+
+                </div>
+
                 <div class="header">
                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/company_logo.php"), false);?>
                     <div class="block-phone-region">
@@ -136,41 +161,10 @@ $curPage = $APPLICATION->GetCurPage(true);
                 );?>
             </div>
         </section>
-           <!-- <?/* if ($wizTemplateId == "eshop_adapt_horizontal"): */?>
-                <?/*$APPLICATION->IncludeComponent("bitrix:menu", "catalog_horizontal", array(
-                        "ROOT_MENU_TYPE" => "left",
-                        "MENU_CACHE_TYPE" => "A",
-                        "MENU_CACHE_TIME" => "36000000",
-                        "MENU_CACHE_USE_GROUPS" => "Y",
-                        "MENU_THEME" => "site",
-                        "CACHE_SELECTED_ITEMS" => "N",
-                        "MENU_CACHE_GET_VARS" => array(),
-                        "MAX_LEVEL" => "3",
-                        "CHILD_MENU_TYPE" => "left",
-                        "USE_EXT" => "Y",
-                        "DELAY" => "N",
-                        "ALLOW_MULTI_SELECT" => "N",
-                    ),
-                    false
-                );*/?>
-            --><?/* endif */?>
 
-			<?if ($APPLICATION->GetCurPage(true) == SITE_DIR."index.php"):?>
-				<?/*$APPLICATION->IncludeComponent(
-					"bitrix:main.include",
-					"",
-					Array(
-						"AREA_FILE_SHOW" => "sect",
-						"AREA_FILE_SUFFIX" => "inc",
-						"AREA_FILE_RECURSIVE" => "N",
-						"EDIT_MODE" => "html",
-					),
-					false,
-					Array('HIDE_ICONS' => 'Y')
-				);*/?>
-			<?endif?>
-        <div id="main-content">
+
             <? if ($curPage != SITE_DIR . "index.php"): ?>
+    <div id="main-content">
                 <section>
                         <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
                             "START_FROM" => "1",

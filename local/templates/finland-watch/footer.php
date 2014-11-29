@@ -1,8 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!-- main-wrapper-->
+<!-- #wrapper-->
     </div>
-
-<!--				--><?//if ($wizTemplateId == "eshop_adapt_vertical"):?>
     <section>
         <div id="main-footer">
             <a href="#" title="Вернуться к началу" id="toTop" class="topbutton"></a>
@@ -164,6 +162,7 @@
             </div>
         </div>
     </section>
+<!--#min-wrapper-->
 </div>
 <!-- Заказать обратный звонок -->
 <?$APPLICATION->IncludeComponent(

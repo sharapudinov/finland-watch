@@ -30,48 +30,48 @@ $this->setFrameMode(true);?>
                             <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>"><?= $arItem["NAME"] ?></a>
                         </p>
                         <?$APPLICATION->IncludeComponent(
-	"bitrix:iblock.vote", 
-	"finland-watch-stars", 
-	array(
-		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => "2",
-		"ELEMENT_ID" => $arItem["ID"],
-		"ELEMENT_CODE" => "",
-		"MAX_VOTE" => "5",
-		"VOTE_NAMES" => array(
-			0 => "0",
-			1 => "1",
-			2 => "2",
-			3 => "3",
-			4 => "4",
-			5 => "",
-		),
-		"SET_STATUS_404" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
-		"DISPLAY_AS_RATING" => "rating"
-	),
-	false
-);?>
-                        <!-- <div id="rating_2" class="rating-one">
-                             <input type="hidden" name="val" value="2.75"/>
-                             <input type="hidden" name="votes" value="2"/>
-                             <input type="hidden" name="vote-id" value="2"/>
-                             <input type="hidden" name="cat_id" value="2"/>
-                         </div>-->
+                            "bitrix:iblock.vote",
+                            "finland-watch-stars",
+                            array(
+                                "IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
+                                "IBLOCK_ID" => $arParams['IBLOCK_ID'],
+                                "ELEMENT_ID" => $arItem["ID"],
+                                "ELEMENT_CODE" => "",
+                                "MAX_VOTE" => "5",
+                                "VOTE_NAMES" => array(
+                                    0 => "0",
+                                    1 => "1",
+                                    2 => "2",
+                                    3 => "3",
+                                    4 => "4",
+                                    5 => "",
+                                ),
+                                "SET_STATUS_404" => "N",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "3600",
+                                "DISPLAY_AS_RATING" => "rating"
+                            ),
+                            false
+                        );?>
                         <div class="lines"></div>
                         <p class="summ-goods">
-                         <span class="black"><?= $arItem['PRICES']['BASE']['PRINT_VALUE'] ?>
+                         <span class="black">
+                             <?= $arItem['PRICES']['BASE']['PRINT_VALUE'] ?>
                              <span class="rouble">a</span>
                          </span>
-                         <span class="red"><?= $arItem['PRICES']['BASE']["PRINT_DISCOUNT_VALUE"] ?>
+                         <span class="red">
+                             <?= $arItem['PRICES']['BASE']["PRINT_DISCOUNT_VALUE"] ?>
                              <span class="rouble">a</span>
                          </span>
                         </p>
 
-                        <p class="profit">Выгода <span
-                                class="red"><?= $arItem['PRICES']['BASE']['PRINT_DISCOUNT_DIFF'] ?><span class="rouble">a</span> (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF_PERCENT'] ?>
-                                )</span></p>
+                        <p class="profit">Выгода
+                            <span class="red">
+                                <?= $arItem['PRICES']['BASE']['PRINT_DISCOUNT_DIFF'] ?>
+                                <span class="rouble">a</span>
+                                (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF_PERCENT'] ?>%)
+                            </span>
+                        </p>
                         <span class="basket-home"></span>
                     </div>
                 </li>

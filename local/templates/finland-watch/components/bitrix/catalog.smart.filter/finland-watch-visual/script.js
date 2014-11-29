@@ -1,3 +1,4 @@
+/*
 function JCSmartFilter(ajaxURL)
 {
 	this.ajaxURL = ajaxURL;
@@ -481,4 +482,4 @@ BX.Iblock.SmartFilter.Horizontal = (function()
 	};
 
 	return Horizontal;
-})();
+})();*/

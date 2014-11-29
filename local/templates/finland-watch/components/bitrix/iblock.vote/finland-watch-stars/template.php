@@ -1,4 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+//test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -48,7 +49,8 @@ $templateData = array(
 	'JS_OBJ' => $strObName,
 	'ELEMENT_ID' => $arParams["ELEMENT_ID"]
 );
-?><table align="center" class="bx_item_detail_rating">
+?>
+<table align="center" class="bx_item_detail_rating">
 	<tr>
 		<td>
 			<div class="bx_item_rating">

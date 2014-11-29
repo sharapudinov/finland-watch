@@ -1,4 +1,5 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+//test_dump($arResult["ITEMS"][10]);
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -24,17 +25,24 @@ $this->setFrameMode(true);
         <div class="calculator-select">
             <div class="text-sel">
                 <p>Я хочу:</p>
-
                 <p>Часы для:</p>
             </div>
             <div class="select-option">
-
                 <div class="box visible">
                     <div class="section">
                         <div class="sec">
                             <select>
-                                <option>Мужские</option>
-                                <option>Женские</option>
+                                <option value="">-----</option>
+                                <? foreach ($arResult['ITEMS'][8]["VALUES"] as $val => $ar): ?>
+                                    <option
+                                        value="<? echo $ar["HTML_VALUE"] ?>"
+                                        name="<? echo $ar["CONTROL_NAME"] ?>"
+                                        id="<? echo $ar["CONTROL_ID"] ?>"
+                                        <? echo $ar["CHECKED"] ? 'selected="selected"' : '' ?>
+                                        >
+                                        <? echo $ar["VALUE"]; ?>
+                                    </option>
+                                <? endforeach; ?>
                             </select>
                         </div>
                     </div>
@@ -43,15 +51,30 @@ $this->setFrameMode(true);
                     <div class="section">
                         <div class="sec">
                             <select>
-                                <option>Сноуборд</option>
-                                <option>Другие часы</option>
+                                <option value="">-----</option>
+                                <? foreach ($arResult['ITEMS'][10]["VALUES"] as $val => $ar): ?>
+                                    <option
+                                        value="<? echo $ar["HTML_VALUE"] ?>"
+                                        name="<? echo $ar["CONTROL_NAME"] ?>"
+                                        id="<? echo $ar["CONTROL_ID"] ?>"
+                                        <? echo $ar["CHECKED"] ? 'selected="selected"' : '' ?>
+                                        >
+                                        <? echo $ar["VALUE"]; ?>
+                                    </option>
+                                <? endforeach; ?>
                             </select>
                         </div>
                     </div>
                 </div>
-
+                <script type="text/javascript">
+                    jQuery.noConflict();
+                    jQuery(document).ready(function () {
+                        jQuery("select").on("change", function () {
+                            jQuery(this).attr('name', jQuery(this).find('option:selected').attr('name'));
+                        });
+                    });
+                </script>
             </div>
-
         </div>
         <?foreach ($arResult["ITEMS"] as $key => $arItem):
             $key = md5($key);
@@ -59,14 +82,12 @@ $this->setFrameMode(true);
                 if (!$arItem["VALUES"]["MIN"]["VALUE"] || !$arItem["VALUES"]["MAX"]["VALUE"] || $arItem["VALUES"]["MIN"]["VALUE"] == $arItem["VALUES"]["MAX"]["VALUE"])
                     continue;
                 ?>
-
                 <div class="slider-namber">
                     <p class="price">По цене:</p>
-
                     <div class="main">
-
                         <div class="formCost">
-                    		<span class="cost left"><label for="minCost"></label>
+                    		<span class="cost left"><label
+                                    for="<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>"></label>
                             <input
                                 class="min-price"
                                 type="text"
@@ -74,9 +95,9 @@ $this->setFrameMode(true);
                                 id="<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>"
                                 value="<? echo $arItem["VALUES"]["MIN"]["HTML_VALUE"] ?>"
                                 size="5"
-                                onkeyup="smartFilter.keyup(this)"
                                 />
-                            <span class="cost right"><label for="maxCost">_</label>
+                            <span class="cost right"><label
+                                    for="<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>">_</label>
                             <input
                                 class="max-price"
                                 type="text"
@@ -84,152 +105,107 @@ $this->setFrameMode(true);
                                 id="<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>"
                                 value="<? echo $arItem["VALUES"]["MAX"]["HTML_VALUE"] ?>"
                                 size="5"
-                                onkeyup="smartFilter.keyup(this)"
                                 />
                         </div>
-
                         <div class="sliderCont">
                             <div id="slider"></div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
-            <?
-            $arJsParams = array(
-                "leftSlider" => 'left_slider_' . $key,
-                "rightSlider" => 'right_slider_' . $key,
-                "tracker" => "drag_tracker_" . $key,
-                "trackerWrap" => "drag_track_" . $key,
-                "minInputId" => $arItem["VALUES"]["MIN"]["CONTROL_ID"],
-                "maxInputId" => $arItem["VALUES"]["MAX"]["CONTROL_ID"],
-                "minPrice" => $arItem["VALUES"]["MIN"]["VALUE"],
-                "maxPrice" => $arItem["VALUES"]["MAX"]["VALUE"],
-                "curMinPrice" => $arItem["VALUES"]["MIN"]["HTML_VALUE"],
-                "curMaxPrice" => $arItem["VALUES"]["MAX"]["HTML_VALUE"],
-                "precision" => 2
-            );
-            ?>
-                <script type="text/javascript">
-                    BX.ready(function () {
-                        var trackBar<?=$key?> = new BX.Iblock.SmartFilter.Horizontal(<?=CUtil::PhpToJSObject($arJsParams)?>);
+                <script>
+                    /* слайдер цен */
+                    jQuery.noConflict();
+                    jQuery(document).ready(function () {
+                        jQuery("#slider").slider({
+                            min:  <?=$arItem["VALUES"]["MIN"]["VALUE"]?>,
+                            max: <?=$arItem["VALUES"]["MAX"]["VALUE"]?>,
+                            values: [<?=$arItem["VALUES"]["MIN"]["VALUE"]?>, <?=$arItem["VALUES"]["MAX"]["VALUE"]?>],
+                            range: true,
+                            step: 1,
+                            stop: function (event, ui) {
+                                jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 0));
+                                jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 1));
+
+                            },
+                            slide: function (event, ui) {
+                                jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 0));
+                                jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 1));
+                            }
+                        });
+
+                        jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").change(function () {
+
+                            var value1 = jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val();
+                            var value2 = jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val();
+
+                            if (parseInt(value1) > parseInt(value2)) {
+                                value1 = value2;
+                                jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(value1);
+                            }
+                            jQuery("#slider").slider("values", 0, value1);
+                        });
+
+
+                        jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").change(function () {
+
+                            var value1 = jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val();
+                            var value2 = jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val();
+
+                            if (value2 > <?=$arItem["VALUES"]["MAX"]["VALUE"]?>) {
+                                value2 = <?=$arItem["VALUES"]["MAX"]["VALUE"]?>;
+                                jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(<?=$arItem["VALUES"]["MAX"]["VALUE"]?>);
+                            }
+
+                            if (parseInt(value1) > parseInt(value2)) {
+                                value2 = value1;
+                                jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(value2);
+                            }
+                            jQuery("#slider").slider("values", 1, value2);
+                        });
+
                     });
+
                 </script>
             <?endif;
         endforeach;?>
-
-        <?
-        foreach ($arResult["ITEMS"] as $key => $arItem):
-            if ($arItem["PROPERTY_TYPE"] == "N"):
-                if (!$arItem["VALUES"]["MIN"]["VALUE"] || !$arItem["VALUES"]["MAX"]["VALUE"] || $arItem["VALUES"]["MIN"]["VALUE"] == $arItem["VALUES"]["MAX"]["VALUE"])
-                    continue;
-                ?>
-                <div class="bx_filter_container price">
-                    <span class="bx_filter_container_title"><?= $arItem["NAME"] ?></span>
-
-                    <div class="bx_filter_param_area">
-                        <div class="bx_filter_param_area_block">
-                            <div class="bx_input_container">
-                                <input
-                                    class="min-price"
-                                    type="text"
-                                    name="<? echo $arItem["VALUES"]["MIN"]["CONTROL_NAME"] ?>"
-                                    id="<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>"
-                                    value="<? echo $arItem["VALUES"]["MIN"]["HTML_VALUE"] ?>"
-                                    size="5"
-                                    onkeyup="smartFilter.keyup(this)"
-                                    />
-                            </div>
-                        </div>
-                        <div class="bx_filter_param_area_block">
-                            <div class="bx_input_container">
-                                <input
-                                    class="max-price"
-                                    type="text"
-                                    name="<? echo $arItem["VALUES"]["MAX"]["CONTROL_NAME"] ?>"
-                                    id="<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>"
-                                    value="<? echo $arItem["VALUES"]["MAX"]["HTML_VALUE"] ?>"
-                                    size="5"
-                                    onkeyup="smartFilter.keyup(this)"
-                                    />
-                            </div>
-                        </div>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bx_ui_slider_track" id="drag_track_<?= $key ?>">
-                        <div class="bx_ui_slider_range" style="left: 0; right: 0%;" id="drag_tracker_<?= $key ?>"></div>
-                        <a class="bx_ui_slider_handle left" href="javascript:void(0)" style="left:0;"
-                           id="left_slider_<?= $key ?>"></a>
-                        <a class="bx_ui_slider_handle right" href="javascript:void(0)" style="right:0%;"
-                           id="right_slider_<?= $key ?>"></a>
-                    </div>
-                    <div class="bx_filter_param_area">
-                        <div class="bx_filter_param_area_block"
-                             id="curMinPrice_<?= $key ?>"><?= $arItem["VALUES"]["MIN"]["VALUE"] ?></div>
-                        <div class="bx_filter_param_area_block"
-                             id="curMaxPrice_<?= $key ?>"><?= $arItem["VALUES"]["MAX"]["VALUE"] ?></div>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-            <?
-            $arJsParams = array(
-                "leftSlider" => 'left_slider_' . $key,
-                "rightSlider" => 'right_slider_' . $key,
-                "tracker" => "drag_tracker_" . $key,
-                "trackerWrap" => "drag_track_" . $key,
-                "minInputId" => $arItem["VALUES"]["MIN"]["CONTROL_ID"],
-                "maxInputId" => $arItem["VALUES"]["MAX"]["CONTROL_ID"],
-                "minPrice" => $arItem["VALUES"]["MIN"]["VALUE"],
-                "maxPrice" => $arItem["VALUES"]["MAX"]["VALUE"],
-                "curMinPrice" => $arItem["VALUES"]["MIN"]["HTML_VALUE"],
-                "curMaxPrice" => $arItem["VALUES"]["MAX"]["HTML_VALUE"],
-                "precision" => 0
-            );
-            ?>
-                <script type="text/javascript" defer="defer">
-                    BX.ready(function () {
-                        var trackBar<?=$key?> = new BX.Iblock.SmartFilter.Horizontal(<?=CUtil::PhpToJSObject($arJsParams)?>);
-                    });
-                </script>
-            <? elseif (!empty($arItem["VALUES"]) && !isset($arItem["PRICE"])): ?>
-                <div class="bx_filter_container">
-                    <span class="bx_filter_container_title"
-                          onclick="smartFilter.hideFilterProps(this)"><?= $arItem["NAME"] ?></span>
-
-                    <div class="bx_filter_block" style="opacity: 0; height: 0px; overflow:hidden;">
+        <div class="clear"></div>
+        <div class="lines-main"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="calculator-block-bottom">
+        <div class="text-sel">
+            <p>C функцией:</p>
+        </div>
+        <div class="check-calculator">
+            <ol>
+                <?
+                foreach ($arResult["ITEMS"] as $key => $arItem):
+                    if (!empty($arItem["VALUES"]) && $arItem["CODE"] == "FUNCTIONS"): ?>
                         <? foreach ($arItem["VALUES"] as $val => $ar): ?>
-                            <span class="<? echo $ar["DISABLED"] ? 'disabled' : '' ?>">
-							<input
-                                type="checkbox"
-                                value="<? echo $ar["HTML_VALUE"] ?>"
-                                name="<? echo $ar["CONTROL_NAME"] ?>"
-                                id="<? echo $ar["CONTROL_ID"] ?>"
-                                <? echo $ar["CHECKED"] ? 'checked="checked"' : '' ?>
-                                onclick="smartFilter.click(this)"
-                                />
-							<label for="<? echo $ar["CONTROL_ID"] ?>"><? echo $ar["VALUE"]; ?></label>
-						</span>
+                            <li>
+                                <p class="check-calcul">
+                                    <input
+                                        type="checkbox"
+                                        value="<? echo $ar["HTML_VALUE"] ?>"
+                                        name="<? echo $ar["CONTROL_NAME"] ?>"
+                                        id="<? echo $ar["CONTROL_ID"] ?>"
+                                        <? echo $ar["CHECKED"] ? 'checked="checked"' : '' ?>
+                                        />
+                                    <label for="<? echo $ar["CONTROL_ID"] ?>"></label><? echo $ar["VALUE"]; ?></p>
+                            </li>
                         <? endforeach; ?>
-                    </div>
-                </div>
-            <?endif;
-        endforeach;?>
-        <div style="clear: both;"></div>
-        <div class="bx_filter_control_section">
-            <span class="icon"></span><input class="bx_filter_search_button" type="submit" id="set_filter"
-                                             name="set_filter" value="<?= GetMessage("CT_BCSF_SET_FILTER") ?>"/>
-            <input class="bx_filter_search_button" type="submit" id="del_filter" name="del_filter"
-                   value="<?= GetMessage("CT_BCSF_DEL_FILTER") ?>"/>
-
-            <div class="bx_filter_popup_result"
-                 id="modef" <? if (!isset($arResult["ELEMENT_COUNT"])) echo 'style="display:none"'; ?>
-                 style="display: inline-block;top: 75px;left: 25px;right: 25px;">
-                <? echo GetMessage("CT_BCSF_FILTER_COUNT", array("#ELEMENT_COUNT#" => '<span id="modef_num">' . intval($arResult["ELEMENT_COUNT"]) . '</span>')); ?>
-                <a href="<? echo $arResult["FILTER_URL"] ?>"><? echo GetMessage("CT_BCSF_FILTER_SHOW") ?></a>
-                <!--<span class="ecke"></span>-->
+                    <?endif;
+                endforeach;?>
+            </ol>
+            <div class="clear"></div>
+            <div class="arrow-button">
+                <p>
+                    <input type="submit" id="set_filter"
+                           name="set_filter" value="<?= GetMessage("CT_BCSF_SET_FILTER") ?>"/>
+                </p>
             </div>
         </div>
+    </div>
 </form>
 </div>
-<script>
-    var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>');
-</script>
