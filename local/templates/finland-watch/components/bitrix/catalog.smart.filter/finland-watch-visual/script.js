@@ -1,3 +1,13 @@
+<!-- Стильный селект -->
+(function(jQuery) {
+    jQuery(function() {
+        jQuery('select').styler({
+            //selectSearch: true
+        });
+    });
+})(jQuery);
+
+
 /*
 function JCSmartFilter(ajaxURL)
 {

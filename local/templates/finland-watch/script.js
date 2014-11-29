@@ -24,14 +24,7 @@ jQuery(document).ready(function () {
     jQuery(".modal-login").fancybox();
 });
 
-<!-- Стильный селект -->
-(function(jQuery) {
-    jQuery(function() {
-        jQuery('select').styler({
-            //selectSearch: true
-        });
-    });
-})(jQuery);
+
 
 jQuery(document).ready(function(){
 
@@ -51,7 +44,6 @@ jQuery(document).ready(function(){
 
     });
 
-    jQuery.noConflict();
     jQuery(function () {
         jQuery(window).scroll(function () {
             if (jQuery(this).scrollTop() != 0) {

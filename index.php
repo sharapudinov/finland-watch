@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
+GLOBAL $arFilter;
 ?><!--=========== Мини слайдер ========-->
 <section>
     <div class="minislider-home">

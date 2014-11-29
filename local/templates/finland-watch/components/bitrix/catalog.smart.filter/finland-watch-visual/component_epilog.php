@@ -8,4 +8,5 @@ if (isset($templateData['TEMPLATE_THEME']))
 {
 	$APPLICATION->SetAdditionalCSS($templateData['TEMPLATE_THEME']);
 }
+$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery.formstyler.js");
 ?>
