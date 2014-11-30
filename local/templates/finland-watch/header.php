@@ -176,6 +176,10 @@ $curPage = $APPLICATION->GetCurPage(true);
             false,
             Array('HIDE_ICONS' => 'Y')
         );?>
-        <h1><?= $APPLICATION->ShowTitle(false); ?></h1>
+        <?if (str_replace("/catalog/",'',$curPage)==$curPage):?>
+            <h1>
+                <?= $APPLICATION->ShowTitle(false); ?>
+            </h1>
+        <?endif?>
     </section>
 <? endif ?>
