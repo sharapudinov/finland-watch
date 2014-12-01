@@ -1,6 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <!-- #wrapper-->
-    </div>
+</div>
+<div class="push"></div>
+</div>
     <section>
         <div id="main-footer">
             <a href="#" title="Вернуться к началу" id="toTop" class="topbutton"></a>

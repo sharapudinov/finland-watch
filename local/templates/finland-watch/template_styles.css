@@ -23,6 +23,16 @@
     -webkit-column-count: 4;
 }
 
+.floatleft {
+    float: left;
+}
+
+.background-color {
+    background-color: #2d2d2d;
+
+}
+
+
 /*
 html{-webkit-text-size-adjust:none}
 body{

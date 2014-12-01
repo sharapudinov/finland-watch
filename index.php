@@ -529,7 +529,5 @@ GLOBAL $arFilter;
         </div>
     </section>
 </div>
-</div>
-<div class="push"></div>
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

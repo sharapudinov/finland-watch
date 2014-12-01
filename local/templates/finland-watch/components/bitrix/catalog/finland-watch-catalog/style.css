@@ -1,3 +1,4 @@
+/*
 .grid{}
 .grid .bx_content_section{
 	margin-bottom: 15px;
@@ -6,7 +7,9 @@
 	margin-bottom: 15px;
 }
 
-/* grid2x1 */
+*/
+/* grid2x1 *//*
+
 .grid2x1{}
 .grid2x1 .bx_content_section{
 	float: left;
@@ -42,4 +45,4 @@
 		padding-left: 1%;
 	}
 
-}
+}*/
