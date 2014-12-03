@@ -8,7 +8,7 @@ if(count($arResult["PERSON_TYPE"]) > 1)
     </div>
 		<?foreach($arResult["PERSON_TYPE"] as $v):?>
 
-    <p class="top-sign-in cash-couriers radio">
+    <p class="top-sign-in radio">
         <input type="radio" id="PERSON_TYPE_<?=$v["ID"]?>" name="PERSON_TYPE" value="<?=$v["ID"]?>"<?if ($v["CHECKED"]=="Y") echo " checked=\"checked\"";?> onClick="submitForm()">
         <label for="PERSON_TYPE_<?=$v["ID"]?>"></label><?=$v["NAME"]?><br />
     </p>

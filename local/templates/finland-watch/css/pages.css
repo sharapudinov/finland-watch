@@ -1031,10 +1031,12 @@
     
 }
 
-.top-sign-in.cash-couriers {
+.top-sign-inclass="top-sign-in cash-couriers bank radio".cash-couriers {
     height: 33px;
     padding-top: 5px;
+/*
     background-image:url("../images/coin.png") ;
+*/
     background-position: 70px 1px;
     background-repeat: no-repeat;
 }
@@ -1042,14 +1044,16 @@
 .top-sign-in.cash-couriers.visa-mastercard {
     height: 30px;
     padding-top: 10px;
+/*
     background-image:url("../images/m-v.png") ;
+*/
     background-position: 63px -12px;
     background-repeat: no-repeat;
 }
 
 .top-sign-in.cash-couriers.bank {
     height: 18px;
-    background-image:url("../images/b.png") ;
+    /*background-image:url("../images/b.png") ;*/
     background-repeat: no-repeat;
     background-position: 70px 7px;
     
@@ -1136,7 +1140,9 @@
 
 .teble-name table th, .teble-name table td{
     font-family: Arial, sans-serif;
+/*
     color: #2d2d2d;
+*/
     font-size: 14px;
     vertical-align: middle;
     text-align: center;

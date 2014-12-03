@@ -1,3 +1,20 @@
+.cash-couriers   {
+    height: 33px;
+    padding-top: 5px;
+    background-position: 67px -12px;
+    background-repeat: no-repeat;
+}
+
+.teble-name table thead {
+    height: 50px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #2d2d2d;
+    color: #0bb5fb !important;
+}
+
 /*
 #order_form_div .sale_data-table.summary td {
 	background: #fff !important;
@@ -10,6 +27,7 @@
 	color: red;
 	font-size: 10px;
 }
+
 #order_form_div .clear {
 	content: ".";
     display: block;
