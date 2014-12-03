@@ -100,7 +100,7 @@ if ($normalCount > 0):
                                  $max = isset($arItem["AVAILABLE_QUANTITY"]) ? "max=\"" . $arItem["AVAILABLE_QUANTITY"] . "\"" : "";
                                  $useFloatQuantity = ($arParams["QUANTITY_FLOAT"] == "Y") ? true : false;
                                  $useFloatQuantityJS = ($useFloatQuantity ? "true" : "false");
-                                 ?><?= $arItem["QUANTITY"] ?>
+                                 ?>
                                  <input
                                      id="QUANTITY_INPUT_<?= $arItem["ID"] ?>"
                                      name="QUANTITY_INPUT_<?= $arItem["ID"] ?>"

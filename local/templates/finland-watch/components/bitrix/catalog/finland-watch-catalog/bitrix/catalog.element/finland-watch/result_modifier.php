@@ -26,5 +26,3 @@ if (count($arResult["MORE_PHOTO"]) > 0) {
         $arResult['RESIZED_MAIN_PHOTOS'][] = $file;
     }
 }
-
-
