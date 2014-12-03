@@ -16,6 +16,7 @@
 @import url('fancybox/jquery.fancybox.css?v=2.1.5');
 @import url('css/pages.css');
 
+
 .check-calculator ol {
     display: inline-block;
     column-count: 4;
@@ -36,6 +37,14 @@
     margin-top: 0!important;
 }
 
+.checkout .as-credit {
+    font-family: Arial, sans-serif;
+    font-size: 12px !important;
+    color: #6d6d6d !important;
+    font-style: italic !important;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
 
 /*
 html{-webkit-text-size-adjust:none}

@@ -119,6 +119,8 @@ $this->setFrameMode(true);
                             <?= $arResult['PRICES']['BASE']["DISCOUNT_VALUE"] ?>
                             <span class="rouble">a</span>
                         </span>
+                        <input type="hidden" name="<?echo $arParams["ACTION_VARIABLE"]?>" value="BUY">
+                        <input type="hidden" name="<?echo $arParams["PRODUCT_ID_VARIABLE"]?>" value="<?echo $arResult["ID"]?>">
                         <input class="buy-card" type="submit" name="<? echo $arParams["ACTION_VARIABLE"] . "BUY" ?>"
                                value="<? echo GetMessage("CATALOG_BUY") ?>">
 
@@ -339,14 +341,34 @@ $this->setFrameMode(true);
 
                                         <p><input type="text" name="email" placeholder="E-mail"/> <span
                                                 class="rating-text">Рейтинг товара </span>
-
-                                        <div id="rating_3" class="rating-main">
-                                            <input type="hidden" name="val" value="2.75"/>
-                                            <input type="hidden" name="votes" value="2"/>
-                                            <input type="hidden" name="vote-id" value="2"/>
-                                            <input type="hidden" name="cat_id" value="2"/>
-                                        </div>
                                         </p>
+                                        <div id="rating_3" class="rating-main">
+                                            <?$APPLICATION->IncludeComponent(
+                                                "bitrix:iblock.vote",
+                                                "finland-watch-stars",
+                                                array(
+                                                    "IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
+                                                    "IBLOCK_ID" => $arParams['IBLOCK_ID'],
+                                                    "ELEMENT_ID" => $arResult["ID"],
+                                                    "ELEMENT_CODE" => "",
+                                                    "MAX_VOTE" => "5",
+                                                    "VOTE_NAMES" => array(
+                                                        0 => "0",
+                                                        1 => "1",
+                                                        2 => "2",
+                                                        3 => "3",
+                                                        4 => "4",
+                                                        5 => "",
+                                                    ),
+                                                    "SET_STATUS_404" => "N",
+                                                    "CACHE_TYPE" => "A",
+                                                    "CACHE_TIME" => "3600",
+                                                    "DISPLAY_AS_RATING" => "rating"
+                                                ),
+                                                false
+                                            );?>
+                                        </div>
+
                                         <p><textarea cols="25" rows="2" placeholder="Отзыв *"></textarea></p>
 
                                         <p class="submit-card"><input type="submit" name="submit-card"

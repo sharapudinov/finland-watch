@@ -1,108 +1,37 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новая страница");
-?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.element", 
-	".default", 
-	array(
-		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => "2",
-		"ELEMENT_ID" => "320",
-		"ELEMENT_CODE" => "",
-		"SECTION_ID" => $_REQUEST["SECTION_ID"],
-		"SECTION_CODE" => "",
-		"HIDE_NOT_AVAILABLE" => "N",
-		"PROPERTY_CODE" => array(
-			0 => "TITLE",
-			1 => "KEYWORDS",
-			2 => "META_DESCRIPTION",
-			3 => "ARTNUMBER",
-			4 => "NEWPRODUCT",
-			5 => "ACTION",
-			6 => "SPECIALOFFER",
-			7 => "SALELEAD",
-			8 => "GENDER",
-			9 => "SPORT",
-			10 => "FUNCTIONS",
-			11 => "BLOG_POST_ID",
-			12 => "BLOG_COMMENTS_CNT",
-			13 => "FORUM_MESSAGE_CNT",
-			14 => "vote_count",
-			15 => "rating",
-			16 => "RECOMMEND",
-			17 => "vote_sum",
-			18 => "FORUM_TOPIC_ID",
-			19 => "",
-		),
-		"OFFERS_LIMIT" => "0",
-		"TEMPLATE_THEME" => "blue",
-		"DISPLAY_NAME" => "Y",
-		"DETAIL_PICTURE_MODE" => "IMG",
-		"ADD_DETAIL_TO_SLIDER" => "N",
-		"DISPLAY_PREVIEW_TEXT_MODE" => "E",
-		"PRODUCT_SUBSCRIPTION" => "N",
-		"SHOW_DISCOUNT_PERCENT" => "Y",
-		"SHOW_OLD_PRICE" => "Y",
-		"SHOW_MAX_QUANTITY" => "N",
-		"SHOW_CLOSE_POPUP" => "N",
-		"MESS_BTN_BUY" => "Купить",
-		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
-		"MESS_BTN_SUBSCRIBE" => "Подписаться",
-		"MESS_NOT_AVAILABLE" => "Нет в наличии",
-		"USE_VOTE_RATING" => "Y",
-		"USE_COMMENTS" => "Y",
-		"BRAND_USE" => "N",
-		"SECTION_URL" => "",
-		"DETAIL_URL" => "",
-		"SECTION_ID_VARIABLE" => "SECTION_ID",
-		"CHECK_SECTION_ID_VARIABLE" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "Y",
-		"SET_TITLE" => "N",
-		"SET_BROWSER_TITLE" => "Y",
-		"BROWSER_TITLE" => "-",
-		"SET_META_KEYWORDS" => "Y",
-		"META_KEYWORDS" => "-",
-		"SET_META_DESCRIPTION" => "Y",
-		"META_DESCRIPTION" => "-",
-		"SET_STATUS_404" => "Y",
-		"ADD_SECTIONS_CHAIN" => "Y",
-		"ADD_ELEMENT_CHAIN" => "N",
-		"USE_ELEMENT_COUNTER" => "Y",
-		"ACTION_VARIABLE" => "action",
-		"PRODUCT_ID_VARIABLE" => "id",
-		"DISPLAY_COMPARE" => "N",
-		"PRICE_CODE" => array(
-			0 => "BASE",
-		),
-		"USE_PRICE_COUNT" => "N",
-		"SHOW_PRICE_COUNT" => "1",
-		"PRICE_VAT_INCLUDE" => "Y",
-		"PRICE_VAT_SHOW_VALUE" => "N",
-		"CONVERT_CURRENCY" => "N",
-		"BASKET_URL" => "/personal/basket.php",
-		"USE_PRODUCT_QUANTITY" => "N",
-		"ADD_PROPERTIES_TO_BASKET" => "N",
-		"PRODUCT_PROPS_VARIABLE" => "prop",
-		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRODUCT_PROPERTIES" => array(
-		),
-		"ADD_TO_BASKET_ACTION" => array(
-			0 => "BUY",
-		),
-		"LINK_IBLOCK_TYPE" => "catalog",
-		"LINK_IBLOCK_ID" => "2",
-		"LINK_PROPERTY_SID" => "RECOMMEND",
-		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
-		"ADD_PICT_PROP" => "-",
-		"LABEL_PROP" => "-",
-		"MESS_BTN_COMPARE" => "Сравнить",
-		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
-		"BLOG_USE" => "N",
-		"VK_USE" => "N",
-		"FB_USE" => "N",
-		"VOTE_DISPLAY_AS_RATING" => "rating"
-	),
-	false
-);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+?>
+<?
+// Выведем актуальную корзину для текущего пользователя
+
+$arBasketItems = array();
+
+$dbBasketItems = CSaleBasket::GetList(
+    array(
+        "NAME" => "ASC",
+        "ID" => "ASC"
+    ),
+    array(
+        "FUSER_ID" => CSaleBasket::GetBasketUserID(),
+        "LID" => SITE_ID,
+        "ORDER_ID" => "NULL"
+    ),
+    false,
+    false,
+    array("ID", "CALLBACK_FUNC", "MODULE",
+        "PRODUCT_ID", "QUANTITY", "DELAY",
+        "CAN_BUY", "PRICE")
+);
+while ($arItems = $dbBasketItems->Fetch())
+{
+    $arBasketItems[] = $arItems;
+}
+
+// Печатаем массив, содержащий актуальную на текущий момент корзину
+echo "<pre>";
+print_r($arBasketItems);
+echo "</pre>";
+?>
+?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
