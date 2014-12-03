@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<div class="section">
+
 	<script type="text/javascript">
 		function changePaySystem(param)
 		{
@@ -51,15 +51,16 @@
 			submitForm();
 		}
 	</script>
-	<div class="bx_section">
-		<h4><?=GetMessage("SOA_TEMPL_PAY_SYSTEM")?></h4>
+<div class="title-head-login">
+    <p><?=GetMessage("SOA_TEMPL_PAY_SYSTEM")?></p>
+</div>
+
 		<?
 		if ($arResult["PAY_FROM_ACCOUNT"] == "Y")
 		{
 			$accountOnly = ($arParams["ONLY_FULL_PAY_FROM_ACCOUNT"] == "Y") ? "Y" : "N";
 			?>
 			<input type="hidden" id="account_only" value="<?=$accountOnly?>" />
-			<div class="bx_block w100 vertical">
 				<div class="bx_element">
 					<input type="hidden" name="PAY_CURRENT_ACCOUNT" value="N">
 					<label for="PAY_CURRENT_ACCOUNT" id="PAY_CURRENT_ACCOUNT_LABEL" onclick="changePaySystem('account');" class="<?if($arResult["USER_VALS"]["PAY_CURRENT_ACCOUNT"]=="Y") echo "selected"?>">
@@ -81,7 +82,6 @@
 					</label>
 					<div class="clear"></div>
 				</div>
-			</div>
 			<?
 		}
 
@@ -94,8 +94,7 @@
 				if (count($arResult["PAY_SYSTEM"]) == 1)
 				{
 					?>
-					<div class="bx_block w100 vertical">
-						<div class="bx_element">
+						<p class="top-sign-in cash-couriers radio">
 							<input type="hidden" name="PAY_SYSTEM_ID" value="<?=$arPaySystem["ID"]?>">
 							<input type="radio"
 								id="ID_PAY_SYSTEM_ID_<?=$arPaySystem["ID"]?>"
@@ -130,8 +129,7 @@
 								</div>
 							</label>
 							<div class="clear"></div>
-						</div>
-					</div>
+						</p>
 					<?
 				}
 				else // more than one
@@ -258,6 +256,3 @@
 			}
 		}
 		?>
-		<div style="clear: both;"></div>
-	</div>
-</div>
