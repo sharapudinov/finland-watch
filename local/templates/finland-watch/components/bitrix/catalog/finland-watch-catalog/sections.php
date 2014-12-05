@@ -299,17 +299,15 @@ $this->setFrameMode(true);
                 и вы даже можете самостоятельно создавать новые функции для грядущих приключений.<br/>
                 Suunto Ambit2 HR - встроенный GPS-навигатор с возможностью регистрации частоты сердцебиения,
                 информацией о погоде и поддержкой приложений Suunto Apps для всех видов спорта на открытом воздухе.</p>
-
             <div class="link-social-news">
                 <ul class="link-social">
-                    <li class="vk"><a href="#"></a></li>
-                    <li class="f"><a href="#"></a></li>
-                    <li class="tw"><a href="#"></a></li>
-                    <li class="od"><a href="#"></a></li>
+                    <?$curPage='http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']?>
+                    <li class="vk"><a target="_blank" href="http://vk.com/share.php?url=<?=$curPage?>"></a></li>
+                    <li class="f"><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?=$curPage?>"></a></li>
+                    <li class="tw"><a target="_blank" href="https://twitter.com/intent/tweet?url=<?=$curPage?>"></a></li>
+                    <li class="od"><a target="_blank" href="http://odnoklassniki.ru/dk?st.cmd=addShare&st._surl=<?=$curPage?>"></a></li>
                 </ul>
-
             </div>
-
         </div>
         <img src="<?=SITE_TEMPLATE_PATH?>/img/clock-c.png" width="391" height="242" title="" alt="" />
         <div class="clear"></div>

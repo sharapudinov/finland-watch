@@ -2,13 +2,15 @@
 //добавляем название раздела
 $dbRes = CIBlockSection::GetList(
     array(),
-    array("CODE" => $arResult["SECTION_CODE"]),
+    array("CODE" => $arResult['VARIABLES']["SECTION_CODE"]),
     false,
-    Array("NAME"),
+    Array("NAME","PICTURE","DESCRIPTION"),
     false
 );
 $res = $dbRes->GetNext();
-$arResult['SECTION_NAME'] = $res["NAME"];
+$arResult['SECTION'] = $res;
+$arResult['SECTION']['RESIZED_PICTURE'];
+
 //test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
@@ -103,7 +105,7 @@ $this->setFrameMode(true);?>
 </section>
 <section>
     <div class="title-tab-link">
-        <h1><?= $arResult['SECTION_NAME'] ?></h1>
+        <h1><?= $arResult['SECTION']['NAME']?></h1>
         <ul>
             <li>Сортировать по:</li>
             <li><a href="#">цене</a></li>
@@ -330,26 +332,18 @@ if ($arParams['USE_FILTER'] == 'Y') {
     </div>
     <div class="block-home-news catalog-home">
         <div class="text-catalog">
-            <p>Первые в мире часы с GPS, сочетающие в себе современные функции для тренировок и активных занятий спортом на открытом воздухе.
-                Они особенно ценятся за потрясающую механическую прочность, надежное измерение высоты и водонепроницаемость.
-                В этих часах есть все функциональные возможности для занятий спортом на открытом воздухе,
-                и вы даже можете самостоятельно создавать новые функции для грядущих приключений.<br/>
-                Suunto Ambit2 HR - встроенный GPS-навигатор с возможностью регистрации частоты сердцебиения,
-                информацией о погоде и поддержкой приложений Suunto Apps для всех видов спорта на открытом воздухе.</p>
-
+            <p><?=$arResult['SECTION']['DESCRIPTION']?></p>
             <div class="link-social-news">
                 <ul class="link-social">
-                    <li class="vk"><a href="#"></a></li>
-                    <li class="f"><a href="#"></a></li>
-                    <li class="tw"><a href="#"></a></li>
-                    <li class="od"><a href="#"></a></li>
+                    <?$curPage='http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']?>
+                    <li class="vk"><a target="_blank" href="http://vk.com/share.php?url=<?=$curPage?>"></a></li>
+                    <li class="f"><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?=$curPage?>"></a></li>
+                    <li class="tw"><a target="_blank" href="https://twitter.com/intent/tweet?url=<?=$curPage?>"></a></li>
+                    <li class="od"><a target="_blank" href="http://odnoklassniki.ru/dk?st.cmd=addShare&st._surl=<?=$curPage?>"></a></li>
                 </ul>
-
             </div>
-
         </div>
-        <img src="<?=SITE_TEMPLATE_PATH?>/img/clock-c.png" width="391" height="242" title="" alt="" />
+        <img src="<?=CFile::GetPath($arResult['SECTION']['PICTURE'])?>" width="391" height="242" title="<?= $arResult['SECTION']['NAME']?>" alt="" />
         <div class="clear"></div>
     </div>
-
 </section>
