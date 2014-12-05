@@ -9,7 +9,7 @@ $dbRes = CIBlockSection::GetList(
 );
 $res = $dbRes->GetNext();
 $arResult['SECTION'] = $res;
-$arResult['SECTION']['RESIZED_PICTURE'];
+$arResult['SECTION']['RESIZED_PICTURE']=CFile::ResizeImageGet($res['PICTURE'],array("width"=>391, "height"=>242),BX_RESIZE_IMAGE_PROPORTIONAL);
 
 //test_dump($arResult);
 /** @var array $arParams */
@@ -343,7 +343,7 @@ if ($arParams['USE_FILTER'] == 'Y') {
                 </ul>
             </div>
         </div>
-        <img src="<?=CFile::GetPath($arResult['SECTION']['PICTURE'])?>" width="391" height="242" title="<?= $arResult['SECTION']['NAME']?>" alt="" />
+        <img src="<?=$arResult['SECTION']['RESIZED_PICTURE']['src']?>" title="<?= $arResult['SECTION']['NAME']?>" alt="" />
         <div class="clear"></div>
     </div>
 </section>
