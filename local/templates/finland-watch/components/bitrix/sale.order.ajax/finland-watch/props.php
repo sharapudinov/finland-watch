@@ -7,68 +7,6 @@ include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 	<?
 	$bHideProps = true;
 
-	if (is_array($arResult["ORDER_PROP"]["USER_PROFILES"]) && !empty($arResult["ORDER_PROP"]["USER_PROFILES"])):
-		if ($arParams["ALLOW_NEW_PROFILE"] == "Y"):
-		?>
-                <p class="top-sign-in"><?=GetMessage("SOA_TEMPL_PROP_CHOOSE")?></p>
-
-            <p class="top-sign-in">Данные получателя:</p>
-			<div class="top-sign-in sign-in-info">
-				<select name="PROFILE_ID" id="ID_PROFILE_ID" onChange="SetContact(this.value)">
-					<option value="0"><?=GetMessage("SOA_TEMPL_PROP_NEW_PROFILE")?></option>
-					<?
-					foreach($arResult["ORDER_PROP"]["USER_PROFILES"] as $arUserProfiles)
-					{
-						?>
-						<option value="<?= $arUserProfiles["ID"] ?>"<?if ($arUserProfiles["CHECKED"]=="Y") echo " selected";?>><?=$arUserProfiles["NAME"]?></option>
-						<?
-					}
-					?>
-				</select>
-			</div>
-		<?
-		else:
-		?>
-
-            <p class="top-sign-in">
-                <?=GetMessage("SOA_TEMPL_EXISTING_PROFILE")?>
-            </p>
-
-
-			<div class="bx_block r3x1">
-					<?
-					if (count($arResult["ORDER_PROP"]["USER_PROFILES"]) == 1)
-					{
-						foreach($arResult["ORDER_PROP"]["USER_PROFILES"] as $arUserProfiles)
-						{
-							echo "<strong>".$arUserProfiles["NAME"]."</strong>";
-							?>
-							<input type="hidden" name="PROFILE_ID" id="ID_PROFILE_ID" value="<?=$arUserProfiles["ID"]?>" />
-							<?
-						}
-					}
-					else
-					{
-						?>
-						<select name="PROFILE_ID" id="ID_PROFILE_ID" onChange="SetContact(this.value)">
-							<?
-							foreach($arResult["ORDER_PROP"]["USER_PROFILES"] as $arUserProfiles)
-							{
-								?>
-								<option value="<?= $arUserProfiles["ID"] ?>"<?if ($arUserProfiles["CHECKED"]=="Y") echo " selected";?>><?=$arUserProfiles["NAME"]?></option>
-								<?
-							}
-							?>
-						</select>
-						<?
-					}
-					?>
-			</div>
-		<?
-		endif;
-	else:
-		$bHideProps = false;
-	endif;
 	?>
 
 
@@ -83,19 +21,7 @@ include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 			$bHideProps = false;
 		}
 
-		if ($bHideProps && $_POST["showProps"] != "Y"):
-		?>
-			<a href="#" class="slide" onclick="fGetBuyerProps(this); return false;">
-				<?=GetMessage('SOA_TEMPL_BUYER_SHOW');?>
-			</a>
-		<?
-		elseif (($bHideProps && $_POST["showProps"] == "Y")):
-		?>
-			<a href="#" class="slide" onclick="fGetBuyerProps(this); return false;">
-				<?=GetMessage('SOA_TEMPL_BUYER_HIDE');?>
-			</a>
-		<?
-		endif;
+		
 		?>
 		<input type="hidden" name="showProps" id="showProps" value="N" />
 	</p>
