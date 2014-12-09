@@ -10,7 +10,6 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
  * @global CUser $USER
  */
 ?>
-<div class="bx_mfeedback">
 	<?if(!empty($arResult["ERROR_MESSAGE"]))
 	{
 		foreach($arResult["ERROR_MESSAGE"] as $v)
@@ -23,13 +22,12 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 	?>
 	<form action="<?=POST_FORM_ACTION_URI?>" method="POST">
 		<?=bitrix_sessid_post()?>
-		<strong><?=GetMessage("MFT_NAME")?><?if(empty($arParams["REQUIRED_FIELDS"]) || in_array("NAME", $arParams["REQUIRED_FIELDS"])):?><span class="mf-req">*</span><?endif?></strong></br>
-		<input type="text" name="user_name" value="<?=$arResult["AUTHOR_NAME"]?>" placeholder=""/><br/>
+		<p><input type="text" name="user_name" value="<?=$arResult["AUTHOR_NAME"]?>" placeholder="<?=GetMessage("MFT_NAME")?><?if(empty($arParams["REQUIRED_FIELDS"]) || in_array("NAME", $arParams["REQUIRED_FIELDS"])):?>*<?endif?>"/></p>
 
-		<strong></strong></br>
-		<input type="text" name="user_email" value="<?=$arResult["AUTHOR_EMAIL"]?>" placeholder="<?=GetMessage("MFT_EMAIL")?><?if(empty($arParams["REQUIRED_FIELDS"]) || in_array("EMAIL", $arParams["REQUIRED_FIELDS"])):?>*<?endif?>"/>
+		<p><input type="text" name="user_email" value="<?=$arResult["AUTHOR_EMAIL"]?>" placeholder="<?=GetMessage("MFT_EMAIL")?><?if(empty($arParams["REQUIRED_FIELDS"]) || in_array("EMAIL", $arParams["REQUIRED_FIELDS"])):?>*<?endif?>"/></p>
 
-		<textarea name="MESSAGE" rows="5" cols="40" placeholder="<?=GetMessage("MFT_MESSAGE")?><?if(empty($arParams["REQUIRED_FIELDS"]) || in_array("MESSAGE", $arParams["REQUIRED_FIELDS"])):?>*<?endif?>"><?=$arResult["MESSAGE"]?><
+		<p><textarea name="MESSAGE" rows="3" cols="40" placeholder="<?=GetMessage("MFT_MESSAGE")?><?if(empty($arParams["REQUIRED_FIELDS"]) || in_array("MESSAGE", $arParams["REQUIRED_FIELDS"])):?>*<?endif?><?=$arResult["MESSAGE"]?>"></textarea></p>
+
 
 		<?if($arParams["USE_CAPTCHA"] == "Y"):?>
 			<strong><?=GetMessage("MFT_CAPTCHA")?></strong><br/>
@@ -40,6 +38,5 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 		<?endif;?>
 
 		<input type="hidden" name="PARAMS_HASH" value="<?=$arResult["PARAMS_HASH"]?>">
-		<input type="submit" name="submit" value="<?=GetMessage("MFT_SUBMIT")?>" class="bt_blue big shadow">
+		<p><input type="submit" name="submit" value="<?=GetMessage("MFT_SUBMIT")?>"></p>
 	</form>
-</div>
