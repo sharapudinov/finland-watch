@@ -69,16 +69,19 @@ GLOBAL $arFilter;
 <!--=========== Главный слайдер ========-->
 <section>
     <div id="main-slider">
-        <?$APPLICATION->IncludeComponent("webvbi:furniture.catalog.index", "finland-watch-actions-slider", array(
-                "IBLOCK_TYPE" => "news",
-                "IBLOCK_ID" => "4",
-                "IBLOCK_BINDING" => "element",
-                "CACHE_TYPE" => "A",
-                "CACHE_TIME" => "36000",
-                "CACHE_GROUPS" => "N"
-            ),
-            false
-        );?>
+        <?$APPLICATION->IncludeComponent(
+	"webvbi:furniture.catalog.index", 
+	"finland-watch-slider", 
+	array(
+		"IBLOCK_TYPE" => "news",
+		"IBLOCK_ID" => "4",
+		"IBLOCK_BINDING" => "element",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000",
+		"CACHE_GROUPS" => "N"
+	),
+	false
+);?>
         <div class="block-advantages">
             <div class="shadow"></div>
             <div class="advantages">

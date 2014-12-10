@@ -19,7 +19,6 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0):
                                 <span class="title-slider"><?= $arItem['NAME'] ?></span>
                                 <p><?= $arItem['PREVIEW_TEXT'] ?></p>
                             </div>
-
                         </li>
                     <?
                     endforeach;

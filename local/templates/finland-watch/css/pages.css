@@ -1034,7 +1034,7 @@
     
 }
 
-.top-sign-inclass="top-sign-in cash-couriers bank radio".cash-couriers {
+.top-sign-in .cash-couriers {
     height: 33px;
     padding-top: 5px;
 /*
@@ -1979,7 +1979,7 @@
     bottom: 0;
     left: 190px;
     display: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 
@@ -2034,7 +2034,7 @@
 }
 
 /*.block-action-link ul li*/ .hover-block .link-buy {
-    
+
 }
 
 /*.block-action-link ul li*/ .hover-block .link-buy a{
@@ -2058,7 +2058,7 @@
 
 .advantages-text {
     width: 540px;
-    
+
 }
 
 .btn-text {
@@ -2097,7 +2097,7 @@
 
 .main-block-advantages .link-social-news ol{
     margin-left: 0px;
-  
+
 }
 
 /*============================ ������� =============================*/
@@ -2109,7 +2109,7 @@
 .content-left {
     float: left;
     width: 700px;
-    
+
 }
 
 .catalog-slider-cleek-buy {
@@ -2155,14 +2155,14 @@
     background-repeat: no-repeat;
     background-position: right 5px;
     cursor: pointer;
-    
+
 }
 
 .title-tab-link ul li:first-child:hover {
     background-color: transparent;
     background-image: none;
     cursor: default;
-    
+
 }
 
 .title-tab-link ul li a{
@@ -2172,12 +2172,12 @@
     height: 100%;
     text-decoration: none;
     border-bottom: 1px dashed;
-    
+
 }
 
 .title-tab-link ul li a:hover, .title-tab-link ul li:hover a, .title-tab-link ul li.active a {
     border-bottom: none;
-    
+
 }
 
 /*============================= ����� ��� =================================*/
@@ -2191,7 +2191,7 @@
     height: 242px;
     background-image:url("../images/t-d-bg.png") ;
     background-repeat: no-repeat;
-    
+
 }
 
 .goods-day-catalog ul{
@@ -2241,7 +2241,7 @@
 }
 
 .slider-home.catalog ul {
-    
+
 }
 
 .slider-home.catalog ul li{
@@ -2251,7 +2251,7 @@
     text-align: center;
     border: 1px solid #dadada;
     background-color: #ffffff;
-    
+
 }
 
 .slider-home.catalog .bg.two .gifts {
@@ -2264,13 +2264,13 @@
 .sitebar-right {
     float: right;
     width: 256px;
-    
+
 }
 
 .title-bar {
     height: 38px;
     z-index: 100;
-    
+
     background-color: #11afeb;
 }
 
@@ -2281,9 +2281,9 @@
    position: absolute;
    top: 100%;
    left: 28px;
-   border-top: 8px solid black; 
-   border-top-color: #11afeb; 
-   border-left: 8px solid transparent; 
+   border-top: 8px solid black;
+   border-top-color: #11afeb;
+   border-left: 8px solid transparent;
    border-right: 8px solid transparent;
 }
 
@@ -2324,7 +2324,7 @@
 .filter-check {
     margin-bottom: 10px;
     padding: 5px 0;
-   
+
 }
 
 .filter-check ul {
@@ -2347,7 +2347,7 @@
     background-image:url("../images/s.png") ;
     background-repeat: no-repeat;
     background-position: 10px 18px;
-    
+
 }
 
 .block-filter .filter-btn input[type=submit] {
@@ -2382,7 +2382,7 @@
     font-family: 'GothamPro-Light', sans-serif;
     font-size: 12px;
     color: #010101;
-    
+
 }
 
 .page-next-link ul li.po {
@@ -2422,14 +2422,14 @@
 
 .page-next-link ul li.next a {
     background-position: right 5px;
-}    
-    
+}
+
 .page-next-link ul li.link-p {
     padding-left: 3px;
 }
 
 .page-next-link ul li.link-more {
-    
+
 }
 
 .page-next-link ul li.link-more a {
@@ -2438,16 +2438,16 @@
     padding-right: 5px;
     border-right: #ffffff;
     border-left: #ffffff;
-} 
+}
 
 .page-next-link ul li.link-more.left a {
     border-left: 1px solid #b3b3b3;
  }
- 
+
  .page-next-link ul li.link-more.right a {
     border-right: 1px solid #b3b3b3;
  }
- 
+
 .page-next-link ul li.link-more a:hover, .page-next-link ul li.link-more.active a{
       border: 1px solid #11afeb;
 }
@@ -2456,7 +2456,7 @@
 
 
 #card-product-modal {
-   
+
 }
 
 
@@ -2468,9 +2468,9 @@
     width: 960px;
     height: auto !important;
     padding: 20px ;
-    
+
     background-color: #efefef!important;
-   
+
 }
 
 .main-block-card-product-modal div {
@@ -2487,7 +2487,7 @@
 
 .main-block-card-product-modal .item-price {
     padding-bottom: 20px !important;
-  
+
 }
 
 .main-block-card-product-modal .block-discount-gift-timer .red {
@@ -2499,19 +2499,19 @@
     float: left;
     width: 470px;
     height: 320px;
-   
+
 }
 
 
 .block-discount-gift-timer {
-    
+
 }
 
 
 .card-item-price {
     float: right;
     width: 475px;
-    
+
 }
 
 .card-item-price .lines-card{
@@ -2530,7 +2530,7 @@
     top: -5px;
     display: inline-block;
     height: 15px;
-    
+
     width: 100px;
 }
 
@@ -2634,7 +2634,7 @@
     background-image:url("../images/click.png") ;
     background-repeat: no-repeat;
     background-position: right 3px;
-   
+
 }
 
 .no-price-link .percent {
@@ -2652,7 +2652,7 @@
     background-image:url("../sliders/gift.png") ;
     background-repeat: no-repeat;
     /*background-position: ;*/
-    
+
 }
 
 .block-discount-gift-timer .block-timer {
@@ -2661,7 +2661,7 @@
     width: 195px;
     right: 0;
     top: 0;
-    
+
 }
 
 .block-discount-gift-timer .block-timer p {
@@ -2685,11 +2685,11 @@
 .social-card {
     float: left;
     height: 30px;
-   
+
 }
 
 .social-card {
-    
+
 }
 
 .block-social-vantage-link li {
@@ -2705,7 +2705,7 @@
     height: 26px;
     background-image:url("../images/social-card.png") ;
     background-repeat: no-repeat;
-    
+
 }
 
 .social-card li.vk a {
@@ -2718,27 +2718,27 @@
 
 .social-card li.tw a {
     background-position: -64px 0;
-} 
+}
 
 .social-card li.od a {
     background-position: -96px 0;
-} 
+}
 
 .social-card li.live a {
     background-position: -129px 0;
-} 
+}
 
 .social-card li.goo a {
     background-position: -161px 0;
-} 
+}
 
 .social-card li.mail a {
     background-position: -192px 0;
-} 
+}
 
 .social-card li.ya a {
     background-position: -225px 0;
-} 
+}
 
 /*====================================================*/
 
@@ -2752,27 +2752,27 @@
 
 .social-card li.tw a:hover {
     background-position: -64px bottom;
-} 
+}
 
 .social-card li.od a:hover {
     background-position: -96px bottom;
-} 
+}
 
 .social-card li.live a:hover {
     background-position: -129px bottom;
-} 
+}
 
 .social-card li.goo a:hover {
     background-position: -161px bottom;
-} 
+}
 
 .social-card li.mail a:hover {
     background-position: -192px bottom;
-} 
+}
 
 .social-card li.ya a:hover {
     background-position: -225px bottom;
-} 
+}
 
 .safeguards-card {
     float: right;
@@ -2781,7 +2781,7 @@
 .safeguards-card li {
     margin-left: 40px;
     line-height: 1.4;
-    
+
     background-image:url("../images/icon-ca.png") ;
     background-repeat: no-repeat;
 }
@@ -2794,7 +2794,7 @@
 .safeguards-card li.icon-g {
     background-position: 0 -59px;
     padding-left: 38px;
-    
+
 }
 
 .safeguards-card li.icon-k {
@@ -2817,7 +2817,7 @@
 
 .block-tab-article-sitebar-card {
     margin-bottom: 20px;
-   
+
 }
 
 .block-tab-article {
@@ -2872,9 +2872,9 @@
     width: 256px;
     float: right;
     overflow: hidden;
-    
+
 }
- 
+
 .sitebar-card .bread-crumbs {
     height: 18px;
     margin-bottom: 3px;

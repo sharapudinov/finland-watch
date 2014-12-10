@@ -37,7 +37,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Акции", 
-		"", 
+		"/news/actions", 
 		Array(), 
 		Array(), 
 		"" 

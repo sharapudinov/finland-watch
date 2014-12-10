@@ -28,8 +28,10 @@ if ($this->StartResultCache(false, ($arParams["CACHE_GROUPS"]==="N"? false: $USE
 		{
 			$arResult['ITEMS'][] = array(
 				'NAME' => $arRes['NAME'],
+                'ID'=>$arRes['ID'],
 				'PREVIEW_TEXT' => $arRes['PREVIEW_TEXT'],
-				'DETAIL_URL' => $arRes['DETAIL_PAGE_URL'],
+                'PREVIEW_TEXT' => $arRes['PREVIEW_TEXT'],
+                'DETAIL_URL' => $arRes['DETAIL_PAGE_URL'],
 				'DETAIL_PICTURE' => CFile::GetFileArray($arRes["DETAIL_PICTURE"]),
                 'PREVIEW_PICTURE' => CFile::GetFileArray($arRes["PREVIEW_PICTURE"])
 			);
