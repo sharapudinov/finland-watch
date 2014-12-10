@@ -147,18 +147,25 @@ $curPage = $APPLICATION->GetCurPage(true);
     </section>
     <section>
         <div id="main-menu-top">
-            <?$APPLICATION->IncludeComponent("bitrix:menu", "finland_top_menu", Array(
-                    "ROOT_MENU_TYPE" => "top",    // Тип меню для первого уровня
-                    "MENU_CACHE_TYPE" => "Y",    // Тип кеширования
-                    "MENU_CACHE_TIME" => "36000000",    // Время кеширования (сек.)
-                    "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
-                    "MENU_CACHE_GET_VARS" => "",    // Значимые переменные запроса
-                    "MAX_LEVEL" => "1",    // Уровень вложенности меню
-                    "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                    "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
-                ),
-                false
-            );?>
+            <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"finland_top_menu", 
+	array(
+		"ROOT_MENU_TYPE" => "top",
+		"MENU_CACHE_TYPE" => "Y",
+		"MENU_CACHE_TIME" => "36000000",
+		"MENU_CACHE_USE_GROUPS" => "N",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MAX_LEVEL" => "1",
+		"USE_EXT" => "N",
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MENU_THEME" => "site"
+	),
+	false
+);?>
         </div>
     </section>
 
