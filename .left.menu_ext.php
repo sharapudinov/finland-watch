@@ -21,7 +21,7 @@ if(CModule::IncludeModule('iblock'))
 
 		if($arIBlock["ACTIVE"] == "Y")
 		{
-			$aMenuLinksExt = $APPLICATION->IncludeComponent("bitrix:menu.sections", "", array(
+			$aMenuLinksExt = $APPLICATION->IncludeComponent("bitrix:menu.sections", "", [
 				"IS_SEF" => "Y",
 				"SEF_BASE_URL" => "",
 				"SECTION_PAGE_URL" => $arIBlock['SECTION_PAGE_URL'],
@@ -30,7 +30,7 @@ if(CModule::IncludeModule('iblock'))
 				"IBLOCK_ID" => $arIBlock['ID'],
 				"DEPTH_LEVEL" => "3",
 				"CACHE_TYPE" => "N",
-			), false, Array('HIDE_ICONS' => 'Y'));
+			], false, Array('HIDE_ICONS' => 'Y'));
 		}
 	}
 

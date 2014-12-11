@@ -29,12 +29,13 @@ if (empty($arResult))
                 case '/catalog/':
                     $secondLevel='catalog';
                     break;
-                default : $secondLevel='empty';
+                default : $secondLevel='';
             }
        ?>
 
             <li class="second-level-menu <?=$arItem['SELECTED']?' active':''?>">
                 <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+                <?if($secondLevel):?>
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "finland_second_level_menu",
@@ -54,6 +55,8 @@ if (empty($arResult))
                     ),
                     false
                 );?>
+                <?endif?>
+
             </li>
         <? endforeach; ?>
     </ul>
