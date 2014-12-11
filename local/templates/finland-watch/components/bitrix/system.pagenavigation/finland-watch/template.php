@@ -36,7 +36,7 @@ $this->setFrameMode(true);
 
             <? if ($arResult["NavPageNomer"] > 2): ?>
                 <li class="prev">
-                    <a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] - 1) ?>"><?= GetMessage("nav_prev") ?></a>
+                    <a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] - 1) ?>"></a>
                 </li>
             <? else: ?>
                 <li class="prev">

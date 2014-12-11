@@ -17,6 +17,10 @@
 @import url('css/pages.css');
 
 
+.write-reviews {
+    margin-bottom: 30px;
+}
+
 .check-calculator ol {
     display: inline-block;
     column-count: 4;

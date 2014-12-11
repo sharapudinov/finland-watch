@@ -1,11 +1,11 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Новая страница");
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Отзывы о магазине");
+?>
 
-
-?><div class="content">
- <section class="main_block">
-     <?$APPLICATION->IncludeComponent(
+    <div class="content">
+        <section class="main_block">
+            <?$APPLICATION->IncludeComponent(
 	"bitrix:forum.topic.reviews", 
 	"finland-watch-shop-reviews", 
 	array(
@@ -18,8 +18,8 @@ $APPLICATION->SetTitle("Новая страница");
 		"URL_TEMPLATES_PROFILE_VIEW" => "",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "0",
-		"MESSAGES_PER_PAGE" => "",
-		"PAGE_NAVIGATION_TEMPLATE" => "",
+		"MESSAGES_PER_PAGE" => "6",
+		"PAGE_NAVIGATION_TEMPLATE" => "finland-watch",
 		"DATE_TIME_FORMAT" => "d.m.Y H:i:s",
 		"NAME_TEMPLATE" => "",
 		"PATH_TO_SMILE" => "/bitrix/images/forum/smile/",
@@ -29,13 +29,14 @@ $APPLICATION->SetTitle("Новая страница");
 		"RATING_TYPE" => "",
 		"SHOW_MINIMIZED" => "Y",
 		"USE_CAPTCHA" => "Y",
-		"PREORDER" => "Y",
+		"PREORDER" => "N",
 		"SHOW_LINK_TO_FORUM" => "N",
 		"FILES_COUNT" => "2",
 		"AJAX_POST" => "Y"
 	),
 	false
 );?>
- </section>
-</div>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+        </section>
+    </div>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

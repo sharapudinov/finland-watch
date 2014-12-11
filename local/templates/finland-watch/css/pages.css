@@ -108,11 +108,13 @@
 }
 
 .reviews-block {
-    width: 460px;
+    width: 100%;
 }
 
 .reviews-block.left {
+/*
     float: left;
+*/
 }
 
 .reviews-block.right{
@@ -2375,6 +2377,7 @@
 
 .page-next-link ul {
     margin-left: 280px;
+    margin-bottom: 30px;
 }
 
 .page-next-link ul li {

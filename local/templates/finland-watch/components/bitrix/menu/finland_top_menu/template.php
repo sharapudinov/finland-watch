@@ -41,7 +41,7 @@ if (empty($arResult))
                     "finland_second_level_menu",
                     array(
                         "ROOT_MENU_TYPE" => $secondLevel,
-                        "MENU_CACHE_TYPE" => "Y",
+                        "MENU_CACHE_TYPE" => "A",
                         "MENU_CACHE_TIME" => "36000000",
                         "MENU_CACHE_USE_GROUPS" => "Y",
                         "MENU_CACHE_GET_VARS" => array(
@@ -49,9 +49,9 @@ if (empty($arResult))
                         "MAX_LEVEL" => "1",
                         "USE_EXT" => "N",
                         "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "left",
+                        "CHILD_MENU_TYPE" => "",
                         "DELAY" => "N",
-                        "MENU_THEME" => "site"
+                        "MENU_THEME" => ""
                     ),
                     false
                 );?>
