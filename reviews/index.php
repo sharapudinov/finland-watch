@@ -18,7 +18,7 @@ $APPLICATION->SetTitle("Отзывы о магазине");
 		"URL_TEMPLATES_PROFILE_VIEW" => "",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "0",
-		"MESSAGES_PER_PAGE" => "6",
+		"MESSAGES_PER_PAGE" => "10",
 		"PAGE_NAVIGATION_TEMPLATE" => "finland-watch",
 		"DATE_TIME_FORMAT" => "d.m.Y H:i:s",
 		"NAME_TEMPLATE" => "",

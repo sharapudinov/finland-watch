@@ -18,11 +18,6 @@ if (LANGUAGE_ID == 'ru'):
 	include($path);
 endif;
 // *************************/Input params***************************************************************
-
-include(__DIR__."/form.php");
-
-
-
 if (!empty($arResult["MESSAGES"])):
 ?>
     <div class="reviews-text">
@@ -109,5 +104,8 @@ endif;
 		);
 	});
 </script>
+<?
+include(__DIR__."/form.php");
+?>
 
 

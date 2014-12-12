@@ -98,7 +98,7 @@ window.reviewsCtrlEnterHandler<?=CUtil::JSEscape($arParams["form_index"]);?> = f
 			$LHE = new CLightHTMLEditor();
 
 			$arEditorParams = array(
-				'bRecreate' => true,
+				'bRecreate' => false,
 				'id' => $arParams["LheId"],
 				'content' => isset($arResult["REVIEW_TEXT"]) ? $arResult["REVIEW_TEXT"] : "",
 				'inputName' => "REVIEW_TEXT",
@@ -107,18 +107,18 @@ window.reviewsCtrlEnterHandler<?=CUtil::JSEscape($arParams["form_index"]);?> = f
 				'height' => "200px",
 				'minHeight' => "200px",
 				'bUseFileDialogs' => false,
-				'bUseMedialib' => false,
-				'BBCode' => true,
-				'bBBParseImageSize' => true,
+				'bUseMedialib' => falsefalse,
+				'BBCode' => false,
+				'bBBParseImageSize' => false,
 				'jsObjName' => $arParams["jsObjName"],
 				'toolbarConfig' => array(),
 				'smileCountInToolbar' => 3,
 				'arSmiles' => $arSmiles,
-				'bQuoteFromSelection' => true,
+				'bQuoteFromSelection' => false,
 				'ctrlEnterHandler' => 'reviewsCtrlEnterHandler'.$arParams["form_index"],
 				'bSetDefaultCodeView' => ($arParams['EDITOR_CODE_DEFAULT'] === 'Y'),
-				'bResizable' => true,
-				'bAutoResize' => true
+				'bResizable' => false,
+				'bAutoResize' => false
 			);
 
 			$arEditorParams['toolbarConfig'] = forumTextParser::GetEditorToolbar(array('forum' => $arResult['FORUM']));

@@ -13,9 +13,9 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0):
                     foreach ($arResult['ITEMS'] as $arItem):
                         ?>
                         <li>
-                            <img src="<?= $arItem['DETAIL_PICTURE']['SRC'] ?>" class="main-img" width="2506" height="401"/>
+                            <img src="<?= $arItem['DETAIL_PICTURE']['src'] ?>" class="main-img"/>
                             <div class="slider-content">
-                                <img src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" title="" alt=""/>
+                                <img src="<?= $arItem['PREVIEW_PICTURE']['src'] ?>" title="" alt=""/>
                                 <span class="title-slider"><?= $arItem['NAME'] ?></span>
                                 <p><?= $arItem['PREVIEW_TEXT'] ?></p>
                             </div>

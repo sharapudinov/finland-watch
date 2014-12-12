@@ -12,7 +12,8 @@ foreach ($arResult['ITEMS'] as $arItem):
         <div class="block-action action-top">
             <div class="block-img-action-text">
                 <div class="img-action">
-                    <img src="<?= $arItem['DETAIL_PICTURE']['SRC'] ?>" class="main-img" width="600" height="256"/>                </div>
+                    <img src="<?= $arItem['PICTURE']['src'] ?>" class="main-img"/>
+                </div>
                 <div class="action-text">
                     <h4><?= $arItem['PREVIEW_TEXT'] ?></h4>
                     <p><?= $arItem['DETAIL_TEXT'] ?></p>

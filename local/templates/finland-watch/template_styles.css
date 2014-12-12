@@ -16,6 +16,14 @@
 @import url('fancybox/jquery.fancybox.css?v=2.1.5');
 @import url('css/pages.css');
 
+.main-block .clientage-text p {
+    width: 300px;
+    float: left;
+}
+.clientage-text {
+    height: 130px;
+    overflow: hidden;
+}
 
 .write-reviews {
     margin-bottom: 30px;
