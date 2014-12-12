@@ -16,6 +16,11 @@
 @import url('fancybox/jquery.fancybox.css?v=2.1.5');
 @import url('css/pages.css');
 
+
+.service-block {
+    width: 460px;
+}
+
 .main-block .clientage-text p {
     width: 300px;
     float: left;
@@ -38,6 +43,10 @@
 
 .floatleft {
     float: left;
+}
+
+.floatright {
+    float: right;
 }
 
 .background-color {
