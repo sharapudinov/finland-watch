@@ -82,6 +82,17 @@ $APPLICATION->SetTitle("Сервис");
             </div>
         </section>
     </div>
+    <div id="dynamic-block">
+        <div class="dynamic-block">
+            <ul>
+                <li><a href="/about">О магазине</a></li>
+                <li ><a href="/service">Сервис</a></li>
+                <li><a href="/reviews">ОТЗЫВЫ</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+
+    </div>
 <script>
     jQuery.noConflict();
         jQuery('.select-style').on("change", function(){
