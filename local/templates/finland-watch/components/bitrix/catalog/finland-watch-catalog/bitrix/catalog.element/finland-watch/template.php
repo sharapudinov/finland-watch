@@ -150,55 +150,24 @@ $this->setFrameMode(true);
     <div class="block-discount-gift-timer">
         <div class="slider-discount">
             <div class="jcarousel-wrapper wrap">
-                <p class="radio"><input id="pass-card" type="radio" name="radio-card" value=""/>
+                <p class="radio"><input id="pass-card" type="radio" name="radio-card" <?=empty($arResult['PRESENTS'])?'disabled':''?> value=""/>
                     <label for="pass-card"></label></p>
                 <div class="corner white"></div>
                 <div class="jcarousel slider-two">
-                    <?            $APPLICATION->IncludeComponent(
-                        "bitrix:catalog.recommended.products",
-                        "finland-watch-presents",
-                        array(
-                            "LINE_ELEMENT_COUNT" => $arParams["ALSO_BUY_ELEMENT_COUNT"],
-                            "TEMPLATE_THEME" => (isset($arParams['TEMPLATE_THEME']) ? $arParams['TEMPLATE_THEME'] : ''),
-                            "ID" => $arResult['ID'],
-                            "PROPERTY_LINK" => "PRESENTS",
-                            "CACHE_TYPE" => $arParams["CACHE_TYPE"],
-                            "CACHE_TIME" => $arParams["CACHE_TIME"],
-                            "BASKET_URL" => $arParams["BASKET_URL"],
-                            "ACTION_VARIABLE" => $arParams["ACTION_VARIABLE"],
-                            "PRODUCT_ID_VARIABLE" => $arParams["PRODUCT_ID_VARIABLE"],
-                            "PRODUCT_QUANTITY_VARIABLE" => $arParams["PRODUCT_QUANTITY_VARIABLE"],
-                            "ADD_PROPERTIES_TO_BASKET" => (isset($arParams["ADD_PROPERTIES_TO_BASKET"]) ? $arParams["ADD_PROPERTIES_TO_BASKET"] : ''),
-                            "PRODUCT_PROPS_VARIABLE" => $arParams["PRODUCT_PROPS_VARIABLE"],
-                            "PARTIAL_PRODUCT_PROPERTIES" => (isset($arParams["PARTIAL_PRODUCT_PROPERTIES"]) ? $arParams["PARTIAL_PRODUCT_PROPERTIES"] : ''),
-                            "PAGE_ELEMENT_COUNT" => $arParams["ALSO_BUY_ELEMENT_COUNT"],
-                            "SHOW_OLD_PRICE" => $arParams['SHOW_OLD_PRICE'],
-                            "SHOW_DISCOUNT_PERCENT" => $arParams['SHOW_DISCOUNT_PERCENT'],
-                            "PRICE_CODE" => $arParams["PRICE_CODE"],
-                            "SHOW_PRICE_COUNT" => $arParams["SHOW_PRICE_COUNT"],
-                            "PRODUCT_SUBSCRIPTION" => 'N',
-                            "PRICE_VAT_INCLUDE" => $arParams["PRICE_VAT_INCLUDE"],
-                            "USE_PRODUCT_QUANTITY" => $arParams['USE_PRODUCT_QUANTITY'],
-                            "SHOW_NAME" => "Y",
-                            "SHOW_IMAGE" => "Y",
-                            "MESS_BTN_BUY" => $arParams['MESS_BTN_BUY'],
-                            "MESS_BTN_DETAIL" => $arParams["MESS_BTN_DETAIL"],
-                            "MESS_NOT_AVAILABLE" => $arParams['MESS_NOT_AVAILABLE'],
-                            "MESS_BTN_SUBSCRIBE" => $arParams['MESS_BTN_SUBSCRIBE'],
-                            "SHOW_PRODUCTS_" . $arParams["IBLOCK_ID"] => "Y",
-                            "HIDE_NOT_AVAILABLE" => $arParams["HIDE_NOT_AVAILABLE"],
-                            "OFFER_TREE_PROPS_" . $arRecomData['OFFER_IBLOCK_ID'] => $arParams["OFFER_TREE_PROPS"],
-                            "OFFER_TREE_PROPS_" . $arRecomData['OFFER_IBLOCK_ID'] => $arParams["OFFER_TREE_PROPS"],
-                            "ADDITIONAL_PICT_PROP_" . $arParams['IBLOCK_ID'] => $arParams['ADD_PICT_PROP'],
-                            "ADDITIONAL_PICT_PROP_" . $arRecomData['OFFER_IBLOCK_ID'] => $arParams['OFFER_ADD_PICT_PROP'],
-                            "PROPERTY_CODE_" . $arRecomData['OFFER_IBLOCK_ID'] => array(),
-                            "CONVERT_CURRENCY" => $arParams["CONVERT_CURRENCY"],
-                            "CURRENCY_ID" => $arParams["CURRENCY_ID"]
-                        ),
-                        $component,
-                        array("HIDE_ICONS" => "Y")
-                    );
-                    ?>
+                    <ul>
+                        <? if (!empty($arResult['PRESENTS'])):
+                            foreach ($arResult['PRESENTS'] as $key => $arItem) {
+                                ?>
+                                <li id='<?="present_" . $key?>'>
+                                    <a id="<?='present_'.$arItem['ID']?>" href="#"><img src="<?= $arItem['RESIZE']['src'] ?>"/></a>
+                                    <p class="red">+ подарок</p>
+                                </li>
+                            <?
+                            }
+                        endif;
+                        ?>
+                    </ul>
+
                     <div class="clear"></div>
                 </div>
                 <a href="#" class="jcarousel-control-prev"></a>
@@ -223,26 +192,7 @@ $this->setFrameMode(true);
 
                             </div>
                         </li>
-                        <li>
-                            <p class="nums">5300</p>
 
-                            <p class="text-star">рублей</p>
-
-                            <div class="gradient">
-                                <p>скидка на второй товар</p>
-
-                            </div>
-                        </li>
-                        <li>
-                            <p class="nums">5120</p>
-
-                            <p class="text-star">рублей</p>
-
-                            <div class="gradient">
-                                <p>скидка на второй товар</p>
-
-                            </div>
-                        </li>
                     </ul>
                     <div class="clear"></div>
                 </div>
@@ -407,22 +357,20 @@ $this->setFrameMode(true);
 
                             <div class="text-tabs">
                                 <section>
-                                    <h5>Suunto Ambit со встроенным прибором GPS</h5>
-
                                     <div class="block-video-card">
-                                        <div class="video">
-                                            <iframe width="560" height="315" src="//www.youtube.com/embed/5qanlirrRWs"
-                                                    frameborder="0" allowfullscreen></iframe>
-                                        </div>
-
-
-                                        <h5>Suunto Ambit со встроенным прибором GPS</h5>
-
-                                        <div class="video">
-                                            <iframe width="560" height="315" src="//www.youtube.com/embed/5qanlirrRWs"
-                                                    frameborder="0" allowfullscreen></iframe>
-                                        </div>
-
+                                        <? if (!empty($arResult['VIDEO'])):
+                                            $counter = 0;
+                                            foreach ($arResult['VIDEO'] as $key => $arItem) {
+                                                ?>
+                                                <h5><?= $arItem['NAME'] ?></h5>
+                                                <div class="video">
+                                                    <iframe width="560" height="315" src="//<?=$arItem['PREVIEW_TEXT'] ?>"
+                                                            frameborder="0" allowfullscreen></iframe>
+                                                </div>
+                                            <?
+                                            }
+                                        endif;
+                                        ?>
                                     </div>
                                 </section>
                             </div>

@@ -26,3 +26,36 @@ if (count($arResult["MORE_PHOTO"]) > 0) {
         $arResult['RESIZED_MAIN_PHOTOS'][] = $file;
     }
 }
+$obVideo=CIBlockElement::GetList(
+    array("SORT"=>"ASC"),
+    array(
+        "IBLOCK_CODE"=>"VIDEO",
+        "ID"=>$arResult['PROPERTIES']['VIDEO']['VALUE']),
+    false,
+    false,
+    array(
+        "ID",
+        "NAME",
+        "PREVIEW_TEXT")
+);
+while($video=$obVideo->GetNext()){
+    $arResult["VIDEO"][]=$video;
+}
+
+$obVideo=CIBlockElement::GetList(
+    array("SORT"=>"ASC"),
+    array(
+        "IBLOCK_CODE"=>"watch",
+        "ID"=>$arResult['PROPERTIES']['PRESENTS']['VALUE']),
+    false,
+    false,
+    array(
+        "ID",
+        "PREVIEW_PICTURE")
+);
+$index=0;
+while($present=$obVideo->GetNext()){
+    $arResult["PRESENTS"][$index]['RESIZE']=CFile::ResizeImageGet($present['PREVIEW_PICTURE'],array('width'=>56,'height'=>76),BX_RESIZE_IMAGE_PROPORTIONAL);
+    $arResult["PRESENTS"][$index]['ID']=$present['ID'];
+    $index++;
+}

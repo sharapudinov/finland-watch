@@ -1,5 +1,5 @@
 <?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
-//test_dump($dbRes);
+if(!CModule::IncludeModule("Main")) die;
 $sectionId = $_REQUEST['SECTION_ID'];
 // создаем объект
 $obCache = new CPHPCache;
@@ -47,7 +47,7 @@ if ($obCache->StartDataCache()):?>
             </td>
             <td>
                 <? if ($item['PROPERTY_MANUAL_VALUE']): ?>
-                    <a href="<?= CFile::GetPah($item['PROPERTY_MANUAL_VALUE']) ?>">
+                    <a href="<?=CFile::GetPath($item['PROPERTY_MANUAL_VALUE']) ?>">
                         Скачать
                     </a>
                 <? endif ?>
@@ -55,7 +55,7 @@ if ($obCache->StartDataCache()):?>
             <td>
                 <? if ($item['PROPERTY_SOFTWARE_VALUE']): ?>
 
-                    <a href="<?= CFile::GetPah($item['PROPERTY_SOFTWARE_VALUE']) ?>">
+                    <a href="<?= CFile::GetPath($item['PROPERTY_SOFTWARE_VALUE']) ?>">
                         Скачать
                     </a>
                 <? endif ?>
