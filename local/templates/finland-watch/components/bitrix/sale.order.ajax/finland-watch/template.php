@@ -41,7 +41,7 @@ CJSCore::Init(array('fx', 'popup', 'window', 'ajax'));
             if (!isset($array1["SORT"]) || !isset($array2["SORT"]))
                 return -1;
 
-            if ($array1["SORT"] > $array2["SORT"])
+            if ($array1["SORT"] > $array2["SORT"]) 
                 return 1;
 
             if ($array1["SORT"] < $array2["SORT"])

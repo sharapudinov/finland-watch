@@ -4,7 +4,7 @@ $sectionId = $_REQUEST['SECTION_ID'];
 // создаем объект
 $obCache = new CPHPCache;
 
-// время кеширования - 30 минут
+// время кеширования
 $life_time = 360000000;
 
 // формируем идентификатор кеша в зависимости от всех параметров
@@ -21,7 +21,7 @@ else :
     if (CModule::IncludeModule("IBlock")) {
         $dbRes = CIBlockElement::GetList(
             array("SORT" => "ASC"),
-            array("SECTION_ID" => $sectionId, "IBLOCK_ID" => 2),
+            array("SECTION_ID" => $sectionId, "IBLOCK_CODE" => "watch"),
             false,
             false,
             array("NAME", "PROPERTY_MANUAL", "PROPERTY_SOFTWARE", "DETAIL_PAGE_URL")
@@ -31,7 +31,6 @@ endif;
 
 // начинаем буферизирование вывода
 if ($obCache->StartDataCache()):?>
-    // выбираем из базы параметры элемента инфо-блока
     <tr>
         <th>Наименование</th>
         <th>Инструкция</th>

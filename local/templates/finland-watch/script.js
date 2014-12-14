@@ -14,8 +14,23 @@ jQuery(function () {
 });
 
 jQuery(document).ready(function () {
+    var city_cookie=jQuery.cookie('city');
+    if (city_cookie) jQuery('a.modal-city').html(city_cookie);
     jQuery('.fancybox').fancybox();
-    jQuery('.modal-city').fancybox();
+    jQuery('.modal-city').fancybox({
+        hideOnContentClick: false,
+        afterShow: function(){
+            jQuery('.city').on('click',function(e){
+                e.preventDefault();
+                jQuery.fancybox.close();
+                var current_city=jQuery(this).html();
+                jQuery('a.modal-city').html(current_city);
+                jQuery.cookie('city', current_city, {
+                    expires: 365
+                });
+            })
+        }
+    });
     jQuery('.one-cleek').fancybox();
     jQuery('.two-cleek').fancybox();
     jQuery(".modalbox").fancybox();

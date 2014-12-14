@@ -4,7 +4,6 @@
 @import url('css/jquery.formstyler.css');
 @import url('css/jquery.rating.css');
 @import url('css/main-flexslider.css');
-@import url('css/modal.css');
 @import url('css/reset.css');
 @import url('css/style-form.css');
 @import url('css/style-script.css');
@@ -16,6 +15,13 @@
 @import url('fancybox/jquery.fancybox.css?v=2.1.5');
 @import url('css/pages.css');
 
+div.city-list {
+    -webkit-column-count: 4;
+    column-count: 4;
+    -moz-column-count: 4;
+    max-height: 400px;
+    overflow-y: scroll;
+}
 
 .service-block {
     width: 460px;
