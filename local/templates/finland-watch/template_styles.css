@@ -40,6 +40,14 @@ div.city-list {
     margin-bottom: 30px;
 }
 
+.calculator-block-bottom .text-sel {
+    padding-top: 5px;
+}
+
+.check-calcul {
+    padding-top: 5px;
+}
+
 .check-calculator ol {
     display: inline-block;
     column-count: 4;

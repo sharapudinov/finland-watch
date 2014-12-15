@@ -41,7 +41,7 @@ $this->setFrameMode(true);?>
                          </p>
 
                          <p class="link-sm">
-                             <a href="#">купить</a>
+                             <a id="<?=$arItem['ID'].'_'.rand()?>" href="#">купить</a>
                          </p>
 
                          <div class="clear"></div>

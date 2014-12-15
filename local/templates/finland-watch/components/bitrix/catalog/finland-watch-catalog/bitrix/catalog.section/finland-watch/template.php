@@ -96,7 +96,7 @@ $cell=0;
                     <noindex>
                         <!--<a href="<? /* echo $arElement["BUY_URL"] */ ?>"
                    rel="nofollow"><? /* echo GetMessage("CATALOG_BUY") */ ?></a>&nbsp;-->
-                        <a class="basket-home" href="<? echo $arElement["ADD_URL"] ?>"
+                        <a id="<?=$arElement['ID'].'_'.rand()?>" class="basket-home" href="#"
                            rel="nofollow"></a>
                     </noindex>
                 <? elseif ((count($arResult["PRICES"]) > 0) || is_array($arElement["PRICE_MATRIX"])): ?>

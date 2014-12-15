@@ -75,7 +75,7 @@ $this->setFrameMode(true);?>
                                  <span class="rouble">a</span>
                              </span>
                          </p>
-                         <p class="link-sm"><a href="#buy-one-cleek" class="one-cleek">купить в 1 клик</a><a href="#" class="buy">купить</a></p>
+                         <p class="link-sm"><a href="#buy-one-cleek" class="one-cleek">купить в 1 клик</a><a id="<?=$arItem['ID'].'_'.rand()?>" href="#" class="buy">купить</a></p>
                          <p class="catch red">Успей заказать сегодня!</p>
                          <div class="clear"></div>
                      </div>

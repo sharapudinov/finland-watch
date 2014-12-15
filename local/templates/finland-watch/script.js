@@ -142,6 +142,26 @@ jQuery(document).ready(function () {
 
     });
 
+    jQuery('.basket-home, .link-sm a').on('click',function(e){
+        e.preventDefault();
+        add2basket(jQuery(this).attr('id'));
+    })
 });
+var add2basketUrl='/personal/cart/add2basket.php';
+function add2basket(id){
+    id=parseInt(id);
+    var basketParams={"ID": id}
+    BX.ajax.loadJSON(
+        add2basketUrl,
+        basketParams,
+        BasketResult
+    );
+}
 
-
+function BasketResult(arResult){
+    if (arResult.STATUS === 'OK')
+    {
+        BX.onCustomEvent('OnBasketChange');
+    }
+    else alert (arResult.ERROR)
+}

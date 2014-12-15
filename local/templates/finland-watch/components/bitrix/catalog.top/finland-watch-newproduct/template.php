@@ -74,7 +74,7 @@ $this->setFrameMode(true);?>
                                     (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF_PERCENT'] ?>%)
                                 </span>
                             </p>
-                            <span class="basket-home"></span>
+                            <span id="<?=$arItem['ID'].'_'.rand()?>" class="basket-home"></span>
                         <? endif ?>
                     </div>
                 </li>
