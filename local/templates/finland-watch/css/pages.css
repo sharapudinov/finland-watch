@@ -2465,7 +2465,9 @@
 
 
 .main-block-card-product-modal {
+/*
     display: none;
+*/
     position: relative;
     z-index: 2000;
     width: 960px;

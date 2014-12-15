@@ -30,7 +30,7 @@ $cell=0;
     <li id="<?= $this->GetEditAreaId($arElement['ID']); ?>">
         <div class="bg two">
             <span class="browsing">
-                <a href="#">просмотр</a>
+                            <a class="modal-card" href="/catalog/card-product-modal.php?ID=<?=$arElement['ID']?>" data-fancybox-type="ajax">просмотр</a>
             </span>
             <span class="gifts"></span>
             <a href="<?= $arElement["DETAIL_PAGE_URL"] ?>">

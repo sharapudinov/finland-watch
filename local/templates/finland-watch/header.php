@@ -27,7 +27,7 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.mousewheel-3.0.6.pack.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-ui.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.cookie.js");
-
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/script-lof.js");
 
         ?>
         <title><? $APPLICATION->ShowTitle() ?></title>
@@ -74,7 +74,7 @@ $curPage = $APPLICATION->GetCurPage(true);
                     </div>
                     <div class="phone-region">
                         <ul>
-                            <li class="region" title="Выбор региона"><a class="modal-city" data-fancybox-type="ajax" href="/modal-city.php?iframe">Москва и
+                            <li class="region" title="Выбор региона"><a class="modal-city" data-fancybox-type="ajax" href="/modal-city.php">Москва и
                                     Подмосковье</a></li>
                             <li class="call"><a class="modalbox call_btn" href="#inline">Заказать звонок</a></li>
                         </ul>

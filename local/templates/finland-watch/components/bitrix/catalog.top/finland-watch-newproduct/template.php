@@ -1,5 +1,5 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-
+//test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -19,7 +19,8 @@ $this->setFrameMode(true);?>
                 <li>
                     <div class="bg two">
                         <span class="browsing">
-                            <a href="#">просмотр</a>
+                            <a class="modal-card" href="/catalog/card-product-modal.php?ID=<?= $arItem['ID'] ?>"
+                               data-fancybox-type="ajax">просмотр</a>
                         </span>
                         <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
                             <img src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" width="219" height="219"/>
@@ -54,25 +55,27 @@ $this->setFrameMode(true);?>
                             false
                         );?>
                         <div class="lines"></div>
-                        <p class="summ-goods">
-                         <span class="black">
-                             <?= $arItem['PRICES']['BASE']['PRINT_VALUE'] ?>
-                             <span class="rouble">a</span>
-                         </span>
-                         <span class="red">
-                             <?= $arItem['PRICES']['BASE']["PRINT_DISCOUNT_VALUE"] ?>
-                             <span class="rouble">a</span>
-                         </span>
-                        </p>
-
-                        <p class="profit">Выгода
-                            <span class="red">
-                                <?= $arItem['PRICES']['BASE']['PRINT_DISCOUNT_DIFF'] ?>
-                                <span class="rouble">a</span>
-                                (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF_PERCENT'] ?>%)
-                            </span>
-                        </p>
-                        <span class="basket-home"></span>
+                        <? if ($arItem["CAN_BUY"]): ?>
+                            <p class="summ-goods">
+                                <span class="black">
+                                    <?= $arItem['PRICES']['BASE']['PRINT_VALUE'] ?>
+                                    <span class="rouble">a</span>
+                                </span>
+                                <span class="red">
+                                    <?= $arItem['PRICES']['BASE']["PRINT_DISCOUNT_VALUE"] ?>
+                                    <span class="rouble">a</span>
+                                </span>
+                            </p>
+                            <p class="profit">
+                                Выгода
+                                <span class="red">
+                                    <?= $arItem['PRICES']['BASE']['PRINT_DISCOUNT_DIFF'] ?>
+                                    <span class="rouble">a</span>
+                                    (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF_PERCENT'] ?>%)
+                                </span>
+                            </p>
+                            <span class="basket-home"></span>
+                        <? endif ?>
                     </div>
                 </li>
             <? endforeach; ?>
