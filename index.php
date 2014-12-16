@@ -70,18 +70,18 @@ GLOBAL $arFilter;
 <section>
     <div id="main-slider">
         <?$APPLICATION->IncludeComponent(
-	"webvbi:furniture.catalog.index", 
-	"finland-watch-slider", 
-	array(
-		"IBLOCK_TYPE" => "news",
-		"IBLOCK_ID" => "4",
-		"IBLOCK_BINDING" => "element",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "36000",
-		"CACHE_GROUPS" => "N"
-	),
-	false
-);?>
+            "webvbi:furniture.catalog.index",
+            "finland-watch-slider",
+            array(
+                "IBLOCK_TYPE" => "news",
+                "IBLOCK_ID" => "4",
+                "IBLOCK_BINDING" => "element",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "36000",
+                "CACHE_GROUPS" => "N"
+            ),
+            false
+        );?>
         <div class="block-advantages">
             <div class="shadow"></div>
             <div class="advantages">
@@ -108,113 +108,72 @@ GLOBAL $arFilter;
 <div class="content">
 <section>
     <div class="block-option">
-        <div class="select-option one">
-            <form action="" method="post">
-                <div class="box visible">
-                    <div class="section">
-                        <div class="sec">
-                            <select class="select-style" data-placeholder="Выберите серию часов">
-                                <option></option>
-                                <option>ВСЕ МОДЕЛИ</option>
-                                <option>СМАРТ ЧАСЫ</option>
-                                <option>ТУЗИЗМ</option>
-                                <option>ФИТНЕЛ</option>
-                                <option>БЕГ</option>
-                                <option>ВЕЛОСПОРТ</option>
-                                <option>ДАЙВИНГ</option>
-                                <option>СКАЛОЛАЗАНИЕ</option>
-                                <option>ГОРНЫЕ ЛЫЖИ / СНОУБОРД</option>
-                                <option>ЯХТИНГ</option>
-                                <option>ПЛАВАНИЕ</option>
-                                <option>АКСЕССУАРЫ</option>
-                                <option>КОМАНДНЫЕ СИСТЕМЫ</option>
-                                <option>КОМПАСЫ</option>
-                                <option>СПОРТИВНЫЕ НАБОРЫ</option>
-                                <option>ПОДАРКИ</option>
-                                <option>АРХИВ МОДЕЛЕЙ</option>
-                            </select>
-                        </div>
-                        <!-- .sec -->
-                    </div>
-                    <!-- .box -->
-                </div>
-            </form>
-
-        </div>
+        <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "finland-watch-select", Array(
+                "IBLOCK_TYPE" => "catalog",    // Тип инфоблока
+                "IBLOCK_ID" => "2",    // Инфоблок
+                "SECTION_ID" => "",    // ID раздела
+                "SECTION_CODE" => "",    // Код раздела
+                "COUNT_ELEMENTS" => "Y",    // Показывать количество элементов в разделе
+                "TOP_DEPTH" => "1",    // Максимальная отображаемая глубина разделов
+                "SECTION_FIELDS" => array(    // Поля разделов
+                    0 => "",
+                    1 => "",
+                ),
+                "SECTION_USER_FIELDS" => array(    // Свойства разделов
+                    0 => "",
+                    1 => "",
+                ),
+                "VIEW_MODE" => "LINE",
+                "SHOW_PARENT_NAME" => "Y",
+                "SECTION_URL" => "",    // URL, ведущий на страницу с содержимым раздела
+                "CACHE_TYPE" => "A",    // Тип кеширования
+                "CACHE_TIME" => "36000000",    // Время кеширования (сек.)
+                "CACHE_GROUPS" => "N",    // Учитывать права доступа
+                "ADD_SECTIONS_CHAIN" => "Y",    // Включать раздел в цепочку навигации
+            ),
+            false
+        );?>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "finland_watch_select_menu",
+            array(
+                "ROOT_MENU_TYPE" => "catalog",
+                "MENU_CACHE_TYPE" => "A",
+                "MENU_CACHE_TIME" => "36000000",
+                "MENU_CACHE_USE_GROUPS" => "N",
+                "MENU_CACHE_GET_VARS" => array(),
+                "MAX_LEVEL" => "1",
+                "USE_EXT" => "N",
+                "ALLOW_MULTI_SELECT" => "N",
+                "CHILD_MENU_TYPE" => "left",
+                "DELAY" => "N",
+                "MENU_THEME" => "site"
+            ),
+            false
+        );?>
         <div class="select-option">
-            <form action="" method="post">
-                <div class="box visible">
-                    <div class="section">
-                        <div class="sec">
-                            <select class="select-style" data-placeholder="Выберите вид спорта">
-                                <option></option>
-                                <option>ВСЕ МОДЕЛИ</option>
-                                <option>СМАРТ ЧАСЫ</option>
-                                <option>ТУЗИЗМ</option>
-                                <option>ФИТНЕЛ</option>
-                                <option>БЕГ</option>
-                                <option>ВЕЛОСПОРТ</option>
-                                <option>ДАЙВИНГ</option>
-                                <option>СКАЛОЛАЗАНИЕ</option>
-                                <option>ГОРНЫЕ ЛЫЖИ / СНОУБОРД</option>
-                                <option>ЯХТИНГ</option>
-                                <option>ПЛАВАНИЕ</option>
-                                <option>АКСЕССУАРЫ</option>
-                                <option>КОМАНДНЫЕ СИСТЕМЫ</option>
-                                <option>КОМПАСЫ</option>
-                                <option>СПОРТИВНЫЕ НАБОРЫ</option>
-                                <option>ПОДАРКИ</option>
-                                <option>АРХИВ МОДЕЛЕЙ</option>
-                            </select>
-                        </div>
-                        <!-- .sec -->
-                    </div>
-                    <!-- .box -->
-                </div>
-            </form>
-
-        </div>
-
-        <div class="select-option">
-            <form action="" method="post">
-                <div class="box visible">
-                    <div class="section">
-                        <div class="sec">
-                            <select class="select-style" data-placeholder="Часы на каждый день">
-                                <option></option>
-                                <option>ВСЕ МОДЕЛИ</option>
-                                <option>СМАРТ ЧАСЫ</option>
-                                <option>ТУЗИЗМ</option>
-                                <option>ФИТНЕЛ</option>
-                                <option>БЕГ</option>
-                                <option>ВЕЛОСПОРТ</option>
-                                <option>ДАЙВИНГ</option>
-                                <option>СКАЛОЛАЗАНИЕ</option>
-                                <option>ГОРНЫЕ ЛЫЖИ / СНОУБОРД</option>
-                                <option>ЯХТИНГ</option>
-                                <option>ПЛАВАНИЕ</option>
-                                <option>АКСЕССУАРЫ</option>
-                                <option>КОМАНДНЫЕ СИСТЕМЫ</option>
-                                <option>КОМПАСЫ</option>
-                                <option>СПОРТИВНЫЕ НАБОРЫ</option>
-                                <option>ПОДАРКИ</option>
-                                <option>АРХИВ МОДЕЛЕЙ</option>
-                            </select>
-                        </div>
+            <div class="box visible">
+                <div class="section">
+                    <div class="sec">
+                        <select class="select-section" data-placeholder="Часы на каждый день">
+                            <option></option>
+                            <option>Серия-1</option>
+                            <option>Серия-2</option>
+                        </select>
                     </div>
                 </div>
-            </form>
-
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Стильный селект -->
-<script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.formstyler.js"></script>
 <script>
     jQuery.noConflict();
-    jQuery(document).ready(function () {
-        jQuery('.select-style').styler();
+    jQuery('.select-sport').on("change", function () {
+        window.location = '/catalog/' + jQuery(this).val();
+    });
+    jQuery('.select-section').on("change", function () {
+        window.location = jQuery(this).val();
     });
 </script>
 <section>
@@ -396,80 +355,82 @@ GLOBAL $arFilter;
         <div id="dynamic-block">
             <div class="dynamic-block dynamic-one-left">
                 <span class="pickup news">Новости</span>
+
                 <div class="clear"></div>
             </div>
         </div>
         <div class="block-home-news">
-            <div class="bg-news"><img src="<?=SITE_TEMPLATE_PATH?>/images/bg-news.png" width="489" height="393"/></div>
+            <div class="bg-news"><img src="<?= SITE_TEMPLATE_PATH ?>/images/bg-news.png" width="489" height="393"/>
+            </div>
             <div class="jcarousel-wrapper wrap">
                 <div class="jcarousel slider-two slider-news">
                     <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"finland-watch-news-list", 
-	array(
-		"DISPLAY_DATE" => "Y",
-		"DISPLAY_NAME" => "Y",
-		"DISPLAY_PICTURE" => "N",
-		"DISPLAY_PREVIEW_TEXT" => "N",
-		"AJAX_MODE" => "Y",
-		"IBLOCK_TYPE" => "news",
-		"IBLOCK_ID" => "1",
-		"NEWS_COUNT" => "10",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_ORDER1" => "DESC",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER2" => "ASC",
-		"FILTER_NAME" => "",
-		"FIELD_CODE" => array(
-			0 => "ID",
-			1 => "",
-		),
-		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "DESCRIPTION",
-			2 => "",
-		),
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"SET_TITLE" => "N",
-		"SET_BROWSER_TITLE" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_STATUS_404" => "N",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"INCLUDE_SUBSECTIONS" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
-		"CACHE_FILTER" => "Y",
-		"CACHE_GROUPS" => "Y",
-		"DISPLAY_TOP_PAGER" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "N",
-		"PAGER_TITLE" => "Новости",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => "",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "Y",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_ADDITIONAL" => ""
-	),
-	false
-);?>
+                        "bitrix:news.list",
+                        "finland-watch-news-list",
+                        array(
+                            "DISPLAY_DATE" => "Y",
+                            "DISPLAY_NAME" => "Y",
+                            "DISPLAY_PICTURE" => "N",
+                            "DISPLAY_PREVIEW_TEXT" => "N",
+                            "AJAX_MODE" => "Y",
+                            "IBLOCK_TYPE" => "news",
+                            "IBLOCK_ID" => "1",
+                            "NEWS_COUNT" => "10",
+                            "SORT_BY1" => "ACTIVE_FROM",
+                            "SORT_ORDER1" => "DESC",
+                            "SORT_BY2" => "SORT",
+                            "SORT_ORDER2" => "ASC",
+                            "FILTER_NAME" => "",
+                            "FIELD_CODE" => array(
+                                0 => "ID",
+                                1 => "",
+                            ),
+                            "PROPERTY_CODE" => array(
+                                0 => "",
+                                1 => "DESCRIPTION",
+                                2 => "",
+                            ),
+                            "CHECK_DATES" => "Y",
+                            "DETAIL_URL" => "",
+                            "PREVIEW_TRUNCATE_LEN" => "",
+                            "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                            "SET_TITLE" => "N",
+                            "SET_BROWSER_TITLE" => "N",
+                            "SET_META_KEYWORDS" => "N",
+                            "SET_META_DESCRIPTION" => "N",
+                            "SET_STATUS_404" => "N",
+                            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                            "ADD_SECTIONS_CHAIN" => "N",
+                            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                            "PARENT_SECTION" => "",
+                            "PARENT_SECTION_CODE" => "",
+                            "INCLUDE_SUBSECTIONS" => "N",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "3600",
+                            "CACHE_FILTER" => "Y",
+                            "CACHE_GROUPS" => "Y",
+                            "DISPLAY_TOP_PAGER" => "N",
+                            "DISPLAY_BOTTOM_PAGER" => "N",
+                            "PAGER_TITLE" => "Новости",
+                            "PAGER_SHOW_ALWAYS" => "N",
+                            "PAGER_TEMPLATE" => "",
+                            "PAGER_DESC_NUMBERING" => "N",
+                            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                            "PAGER_SHOW_ALL" => "Y",
+                            "AJAX_OPTION_JUMP" => "N",
+                            "AJAX_OPTION_STYLE" => "Y",
+                            "AJAX_OPTION_HISTORY" => "N",
+                            "AJAX_OPTION_ADDITIONAL" => ""
+                        ),
+                        false
+                    );?>
 
                     <div class="clear"></div>
                 </div>
                 <a href="#" class="jcarousel-control-prev"></a>
                 <a href="#" class="jcarousel-control-next"></a>
-                </div>
             </div>
+        </div>
     </section>
     <section>
         <div class="main-block-about">
@@ -527,7 +488,7 @@ GLOBAL $arFilter;
             </div>
             <div class="clear"></div>
             <div class="bg-about">
-                <img src="<?=SITE_TEMPLATE_PATH?>/images/bg-about.png" width="361" height="342"/>
+                <img src="<?= SITE_TEMPLATE_PATH ?>/images/bg-about.png" width="361" height="342"/>
             </div>
         </div>
     </section>

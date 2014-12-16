@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 
 ?>
 <div class="calculator-main">
-<form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" action="<? echo $arResult["FORM_ACTION"] ?>"
+<form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" action="/catalog/all/"
       method="get">
     <? foreach ($arResult["HIDDEN"] as $arItem): ?>
         <input type="hidden" name="<? echo $arItem["CONTROL_NAME"] ?>" id="<? echo $arItem["CONTROL_ID"] ?>"

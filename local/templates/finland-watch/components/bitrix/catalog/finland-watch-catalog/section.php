@@ -86,7 +86,7 @@ $this->setFrameMode(true);?>
                 "PRODUCT_PROPS_VARIABLE" => "prop",
                 "PARTIAL_PRODUCT_PROPERTIES" => "Y",
                 "PRODUCT_PROPERTIES" => array(),
-                "OFFERS_CART_PROPERTIES" => array()
+                "OFFERS_CART_PROPERTIES" => array(),
             ),
             false
         );
@@ -163,7 +163,10 @@ if ($arParams['USE_FILTER'] == 'Y') {
 }?>
 
 
-<?$intSectionID = $APPLICATION->IncludeComponent(
+<?
+GLOBAL $main_filter;
+if(is_set($_REQUEST['SPORT'])) $main_filter['PROPERTY_SPORT']=$_REQUEST['SPORT'];
+$intSectionID = $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
     "finland-watch",
     array(
@@ -184,7 +187,7 @@ if ($arParams['USE_FILTER'] == 'Y') {
         "SECTION_ID_VARIABLE" => $arParams["SECTION_ID_VARIABLE"],
         "PRODUCT_QUANTITY_VARIABLE" => $arParams["PRODUCT_QUANTITY_VARIABLE"],
         "PRODUCT_PROPS_VARIABLE" => $arParams["PRODUCT_PROPS_VARIABLE"],
-        "FILTER_NAME" => $arParams["FILTER_NAME"],
+        "FILTER_NAME" => is_set($main_filter)?'main_filter':$arParams["FILTER_NAME"],
         "CACHE_TYPE" => $arParams["CACHE_TYPE"],
         "CACHE_TIME" => $arParams["CACHE_TIME"],
         "CACHE_FILTER" => $arParams["CACHE_FILTER"],
@@ -223,7 +226,7 @@ if ($arParams['USE_FILTER'] == 'Y') {
         "OFFERS_LIMIT" => $arParams["LIST_OFFERS_LIMIT"],
 
         "SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
-        "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
+        "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"]!='all'?$arResult["VARIABLES"]["SECTION_CODE"]:'',
         "SECTION_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["section"],
         "DETAIL_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["element"],
         'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
@@ -249,7 +252,8 @@ if ($arParams['USE_FILTER'] == 'Y') {
         "ADD_SECTIONS_CHAIN" => "N",
         'ADD_TO_BASKET_ACTION' => $basketAction,
         'SHOW_CLOSE_POPUP' => isset($arParams['COMMON_SHOW_CLOSE_POPUP']) ? $arParams['COMMON_SHOW_CLOSE_POPUP'] : '',
-        'COMPARE_PATH' => $arResult['FOLDER'] . $arResult['URL_TEMPLATES']['compare']
+        'COMPARE_PATH' => $arResult['FOLDER'] . $arResult['URL_TEMPLATES']['compare'],
+        "SHOW_ALL_WO_SECTION" => 'Y'
     ),
     $component
 );?>

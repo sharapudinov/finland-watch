@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-$cell=0;
+$cell = 0;
 ?>
 <? foreach ($arResult["ITEMS"] as $cell => $arElement): ?>
     <?
@@ -20,9 +20,7 @@ $cell=0;
     ?>
     <? if ($cell % $arParams["LINE_ELEMENT_COUNT"] == 0): ?>
         <section>
-
         <div class="slider-home catalog">
-
         <div class="wrap-catalog">
         <div class="slider-two">
         <ul class="">
@@ -30,7 +28,8 @@ $cell=0;
     <li id="<?= $this->GetEditAreaId($arElement['ID']); ?>">
         <div class="bg two">
             <span class="browsing">
-                            <a class="modal-card" href="/catalog/card-product-modal.php?ID=<?=$arElement['ID']?>" data-fancybox-type="ajax">просмотр</a>
+                            <a class="modal-card" href="/catalog/card-product-modal.php?ID=<?= $arElement['ID'] ?>"
+                               data-fancybox-type="ajax">просмотр</a>
             </span>
             <span class="gifts"></span>
             <a href="<?= $arElement["DETAIL_PAGE_URL"] ?>">
@@ -96,7 +95,7 @@ $cell=0;
                     <noindex>
                         <!--<a href="<? /* echo $arElement["BUY_URL"] */ ?>"
                    rel="nofollow"><? /* echo GetMessage("CATALOG_BUY") */ ?></a>&nbsp;-->
-                        <a id="<?=$arElement['ID'].'_'.rand()?>" class="basket-home" href="#"
+                        <a id="<?= $arElement['ID'] . '_' . rand() ?>" class="basket-home" href="#"
                            rel="nofollow"></a>
                     </noindex>
                 <? elseif ((count($arResult["PRICES"]) > 0) || is_array($arElement["PRICE_MATRIX"])): ?>

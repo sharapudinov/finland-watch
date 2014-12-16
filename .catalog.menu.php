@@ -9,7 +9,7 @@ if(CModule::IncludeModule('IBlock')) {
         false);
     while($item = $dbRes->GetNext()) {
         if($item["PROPERTY_SPORT_ENUM_ID"]!=null){
-            $aMenuLinks[]=array($item['PROPERTY_SPORT_VALUE']);
+            $aMenuLinks[]=array($item['PROPERTY_SPORT_VALUE'],'/catalog/all/?SPORT='.$item['PROPERTY_SPORT_ENUM_ID']);
         }
     }
 }

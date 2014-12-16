@@ -1,6 +1,6 @@
 <?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
 if(!CModule::IncludeModule("Main")) die;
-$sectionId = $_REQUEST['SECTION_ID'];
+$sectionCode = $_REQUEST['SECTION_CODE'];
 // создаем объект
 $obCache = new CPHPCache;
 
@@ -9,7 +9,7 @@ $life_time = 360000000;
 
 // формируем идентификатор кеша в зависимости от всех параметров
 // которые могут повлиять на результирующий HTML
-$cache_id = $sectionId;
+$cache_id = $sectionCode;
 
 // если кеш есть и он ещё не истек, то
 if ($obCache->InitCache($life_time, $cache_id, "/")):
@@ -21,7 +21,7 @@ else :
     if (CModule::IncludeModule("IBlock")) {
         $dbRes = CIBlockElement::GetList(
             array("SORT" => "ASC"),
-            array("SECTION_ID" => $sectionId, "IBLOCK_CODE" => "watch"),
+            array("SECTION_CODE" => $sectionCode, "IBLOCK_CODE" => "watch"),
             false,
             false,
             array("NAME", "PROPERTY_MANUAL", "PROPERTY_SOFTWARE", "DETAIL_PAGE_URL")
