@@ -166,6 +166,7 @@ if ($arParams['USE_FILTER'] == 'Y') {
 <?
 GLOBAL $main_filter;
 if(is_set($_REQUEST['SPORT'])) $main_filter['PROPERTY_SPORT']=$_REQUEST['SPORT'];
+if($_REQUEST['PRESENTS']=='Y') $main_filter['!PROPERTY_PRESENTS']=false;
 $intSectionID = $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
     "finland-watch",
@@ -258,7 +259,7 @@ $intSectionID = $APPLICATION->IncludeComponent(
     $component
 );?>
 <section>
-    <div class="page-next-link">
+    <div class="page-nav-count-link">
 
         <ul>
 
@@ -276,8 +277,6 @@ $intSectionID = $APPLICATION->IncludeComponent(
 </section>
 </div>
 <div class="sitebar-right">
-
-
     <?if ($arParams['USE_FILTER'] == 'Y') {
     $APPLICATION->IncludeComponent(
         "bitrix:catalog.smart.filter",

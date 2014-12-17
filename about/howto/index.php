@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Как купить");
 ?>
     <div class="content">
         <section class="main_block">
-            <div class="bx_page">
+            <div class="article">
                 <p>Процедура покупки товара в нашем Интернет-магазине очень проста и состоит из нескольких шагов.</p>
 
                 <h2>1. Оформление заказа</h2>

@@ -23,7 +23,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Оплата", 
-		"about/reviews/", 
+		"/about/howto", 
 		Array(), 
 		Array(), 
 		"" 

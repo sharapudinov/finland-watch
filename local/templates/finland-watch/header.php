@@ -20,7 +20,7 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->ShowCSS(true, true);
         $APPLICATION->ShowHeadStrings();
         $APPLICATION->ShowHeadScripts();
-        //$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-2.1.1.min.js");
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-2.1.1.min.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.fancybox.js?v=2.1.5");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.fancybox.pack.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.mousewheel-3.0.6.pack.js");

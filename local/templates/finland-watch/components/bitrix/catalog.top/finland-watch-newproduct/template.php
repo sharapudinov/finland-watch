@@ -31,29 +31,29 @@ $this->setFrameMode(true);?>
                             <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>"><?= $arItem["NAME"] ?></a>
                         </p>
                         <?$APPLICATION->IncludeComponent(
-                            "bitrix:iblock.vote",
-                            "finland-watch-stars",
-                            array(
-                                "IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
-                                "IBLOCK_ID" => $arParams['IBLOCK_ID'],
-                                "ELEMENT_ID" => $arItem["ID"],
-                                "ELEMENT_CODE" => "",
-                                "MAX_VOTE" => "5",
-                                "VOTE_NAMES" => array(
-                                    0 => "0",
-                                    1 => "1",
-                                    2 => "2",
-                                    3 => "3",
-                                    4 => "4",
-                                    5 => "",
-                                ),
-                                "SET_STATUS_404" => "N",
-                                "CACHE_TYPE" => "A",
-                                "CACHE_TIME" => "3600",
-                                "DISPLAY_AS_RATING" => "rating"
-                            ),
-                            false
-                        );?>
+	"bitrix:iblock.vote", 
+	"finland-watch-stars", 
+	array(
+		"IBLOCK_TYPE" => "catalog",
+		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+		"ELEMENT_ID" => $arItem["ID"],
+		"ELEMENT_CODE" => "",
+		"MAX_VOTE" => "5",
+		"VOTE_NAMES" => array(
+			0 => "0",
+			1 => "1",
+			2 => "2",
+			3 => "3",
+			4 => "4",
+			5 => "",
+		),
+		"SET_STATUS_404" => "N",
+		"CACHE_TYPE" => "N",
+		"CACHE_TIME" => "36000000",
+		"DISPLAY_AS_RATING" => "rating"
+	),
+	false
+);?>
                         <div class="lines"></div>
                         <? if ($arItem["CAN_BUY"]): ?>
                             <p class="summ-goods">

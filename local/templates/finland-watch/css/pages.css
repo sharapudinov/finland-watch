@@ -691,7 +691,7 @@
     height: 388px;
 }
 
-/*================== ���� �������, �����������, ������������� ������ =================*/  
+/*================== ???? ???????, ???????????, ????????????? ?????? =================*/  
 
 .basket-login-verification {
     width: 960px;
@@ -1201,8 +1201,10 @@
 
 .personal-account .teble-name table th:first-child, .personal-account .teble-name table td:first-child {
     
+/*
     text-align: left;
-   
+*/
+   text-align: center;
     
 }
 
@@ -1306,7 +1308,7 @@
     width: 27px;
     height: 25px;
     text-align: center ;
-    margin-top: -50px;
+    margin-top: -57px;
     border: 1px solid #efefef;
     background-image:url("../images/x.png") ;
     background-repeat: no-repeat;
@@ -1477,7 +1479,7 @@
     margin-bottom: 15px;
 }
 
-/*============ ������ ������� =================*/
+/*============ ?????? ??????? =================*/
 
 
 
@@ -1743,7 +1745,7 @@
     padding-left: 30px;
 }
 
-/*=============== �������� �������� ====================*/
+/*=============== ???????? ???????? ====================*/
 
 #block-main-news-about.catalog, #block-main-news-about.action {
     background-image: none;
@@ -1817,7 +1819,7 @@
     margin-right: -45px;
 }
 
-/*================= �������� � ������� =========================*/
+/*================= ???????? ? ??????? =========================*/
 
 
 .block-action.action-top {
@@ -1973,7 +1975,7 @@
    
 }
 
-/*==================== ���� ��� ��������� ======================*/
+/*==================== ???? ??? ????????? ======================*/
 
 .block-action-link ul li .hover-block {
     position: absolute !important;
@@ -2102,7 +2104,7 @@
 
 }
 
-/*============================ ������� =============================*/
+/*============================ ??????? =============================*/
 
 .content.content-catalog {
     padding-bottom: 20px;
@@ -2182,7 +2184,7 @@
 
 }
 
-/*============================= ����� ��� =================================*/
+/*============================= ????? ??? =================================*/
 
 .goods-day-catalog {
     z-index: 600;
@@ -2276,7 +2278,7 @@
     background-color: #11afeb;
 }
 
-/*===================== ������ �� ������ css ========================*/
+/*===================== ?????? ?? ?????? css ========================*/
 
 .title-bar:after {
    content: "";
@@ -2370,18 +2372,19 @@
 
 
 
-/*===================== ������������ ��������� ============================*/
+/*===================== ???????????? ????????? ============================*/
 
-.page-next-link  {
+.page-next-link , .page-nav-count-link   {
     padding: 25px 0 5px 0;
 }
 
 .page-next-link ul {
-    margin-left: 280px;
+    width: 60%;
+    margin-left: 260px;
     margin-bottom: 30px;
 }
 
-.page-next-link ul li {
+.page-next-link ul li, .page-nav-count-link ul li {
     float: left;
     font-family: 'GothamPro-Light', sans-serif;
     font-size: 12px;
@@ -2389,13 +2392,13 @@
 
 }
 
-.page-next-link ul li.po {
+.page-next-link ul li.po, .page-nav-count-link ul li.po  {
     margin-right: 7px;
     padding-top: 7px;
     padding-left: 3px;
 }
 
-.page-next-link ul li a {
+.page-next-link ul li a, .page-nav-count-link ul li a {
     height: 18px;
     min-width: 23px;
     padding-top: 6px;
@@ -2410,7 +2413,9 @@
 .page-next-link ul li a:hover, .page-next-link ul li.active a {
     border: 1px solid #11afeb;
 }
-
+.page-nav-count-link ul li a:hover, .page-nav-count-link ul li.active a {
+     border: 1px solid #11afeb;
+ }
 .page-next-link ul li.prev a, .page-next-link ul li.next a {
     background-image:url("../images/page-prev-next.png") ;
     background-repeat: no-repeat;
@@ -2419,15 +2424,27 @@
     padding-top: 6px;
     min-width: 14px;
 }
-
+.page-nav-count-link ul li.prev a, .page-nav-count-link ul li.next a {
+    background-image:url("../images/page-prev-next.png") ;
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    border: none;
+    padding-top: 6px;
+    min-width: 14px;
+}
 .page-next-link ul li.next {
+    margin-right: 10px;
+}
+.page-nav-count-link ul li.next {
     margin-right: 10px;
 }
 
 .page-next-link ul li.next a {
     background-position: right 5px;
 }
-
+.page-nav-count-link ul li.next a {
+    background-position: right 5px;
+}
 .page-next-link ul li.link-p {
     padding-left: 3px;
 }
@@ -2444,19 +2461,34 @@
     border-left: #ffffff;
 }
 
+.page-nav-count-link ul li.link-more a {
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-right: #ffffff;
+    border-left: #ffffff;
+}
 .page-next-link ul li.link-more.left a {
     border-left: 1px solid #b3b3b3;
  }
+.page-nav-count-link ul li.link-more.left a {
+    border-left: 1px solid #b3b3b3;
+}
 
  .page-next-link ul li.link-more.right a {
     border-right: 1px solid #b3b3b3;
  }
-
+.page-nav-count-link ul li.link-more.right a {
+    border-right: 1px solid #b3b3b3;
+}
 .page-next-link ul li.link-more a:hover, .page-next-link ul li.link-more.active a{
       border: 1px solid #11afeb;
 }
 
-/*========================== �������� ������ ========================================*/
+/.page-nav-count-link ul li.link-more a:hover, .page-nav-count-link ul li.link-more.active a{
+     border: 1px solid #11afeb;
+ }
+*========================== ???????? ?????? ========================================*/
 
 
 #card-product-modal {
@@ -3015,7 +3047,7 @@
 }
 
 
-/*================ / �������� �����  / =======================*/ 
+/*================ / ???????? ?????  / =======================*/ 
 
 .video {
     width: 560px;
@@ -3044,7 +3076,7 @@
 
 
  
-/*================ / ����� ����� �� ������� / =======================*/ 
+/*================ / ????? ????? ?? ??????? / =======================*/ 
  
  .block-video-card {
     

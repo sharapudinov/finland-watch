@@ -43,6 +43,10 @@ if ($normalCount > 0):
                     ?>
                     <th  id="col_<?= $arHeader["id"]; ?>">
                 <?
+                elseif ($arHeader["id"] == "SUM"):
+                    ?>
+                    <th  colspan="2" id="col_<?= $arHeader["id"]; ?>">
+                <?
                 else:
                     ?>
                     <th  id="col_<?= $arHeader["id"]; ?>">
@@ -131,8 +135,9 @@ if ($normalCount > 0):
                     <td id="sum_<?= $arItem["ID"] ?>" class="summ">
                         <?= $arItem['SUM'] ?>
                         <span class="rouble">a</span>
-                        <a href="<?= str_replace("#ID#", $arItem["ID"], $arUrls["delete"]) ?>" class="close"></a>
+
                     </td>
+                    <td> <a href="<?= str_replace("#ID#", $arItem["ID"], $arUrls["delete"]) ?>" class="close"></a></td>
                 </tr>
             <? endif ?>
         <? endforeach ?>

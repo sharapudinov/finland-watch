@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Доставка");
 ?>
     <div class="content">
         <section class="main_block">
-            <div class="bx_page">
+            <div class="article">
                 <p>Интернет-магазин выполняет доставку любого товара своей собственной Службой доставки.</p>
 
                 <h2>Стоимость доставки курьером</h2>
