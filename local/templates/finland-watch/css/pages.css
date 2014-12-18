@@ -691,7 +691,7 @@
     height: 388px;
 }
 
-/*================== ???? ???????, ???????????, ????????????? ?????? =================*/  
+/*================== ???? ???????, ???????????, ????????????? ?????? =================*/
 
 .basket-login-verification {
     width: 960px;
@@ -704,7 +704,7 @@
     margin-bottom: 25px;
     overflow: hidden;
 }
- 
+
  .basket-login-verification ul li{
     position: relative;
     float: left;
@@ -717,7 +717,7 @@
 .basket-login-verification ul li:first-child {
     padding-left: 20px;
 }
- 
+
 .basket-login-verification ul li:first-child:before {
     position: absolute;
     width: 12px;
@@ -738,7 +738,7 @@
     background-repeat: no-repeat;
 }
 
- .basket-login-verification ul li:nth-child(1):after, 
+ .basket-login-verification ul li:nth-child(1):after,
  .basket-login-verification ul li:nth-child(2):after {
     position: absolute;
     width: 16px;
@@ -748,7 +748,7 @@
     margin-top: 2px;
     background-image:url("../images/s-m.png") ;
     background-repeat: no-repeat;
-} 
+}
 
 .basket-login-verification ul li:nth-child(2) {
     color: #ed1c24;
@@ -776,7 +776,7 @@
 .teble-name.basket-my-table .code-personal{
     text-align: left !important;
     margin-left: 38px;
-    
+
 }
 
 .teble-name.basket-my-table .code-personal input{
@@ -827,7 +827,7 @@
 
 .basket-login-verification.basket-my li:first-child {
     color: #ed1c24 !important;
-    
+
 }
 
 .basket-login-verification.basket-my ul li:first-child:before {
@@ -838,7 +838,7 @@
     width: 960px;
     padding-top: 5px;
     font-family: Arial, sans-serif;
-   
+
 }
 
 .article-text.login-verification p {
@@ -902,7 +902,7 @@
     font-style: italic;
     color: #6c6c6c;
 }
- 
+
 .form-sign-in p a {
     font-size: 12px;
     font-style: italic;
@@ -994,7 +994,7 @@
     margin-bottom: 10px;
     width: 172px;
     height: 39px;
-    
+
 }
 
 
@@ -1033,7 +1033,7 @@
 }
 
 .login-yes-verification .top-sign-in.cash-couriers {
-    
+
 }
 
 .top-sign-in .cash-couriers {
@@ -1045,7 +1045,7 @@
     background-position: 70px 1px;
     background-repeat: no-repeat;
 }
- 
+
 .top-sign-in.cash-couriers.visa-mastercard {
     height: 30px;
     padding-top: 10px;
@@ -1061,8 +1061,8 @@
     /*background-image:url("../images/b.png") ;*/
     background-repeat: no-repeat;
     background-position: 70px 7px;
-    
-} 
+
+}
 
 .shipping-pickup .shipping.radio    {
     margin-left: 43px;
@@ -1075,7 +1075,7 @@
     margin: 0 0 0 23px;
     padding: 5px 0;
  }
- 
+
 .form-sign-in.sign-in-info .select-block {
     display: inline-block ;
     float: right;
@@ -1084,7 +1084,7 @@
     background-image:url("../images/sel.png") ;
     background-repeat: no-repeat;
     background-position: right 0;
-   
+
     border: 1px solid #c0c0c0;
 }
 
@@ -1101,19 +1101,20 @@
 .form-sign-in.sign-in-info .select-block select:focus {
     color: #000000;
     font-size: 14px;
-    
+
 }
 
 .select-block select {
   -webkit-appearance: none;
   line-height: 2em;
   -moz-appearance: none;
-  text-indent: 0.01px; 
+  text-indent: 0.01px;
   text-overflow: '';
   -ms-appearance: none;
   appearance: none!important;
 }
- 
+
+/*noinspection CssInvalidPseudoSelector*/
 .select-block select::-ms-expand {
   display: none;
 }
@@ -1200,12 +1201,12 @@
 
 
 .personal-account .teble-name table th:first-child, .personal-account .teble-name table td:first-child {
-    
+
 /*
     text-align: left;
 */
    text-align: center;
-    
+
 }
 
 .personal-account .check-calcul {
@@ -1221,7 +1222,7 @@
 
 
 .teble-name.basket-my-table table th:first-child, .teble-name.basket-my-table table td:first-child {
-   
+
     text-align: left;
 }
 
@@ -1236,7 +1237,7 @@
     width: 100%;
     padding: 10px 0;
     vertical-align: middle;
-    
+
 }
 
 .personal-account .teble-name table td {
@@ -1247,17 +1248,17 @@
 }
 
 .teble-name table td:nth-child(2), .teble-name table td:nth-child(3), .teble-name table td:last-child {
-   
+
     text-align: center;
-   
+
 }
 
-.personal-account .teble-name table td:nth-child(2), 
+.personal-account .teble-name table td:nth-child(2),
 .personal-account .teble-name table td:nth-child(3),
  .personal-account .teble-name table td:last-child {
     width: auto !important;
     text-align: center;
-  
+
 }
 
 .teble-name table td img {
@@ -1298,7 +1299,7 @@
     height: 45px;
     margin-right: 38px;
     text-align: right;
-    
+
 }
 
 /*.teble-name tr td */.close {
@@ -1322,7 +1323,7 @@
 .teble-name.basket-my-table table .table-text p {
     padding: 0;
     margin: 0;
-    
+
 }
 
 .teble-name.basket-my-table table .table-text .name-clock {
@@ -1344,7 +1345,7 @@
 
 .teble-name.basket-my-table .yes-summ {
     color: #000000;
-    
+
 }
 
 
@@ -1354,14 +1355,14 @@
 
 .teble-name.basket-my-table td {
     border-right: none;
-   
+
 }
 
 
 
 .teble-name.basket-my-table .block {
     width: 640px !important;
-    
+
 }
 
 .teble-name.basket-my-table .tleft {
@@ -1405,7 +1406,7 @@
     height: 7px;
     border-bottom: 1px solid red;
     margin-right: 10px;
-    
+
 }
 
 .teble-name.basket-my-table .img-one {
@@ -1540,7 +1541,7 @@
 
 .personal-account .teble-name th:first-child{
     padding-left: 65px;
-   
+
 }
 
 .personal-account .teble-name td:first-child .check-keep{
@@ -1565,11 +1566,11 @@
 
 .personal-account .no-yes {
     text-align: left;
-    
+
 }
 
 .personal-account .no-yes ul {
-    
+
 }
 
 .personal-account /*.no-yes*/ ul.no-yes-link li{
@@ -1579,7 +1580,7 @@
     padding-left: 30px;
     background-image:url("../images/no-yes.png") ;
     background-repeat: no-repeat;
-    
+
 }
 
 .personal-account /*.no-yes */ul.no-yes-link li a {
@@ -1614,7 +1615,7 @@
 }
 
 .change-data {
-   
+
     padding-bottom: 10px;
     padding-top: 5px;
     margin-bottom: 10px !important;
@@ -1630,7 +1631,7 @@
     background-image:url("../images/more.png") ;
     background-repeat: no-repeat;
     background-position: right;
-    
+
 }
 
 .change-data.right a{
@@ -1659,7 +1660,7 @@
     text-decoration: none;
     background-color: #d9dadc;
     border-radius: 5px;
-    
+
     margin-right: 20px;
 }
 
@@ -1667,12 +1668,12 @@
     color: #6d6d6d;
     font-size: 14px;
     font-style: normal;
-    
+
 }
 
 .login-new.personal .gray.bott {
     margin-bottom: 38px !important;
-    
+
 }
 
 .no-bg {
@@ -1721,7 +1722,7 @@
 }
 
 .login-new.personal .no-yes-link li{
-   
+
 }
 
 .login-new.personal .check-keep  {
@@ -1749,7 +1750,7 @@
 
 #block-main-news-about.catalog, #block-main-news-about.action {
     background-image: none;
-   
+
 }
 
 #block-main-news-about.catalog .block-home-news.catalog-home {
@@ -1795,7 +1796,7 @@
 
 .block-home-news.catalog-home {
     padding-bottom: 20px;
-   
+
 }
 
 .block-home-news.catalog-home .text-catalog {
@@ -1803,7 +1804,7 @@
     float: left;
     padding-top: 30px;
     margin-left: 35px;
-    
+
 }
 
 .block-home-news.catalog-home .text-catalog p {
@@ -1826,13 +1827,13 @@
     margin: 15px 0 0 0;
     background-image:url("../images/footer-bg.png") ;
     height: auto !important;
-  
+
 }
 
 .block-img-action-text {
     width: 960px;
     margin: 0 auto;
-   
+
 }
 
 .img-action {
@@ -1866,7 +1867,7 @@
 
 .block-action-link {
     width: 393px;
-   
+
 }
 
 .block-action-link.left {
@@ -1878,7 +1879,7 @@
 }
 
 .action-link ul {
-    
+
 }
 
 .action-link ul li{
@@ -1906,7 +1907,7 @@
 .block-title-vip {
     margin: 0 auto;
     width: 960px;
-    
+
 }
 
 .title-vip {
@@ -1927,7 +1928,7 @@
     padding: 50px 0 40px 32px;
     color: #ffffff;
     font-family: 'GothamPro', sans-serif;
-    
+
 }
 
 .main-block-advantages .clock-v{
@@ -1952,7 +1953,7 @@
 }
 
 .main-block-advantages .list-advantages li, .main-block-advantages p{
-   
+
     font-family: 'GothamPro', sans-serif;
     font-size: 14px !important;
     line-height: 1.4;
@@ -1972,7 +1973,7 @@
     height: 2px;
     width: 5px;
     left: -17px;
-   
+
 }
 
 /*==================== ???? ??? ????????? ======================*/
@@ -2485,10 +2486,10 @@
       border: 1px solid #11afeb;
 }
 
-/.page-nav-count-link ul li.link-more a:hover, .page-nav-count-link ul li.link-more.active a{
+.page-nav-count-link ul li.link-more a:hover, .page-nav-count-link ul li.link-more.active a{
      border: 1px solid #11afeb;
  }
-*========================== ???????? ?????? ========================================*/
+/*========================== Быстрый просмотр ========================================*/
 
 
 #card-product-modal {
@@ -2928,12 +2929,12 @@
 }
 
 .hover-block {
-    
+
 }
 
 .comment-card-form {
     margin-bottom: 40px;
-   
+
 }
 
 
@@ -2959,7 +2960,7 @@
 
 .comment-form .tems {
     position: absolute;
-    
+
    right: 0;
 }
 
@@ -3010,7 +3011,7 @@
     left: 320px;
     top: 12px;
     z-index: 2000;
-    
+
 }
 
 #rating_5 {
@@ -3019,7 +3020,7 @@
     right: 15px;
     top: 45px;
     z-index: 2000;
-    
+
 }
 
 
@@ -3047,7 +3048,7 @@
 }
 
 
-/*================ / ???????? ?????  / =======================*/ 
+/*================ / ???????? ?????  / =======================*/
 
 .video {
     width: 560px;
@@ -3057,26 +3058,26 @@
 
 .content-video {
     padding: 40px 0;
-    
+
 }
 
 .block-video-pages {
     margin-bottom: 25px !important;
 }
- 
+
 .block-video-pages h5 {
     color: #000000;
     padding-top: 20px;
     margin-left: 590px;
-} 
- 
+}
+
 .block-video-pages .video  {
     float: left;
 }
 
 
- 
-/*================ / ????? ????? ?? ??????? / =======================*/ 
+
+/*================ / ????? ????? ?? ??????? / =======================*/
  
  .block-video-card {
     

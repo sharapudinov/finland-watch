@@ -4,14 +4,13 @@ $dbRes = CIBlockSection::GetList(
     array(),
     array("CODE" => $arResult['VARIABLES']["SECTION_CODE"]),
     false,
-    Array("NAME","PICTURE","DESCRIPTION"),
+    Array("NAME", "PICTURE", "DESCRIPTION"),
     false
 );
 $res = $dbRes->GetNext();
 $arResult['SECTION'] = $res;
-$arResult['SECTION']['RESIZED_PICTURE']=CFile::ResizeImageGet($res['PICTURE'],array("width"=>391, "height"=>242),BX_RESIZE_IMAGE_PROPORTIONAL);
+$arResult['SECTION']['RESIZED_PICTURE'] = CFile::ResizeImageGet($res['PICTURE'], array("width" => 391, "height" => 242), BX_RESIZE_IMAGE_PROPORTIONAL);
 
-//test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -26,8 +25,83 @@ $arResult['SECTION']['RESIZED_PICTURE']=CFile::ResizeImageGet($res['PICTURE'],ar
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
+GLOBAL ${$arParams['FILTER_NAME']};
+${$arParams['FILTER_NAME']}=array();
 $this->setFrameMode(true);?>
 <div class="content content-catalog">
+<?
+if ($arParams['USE_FILTER'] == 'Y') {
+$arFilter = array(
+    "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+    "ACTIVE" => "Y",
+    "GLOBAL_ACTIVE" => "Y",
+);
+if (0 < intval($arResult["VARIABLES"]["SECTION_ID"])) {
+    $arFilter["ID"] = $arResult["VARIABLES"]["SECTION_ID"];
+} elseif ('' != $arResult["VARIABLES"]["SECTION_CODE"]) {
+    $arFilter["=CODE"] = $arResult["VARIABLES"]["SECTION_CODE"];
+}
+
+$obCache = new CPHPCache();
+if ($obCache->InitCache(36000, serialize($arFilter), "/iblock/catalog")) {
+    $arCurSection = $obCache->GetVars();
+} elseif ($obCache->StartDataCache()) {
+    $arCurSection = array();
+    if (Loader::includeModule("iblock")) {
+        $dbRes = CIBlockSection::GetList(array(), $arFilter, false, array("ID"));
+
+        if (defined("BX_COMP_MANAGED_CACHE")) {
+            global $CACHE_MANAGER;
+            $CACHE_MANAGER->StartTagCache("/iblock/catalog");
+
+            if ($arCurSection = $dbRes->Fetch()) {
+                $CACHE_MANAGER->RegisterTag("iblock_id_" . $arParams["IBLOCK_ID"]);
+            }
+            $CACHE_MANAGER->EndTagCache();
+        } else {
+            if (!$arCurSection = $dbRes->Fetch())
+                $arCurSection = array();
+        }
+    }
+    $obCache->EndDataCache($arCurSection);
+}
+if (!isset($arCurSection)) {
+    $arCurSection = array();
+}
+if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMON_SETTINGS_BASKET_POPUP'] == 'Y') {
+    $basketAction = (isset($arParams['COMMON_ADD_TO_BASKET_ACTION']) ? $arParams['COMMON_ADD_TO_BASKET_ACTION'] : '');
+} else {
+    $basketAction = (isset($arParams['SECTION_ADD_TO_BASKET_ACTION']) ? $arParams['SECTION_ADD_TO_BASKET_ACTION'] : '');
+}
+?>
+<div class="sitebar-right">
+    <?
+    $APPLICATION->IncludeComponent(
+        "bitrix:catalog.smart.filter",
+        "finland-watch-visual-vertical",
+        array(
+            "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+            "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+            "SECTION_ID" => $arCurSection['ID'],
+            "FILTER_NAME" => $arParams["FILTER_NAME"],
+            "PRICE_CODE" => $arParams["PRICE_CODE"],
+            "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+            "CACHE_TIME" => $arParams["CACHE_TIME"],
+            "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+            "SAVE_IN_SESSION" => "Y",
+            "XML_EXPORT" => "Y",
+            "SECTION_TITLE" => "NAME",
+            "SECTION_DESCRIPTION" => "DESCRIPTION",
+            'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
+            "TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"]
+        ),
+        $component,
+        array('HIDE_ICONS' => 'Y')
+    );
+
+    ?>
+    <? } ?>
+</div>
 <div class="content-left">
 <section>
     <div class="catalog-slider-cleek-buy">
@@ -105,75 +179,44 @@ $this->setFrameMode(true);?>
 </section>
 <section>
     <div class="title-tab-link">
-        <h1><?= $arResult['SECTION']['NAME']?></h1>
+        <h1><?= $arResult['SECTION']['NAME'] ?></h1>
         <ul>
+            <? $sort = $_REQUEST['SORT']; ?>
             <li>Сортировать по:</li>
-            <li><a href="#">цене</a></li>
-            <li class="active"><a href="#">рейтингу</a></li>
+            <li <?= ($sort == 'price') ? 'class="active"' : '' ?>><a href="<?= requestUriAddGetParams(array("SORT"=>'price')) ?>">цене</a></li>
+            <li <?= ($sort == 'rating') ? 'class="active"' : '' ?>><a href="<?= requestUriAddGetParams(array("SORT"=>'rating')) ?>">рейтингу</a>
+            </li>
         </ul>
         <div class="clear"></div>
     </div>
 
 </section>
-<?
-if ($arParams['USE_FILTER'] == 'Y') {
-    $arFilter = array(
-        "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-        "ACTIVE" => "Y",
-        "GLOBAL_ACTIVE" => "Y",
-    );
-    if (0 < intval($arResult["VARIABLES"]["SECTION_ID"])) {
-        $arFilter["ID"] = $arResult["VARIABLES"]["SECTION_ID"];
-    } elseif ('' != $arResult["VARIABLES"]["SECTION_CODE"]) {
-        $arFilter["=CODE"] = $arResult["VARIABLES"]["SECTION_CODE"];
-    }
 
-    $obCache = new CPHPCache();
-    if ($obCache->InitCache(36000, serialize($arFilter), "/iblock/catalog")) {
-        $arCurSection = $obCache->GetVars();
-    } elseif ($obCache->StartDataCache()) {
-        $arCurSection = array();
-        if (Loader::includeModule("iblock")) {
-            $dbRes = CIBlockSection::GetList(array(), $arFilter, false, array("ID"));
-
-            if (defined("BX_COMP_MANAGED_CACHE")) {
-                global $CACHE_MANAGER;
-                $CACHE_MANAGER->StartTagCache("/iblock/catalog");
-
-                if ($arCurSection = $dbRes->Fetch()) {
-                    $CACHE_MANAGER->RegisterTag("iblock_id_" . $arParams["IBLOCK_ID"]);
-                }
-                $CACHE_MANAGER->EndTagCache();
-            } else {
-                if (!$arCurSection = $dbRes->Fetch())
-                    $arCurSection = array();
-            }
-        }
-        $obCache->EndDataCache($arCurSection);
-    }
-    if (!isset($arCurSection)) {
-        $arCurSection = array();
-    }
-    if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMON_SETTINGS_BASKET_POPUP'] == 'Y') {
-        $basketAction = (isset($arParams['COMMON_ADD_TO_BASKET_ACTION']) ? $arParams['COMMON_ADD_TO_BASKET_ACTION'] : '');
-    } else {
-        $basketAction = (isset($arParams['SECTION_ADD_TO_BASKET_ACTION']) ? $arParams['SECTION_ADD_TO_BASKET_ACTION'] : '');
-    }
-    $intSectionID = 0;
-}?>
 
 
 <?
+switch ($sort) {
+    case 'rating':
+        $sort = "PROPERTY_rating";
+        break;
+    case 'price':
+        $sort = 'CATALOG_PRICE_1';
+        break;
+}
+
+$page_element_count = !is_set($_REQUEST['PAGE_ELEMENT_COUNT']) ? 10 : $_REQUEST['PAGE_ELEMENT_COUNT'];
+$page_element_count = $page_element_count == 'all' ? '' : $page_element_count;
 GLOBAL $main_filter;
-if(is_set($_REQUEST['SPORT'])) $main_filter['PROPERTY_SPORT']=$_REQUEST['SPORT'];
-if($_REQUEST['PRESENTS']=='Y') $main_filter['!PROPERTY_PRESENTS']=false;
+if (is_set($_REQUEST['SPORT'])) $main_filter['PROPERTY_SPORT'] = $_REQUEST['SPORT'];
+if ($_REQUEST['PRESENTS'] == 'Y') $main_filter['!PROPERTY_PRESENTS'] = false;
+$intSectionID = 0;
 $intSectionID = $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
     "finland-watch",
     array(
         "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
         "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-        "ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
+        "ELEMENT_SORT_FIELD" => $sort ? $sort : $arParams["ELEMENT_SORT_FIELD"],
         "ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
         "ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
         "ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
@@ -188,7 +231,7 @@ $intSectionID = $APPLICATION->IncludeComponent(
         "SECTION_ID_VARIABLE" => $arParams["SECTION_ID_VARIABLE"],
         "PRODUCT_QUANTITY_VARIABLE" => $arParams["PRODUCT_QUANTITY_VARIABLE"],
         "PRODUCT_PROPS_VARIABLE" => $arParams["PRODUCT_PROPS_VARIABLE"],
-        "FILTER_NAME" => is_set($main_filter)?'main_filter':$arParams["FILTER_NAME"],
+        "FILTER_NAME" => is_set($main_filter) ? 'main_filter' : $arParams["FILTER_NAME"],
         "CACHE_TYPE" => $arParams["CACHE_TYPE"],
         "CACHE_TIME" => $arParams["CACHE_TIME"],
         "CACHE_FILTER" => $arParams["CACHE_FILTER"],
@@ -196,7 +239,7 @@ $intSectionID = $APPLICATION->IncludeComponent(
         "SET_TITLE" => $arParams["SET_TITLE"],
         "SET_STATUS_404" => $arParams["SET_STATUS_404"],
         "DISPLAY_COMPARE" => $arParams["USE_COMPARE"],
-        "PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
+        "PAGE_ELEMENT_COUNT" => $page_element_count,
         "LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
         "PRICE_CODE" => $arParams["PRICE_CODE"],
         "USE_PRICE_COUNT" => $arParams["USE_PRICE_COUNT"],
@@ -227,7 +270,7 @@ $intSectionID = $APPLICATION->IncludeComponent(
         "OFFERS_LIMIT" => $arParams["LIST_OFFERS_LIMIT"],
 
         "SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
-        "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"]!='all'?$arResult["VARIABLES"]["SECTION_CODE"]:'',
+        "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"] != 'all' ? $arResult["VARIABLES"]["SECTION_CODE"] : '',
         "SECTION_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["section"],
         "DETAIL_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["element"],
         'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
@@ -258,17 +301,21 @@ $intSectionID = $APPLICATION->IncludeComponent(
     ),
     $component
 );?>
-<section>
+<section class="floatleft">
     <div class="page-nav-count-link">
 
         <ul>
-
             <li class="po">показывать по</li>
-            <li class="link-more left"><a href="#">10</a></li>
-            <li class="link-more"><a href="#">30</a></li>
-            <li class="link-more"><a href="#">50</a></li>
-            <li class="link-more"><a href="#">100</a></li>
-            <li class="link-more right active"><a href="#">Все</a></li>
+            <li class="link-more left <?= $page_element_count == '10' ? 'active' : '' ?>"><a
+                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>10))?>">10</a></li>
+            <li class="link-more <?= $page_element_count == '30' ? 'active' : '' ?>"><a
+                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>30))?>">30</a></li>
+            <li class="link-more <?= $page_element_count == '50' ? 'active' : '' ?>"><a
+                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>50))?>">50</a></li>
+            <li class="link-more <?= $page_element_count == '100' ? 'active' : '' ?>"><a
+                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>100))?>">100</a></li>
+            <li class="link-more right <?= $page_element_count == '' ? 'active' : '' ?>"><a
+                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>'all'))?>">Все</a></li>
         </ul>
 
         <div class="clear"></div>
@@ -276,36 +323,11 @@ $intSectionID = $APPLICATION->IncludeComponent(
 
 </section>
 </div>
-<div class="sitebar-right">
-    <?if ($arParams['USE_FILTER'] == 'Y') {
-    $APPLICATION->IncludeComponent(
-        "bitrix:catalog.smart.filter",
-        "visual_" . ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL" ? "horizontal" : "vertical"),
-        array(
-            "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-            "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-            "SECTION_ID" => $arCurSection['ID'],
-            "FILTER_NAME" => $arParams["FILTER_NAME"],
-            "PRICE_CODE" => $arParams["PRICE_CODE"],
-            "CACHE_TYPE" => $arParams["CACHE_TYPE"],
-            "CACHE_TIME" => $arParams["CACHE_TIME"],
-            "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-            "SAVE_IN_SESSION" => "Y",
-            "XML_EXPORT" => "Y",
-            "SECTION_TITLE" => "NAME",
-            "SECTION_DESCRIPTION" => "DESCRIPTION",
-            'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
-            "TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"]
-        ),
-        $component,
-        array('HIDE_ICONS' => 'Y')
-    );?>
 
-</div>
 <div class="clear"></div>
 </div>
 <section class="background-color">
-    <? } ?>
+
     <div id="block-main-news-about" class="catalog">
         <div id="dynamic-block" class="catalog-home">
             <?$APPLICATION->IncludeComponent(
@@ -335,18 +357,25 @@ $intSectionID = $APPLICATION->IncludeComponent(
     </div>
     <div class="block-home-news catalog-home">
         <div class="text-catalog">
-            <p><?=$arResult['SECTION']['DESCRIPTION']?></p>
+            <p><?= $arResult['SECTION']['DESCRIPTION'] ?></p>
+
             <div class="link-social-news">
                 <ul class="link-social">
-                    <?$curPage='http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']?>
-                    <li class="vk"><a target="_blank" href="http://vk.com/share.php?url=<?=$curPage?>"></a></li>
-                    <li class="f"><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?=$curPage?>"></a></li>
-                    <li class="tw"><a target="_blank" href="https://twitter.com/intent/tweet?url=<?=$curPage?>"></a></li>
-                    <li class="od"><a target="_blank" href="http://odnoklassniki.ru/dk?st.cmd=addShare&st._surl=<?=$curPage?>"></a></li>
+                    <? $curPage = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] ?>
+                    <li class="vk"><a target="_blank" href="http://vk.com/share.php?url=<?= $curPage ?>"></a></li>
+                    <li class="f"><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?= $curPage ?>"></a>
+                    </li>
+                    <li class="tw"><a target="_blank" href="https://twitter.com/intent/tweet?url=<?= $curPage ?>"></a>
+                    </li>
+                    <li class="od"><a target="_blank"
+                                      href="http://odnoklassniki.ru/dk?st.cmd=addShare&st._surl=<?= $curPage ?>"></a>
+                    </li>
                 </ul>
             </div>
         </div>
-        <img src="<?=$arResult['SECTION']['RESIZED_PICTURE']['src']?>" title="<?= $arResult['SECTION']['NAME']?>" alt="" />
+        <img src="<?= $arResult['SECTION']['RESIZED_PICTURE']['src'] ?>" title="<?= $arResult['SECTION']['NAME'] ?>"
+             alt=""/>
+
         <div class="clear"></div>
     </div>
 </section>

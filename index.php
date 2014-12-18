@@ -337,29 +337,29 @@ GLOBAL $arFilter;
         </ul>
     </div>
     <?$APPLICATION->IncludeComponent(
-        "bitrix:catalog.smart.filter",
-        "finland-watch-visual",
-        array(
-            "IBLOCK_TYPE" => "catalog",
-            "IBLOCK_ID" => "2",
-            "SECTION_ID" => $_REQUEST["SECTION_ID"],
-            "FILTER_NAME" => "arrFilter",
-            "HIDE_NOT_AVAILABLE" => "N",
-            "CACHE_TYPE" => "A",
-            "CACHE_TIME" => "36000000",
-            "CACHE_GROUPS" => "Y",
-            "SAVE_IN_SESSION" => "Y",
-            "INSTANT_RELOAD" => "N",
-            "PRICE_CODE" => array(
-                0 => "BASE",
-            ),
-            "XML_EXPORT" => "N",
-            "SECTION_TITLE" => "-",
-            "SECTION_DESCRIPTION" => "-",
-            "TEMPLATE_THEME" => ""
-        ),
-        false
-    );?>
+	"bitrix:catalog.smart.filter", 
+	"finland-watch-visual", 
+	array(
+		"IBLOCK_TYPE" => "catalog",
+		"IBLOCK_ID" => "2",
+		"SECTION_ID" => "",
+		"FILTER_NAME" => "arrFilter",
+		"HIDE_NOT_AVAILABLE" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000000",
+		"CACHE_GROUPS" => "Y",
+		"SAVE_IN_SESSION" => "Y",
+		"INSTANT_RELOAD" => "N",
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
+		"XML_EXPORT" => "N",
+		"SECTION_TITLE" => "-",
+		"SECTION_DESCRIPTION" => "-",
+		"TEMPLATE_THEME" => ""
+	),
+	false
+);?>
 
 
 </section>

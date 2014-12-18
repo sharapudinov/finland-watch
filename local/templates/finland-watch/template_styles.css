@@ -15,7 +15,9 @@
 @import url('fancybox/jquery.fancybox.css?v=2.1.5');
 @import url('css/pages.css');
 
-
+.title-tab-link h1 {
+    width: 100%!important;
+}
 
 div.article {
     padding: 30px 0 20px 0;
@@ -32,7 +34,11 @@ div.article p, div.article ul {
     margin-bottom: 20px;
 }
 
-
+.filter-check {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+}
 
 div.city-list {
     -webkit-column-count: 4;

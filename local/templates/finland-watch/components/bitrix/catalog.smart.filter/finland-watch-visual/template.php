@@ -1,5 +1,5 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-//test_dump($arResult["ITEMS"][10]);
+//test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -52,7 +52,7 @@ $this->setFrameMode(true);
                         <div class="sec">
                             <select>
                                 <option value="">-----</option>
-                                <? foreach ($arResult['ITEMS'][10]["VALUES"] as $val => $ar): ?>
+                                <? foreach ($arResult['ITEMS'][49]["VALUES"] as $val => $ar): ?>
                                     <option
                                         value="<? echo $ar["HTML_VALUE"] ?>"
                                         name="<? echo $ar["CONTROL_NAME"] ?>"
