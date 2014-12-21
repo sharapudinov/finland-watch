@@ -180,7 +180,7 @@
 			0 => "NAME",
 			1 => "PHONE",
 		),
-		"EVENT_MESSAGE_ID" => ""
+		"EVENT_MESSAGE_ID" => "7"
 	),
 	false
 );?>

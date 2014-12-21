@@ -12,10 +12,22 @@ jQuery(function () {
     });
 
 });
-
+function init() {
+    var geolocation = ymaps.geolocation;
+    if (geolocation) {
+        $("a.modal-city").html(/*geolocation.country + ', ' + geolocation.region + ', ' + */geolocation.city);
+    } else {
+        console.log('Не удалось установить местоположение');
+    }
+}
 jQuery(document).ready(function () {
     var city_cookie = jQuery.cookie('city');
-    if (city_cookie) jQuery('a.modal-city').html(city_cookie);
+    if (!!city_cookie) {
+        jQuery('a.modal-city').html(city_cookie)
+    }
+    else {
+        ymaps.ready(init);
+    }
     jQuery('.modal-city').fancybox({
         afterShow: function () {
             jQuery('.city').on('click', function (e) {
@@ -24,7 +36,8 @@ jQuery(document).ready(function () {
                 var current_city = jQuery(this).html();
                 jQuery('a.modal-city').html(current_city);
                 jQuery.cookie('city', current_city, {
-                    expires: 365
+                    expires: 365,
+                    path: '/'
                 });
             })
         }

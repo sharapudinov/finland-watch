@@ -98,6 +98,7 @@ if ($normalCount > 0):
                     <td>
                       <span class="number-yes-no">
                          <div class="quantity-block" style="margin-top:5px;">
+
                              <div class="quantity">
                                  <?
                                  $ratio = isset($arItem["MEASURE_RATIO"]) ? $arItem["MEASURE_RATIO"] : 0;
@@ -108,7 +109,7 @@ if ($normalCount > 0):
                                  <input
                                      id="QUANTITY_INPUT_<?= $arItem["ID"] ?>"
                                      name="QUANTITY_INPUT_<?= $arItem["ID"] ?>"
-                                     class="count" name="count" type="text" value="1"
+                                     class="count" name="count" type="text"
                                      value="<?= $arItem["QUANTITY"] ?>"
                                      onchange="updateQuantity('QUANTITY_INPUT_<?= $arItem["ID"] ?>', '<?= $arItem["ID"] ?>', <?= $ratio ?>, <?= $useFloatQuantityJS ?>)"
                                      />

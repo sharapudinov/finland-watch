@@ -12,6 +12,7 @@ $curPage = $APPLICATION->GetCurPage(true);
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
         <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_DIR ?>/favicon.ico"/>
+        <script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
         <?//$APPLICATION->ShowHead();
         echo '<meta http-equiv="Content-Type" content="text/html; charset=' . LANG_CHARSET . '"' . (true ? ' /' : '') . '>' . "\n";
         $APPLICATION->ShowMeta("robots", false, true);
@@ -28,6 +29,7 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.cookie.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/script-lof.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/script.js");
+
 
         ?>
         <title><? $APPLICATION->ShowTitle() ?></title>
