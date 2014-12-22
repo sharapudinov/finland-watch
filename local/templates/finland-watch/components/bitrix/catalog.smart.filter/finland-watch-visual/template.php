@@ -1,4 +1,4 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 //test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
@@ -15,77 +15,79 @@ $this->setFrameMode(true);
 
 ?>
 <div class="calculator-main">
-<form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" action="/catalog/all/"
-      method="get">
-    <? foreach ($arResult["HIDDEN"] as $arItem): ?>
-        <input type="hidden" name="<? echo $arItem["CONTROL_NAME"] ?>" id="<? echo $arItem["CONTROL_ID"] ?>"
-               value="<? echo $arItem["HTML_VALUE"] ?>"/>
-    <? endforeach; ?>
-    <div class="calculator-block-top">
-        <div class="calculator-select">
-            <div class="text-sel">
-                <p>Я хочу:</p>
-                <p>Часы для:</p>
-            </div>
-            <div class="select-option">
-                <div class="box visible">
-                    <div class="section">
-                        <div class="sec">
-                            <select>
-                                <option value="">-----</option>
-                                <? foreach ($arResult['ITEMS'][8]["VALUES"] as $val => $ar): ?>
-                                    <option
-                                        value="<? echo $ar["HTML_VALUE"] ?>"
-                                        name="<? echo $ar["CONTROL_NAME"] ?>"
-                                        id="<? echo $ar["CONTROL_ID"] ?>"
-                                        <? echo $ar["CHECKED"] ? 'selected="selected"' : '' ?>
-                                        >
-                                        <? echo $ar["VALUE"]; ?>
-                                    </option>
-                                <? endforeach; ?>
-                            </select>
+    <form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" action="/catalog/all/"
+          method="get">
+        <? foreach ($arResult["HIDDEN"] as $arItem): ?>
+            <input type="hidden" name="<? echo $arItem["CONTROL_NAME"] ?>" id="<? echo $arItem["CONTROL_ID"] ?>"
+                   value="<? echo $arItem["HTML_VALUE"] ?>"/>
+        <? endforeach; ?>
+        <div class="calculator-block-top">
+            <div class="calculator-select">
+                <div class="text-sel">
+                    <p>Я хочу:</p>
+
+                    <p>Часы для:</p>
+                </div>
+                <div class="select-option">
+                    <div class="box visible">
+                        <div class="section">
+                            <div class="sec">
+                                <select>
+                                    <option value="">-----</option>
+                                    <? foreach ($arResult['ITEMS'][8]["VALUES"] as $val => $ar): ?>
+                                        <option
+                                            value="<? echo $ar["HTML_VALUE"] ?>"
+                                            name="<? echo $ar["CONTROL_NAME"] ?>"
+                                            id="<? echo $ar["CONTROL_ID"] ?>"
+                                            <? echo $ar["CHECKED"] ? 'selected="selected"' : '' ?>
+                                            >
+                                            <? echo $ar["VALUE"]; ?>
+                                        </option>
+                                    <? endforeach; ?>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="box visible">
-                    <div class="section">
-                        <div class="sec">
-                            <select>
-                                <option value="">-----</option>
-                                <? foreach ($arResult['ITEMS'][49]["VALUES"] as $val => $ar): ?>
-                                    <option
-                                        value="<? echo $ar["HTML_VALUE"] ?>"
-                                        name="<? echo $ar["CONTROL_NAME"] ?>"
-                                        id="<? echo $ar["CONTROL_ID"] ?>"
-                                        <? echo $ar["CHECKED"] ? 'selected="selected"' : '' ?>
-                                        >
-                                        <? echo $ar["VALUE"]; ?>
-                                    </option>
-                                <? endforeach; ?>
-                            </select>
+                    <div class="box visible">
+                        <div class="section">
+                            <div class="sec">
+                                <select>
+                                    <option value="">-----</option>
+                                    <? foreach ($arResult['ITEMS'][49]["VALUES"] as $val => $ar): ?>
+                                        <option
+                                            value="<? echo $ar["HTML_VALUE"] ?>"
+                                            name="<? echo $ar["CONTROL_NAME"] ?>"
+                                            id="<? echo $ar["CONTROL_ID"] ?>"
+                                            <? echo $ar["CHECKED"] ? 'selected="selected"' : '' ?>
+                                            >
+                                            <? echo $ar["VALUE"]; ?>
+                                        </option>
+                                    <? endforeach; ?>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <script type="text/javascript">
-                    jQuery.noConflict();
-                    jQuery(document).ready(function () {
-                        jQuery("select").on("change", function () {
-                            jQuery(this).attr('name', jQuery(this).find('option:selected').attr('name'));
+                    <script type="text/javascript">
+                        jQuery.noConflict();
+                        jQuery(document).ready(function () {
+                            jQuery("select").on("change", function () {
+                                jQuery(this).attr('name', jQuery(this).find('option:selected').attr('name'));
+                            });
                         });
-                    });
-                </script>
+                    </script>
+                </div>
             </div>
-        </div>
-        <?foreach ($arResult["ITEMS"] as $key => $arItem):
-            $key = md5($key);
-            if (isset($arItem["PRICE"])):
-                if (!$arItem["VALUES"]["MIN"]["VALUE"] || !$arItem["VALUES"]["MAX"]["VALUE"] || $arItem["VALUES"]["MIN"]["VALUE"] == $arItem["VALUES"]["MAX"]["VALUE"])
-                    continue;
-                ?>
-                <div class="slider-namber">
-                    <p class="price">По цене:</p>
-                    <div class="main">
-                        <div class="formCost">
+            <? foreach ($arResult["ITEMS"] as $key => $arItem):
+                $key = md5($key);
+                if (isset($arItem["PRICE"])):
+                    if (!$arItem["VALUES"]["MIN"]["VALUE"] || !$arItem["VALUES"]["MAX"]["VALUE"] || $arItem["VALUES"]["MIN"]["VALUE"] == $arItem["VALUES"]["MAX"]["VALUE"])
+                        continue;
+                    ?>
+                    <div class="slider-namber">
+                        <p class="price">По цене:</p>
+
+                        <div class="main">
+                            <div class="formCost">
                     		<span class="cost left"><label
                                     for="<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>"></label>
                             <input
@@ -106,106 +108,106 @@ $this->setFrameMode(true);
                                 value="<? echo $arItem["VALUES"]["MAX"]["HTML_VALUE"] ?>"
                                 size="5"
                                 />
+                            </div>
+                            <div class="sliderCont">
+                                <div id="slider"></div>
+                            </div>
                         </div>
-                        <div class="sliderCont">
-                            <div id="slider"></div>
-                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
-                <script>
-                    /* слайдер цен */
-                    jQuery.noConflict();
-                    jQuery(document).ready(function () {
-                        jQuery("#slider").slider({
-                            min:  <?=$arItem["VALUES"]["MIN"]["VALUE"]?>,
-                            max: <?=$arItem["VALUES"]["MAX"]["VALUE"]?>,
-                            values: [<?=$arItem["VALUES"]["MIN"]["VALUE"]?>, <?=$arItem["VALUES"]["MAX"]["VALUE"]?>],
-                            range: true,
-                            step: 1,
-                            stop: function (event, ui) {
-                                jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 0));
-                                jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 1));
+                    <script>
+                        /* слайдер цен */
+                        jQuery.noConflict();
+                        jQuery(document).ready(function () {
+                            jQuery("#slider").slider({
+                                min:  <?=$arItem["VALUES"]["MIN"]["VALUE"]?>,
+                                max: <?=$arItem["VALUES"]["MAX"]["VALUE"]?>,
+                                values: [<?=$arItem["VALUES"]["MIN"]["VALUE"]?>, <?=$arItem["VALUES"]["MAX"]["VALUE"]?>],
+                                range: true,
+                                step: 1,
+                                stop: function (event, ui) {
+                                    jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 0));
+                                    jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 1));
 
-                            },
-                            slide: function (event, ui) {
-                                jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 0));
-                                jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 1));
-                            }
+                                },
+                                slide: function (event, ui) {
+                                    jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 0));
+                                    jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(jQuery("#slider").slider("values", 1));
+                                }
+                            });
+
+                            jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").change(function () {
+
+                                var value1 = jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val();
+                                var value2 = jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val();
+
+                                if (parseInt(value1) > parseInt(value2)) {
+                                    value1 = value2;
+                                    jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(value1);
+                                }
+                                jQuery("#slider").slider("values", 0, value1);
+                            });
+
+
+                            jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").change(function () {
+
+                                var value1 = jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val();
+                                var value2 = jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val();
+
+                                if (value2 > <?=$arItem["VALUES"]["MAX"]["VALUE"]?>) {
+                                    value2 = <?=$arItem["VALUES"]["MAX"]["VALUE"]?>;
+                                    jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(<?=$arItem["VALUES"]["MAX"]["VALUE"]?>);
+                                }
+
+                                if (parseInt(value1) > parseInt(value2)) {
+                                    value2 = value1;
+                                    jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(value2);
+                                }
+                                jQuery("#slider").slider("values", 1, value2);
+                            });
+
                         });
 
-                        jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").change(function () {
-
-                            var value1 = jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val();
-                            var value2 = jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val();
-
-                            if (parseInt(value1) > parseInt(value2)) {
-                                value1 = value2;
-                                jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val(value1);
-                            }
-                            jQuery("#slider").slider("values", 0, value1);
-                        });
-
-
-                        jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").change(function () {
-
-                            var value1 = jQuery("input#<? echo $arItem["VALUES"]["MIN"]["CONTROL_ID"] ?>").val();
-                            var value2 = jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val();
-
-                            if (value2 > <?=$arItem["VALUES"]["MAX"]["VALUE"]?>) {
-                                value2 = <?=$arItem["VALUES"]["MAX"]["VALUE"]?>;
-                                jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(<?=$arItem["VALUES"]["MAX"]["VALUE"]?>);
-                            }
-
-                            if (parseInt(value1) > parseInt(value2)) {
-                                value2 = value1;
-                                jQuery("input#<? echo $arItem["VALUES"]["MAX"]["CONTROL_ID"] ?>").val(value2);
-                            }
-                            jQuery("#slider").slider("values", 1, value2);
-                        });
-
-                    });
-
-                </script>
-            <?endif;
-        endforeach;?>
-        <div class="clear"></div>
-        <div class="lines-main"></div>
-    </div>
-    <div class="clear"></div>
-    <div class="calculator-block-bottom">
-        <div class="text-sel">
-            <p>C функцией:</p>
-        </div>
-        <div class="check-calculator">
-            <ol>
-                <?
-                foreach ($arResult["ITEMS"] as $key => $arItem):
-                    if (!empty($arItem["VALUES"]) && $arItem["CODE"] == "FUNCTIONS"): ?>
-                        <? foreach ($arItem["VALUES"] as $val => $ar): ?>
-                            <li>
-                                <p class="check-calcul">
-                                    <input
-                                        type="checkbox"
-                                        value="<? echo $ar["HTML_VALUE"] ?>"
-                                        name="<? echo $ar["CONTROL_NAME"] ?>"
-                                        id="<? echo $ar["CONTROL_ID"] ?>"
-                                        <? echo $ar["CHECKED"] ? 'checked="checked"' : '' ?>
-                                        />
-                                    <label for="<? echo $ar["CONTROL_ID"] ?>"></label><? echo $ar["VALUE"]; ?></p>
-                            </li>
-                        <? endforeach; ?>
-                    <?endif;
-                endforeach;?>
-            </ol>
+                    </script>
+                <?endif;
+            endforeach; ?>
             <div class="clear"></div>
-            <div class="arrow-button">
-                <p>
-                    <input type="submit" id="set_filter"
-                           name="set_filter" value="<?= GetMessage("CT_BCSF_SET_FILTER") ?>"/>
-                </p>
+            <div class="lines-main"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="calculator-block-bottom">
+            <div class="text-sel">
+                <p>C функцией:</p>
+            </div>
+            <div class="check-calculator">
+                <ol>
+                    <?
+                    foreach ($arResult["ITEMS"] as $key => $arItem):
+                        if (!empty($arItem["VALUES"]) && $arItem["CODE"] == "FUNCTIONS"): ?>
+                            <? foreach ($arItem["VALUES"] as $val => $ar): ?>
+                                <li>
+                                    <p class="check-calcul">
+                                        <input
+                                            type="checkbox"
+                                            value="<? echo $ar["HTML_VALUE"] ?>"
+                                            name="<? echo $ar["CONTROL_NAME"] ?>"
+                                            id="<? echo $ar["CONTROL_ID"] ?>"
+                                            <? echo $ar["CHECKED"] ? 'checked="checked"' : '' ?>
+                                            />
+                                        <label for="<? echo $ar["CONTROL_ID"] ?>"></label><? echo $ar["VALUE"]; ?></p>
+                                </li>
+                            <? endforeach; ?>
+                        <?endif;
+                    endforeach; ?>
+                </ol>
+                <div class="clear"></div>
+                <div class="arrow-button">
+                    <p>
+                        <input type="submit" id="set_filter"
+                               name="set_filter" value="<?= GetMessage("CT_BCSF_SET_FILTER") ?>"/>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
 </div>
