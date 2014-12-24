@@ -43,7 +43,7 @@ $this->setFrameMode(true);
 		"SECTION_DESCRIPTION" => "-",
 		"TEMPLATE_THEME" => ""
 	),
-	false
+	$component
 );?>
 
 
@@ -96,7 +96,7 @@ $this->setFrameMode(true);
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "N",
+		"CACHE_GROUPS" => "Y",
 		"DISPLAY_COMPARE" => "N",
 		"CACHE_FILTER" => "Y",
 		"PRICE_CODE" => array(
@@ -118,7 +118,7 @@ $this->setFrameMode(true);
 		),
 		"OFFERS_CART_PROPERTIES" => ""
 	),
-	false
+	$component
 );?>
         </div>
     </section>
@@ -167,7 +167,7 @@ $this->setFrameMode(true);
                     "SECTION_ID_VARIABLE" => "SECTION_ID",
                     "CACHE_TYPE" => "A",
                     "CACHE_TIME" => "36000000",
-                    "CACHE_GROUPS" => "N",
+                    "CACHE_GROUPS" => "Y",
                     "DISPLAY_COMPARE" => "N",
                     "CACHE_FILTER" => "Y",
                     "PRICE_CODE" => array(
@@ -188,7 +188,7 @@ $this->setFrameMode(true);
                     "PRODUCT_PROPERTIES" => array(),
                     "OFFERS_CART_PROPERTIES" => array()
                 ),
-                false
+                $component
             );?>
         </div>
     </section>
@@ -240,7 +240,7 @@ $this->setFrameMode(true);
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "N",
+		"CACHE_GROUPS" => "Y",
 		"DISPLAY_COMPARE" => "N",
 		"CACHE_FILTER" => "Y",
 		"PRICE_CODE" => array(
@@ -262,7 +262,7 @@ $this->setFrameMode(true);
 		),
 		"OFFERS_CART_PROPERTIES" => ""
 	),
-	false
+	$component
 );?>
         </div>
     </section>

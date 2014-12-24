@@ -162,7 +162,7 @@ if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMO
                 "PRODUCT_PROPERTIES" => array(),
                 "OFFERS_CART_PROPERTIES" => array(),
             ),
-            false
+            $component
         );
         ?>
     </div>

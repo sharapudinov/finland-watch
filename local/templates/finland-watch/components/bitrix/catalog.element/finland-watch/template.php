@@ -99,7 +99,7 @@ $this->setFrameMode(true);
                 "CACHE_TIME" => "3600",
                 "DISPLAY_AS_RATING" => "rating"
             ),
-            false
+            $component
         );?>
         <h1><a href="#"><?= $arResult['NAME'] ?></a></h1>
         <? if ($arResult["CAN_BUY"]): ?>

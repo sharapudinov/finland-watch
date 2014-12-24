@@ -1,5 +1,5 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-//test_dump($arResult);
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+//test_dump($arParams);
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -11,7 +11,7 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
-$this->setFrameMode(true);?>
+$this->setFrameMode(true); ?>
 <div class="jcarousel-wrapper wrap">
     <div class="jcarousel slider-two">
         <ul class="">
@@ -30,30 +30,32 @@ $this->setFrameMode(true);?>
                         <p class="name-goods">
                             <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>"><?= $arItem["NAME"] ?></a>
                         </p>
-                        <?$APPLICATION->IncludeComponent(
-	"bitrix:iblock.vote", 
-	"finland-watch-stars", 
-	array(
-		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-		"ELEMENT_ID" => $arItem["ID"],
-		"ELEMENT_CODE" => "",
-		"MAX_VOTE" => "5",
-		"VOTE_NAMES" => array(
-			0 => "0",
-			1 => "1",
-			2 => "2",
-			3 => "3",
-			4 => "4",
-			5 => "",
-		),
-		"SET_STATUS_404" => "N",
-		"CACHE_TYPE" => "N",
-		"CACHE_TIME" => "36000000",
-		"DISPLAY_AS_RATING" => "rating"
-	),
-	false
-);?>
+
+                        <?
+                        $APPLICATION->IncludeComponent(
+                            "bitrix:iblock.vote",
+                            "finland-watch-stars",
+                            array(
+                                "IBLOCK_TYPE" => "catalog",
+                                "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                                "ELEMENT_ID" => $arItem["ID"],
+                                "ELEMENT_CODE" => "",
+                                "MAX_VOTE" => "5",
+                                "VOTE_NAMES" => array(
+                                    0 => "0",
+                                    1 => "1",
+                                    2 => "2",
+                                    3 => "3",
+                                    4 => "4",
+                                    5 => "",
+                                ),
+                                "SET_STATUS_404" => "N",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "36000000",
+                                "DISPLAY_AS_RATING" => "rating"
+                            ),
+                            $component
+                        ); ?>
                         <div class="lines"></div>
                         <? if ($arItem["CAN_BUY"]): ?>
                             <p class="summ-goods">
@@ -74,7 +76,7 @@ $this->setFrameMode(true);?>
                                     (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF_PERCENT'] ?>%)
                                 </span>
                             </p>
-                            <span id="<?=$arItem['ID'].'_'.rand()?>" class="basket-home"></span>
+                            <span id="<?= $arItem['ID'] . '_' . rand() ?>" class="basket-home"></span>
                         <? endif ?>
                     </div>
                 </li>

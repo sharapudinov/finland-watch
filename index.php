@@ -40,7 +40,7 @@ GLOBAL $arFilter;
                 "SECTION_ID_VARIABLE" => "SECTION_ID",
                 "CACHE_TYPE" => "A",
                 "CACHE_TIME" => "36000000",
-                "CACHE_GROUPS" => "N",
+                "CACHE_GROUPS" => "Y",
                 "DISPLAY_COMPARE" => "N",
                 "CACHE_FILTER" => "Y",
                 "PRICE_CODE" => array(
@@ -78,7 +78,7 @@ GLOBAL $arFilter;
                 "IBLOCK_BINDING" => "element",
                 "CACHE_TYPE" => "A",
                 "CACHE_TIME" => "36000",
-                "CACHE_GROUPS" => "N"
+                "CACHE_GROUPS" => "Y"
             ),
             false
         );?>
@@ -228,11 +228,11 @@ GLOBAL $arFilter;
 		"SECTION_URL" => "",
 		"DETAIL_URL" => "",
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
-		"CACHE_TYPE" => "N",
+		"CACHE_TYPE" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_GROUPS" => "Y",
 		"DISPLAY_COMPARE" => "N",
-		"CACHE_FILTER" => "N",
+		"CACHE_FILTER" => "Y",
 		"PRICE_CODE" => array(
 			0 => "BASE",
 		),
@@ -420,7 +420,7 @@ GLOBAL $arFilter;
                             "PARENT_SECTION_CODE" => "",
                             "INCLUDE_SUBSECTIONS" => "N",
                             "CACHE_TYPE" => "A",
-                            "CACHE_TIME" => "3600",
+                            "CACHE_TIME" => "36000000",
                             "CACHE_FILTER" => "Y",
                             "CACHE_GROUPS" => "Y",
                             "DISPLAY_TOP_PAGER" => "N",

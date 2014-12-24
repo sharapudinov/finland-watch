@@ -54,4 +54,6 @@ $arResult["~AJAX_PARAMS"] = array(
 $arResult["AJAX_PARAMS"] = CUtil::PhpToJSObject($arResult["~AJAX_PARAMS"]);
 //09*
 //Продолжение экскурсии в файле template.php
+
+/*file_put_contents('arres_'.$arParams['ELEMENT_ID'].'_'.rand().'.txt',print_r($arResult,true));*/
 ?>
