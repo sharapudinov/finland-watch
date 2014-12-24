@@ -98,7 +98,7 @@ $APPLICATION->SetTitle("Сервис");
     </div>
     <script>
         jQuery.noConflict();
-        jQuery('.select-style').on("change", function () {
+        jQuery('.select-sport').on("change", function () {
             jQuery("#service_table").load("service_table_content.php?SECTION_CODE=" + jQuery(this).val());
         });
     </script>
