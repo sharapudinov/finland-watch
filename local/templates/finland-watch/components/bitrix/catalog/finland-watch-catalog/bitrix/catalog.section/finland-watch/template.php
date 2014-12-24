@@ -81,7 +81,7 @@ $cell = 0;
                         <p class="profit">
                             Выгода
                         <span class="red">
-                            <?= $arPrice["PRINT_DISCOUNT_VALUE"] ?>
+                            <?= $arPrice["PRINT_DISCOUNT_DIFF"] ?>
                             <span class="rouble">a</span> (15%)
                         </span>
                         </p>

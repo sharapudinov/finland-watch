@@ -38,7 +38,7 @@ if(isset($arParams["AJAX_CALL"]) && $arParams["AJAX_CALL"]=="Y")
 }
 
 CJSCore::Init(array("ajax"));
-$strObName = "bx_vo_".$arParams["IBLOCK_ID"]."_".$arParams["ELEMENT_ID"].'_'.$this->randString();
+$strObName = "bx_vo_".$arParams["IBLOCK_ID"]."_".$arParams["ELEMENT_ID"];
 $arJSParams = array(
 	"progressId" => $strObName."_progr",
 	"ratingId" => $strObName."_rating",
@@ -56,13 +56,13 @@ $templateData = array(
 		<td>
 			<div class="bx_item_rating">
 				<div class="bx_stars_container">
-					<div id="<?=$arJSParams["starsId"]?>" class="bx_stars_bg"></div>
-					<div id="<?=$arJSParams["progressId"]?>" class="bx_stars_progres"></div>
+					<div  class="bx_stars_bg <?=$arJSParams["starsId"]?>"></div>
+					<div  class="bx_stars_progres <?=$arJSParams["progressId"]?>"></div>
 				</div>
 			</div>
 		</td>
 		<td>
-			<span id="<?=$arJSParams["ratingId"]?>" class="bx_stars_rating_votes">(0)</span>
+			<span class="bx_stars_rating_votes <?=$arJSParams["ratingId"]?>">(0)</span>
 		</td>
 	</tr>
 </table>

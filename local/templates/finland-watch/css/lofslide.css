@@ -75,14 +75,20 @@ ul.lof-main-wapper li{
 	top:0;
 	left:0;
 	float:inherit;
-	
 }
-ul.lof-main-wapper li img{
-	padding:0px;	
-	width:280px;
-    height:280px;
-	margin: 0 auto;
-	padding: 20px 0 0 50px;
+ul.lof-main-wapper li div img{
+/*	width:280px;
+    height:280px;*/
+	margin: auto;
+
+
+}
+
+ul.lof-main-wapper li div {
+	width: 375px;
+
+	padding-top: 20px;
+	text-align: center;
 }
 
 
@@ -137,8 +143,7 @@ ul.lof-navigator li div{
 	background:#fff;
 	color:#FFF;
 	height:75px;
-	padding-top: 4px;
-	position:relative;
+  	position:relative;
 	text-align: center;
 	
 }
@@ -147,15 +152,15 @@ ul.lof-navigator li div{
 	background:#969696;
 	color:#FFF;
 }
-.lof-navigator li img{
-	width:47px;
+/*.lof-navigator li img{*/
+	/*width:65px;*/
+	/*height:65px;*/
+	/**/
+/*}*/
+/*.lof-navigator li.active img{
+	width:65px;
 	height:65px;
-	
-}
-.lof-navigator li.active img{
-	width:47px;
-	height:65px;
-}
+}*/
 
 .lof-snleft  .lof-main-outer{
 		float:right;
@@ -176,7 +181,7 @@ ul.lof-navigator li div{
 	}
 	
 	ul.lof-main-wapper li {
-		position:relative;	
+		position:relative;
 	}
 	.lof-snleft .lof-navigator .active{
 		background:#969696;

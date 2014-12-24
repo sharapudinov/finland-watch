@@ -1,4 +1,4 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 //test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
@@ -15,120 +15,126 @@ $this->setFrameMode(true);
 ?>
 
 <div class="block-slider-img-card-item-price card-product">
-<div class="slider-img">
+    <div class="slider-img">
 
-    <!-- Start photosgallery-vertical -->
-    <div id="lofslidecontent45" class="lof-slidecontent lof-snleft">
-        <div class="preload">
-            <div></div>
-        </div>
-        <!-- MAIN CONTENT -->
-        <div class="lof-main-outer">
-            <ul class="lof-main-wapper">
-                <li>
-                    <span class="discounts"></span>
-                    <span class="gifts"></span>
-                    <img src="<?= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?>"
-                         width="<?= $arResult['RESIZED_MAIN_REVIEW']['width'] ?>"
-                         height="<?= $arResult['RESIZED_MAIN_PREVIEW']['heigth'] ?>" alt="<?= $arResult["NAME"] ?>"
-                         title="<?= $arResult["NAME"] ?>"/>
-                </li>
-                <? if (count($arResult["RESIZED_MAIN_PHOTOS"]) > 0): ?>
-                    <? foreach ($arResult["RESIZED_MAIN_PHOTOS"] as $PHOTO): ?>
-                        <li>
-                            <img src="<?= $PHOTO['src'] ?>" width="<?= $PHOTO['width'] ?>"
-                                 height="<?= $PHOTO['height'] ?>" alt="<?= $arResult["NAME"] ?>"
+        <!-- Start photosgallery-vertical -->
+        <div id="lofslidecontent45" class="lof-slidecontent lof-snleft">
+            <div class="preload">
+                <div></div>
+            </div>
+            <!-- MAIN CONTENT -->
+            <div class="lof-main-outer">
+                <ul class="lof-main-wapper">
+                    <li>
+                        <div class="img-wraper">
+                            <span class="discounts"></span>
+                            <span class="gifts"></span>
+                            <img src="<?= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?>"
+                                 width="<?= $arResult['RESIZED_MAIN_REVIEW']['width'] ?>"
+                                 height="<?= $arResult['RESIZED_MAIN_PREVIEW']['height'] ?>"
+                                 alt="<?= $arResult["NAME"] ?>"
                                  title="<?= $arResult["NAME"] ?>"/>
-                        </li>
-                    <? endforeach ?>
-                <? endif ?>
-            </ul>
+                        </div>
+                    </li>
+                    <? if (count($arResult["RESIZED_MAIN_PHOTOS"]) > 0): ?>
+                        <? foreach ($arResult["RESIZED_MAIN_PHOTOS"] as $PHOTO): ?>
+                            <li>
+                                <div class="img-wraper">
+                                    <img src="<?= $PHOTO['src'] ?>" width="<?= $PHOTO['width'] ?>"
+                                         height="<?= $PHOTO['height'] ?>" alt="<?= $arResult["NAME"] ?>"
+                                         title="<?= $arResult["NAME"] ?>"/>
+                                </div>
+                            </li>
+                        <? endforeach ?>
+                    <? endif ?>
+                </ul>
+            </div>
+            <!-- END MAIN CONTENT -->
+            <!-- NAVIGATOR -->
+
+            <div class="lof-navigator-outer">
+                <ul class="lof-navigator">
+                    <li>
+                        <div>
+                            <img src="<?= $arResult['RESIZED_PREVIEW']['src'] ?>"
+                                 width="<?= $arResult['RESIZED_PREVIEW']['width'] ?>"
+                                 height="<?= $arResult['RESIZED_PREVIEW']['height'] ?>"
+                                 alt="<?= $arResult['NAME'] ?>" title="<?= $arResult['NAME'] ?>"/>
+                        </div>
+                    </li>
+                    <? if (count($arResult["RESIZED_PHOTOS"]) > 0): ?>
+                        <? foreach ($arResult["RESIZED_PHOTOS"] as $PHOTO): ?>
+                            <li>
+                                <div>
+                                    <img src="<?= $PHOTO['src'] ?>" width="<?= $PHOTO['width'] ?>"
+                                         height="<?= $PHOTO['height'] ?>" alt="<?= $arResult["NAME"] ?>"
+                                         title="<?= $arResult["NAME"] ?>"/>
+                                </div>
+                            </li>
+                        <? endforeach ?>
+                    <? endif ?>
+
+                </ul>
+            </div>
+
         </div>
-        <!-- END MAIN CONTENT -->
-        <!-- NAVIGATOR -->
-
-        <div class="lof-navigator-outer">
-            <ul class="lof-navigator">
-                <li>
-                    <div>
-                        <img src="<?= $arResult['RESIZED_PREVIEW']['src'] ?>"
-                             width="<?= $arResult['RESIZED_PREVIEW']['width'] ?> height="<?= $arResult['RESIZED_PREVIEW']['heigth'] ?>
-                             alt="<?= $arResult['NAME'] ?>" title="<?= $arResult['NAME'] ?>"/>
-                    </div>
-                </li>
-                <? if (count($arResult["RESIZED_PHOTOS"]) > 0): ?>
-                    <? foreach ($arResult["RESIZED_PHOTOS"] as $PHOTO): ?>
-                        <li>
-                            <div>
-                                <img src="<?= $PHOTO['src'] ?>" width="<?= $PHOTO['width'] ?>"
-                                     height="<?= $PHOTO['height'] ?>" alt="<?= $arResult["NAME"] ?>"
-                                     title="<?= $arResult["NAME"] ?>"/>
-                            </div>
-                        </li>
-                    <? endforeach ?>
-                <? endif ?>
-
-            </ul>
-        </div>
-
     </div>
-</div>
-<div class="card-item-price">
+    <div class="card-item-price">
 
 
-    <div class="item-price">
-        <?$APPLICATION->IncludeComponent(
-            "bitrix:iblock.vote",
-            "finland-watch-stars",
-            array(
-                "IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
-                "IBLOCK_ID" => $arParams['IBLOCK_ID'],
-                "ELEMENT_ID" => $arResult["ID"],
-                "ELEMENT_CODE" => "",
-                "MAX_VOTE" => "5",
-                "VOTE_NAMES" => array(
-                    0 => "0",
-                    1 => "1",
-                    2 => "2",
-                    3 => "3",
-                    4 => "4",
-                    5 => "",
+        <div class="item-price">
+            <? $APPLICATION->IncludeComponent(
+                "bitrix:iblock.vote",
+                "finland-watch-stars",
+                array(
+                    "IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
+                    "IBLOCK_ID" => $arParams['IBLOCK_ID'],
+                    "ELEMENT_ID" => $arResult["ID"],
+                    "ELEMENT_CODE" => "",
+                    "MAX_VOTE" => "5",
+                    "VOTE_NAMES" => array(
+                        0 => "0",
+                        1 => "1",
+                        2 => "2",
+                        3 => "3",
+                        4 => "4",
+                        5 => "",
+                    ),
+                    "SET_STATUS_404" => "N",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "3600",
+                    "DISPLAY_AS_RATING" => "rating"
                 ),
-                "SET_STATUS_404" => "N",
-                "CACHE_TYPE" => "A",
-                "CACHE_TIME" => "3600",
-                "DISPLAY_AS_RATING" => "rating"
-            ),
-            $component
-        );?>
-        <h1><a href="#"><?= $arResult['NAME'] ?></a></h1>
-        <? if ($arResult["CAN_BUY"]): ?>
-        <ul class="cheaply-gift">
+                $component
+            ); ?>
+            <h1><a href="#"><?= $arResult['NAME'] ?></a></h1>
+            <? if ($arResult["CAN_BUY"]): ?>
+            <ul class="cheaply-gift">
 
-            <li class="icon-v">В наличии</li>
-            <li class="icon-s"><a href="#inline-two" class="one-cleek">Нашли дешевле?</a></li>
-            <li class="icon-p"><a href="#buy-two-cleek" class="two-cleek">Хочу в подарок</a></li>
-        </ul>
-        <div class="clear"></div>
-        <div class="lines-card"></div>
-        <? if ($arResult["CAN_BUY"]): ?>
-            <form action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
-                <div class="card-price">
-                    <p>Цена:
+                <li class="icon-v">В наличии</li>
+                <li class="icon-s"><a href="#inline-two" class="one-cleek">Нашли дешевле?</a></li>
+                <li class="icon-p"><a href="#buy-two-cleek" class="two-cleek">Хочу в подарок</a></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="lines-card"></div>
+            <? if ($arResult["CAN_BUY"]): ?>
+                <form action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
+                    <div class="card-price">
+                        <p>Цена:
                         <span class="summ-card">
                             <?= $arResult['PRICES']['BASE']["DISCOUNT_VALUE"] ?>
                             <span class="rouble">a</span>
                         </span>
-                        <input type="hidden" name="<? echo $arParams["ACTION_VARIABLE"] ?>" value="BUY">
-                        <input type="hidden" name="<? echo $arParams["PRODUCT_ID_VARIABLE"] ?>"
-                               value="<? echo $arResult["ID"] ?>">
-                        <input class="buy-card" type="submit" name="<? echo $arParams["ACTION_VARIABLE"] . "BUY" ?>"
-                               value="<? echo GetMessage("CATALOG_BUY") ?>">
+                            <input type="hidden" name="<? echo $arParams["ACTION_VARIABLE"] ?>" value="BUY">
+                            <input type="hidden" name="<? echo $arParams["PRODUCT_ID_VARIABLE"] ?>"
+                                   value="<? echo $arResult["ID"] ?>">
+                            <input class="buy-card" type="submit" name="<? echo $arParams["ACTION_VARIABLE"] . "BUY" ?>"
+                                   value="<? echo GetMessage("CATALOG_BUY") ?>">
 
-                </div>
-            </form>
-            <div class="no-price-link">
-                <p>Старая цена: <br/>
+                    </div>
+                </form>
+                <div class="no-price-link">
+                    <p>Старая цена: <br/>
                         <span class="summ-card red">
                             <?= $arResult['PRICES']['BASE']["PRINT_VALUE"] ?>
                             <span class="rouble">a</span>
@@ -138,111 +144,112 @@ $this->setFrameMode(true);
                                 <?= $arResult['PRICES']['BASE']["PRINT_DISCOUNT_DIFF"] ?>
                                 <span class="rouble">a</span>
                                 <span class="percent">
-                                    (<?= $arResult['PRICES']['BASE']["DISCOUNT_DIFF_PERCENT"] ?>)
+                                    (<?= $arResult['PRICES']['BASE']["DISCOUNT_DIFF_PERCENT"] ?>%)
                                 </span>
                             </span>
                         </span>
-                    <a href="#buy-one-cleek" class="buy-card one-cleek">купить в 1 клик</a>
+                        <a href="#buy-one-cleek" class="buy-card one-cleek">купить в 1 клик</a>
 
-                </p>
+                    </p>
+                </div>
+            <? endif ?>
+        </div>
+        <div class="block-discount-gift-timer">
+            <div class="slider-discount">
+                <div class="jcarousel-wrapper wrap">
+                    <p class="radio"><input id="pass-card" type="radio"
+                                            name="radio-card" <?= empty($arResult['PRESENTS']) ? 'disabled' : '' ?>
+                                            value=""/>
+                        <label for="pass-card"></label></p>
+
+                    <div class="corner white"></div>
+                    <div class="jcarousel slider-two">
+                        <ul>
+                            <? if (!empty($arResult['PRESENTS'])):
+                                foreach ($arResult['PRESENTS'] as $key => $arItem) {
+                                    ?>
+                                    <li id='<?= "present_" . $key ?>'>
+                                        <a id="<?= 'present_' . $arItem['ID'] ?>" href="#"><img
+                                                src="<?= $arItem['RESIZE']['src'] ?>"/></a>
+
+                                        <p class="red">+ подарок</p>
+                                    </li>
+                                <?
+                                }
+                            endif;
+                            ?>
+                        </ul>
+
+                        <div class="clear"></div>
+                    </div>
+                    <a href="#" class="jcarousel-control-prev"></a>
+                    <a href="#" class="jcarousel-control-next"></a>
+
+                    <p class="jcarousel-pagination" style="display: none"></p>
+                </div>
             </div>
-        <? endif ?>
+            <div class="slider-discount">
+                <div class="jcarousel-wrapper wrap">
+                    <p class="radio"><input id="pass-card2" type="radio" name="radio-card" value=""/>
+                        <label for="pass-card2"></label></p>
+
+                    <div class="corner blue"></div>
+                    <div class="jcarousel slider-two slider-blue">
+                        <ul class="">
+                            <li>
+                                <p class="nums">5099</p>
+
+                                <p class="text-star">рублей</p>
+
+                                <div class="gradient">
+                                    <p>скидка на второй товар</p>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <a href="#" class="jcarousel-control-prev"></a>
+                    <a href="#" class="jcarousel-control-next"></a>
+                </div>
+            </div>
+            <div class="block-timer">
+                <p>До конца акции:</p>
+
+                <div class="timer" style="border: 1px solid #cccccc;">
+                </div>
+            </div>
+            <? endif ?>
+            <div class="clear"></div>
+        </div>
+        </form>
+        <div class="lines-card"></div>
     </div>
-    <div class="block-discount-gift-timer">
-        <div class="slider-discount">
-            <div class="jcarousel-wrapper wrap">
-                <p class="radio"><input id="pass-card" type="radio"
-                                        name="radio-card" <?= empty($arResult['PRESENTS']) ? 'disabled' : '' ?>
-                                        value=""/>
-                    <label for="pass-card"></label></p>
+    <div class="clear"></div>
 
-                <div class="corner white"></div>
-                <div class="jcarousel slider-two">
-                    <ul>
-                        <? if (!empty($arResult['PRESENTS'])):
-                            foreach ($arResult['PRESENTS'] as $key => $arItem) {
-                                ?>
-                                <li id='<?= "present_" . $key ?>'>
-                                    <a id="<?= 'present_' . $arItem['ID'] ?>" href="#"><img
-                                            src="<?= $arItem['RESIZE']['src'] ?>"/></a>
+    <div class="block-social-vantage-link">
+        <ul class="social-card">
+            <li class="vk"><a href="#"></a></li>
+            <li class="f"><a href="#"></a></li>
+            <li class="tw"><a href="#"></a></li>
+            <li class="od"><a href="#"></a></li>
+            <li class="live"><a href="#"></a></li>
+            <li class="goo"><a href="#"></a></li>
+            <li class="mail"><a href="#"></a></li>
+            <li class="ya"><a href="#"></a></li>
+        </ul>
+        <? if ($arResult["CAN_BUY"]): ?>
 
-                                    <p class="red">+ подарок</p>
-                                </li>
-                            <?
-                            }
-                        endif;
-                        ?>
-                    </ul>
-
-                    <div class="clear"></div>
-                </div>
-                <a href="#" class="jcarousel-control-prev"></a>
-                <a href="#" class="jcarousel-control-next"></a>
-
-                <p class="jcarousel-pagination" style="display: none"></p>
-            </div>
-        </div>
-        <div class="slider-discount">
-            <div class="jcarousel-wrapper wrap">
-                <p class="radio"><input id="pass-card2" type="radio" name="radio-card" value=""/>
-                    <label for="pass-card2"></label></p>
-
-                <div class="corner blue"></div>
-                <div class="jcarousel slider-two slider-blue">
-                    <ul class="">
-                        <li>
-                            <p class="nums">5099</p>
-
-                            <p class="text-star">рублей</p>
-
-                            <div class="gradient">
-                                <p>скидка на второй товар</p>
-
-                            </div>
-                        </li>
-
-                    </ul>
-                    <div class="clear"></div>
-                </div>
-                <a href="#" class="jcarousel-control-prev"></a>
-                <a href="#" class="jcarousel-control-next"></a>
-            </div>
-        </div>
-        <div class="block-timer">
-            <p>До конца акции:</p>
-
-            <div class="timer" style="border: 1px solid #cccccc;">
-            </div>
-        </div>
+            <ul class="safeguards-card">
+                <li class="icon-b"><span class="blue">БЕСПЛАТНАЯ </span><br/>доставка</li>
+                <li class="icon-g"><span class="blue">ГАРАНТИЯ КАЧЕСТВА</span><br/> Обмен и возврат в течении 15 дней
+                </li>
+                <li class="icon-k"><a href="#">КУПИТЬ В КРЕДИТ</a><br/> на выгодных условиях</li>
+            </ul>
         <? endif ?>
         <div class="clear"></div>
     </div>
-    </form>
-    <div class="lines-card"></div>
-</div>
-<div class="clear"></div>
-
-<div class="block-social-vantage-link">
-    <ul class="social-card">
-        <li class="vk"><a href="#"></a></li>
-        <li class="f"><a href="#"></a></li>
-        <li class="tw"><a href="#"></a></li>
-        <li class="od"><a href="#"></a></li>
-        <li class="live"><a href="#"></a></li>
-        <li class="goo"><a href="#"></a></li>
-        <li class="mail"><a href="#"></a></li>
-        <li class="ya"><a href="#"></a></li>
-    </ul>
-    <? if ($arResult["CAN_BUY"]): ?>
-
-        <ul class="safeguards-card">
-            <li class="icon-b"><span class="blue">БЕСПЛАТНАЯ </span><br/>доставка</li>
-            <li class="icon-g"><span class="blue">ГАРАНТИЯ КАЧЕСТВА</span><br/> Обмен и возврат в течении 15 дней</li>
-            <li class="icon-k"><a href="#">КУПИТЬ В КРЕДИТ</a><br/> на выгодных условиях</li>
-        </ul>
-    <? endif ?>
-    <div class="clear"></div>
-</div>
 
 </div>
 <div class="clear"></div>
@@ -260,7 +267,7 @@ $this->setFrameMode(true);
                             <?= $arResult["PREVIEW_TEXT"] ?>
                         <? elseif ($arResult["DETAIL_TEXT"]): ?>
                             <?= $arResult["DETAIL_TEXT"] ?>
-                        <?endif; ?>
+                        <? endif; ?>
                     </div>
                 </li>
                 <li class="tab-head-cont">
@@ -276,7 +283,7 @@ $this->setFrameMode(true);
                                 ?><a href="<?= $arProperty["VALUE"] ?>"><?= GetMessage("CATALOG_DOWNLOAD") ?></a><?
                             else:
                                 echo $arProperty["DISPLAY_VALUE"];?>
-                            <?endif ?><br/>
+                            <? endif ?><br/>
                         <? endforeach ?>
                     </div>
                 </li>
@@ -301,7 +308,7 @@ $this->setFrameMode(true);
                                         </p>
 
                                         <div id="rating_3" class="rating-main">
-                                            <?$APPLICATION->IncludeComponent(
+                                            <? $APPLICATION->IncludeComponent(
                                                 "bitrix:iblock.vote",
                                                 "finland-watch-stars",
                                                 array(
@@ -324,7 +331,7 @@ $this->setFrameMode(true);
                                                     "DISPLAY_AS_RATING" => "rating"
                                                 ),
                                                 false
-                                            );?>
+                                            ); ?>
                                         </div>
 
                                         <p><textarea cols="25" rows="2" placeholder="Отзыв *"></textarea></p>
@@ -394,7 +401,7 @@ $this->setFrameMode(true);
     </div>
 
 
-    <?            $APPLICATION->IncludeComponent(
+    <? $APPLICATION->IncludeComponent(
         "bitrix:catalog.recommended.products",
         "finland-watch-vertical",
         array(

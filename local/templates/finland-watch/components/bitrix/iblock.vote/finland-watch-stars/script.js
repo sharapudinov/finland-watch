@@ -24,27 +24,30 @@
 		else if(value < 0)
 			value = 0;
 
-		var progressObj = BX(this.progressId);
+		var progressObj = document.getElementsByClassName(this.progressId);
 
-		if(!!progressObj)
+		if(progressObj.length>0)
 		{
-			progressObj.style.width = parseInt(value)+"%";
+			for( var i = 0; i < progressObj.length; i++) {
+				progressObj[i].style.width = parseInt(value) + "%";
+			}
 			this.votedValue = value;
 		}
 	};
 
 	JCIblockVoteStars.prototype.setVotes = function(value)
 	{
-		var ratingObj = BX(this.ratingId);
+		var ratingObj = document.getElementsByClassName(this.ratingId);
 
-		if(!!ratingObj)
-			ratingObj.innerHTML = "( "+value+" )";
+		if(ratingObj.length>0)
+			for( var i = 0; i < ratingObj.length; i++)
+				ratingObj[i].innerHTML = "( "+value+" )";
 	};
 
 	JCIblockVoteStars.prototype.getStarsObj = function()
 	{
 		if(!this.starsObj)
-			this.starsObj = BX(this.starsId);
+			this.starsObj = document.getElementsByClassName(this.starsId);
 
 		return this.starsObj;
 	};
@@ -52,8 +55,8 @@
 	//todo: IE 8 has no pageX, pageY.
 	JCIblockVoteStars.prototype.onMouseMove = function(event)
 	{
-		var starsPos = BX.pos(this.getStarsObj());
-
+		var starsObj=this.getStarsObj();
+		var starsPos = BX.pos(starsObj[0]);
 		var voteValue = (event.pageX - starsPos.left)/starsPos.width*5;
 
 		for (var i = 1; i <= 5; i++)
@@ -64,21 +67,26 @@
 				break;
 			}
 		}
-
 		this.setValue(voteValue*20);
 	};
 
 	JCIblockVoteStars.prototype.onMouseOver = function(event)
 	{
-		BX.bind(this.getStarsObj(), 'click', BX.proxy(this.onVote, this));
+		var starsObj=this.getStarsObj();
+		for(var i=0; i<starsObj.length; i++) {
+			BX.bind(starsObj[i], 'click', BX.proxy(this.onVote, this));
+		}
 		this.preVotedValue = this.votedValue;
 	};
 
 	JCIblockVoteStars.prototype.onMouseOut = function(event)
 	{
-		BX.unbind(this.getStarsObj(), 'click', BX.proxy(this.onVote, this));
-		this.votedValue = this.preVotedValue;
-		this.setValue(this.votedValue);
+		var starsObj=this.getStarsObj();
+		for(var i=0; i<starsObj.length; i++) {
+			BX.unbind(starsObj[i], 'click', BX.proxy(this.onVote, this));
+			this.votedValue = this.preVotedValue;
+			this.setValue(this.votedValue);
+		}
 	};
 
 	JCIblockVoteStars.prototype.onVote = function(event)
@@ -111,17 +119,22 @@
 	JCIblockVoteStars.prototype.bindEvents = function()
 	{
 		var starsObj = this.getStarsObj();
-		BX.bind(starsObj, 'mousemove', BX.proxy(this.onMouseMove, this));
-		BX.bind(starsObj, 'mouseover', BX.proxy(this.onMouseOver, this));
-		BX.bind(starsObj, 'mouseout', BX.proxy(this.onMouseOut, this));
+		for(var i=0; i<starsObj.length; i++){
+			BX.bind(starsObj[i], 'mousemove', BX.proxy(this.onMouseMove, this));
+			BX.bind(starsObj[i], 'mouseover', BX.proxy(this.onMouseOver, this));
+			BX.bind(starsObj[i], 'mouseout', BX.proxy(this.onMouseOut, this));
+		}
+
 	};
 
 	JCIblockVoteStars.prototype.unBindEvents = function()
 	{
 		var starsObj = this.getStarsObj();
-		BX.unbind(starsObj, 'mousemove', BX.proxy(this.onMouseMove, this));
-		BX.unbind(starsObj, 'mouseover', BX.proxy(this.onMouseOver, this));
-		BX.unbind(starsObj, 'mouseout', BX.proxy(this.onMouseOut, this));
-		BX.unbind(this.getStarsObj(), 'click', BX.proxy(this.onVote, this));
+		for(var i=0; i<starsObj.length; i++) {
+			BX.unbind(starsObj[i], 'mousemove', BX.proxy(this.onMouseMove, this));
+			BX.unbind(starsObj[i], 'mouseover', BX.proxy(this.onMouseOver, this));
+			BX.unbind(starsObj[i], 'mouseout', BX.proxy(this.onMouseOut, this));
+			BX.unbind(starsObj[i], 'click', BX.proxy(this.onVote, this));
+		}
 	};
 })(window);

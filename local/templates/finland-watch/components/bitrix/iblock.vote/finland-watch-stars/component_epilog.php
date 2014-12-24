@@ -18,5 +18,4 @@ BX.ready(
 <?
 	}
 }
-$arResult['RND']=$this->randString();
 ?>
