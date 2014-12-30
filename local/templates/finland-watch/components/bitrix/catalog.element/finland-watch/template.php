@@ -15,77 +15,8 @@ $this->setFrameMode(true);
 ?>
 
 <div class="block-slider-img-card-item-price card-product">
-<!--    <div class="slider-img">-->
-<!---->
-<!--        <!-- Start photosgallery-vertical -->-->
-<!--        <div id="lofslidecontent45" class="lof-slidecontent lof-snleft">-->
-<!--            <div class="preload">-->
-<!--                <div></div>-->
-<!--            </div>-->
-<!--            <!-- MAIN CONTENT -->-->
-<!--            <div class="lof-main-outer">-->
-<!--                <ul class="lof-main-wapper">-->
-<!--                    <li>-->
-<!--                        <div class="img-wraper">-->
-<!--                            <span class="discounts"></span>-->
-<!--                            <span class="gifts"></span>-->
-<!--                            <img src="--><?//= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?><!--"-->
-<!--                                 width="--><?//= $arResult['RESIZED_MAIN_REVIEW']['width'] ?><!--"-->
-<!--                                 height="--><?//= $arResult['RESIZED_MAIN_PREVIEW']['height'] ?><!--"-->
-<!--                                 alt="--><?//= $arResult["NAME"] ?><!--"-->
-<!--                                 title="--><?//= $arResult["NAME"] ?><!--"/>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    --><?// if (count($arResult["RESIZED_MAIN_PHOTOS"]) > 0): ?>
-<!--                        --><?// foreach ($arResult["RESIZED_MAIN_PHOTOS"] as $PHOTO): ?>
-<!--                            <li>-->
-<!--                                <div class="img-wraper">-->
-<!--                                    <img src="--><?//= $PHOTO['src'] ?><!--" width="--><?//= $PHOTO['width'] ?><!--"-->
-<!--                                         height="--><?//= $PHOTO['height'] ?><!--" alt="--><?//= $arResult["NAME"] ?><!--"-->
-<!--                                         title="--><?//= $arResult["NAME"] ?><!--"/>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                        --><?// endforeach ?>
-<!--                    --><?// endif ?>
-<!--                </ul>-->
-<!--            </div>-->
-<!--            <!-- END MAIN CONTENT -->-->
-<!--            <!-- NAVIGATOR -->-->
-<!---->
-<!--            <div class="lof-navigator-outer">-->
-<!--                <ul class="lof-navigator">-->
-<!--                    <li>-->
-<!--                        <div>-->
-<!--                            <img src="--><?//= $arResult['RESIZED_PREVIEW']['src'] ?><!--"-->
-<!--                                 width="--><?//= $arResult['RESIZED_PREVIEW']['width'] ?><!--"-->
-<!--                                 height="--><?//= $arResult['RESIZED_PREVIEW']['height'] ?><!--"-->
-<!--                                 alt="--><?//= $arResult['NAME'] ?><!--" title="--><?//= $arResult['NAME'] ?><!--"/>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    --><?// if (count($arResult["RESIZED_PHOTOS"]) > 0): ?>
-<!--                        --><?// foreach ($arResult["RESIZED_PHOTOS"] as $PHOTO): ?>
-<!--                            <li>-->
-<!--                                <div>-->
-<!--                                    <img src="--><?//= $PHOTO['src'] ?><!--" width="--><?//= $PHOTO['width'] ?><!--"-->
-<!--                                         height="--><?//= $PHOTO['height'] ?><!--" alt="--><?//= $arResult["NAME"] ?><!--"-->
-<!--                                         title="--><?//= $arResult["NAME"] ?><!--"/>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                        --><?// endforeach ?>
-<!--                    --><?// endif ?>
-<!---->
-<!--                </ul>-->
-<!--            </div>-->
-<!---->
-<!--        </div>-->
-<!--    </div>-->
     <div class="slider-img">
-
-
-
         <div class="clearfix block-zoom" >
-
-
             <div class="clearfix small" >
                 <ul id="thumblist" class="clearfix" >
                     <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small1.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big1.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb1.png'/></a></li>
@@ -98,7 +29,6 @@ $this->setFrameMode(true);
 
                 <span class="discounts"></span>
                 <span class="gifts"></span>
-
                 <a href="<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big1.jpg" class="jqzoom" rel='gal1'  title="" >
                     <img src="<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small1.jpg"  title="" />
                 </a>
@@ -480,7 +410,7 @@ $this->setFrameMode(true);
 </div>
 
 
-<!--<script type="text/javascript">
+<script type="text/javascript">
     jQuery.noConflict();
     jQuery(document).ready(function () {
         jQuery('#lofslidecontent45').lofJSidernews({
@@ -495,7 +425,7 @@ $this->setFrameMode(true);
     });
 
 </script>
--->
+
 <script type="text/javascript">
     jQuery.noConflict();
     jQuery(document).ready(function() {
@@ -528,15 +458,4 @@ $this->setFrameMode(true);
         });
     });
 </script>
-
-
-<!--	<? /* if (count($arResult["LINKED_ELEMENTS"])>0): */ ?>
-<br/><b><? /*= $arResult["LINKED_ELEMENTS"][0]["IBLOCK_NAME"] */ ?>:</b>
-<ul>
-    <? /* foreach ($arResult["LINKED_ELEMENTS"] as $arElement): */ ?>
-    <li><a href="<? /*= $arElement["DETAIL_PAGE_URL"] */ ?>"><? /*= $arElement["NAME"] */ ?></a></li>
-    <? /* endforeach; */ ?>
-</ul>
---><? /* endif */ ?>
-
 
