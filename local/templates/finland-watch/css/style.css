@@ -1040,11 +1040,11 @@ h6 {
     position: absolute !important;
     top: 28%;
     left: 0;
-    opacity: 0;
+    display: none;
 }
 
 .slider-home .bg:hover .browsing{
-    opacity: 1;
+    display: block;
 }
 
 .slider-home .browsing a{
