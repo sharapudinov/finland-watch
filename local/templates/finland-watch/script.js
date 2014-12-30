@@ -15,7 +15,7 @@ jQuery(function () {
 function init() {
     var geolocation = ymaps.geolocation;
     if (geolocation) {
-        $("a.modal-city").html(/*geolocation.country + ', ' + geolocation.region + ', ' + */geolocation.city);
+        jQuery("a.modal-city").html(/*geolocation.country + ', ' + geolocation.region + ', ' + */geolocation.city);
     } else {
         console.log('Не удалось установить местоположение');
     }

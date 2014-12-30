@@ -678,8 +678,10 @@ h6 {
     margin-left: -6px;
     background-image:url("../images/s-l.png") ;
     background-repeat: no-repeat;
-    /*background-position: ;*/
-    
+/*
+    background-position: ;
+*/
+
 }
 
 #main-menu-top .block-hover-present img {
@@ -769,20 +771,22 @@ h6 {
 #main-slider {
     margin-bottom: 30px;
     height: 400px;
-    background-image:url("../sliders/slider-bg.jpg") ;
+    /*background-image:url("../sliders/slider-bg.jpg") ;*/
     background-repeat: no-repeat;
     background-position: center top;
     
 }
 
 .block-slider {
-    height: 285px;
+    height: 400px;
     
 }
 
 .block-advantages {
+    z-index: 100;
     height: 115px;
-    background-image:url("../images/advantages-bg.png") ;
+    /*background-image:url("../images/advantages-bg.png") ;*/
+    overflow: hidden;
 }
 
 .block-advantages .shadow {
@@ -863,7 +867,9 @@ h6 {
 
 .content {
     margin: 0 auto;
-    /*padding-bottom: ;*/
+/*
+    padding-bottom: ;
+*/
     width: 960px;
 }
 
@@ -1128,10 +1134,15 @@ h6 {
     display: inline-block;
     width: 30px;
     height: 30px;
-    z-index: 1000;
+    /*z-index: 100;*/
     background-image:url("../images/gifts-discounts.png") ;
     background-repeat: no-repeat;
 }
+
+.slider-home .discounts, .slider-home .gifts {
+    z-index: 100;
+}
+
 
 .gifts {
     background-position: 0 bottom;
@@ -1351,7 +1362,9 @@ h6 {
     color: #11b3f0;
     line-height: 1.3;
     margin-bottom: 19px;
-    /*margin-right: ;*/
+/*
+    margin-right: ;
+*/
     text-align: right;
     padding-top: 5px;
 }
@@ -1416,7 +1429,9 @@ h6 {
 }
 
 .block-filter .slider-namber .main .sliderCont {
-    /*margin-left: ;*/
+/*
+    margin-left: ;
+*/
 }
 
 .slider-namber .main .num-text {

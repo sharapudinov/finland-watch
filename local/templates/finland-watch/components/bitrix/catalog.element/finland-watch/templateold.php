@@ -15,101 +15,71 @@ $this->setFrameMode(true);
 ?>
 
 <div class="block-slider-img-card-item-price card-product">
-<!--    <div class="slider-img">-->
-<!---->
-<!--        <!-- Start photosgallery-vertical -->-->
-<!--        <div id="lofslidecontent45" class="lof-slidecontent lof-snleft">-->
-<!--            <div class="preload">-->
-<!--                <div></div>-->
-<!--            </div>-->
-<!--            <!-- MAIN CONTENT -->-->
-<!--            <div class="lof-main-outer">-->
-<!--                <ul class="lof-main-wapper">-->
-<!--                    <li>-->
-<!--                        <div class="img-wraper">-->
-<!--                            <span class="discounts"></span>-->
-<!--                            <span class="gifts"></span>-->
-<!--                            <img src="--><?//= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?><!--"-->
-<!--                                 width="--><?//= $arResult['RESIZED_MAIN_REVIEW']['width'] ?><!--"-->
-<!--                                 height="--><?//= $arResult['RESIZED_MAIN_PREVIEW']['height'] ?><!--"-->
-<!--                                 alt="--><?//= $arResult["NAME"] ?><!--"-->
-<!--                                 title="--><?//= $arResult["NAME"] ?><!--"/>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    --><?// if (count($arResult["RESIZED_MAIN_PHOTOS"]) > 0): ?>
-<!--                        --><?// foreach ($arResult["RESIZED_MAIN_PHOTOS"] as $PHOTO): ?>
-<!--                            <li>-->
-<!--                                <div class="img-wraper">-->
-<!--                                    <img src="--><?//= $PHOTO['src'] ?><!--" width="--><?//= $PHOTO['width'] ?><!--"-->
-<!--                                         height="--><?//= $PHOTO['height'] ?><!--" alt="--><?//= $arResult["NAME"] ?><!--"-->
-<!--                                         title="--><?//= $arResult["NAME"] ?><!--"/>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                        --><?// endforeach ?>
-<!--                    --><?// endif ?>
-<!--                </ul>-->
-<!--            </div>-->
-<!--            <!-- END MAIN CONTENT -->-->
-<!--            <!-- NAVIGATOR -->-->
-<!---->
-<!--            <div class="lof-navigator-outer">-->
-<!--                <ul class="lof-navigator">-->
-<!--                    <li>-->
-<!--                        <div>-->
-<!--                            <img src="--><?//= $arResult['RESIZED_PREVIEW']['src'] ?><!--"-->
-<!--                                 width="--><?//= $arResult['RESIZED_PREVIEW']['width'] ?><!--"-->
-<!--                                 height="--><?//= $arResult['RESIZED_PREVIEW']['height'] ?><!--"-->
-<!--                                 alt="--><?//= $arResult['NAME'] ?><!--" title="--><?//= $arResult['NAME'] ?><!--"/>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    --><?// if (count($arResult["RESIZED_PHOTOS"]) > 0): ?>
-<!--                        --><?// foreach ($arResult["RESIZED_PHOTOS"] as $PHOTO): ?>
-<!--                            <li>-->
-<!--                                <div>-->
-<!--                                    <img src="--><?//= $PHOTO['src'] ?><!--" width="--><?//= $PHOTO['width'] ?><!--"-->
-<!--                                         height="--><?//= $PHOTO['height'] ?><!--" alt="--><?//= $arResult["NAME"] ?><!--"-->
-<!--                                         title="--><?//= $arResult["NAME"] ?><!--"/>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                        --><?// endforeach ?>
-<!--                    --><?// endif ?>
-<!---->
-<!--                </ul>-->
-<!--            </div>-->
-<!---->
-<!--        </div>-->
-<!--    </div>-->
     <div class="slider-img">
 
-
-
-        <div class="clearfix block-zoom" >
-
-
-            <div class="clearfix small" >
-                <ul id="thumblist" class="clearfix" >
-                    <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small1.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big1.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb1.png'/></a></li>
-                    <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small2.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big2.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb2.png'/></a></li>
-                    <li><a  href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small3.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big3.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb3.png'/></a></li>
-                    <li><a  href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small4.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big4.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb4.png'/></a></li>
+        <!-- Start photosgallery-vertical -->
+        <div id="lofslidecontent45" class="lof-slidecontent lof-snleft">
+            <div class="preload">
+                <div></div>
+            </div>
+            <!-- MAIN CONTENT -->
+            <div class="lof-main-outer">
+                <ul class="lof-main-wapper">
+                    <li>
+                        <div class="img-wraper">
+                            <span class="discounts"></span>
+                            <span class="gifts"></span>
+                            <img src="<?= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?>"
+                                 width="<?= $arResult['RESIZED_MAIN_REVIEW']['width'] ?>"
+                                 height="<?= $arResult['RESIZED_MAIN_PREVIEW']['height'] ?>"
+                                 alt="<?= $arResult["NAME"] ?>"
+                                 title="<?= $arResult["NAME"] ?>"/>
+                        </div>
+                    </li>
+                    <? if (count($arResult["RESIZED_MAIN_PHOTOS"]) > 0): ?>
+                        <? foreach ($arResult["RESIZED_MAIN_PHOTOS"] as $PHOTO): ?>
+                            <li>
+                                <div class="img-wraper">
+                                    <img src="<?= $PHOTO['src'] ?>" width="<?= $PHOTO['width'] ?>"
+                                         height="<?= $PHOTO['height'] ?>" alt="<?= $arResult["NAME"] ?>"
+                                         title="<?= $arResult["NAME"] ?>"/>
+                                </div>
+                            </li>
+                        <? endforeach ?>
+                    <? endif ?>
                 </ul>
             </div>
-            <div class="clearfix large">
+            <!-- END MAIN CONTENT -->
+            <!-- NAVIGATOR -->
 
-                <span class="discounts"></span>
-                <span class="gifts"></span>
+            <div class="lof-navigator-outer">
+                <ul class="lof-navigator">
+                    <li>
+                        <div>
+                            <img src="<?= $arResult['RESIZED_PREVIEW']['src'] ?>"
+                                 width="<?= $arResult['RESIZED_PREVIEW']['width'] ?>"
+                                 height="<?= $arResult['RESIZED_PREVIEW']['height'] ?>"
+                                 alt="<?= $arResult['NAME'] ?>" title="<?= $arResult['NAME'] ?>"/>
+                        </div>
+                    </li>
+                    <? if (count($arResult["RESIZED_PHOTOS"]) > 0): ?>
+                        <? foreach ($arResult["RESIZED_PHOTOS"] as $PHOTO): ?>
+                            <li>
+                                <div>
+                                    <img src="<?= $PHOTO['src'] ?>" width="<?= $PHOTO['width'] ?>"
+                                         height="<?= $PHOTO['height'] ?>" alt="<?= $arResult["NAME"] ?>"
+                                         title="<?= $arResult["NAME"] ?>"/>
+                                </div>
+                            </li>
+                        <? endforeach ?>
+                    <? endif ?>
 
-                <a href="imgProd/triumph_big1.jpg" class="jqzoom" rel='gal1'  title="" >
-                    <img src="imgProd/triumph_small1.jpg"  title="" />
-                </a>
-
+                </ul>
             </div>
+
         </div>
-
-
-
-
     </div>
+
     <div class="card-item-price">
 
 

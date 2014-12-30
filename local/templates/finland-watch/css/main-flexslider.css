@@ -1,5 +1,5 @@
 #main-slider .flex-container {
-   height: 285px;
+   height: 400px;
    padding: 0;
    margin: 0;
   
@@ -13,7 +13,7 @@
 #main-slider .flex-container .slider-content {
     width: 960px;
     margin: 0 auto;
-    height: 285px;
+    height: 400px;
     z-index: 5000;
     display: block;
     
@@ -47,7 +47,7 @@
 
 
 #main-slider .slides  li {
-    height: 285px;
+    height: 400px;
     width: 1750px;
     padding-top: 0 !important;
     margin-top: 0 !important;
@@ -55,7 +55,7 @@
 }
 
 #main-slider .slides {
-    height: 285px;
+    height: 400px;
     overflow: hidden;
     padding-top: 0 !important;
 }
@@ -70,7 +70,7 @@
 
 
 #main-slider .flex-container {
-    z-index:100;
+    z-index:200;
 }
 
 
@@ -88,11 +88,11 @@
 	position: absolute !important;
     display: inline-block;
 	width: 100%;
-	bottom: 10px;
+	bottom: -20px;
     z-index: 2000;
 	text-align: center;
 	margin:0;
-   
+    height: 50px;
 }
 
 #main-slider .flex-control-nav li {
@@ -101,8 +101,8 @@
 }
 
 
-
 #main-slider .flex-control-paging li a {
+    position: relative;
 	display: block;
     width: 12px;
 	height: 12px;
@@ -127,7 +127,7 @@
 #main-slider .flex-direction-nav a {
 	display: block;
 	position: absolute;
-	margin: -160px 0 0 0;
+	margin: -270px 0 0 0;
 	width: 17px;
 	height: 54px;
 	top: 50%;
@@ -135,7 +135,6 @@
 	text-indent: -9999px;
 	background-image:url("../sliders/nav-slider.png") ;
     background-repeat: no-repeat;
-   
 }
 
 

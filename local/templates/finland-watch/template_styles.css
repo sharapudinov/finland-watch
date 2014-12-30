@@ -14,6 +14,7 @@
 @import url('css/sliderkit-style.css');
 @import url('fancybox/jquery.fancybox.css?v=2.1.5');
 @import url('css/pages.css');
+@import url("zoom/jquery.jqzoom.css");
 
 .title-tab-link h1 {
     width: 100%!important;
