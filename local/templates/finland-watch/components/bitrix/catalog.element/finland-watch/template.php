@@ -99,8 +99,8 @@ $this->setFrameMode(true);
                 <span class="discounts"></span>
                 <span class="gifts"></span>
 
-                <a href="imgProd/triumph_big1.jpg" class="jqzoom" rel='gal1'  title="" >
-                    <img src="imgProd/triumph_small1.jpg"  title="" />
+                <a href="<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big1.jpg" class="jqzoom" rel='gal1'  title="" >
+                    <img src="<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small1.jpg"  title="" />
                 </a>
 
             </div>
@@ -480,7 +480,7 @@ $this->setFrameMode(true);
 </div>
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     jQuery.noConflict();
     jQuery(document).ready(function () {
         jQuery('#lofslidecontent45').lofJSidernews({
@@ -495,6 +495,22 @@ $this->setFrameMode(true);
     });
 
 </script>
+-->
+<script type="text/javascript">
+    jQuery.noConflict();
+    jQuery(document).ready(function() {
+        jQuery('.jqzoom').jqzoom({
+            zoomType: 'standard',
+            lens:true,
+            preloadImages: false,
+            alwaysOn:false
+        });
+
+    });
+
+
+</script>
+
 <script>
     jQuery.noConflict();
     jQuery(document).ready(function () {
