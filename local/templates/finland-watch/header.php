@@ -2,7 +2,7 @@
 IncludeTemplateLangFile($_SERVER["DOCUMENT_ROOT"] . "/bitrix/templates/" . SITE_TEMPLATE_ID . "/header.php");
 $wizTemplateId = COption::GetOptionString("main", "wizard_template_id", "finland-watch", SITE_ID);
 CUtil::InitJSCore();
-CJSCore::Init(array("fx"));
+CJSCore::Init(array("fx","jquery"));
 $curPage = $APPLICATION->GetCurPage(true);
 ?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -16,7 +16,9 @@ $curPage = $APPLICATION->GetCurPage(true);
         <?//$APPLICATION->ShowHead();
         echo '<meta http-equiv="Content-Type" content="text/html; charset=' . LANG_CHARSET . '"' . (true ? ' /' : '') . '>' . "\n";
 
-        $APPLICATION->SetAditionalCss(SITE_TEMPLATE_PATH.'/js/magicscroll/magicscroll.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/js/magictoolbox/magicscroll/magicscroll.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/js/magictoolbox/magicscroll/magiczoom.css');
+
         $APPLICATION->ShowMeta("robots", false, true);
         $APPLICATION->ShowMeta("keywords", false, true);
         $APPLICATION->ShowMeta("description", false, true);
@@ -28,11 +30,12 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.mousewheel-3.0.6.pack.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-ui.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.cookie.js");
-        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/script-lof.js");
+/*        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/script-lof.js");*/
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery.easing.js");
-        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/zoom/jquery.jqzoom-core.js");
+ /*       $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/zoom/jquery.jqzoom-core.js");*/
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/script.js");
-        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/magicscroll/magicscroll.js");
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/magictoolbox/magiczoom/magiczoom.js");
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/magictoolbox/magicscroll/magicscroll.js");
 
 
 

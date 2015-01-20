@@ -13,32 +13,47 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<style>
+    .MagicScroll {
+        float: left;
+    }
+    .MagicScrollItem {
+        padding: 2px;
+    }
+</style>
 
 <div class="block-slider-img-card-item-price card-product">
     <div class="slider-img">
-        <div class="clearfix block-zoom" >
-            <div class="clearfix small" >
-                <ul id="thumblist" class="clearfix" >
-                    <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small1.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big1.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb1.png'/></a></li>
-                    <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small2.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big2.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb2.png'/></a></li>
-                    <li><a  href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small3.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big3.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb3.png'/></a></li>
-                    <li><a  href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small4.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big4.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb4.png'/></a></li>
-                </ul>
-            </div>
-            <div class="clearfix large">
+        <div class="clearfix block-zoom">
+            <div class="clearfix small">
+                <div class="MagicScroll" id="outside">
+
+                    <a class="selector" href="<?= $arResult["PREVIEW_PICTURE"]["SRC"] ?>" rel="zoom-id: zoom;"
+                       rev="<?= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?>">
+                        <img src="<?= $arResult["RESIZED_PREVIEW"]["src"] ?>"/>
+                    </a>
+
+                    <!-- Thumbnails -->
+                    <? foreach ($arResult["MORE_PHOTO"] as $key => $PHOTO): ?>
+
+                        <a href="<?= $PHOTO['SRC'] ?>" rel="zoom-id: zoom;"
+                           rev="<?= $arResult['RESIZED_MAIN_PHOTOS'][$key]['src'] ?>">
+                            <img src="<?= $arResult["RESIZED_PHOTOS"][$key]["src"] ?>"/>
+                        </a>
+
+                    <? endforeach ?>
+                </div>
+
+                <a href="<?= $arResult["PREVIEW_PICTURE"]["SRC"] ?>" class="MagicZoom" id="zoom">
+                    <img src="<?= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?>"/>
+                </a>
+
 
                 <span class="discounts"></span>
                 <span class="gifts"></span>
-                <a href="<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big1.jpg" class="jqzoom" rel='gal1'  title="" >
-                    <img src="<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small1.jpg"  title="" />
-                </a>
 
             </div>
         </div>
-
-
-
-
     </div>
     <div class="card-item-price">
 
@@ -223,7 +238,8 @@ $this->setFrameMode(true);
                     <a href="#" class="is-active a-tab">Обзор</a>
 
                     <div class="text-tabs">
-                        <h5 class="icon-d"><a href="<?=CFile::GetPath($arResult['PROPERTIES']['MANUAL']['VALUE'])?>">Скачайте инструкцию для ваших часов</a></h5>
+                        <h5 class="icon-d"><a href="<?= CFile::GetPath($arResult['PROPERTIES']['MANUAL']['VALUE']) ?>">Скачайте
+                                инструкцию для ваших часов</a></h5>
                         <? if ($arResult["PREVIEW_TEXT"]): ?>
                             <?= $arResult["PREVIEW_TEXT"] ?>
                         <? elseif ($arResult["DETAIL_TEXT"]): ?>
@@ -409,7 +425,7 @@ $this->setFrameMode(true);
     ?>
 </div>
 
-
+<!--
 <script type="text/javascript">
     jQuery.noConflict();
     jQuery(document).ready(function () {
@@ -428,18 +444,18 @@ $this->setFrameMode(true);
 
 <script type="text/javascript">
     jQuery.noConflict();
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         jQuery('.jqzoom').jqzoom({
             zoomType: 'standard',
-            lens:true,
+            lens: true,
             preloadImages: false,
-            alwaysOn:false
+            alwaysOn: false
         });
 
     });
 
 
-</script>
+</script>-->
 
 <script>
     jQuery.noConflict();
@@ -459,10 +475,25 @@ $this->setFrameMode(true);
     });
 </script>
 <script type="text/javascript">
+    MagicZoom.options = {
+        'hint': false,
+        'selectors-mouseover-delay': 200,
+        'zoom-width': 400,
+        'zoom-height': 400,
+        'zoom-distance': 5,
+        'show-title': 'false',
+        'opacity': 70,
+        'selectors-class' : 'selected'
+    };
     MagicScroll.options = {
         'duration': 500,
         'step': 2,
+        'step': 2,
         'items': 4,
         'direction': 'top'
-    }
+    };
+    MagicScroll.extraOptions.outside = {
+        'arrows': 'outside',
+        'arrows-opacity' : 100
+    };
 </script>
