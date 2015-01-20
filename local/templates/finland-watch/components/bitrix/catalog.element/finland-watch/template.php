@@ -19,18 +19,22 @@ $this->setFrameMode(true);
         <div class="clearfix block-zoom" >
             <div class="clearfix small" >
                 <ul id="thumblist" class="clearfix" >
-                    <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small1.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big1.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb1.png'/></a></li>
-                    <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small2.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big2.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb2.png'/></a></li>
-                    <li><a  href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small3.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big3.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb3.png'/></a></li>
-                    <li><a  href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small4.jpg',largeimage: '<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big4.jpg'}"><img src='<?=SITE_TEMPLATE_PATH?>/imgProd/thumbs/triumph_thumb4.png'/></a></li>
+                    <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=$arResult["RESIZED_MAIN_PREVIEW"]["src"]?>',largeimage: '<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>'}"><img src='<?=$arResult["RESIZED_PREVIEW"]["src"]?>' height="65px"/></a></li>
+
+                    <?foreach ($arResult["MORE_PHOTO"] as $key => $PHOTO):?>
+                        <li>
+                            <a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?=$arResult['RESIZED_MAIN_PHOTOS'][$key]['src']?>',largeimage: '<?=$PHOTO['SRC']?>'}"/><img src='<?=$arResult["RESIZED_PHOTOS"][$key]["src"]?>' height="65px"/></a>
+                        </li>
+                    <?endforeach?>
+
                 </ul>
             </div>
             <div class="clearfix large">
 
                 <span class="discounts"></span>
                 <span class="gifts"></span>
-                <a href="<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_big1.jpg" class="jqzoom" rel='gal1'  title="" >
-                    <img src="<?=SITE_TEMPLATE_PATH?>/imgProd/triumph_small1.jpg"  title="" />
+                <a href="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" class="jqzoom" rel='gal1'  title="" >
+                    <img src="<?=$arResult["RESIZED_MAIN_PREVIEW"]["src"]?>"  title="" />
                 </a>
 
             </div>

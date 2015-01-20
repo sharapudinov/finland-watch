@@ -78,7 +78,9 @@ ul#thumblist li a.zoomThumbActive{
   float: left;
 	text-decoration:none;
 	width: 375px;
+/*
     overflow: ;
+*/
 
 }
 

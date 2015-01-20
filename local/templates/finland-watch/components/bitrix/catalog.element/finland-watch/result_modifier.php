@@ -7,22 +7,22 @@ if ($user_id) {
     $arResult['DISPLAY_PROPERTIES']['USER_ID']['DISPLAY_VALUE'] = CUser::FormatName(CSite::GetNameFormat(false), array("NAME" => $f['NAME'], "LAST_NAME" => $f['LAST_NAME'], "SECOND_NAME" => $f['SECOND_NAME'], "LOGIN" => $f['LOGIN']));
 }
 
-$file = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"], array('width' => 90, 'height' => 75), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+$file = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"], array('width' => 65, 'height' => 65), BX_RESIZE_IMAGE_PROPORTIONAL, true);
 
 $arResult["RESIZED_PREVIEW"] = $file;
 
 if (count($arResult["MORE_PHOTO"]) > 0) {
     foreach ($arResult["MORE_PHOTO"] as $PHOTO) {
-        $file = CFile::ResizeImageGet($PHOTO, array('width' => 90, 'height' => 75), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+        $file = CFile::ResizeImageGet($PHOTO, array('width' => 65, 'height' => 65), BX_RESIZE_IMAGE_PROPORTIONAL, true);
         $arResult['RESIZED_PHOTOS'][] = $file;
     }
 }
-$file = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"], array('width' => 280, 'height' => 280), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+$file = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"], array('width' => 317, 'height' => 317), BX_RESIZE_IMAGE_PROPORTIONAL, true);
 $arResult["RESIZED_MAIN_PREVIEW"] = $file;
 
 if (count($arResult["MORE_PHOTO"]) > 0) {
     foreach ($arResult["MORE_PHOTO"] as $PHOTO) {
-        $file = CFile::ResizeImageGet($PHOTO, array('width' => 280, 'height' => 280), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+        $file = CFile::ResizeImageGet($PHOTO, array('width' => 317, 'height' => 317), BX_RESIZE_IMAGE_PROPORTIONAL, true);
         $arResult['RESIZED_MAIN_PHOTOS'][] = $file;
     }
 }
