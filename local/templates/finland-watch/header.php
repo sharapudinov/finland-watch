@@ -10,18 +10,19 @@ $curPage = $APPLICATION->GetCurPage(true);
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
-        <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_DIR ?>/favicon.ico"/>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width">
+          <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_DIR ?>/favicon.ico"/>
         <script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
         <?//$APPLICATION->ShowHead();
         echo '<meta http-equiv="Content-Type" content="text/html; charset=' . LANG_CHARSET . '"' . (true ? ' /' : '') . '>' . "\n";
+
+        $APPLICATION->SetAditionalCss(SITE_TEMPLATE_PATH.'/js/magicscroll/magicscroll.css');
         $APPLICATION->ShowMeta("robots", false, true);
         $APPLICATION->ShowMeta("keywords", false, true);
         $APPLICATION->ShowMeta("description", false, true);
         $APPLICATION->ShowCSS(true, true);
         $APPLICATION->ShowHeadStrings();
         $APPLICATION->ShowHeadScripts();
-/*        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-2.1.1.min.js");*/
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.fancybox.js?v=2.1.5");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.fancybox.pack.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.mousewheel-3.0.6.pack.js");
@@ -31,6 +32,8 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery.easing.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/zoom/jquery.jqzoom-core.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/script.js");
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/magicscroll/magicscroll.js");
+
 
 
         ?>

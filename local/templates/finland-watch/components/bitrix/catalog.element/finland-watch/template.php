@@ -458,4 +458,11 @@ $this->setFrameMode(true);
         });
     });
 </script>
-
+<script type="text/javascript">
+    MagicScroll.options = {
+        'duration': 500,
+        'step': 2,
+        'items': 4,
+        'direction': 'top'
+    }
+</script>
