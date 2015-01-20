@@ -425,38 +425,6 @@ $this->setFrameMode(true);
     ?>
 </div>
 
-<!--
-<script type="text/javascript">
-    jQuery.noConflict();
-    jQuery(document).ready(function () {
-        jQuery('#lofslidecontent45').lofJSidernews({
-            interval: 2000,
-            //easing:'easeOutBounce',
-            duration: 0,
-            maxItemDisplay: 4,
-            navigatorHeight: 75,
-            navigatorWidth: 90,
-            auto: false
-        });
-    });
-
-</script>
-
-<script type="text/javascript">
-    jQuery.noConflict();
-    jQuery(document).ready(function () {
-        jQuery('.jqzoom').jqzoom({
-            zoomType: 'standard',
-            lens: true,
-            preloadImages: false,
-            alwaysOn: false
-        });
-
-    });
-
-
-</script>-->
-
 <script>
     jQuery.noConflict();
     jQuery(document).ready(function () {
