@@ -2513,21 +2513,9 @@
 }
 
 .main-block-card-product-modal div {
-    position: relative !important;
+    position: relative;
 }
 
-.main-block-card-product-modal h1 {
-    padding: 10px 0 15px 0;
-}
-
-.main-block-card-product-modal .cheaply-gift{
-    padding-top: 20px;
-}
-
-.main-block-card-product-modal .item-price {
-    padding-bottom: 20px !important;
-
-}
 
 .main-block-card-product-modal .block-discount-gift-timer .red {
     color: #ed1b24;
@@ -2536,8 +2524,8 @@
 
 .slider-img {
     float: left;
-    width: 470px;
-    height: 320px;
+/*    width: 470px;
+    height: 320px;*/
 
 }
 

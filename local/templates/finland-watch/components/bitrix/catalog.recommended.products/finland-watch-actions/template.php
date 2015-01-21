@@ -37,7 +37,7 @@ $this->setFrameMode(true);?>
                                         <p class="profit">Выгода <span class="red">
                                                 <?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF'] ?>
                                                 <span class="rouble">a</span>
-                                                (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF'] ?>)
+                                                (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF_PERCENT'] ?>%)
                                             </span>
                                         </p>
                                     <? endif ?>

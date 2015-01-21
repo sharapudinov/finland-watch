@@ -1,5 +1,10 @@
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php"); ?>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");?>
+<style>
+
+
+</style>
 <div id="card-product-modal" class="main-block-card-product-modal">
+
     <?
 
     $APPLICATION->IncludeComponent(

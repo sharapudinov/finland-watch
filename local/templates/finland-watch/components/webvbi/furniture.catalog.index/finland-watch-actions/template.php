@@ -87,7 +87,7 @@ foreach ($arResult['ITEMS'] as $arItem):
             1 => "",
         )
     ),
-    false
+    $component
 );?>
 
 <?

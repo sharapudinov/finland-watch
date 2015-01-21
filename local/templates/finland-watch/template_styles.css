@@ -1,20 +1,4 @@
-@import url('css/contact-slider.css');
-@import url('css/jcarousel.responsive.css');
-@import url('css/jquery-ui.css');
-@import url('css/jquery.formstyler.css');
-@import url('css/jquery.rating.css');
-@import url('css/main-flexslider.css');
-@import url('css/reset.css');
-@import url('css/style-form.css');
-@import url('css/style-script.css');
-@import url('css/style.css');
-@import url('css/style-tabs.css');
-@import url('css/disqus.css');
-@import url('css/lofslide.css');
-@import url('css/sliderkit-style.css');
-@import url('fancybox/jquery.fancybox.css?v=2.1.5');
-@import url('css/pages.css');
-@import url("zoom/jquery.jqzoom.css");
+
 
 #main-wrapper, #main-header, #main-slider, #main-content,
 #main-footer, #main-menu-top {
@@ -81,9 +65,7 @@ div.city-list {
 
 .check-calculator ol {
     display: inline-block;
-    column-count: 4;
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
+
 }
 
 .floatleft {

@@ -47,8 +47,6 @@ $this->setFrameMode(true);
                 <a href="<?= $arResult["PREVIEW_PICTURE"]["SRC"] ?>" class="MagicZoom" id="zoom">
                     <img src="<?= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?>"/>
                 </a>
-
-
                 <span class="discounts"></span>
                 <span class="gifts"></span>
 

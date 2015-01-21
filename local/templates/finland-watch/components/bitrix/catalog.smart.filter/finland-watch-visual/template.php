@@ -180,26 +180,32 @@ $this->setFrameMode(true);
                 <p>C функцией:</p>
             </div>
             <div class="check-calculator">
-                <ol>
-                    <?
-                    foreach ($arResult["ITEMS"] as $key => $arItem):
-                        if (!empty($arItem["VALUES"]) && $arItem["CODE"] == "FUNCTIONS"): ?>
-                            <? foreach ($arItem["VALUES"] as $val => $ar): ?>
-                                <li>
-                                    <p class="check-calcul">
-                                        <input
-                                            type="checkbox"
-                                            value="<? echo $ar["HTML_VALUE"] ?>"
-                                            name="<? echo $ar["CONTROL_NAME"] ?>"
-                                            id="<? echo $ar["CONTROL_ID"] ?>"
-                                            <? echo $ar["CHECKED"] ? 'checked="checked"' : '' ?>
-                                            />
-                                        <label for="<? echo $ar["CONTROL_ID"] ?>"></label><? echo $ar["VALUE"]; ?></p>
-                                </li>
-                            <? endforeach; ?>
-                        <?endif;
-                    endforeach; ?>
-                </ol>
+
+                <?
+                foreach ($arResult["ITEMS"] as $key => $arItem):
+                    if (!empty($arItem["VALUES"]) && $arItem["CODE"] == "FUNCTIONS"): ?>
+                        <ol>
+                        <? foreach ($arItem["VALUES"] as $val => $ar): ?>
+                            <li>
+                                <p class="check-calcul">
+                                    <input
+                                        type="checkbox"
+                                        value="<? echo $ar["HTML_VALUE"] ?>"
+                                        name="<? echo $ar["CONTROL_NAME"] ?>"
+                                        id="<? echo $ar["CONTROL_ID"] ?>"
+                                        <? echo $ar["CHECKED"] ? 'checked="checked"' : '' ?>
+                                        />
+                                    <label for="<? echo $ar["CONTROL_ID"] ?>"></label><? echo $ar["VALUE"]; ?></p>
+                            </li>
+                            <? if ($val % 2 ==0 && $val!= 0): ?>
+                                </ol>
+                                <ol>
+                            <? endif ?>
+                        <? endforeach; ?>
+                        </ol>
+                    <?endif;
+                endforeach; ?>
+
                 <div class="clear"></div>
                 <div class="arrow-button">
                     <p>

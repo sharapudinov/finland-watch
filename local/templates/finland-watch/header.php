@@ -1,8 +1,8 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 IncludeTemplateLangFile($_SERVER["DOCUMENT_ROOT"] . "/bitrix/templates/" . SITE_TEMPLATE_ID . "/header.php");
 $wizTemplateId = COption::GetOptionString("main", "wizard_template_id", "finland-watch", SITE_ID);
 CUtil::InitJSCore();
-CJSCore::Init(array("fx","jquery"));
+CJSCore::Init(array("fx", "jquery"));
 $curPage = $APPLICATION->GetCurPage(true);
 ?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -11,14 +11,30 @@ $curPage = $APPLICATION->GetCurPage(true);
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width">
-          <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_DIR ?>/favicon.ico"/>
+        <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_DIR ?>/favicon.ico"/>
         <script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
-        <?//$APPLICATION->ShowHead();
+        <? //$APPLICATION->ShowHead();
         echo '<meta http-equiv="Content-Type" content="text/html; charset=' . LANG_CHARSET . '"' . (true ? ' /' : '') . '>' . "\n";
 
-        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/js/magictoolbox/magicscroll/magicscroll.css');
-        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/js/magictoolbox/magicscroll/magiczoom.css');
-
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/js/magictoolbox/magicscroll/magicscroll.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/js/magictoolbox/magicscroll/magiczoom.css');
+/*        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/contact-slider.css');*/
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jcarousel.responsive.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jquery-ui.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/main-flexslider.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/reset.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/style-form.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/style-script.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/style.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/style-tabs.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/disqus.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/lofslide.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/sliderkit-style.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/fancybox/jquery.fancybox.css?v=2.1.5');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/pages.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/zoom/jquery.jqzoom.css');
+        
         $APPLICATION->ShowMeta("robots", false, true);
         $APPLICATION->ShowMeta("keywords", false, true);
         $APPLICATION->ShowMeta("description", false, true);
@@ -30,12 +46,10 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/fancybox/jquery.mousewheel-3.0.6.pack.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-ui.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.cookie.js");
-/*        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/script-lof.js");*/
-        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery.easing.js");
- /*       $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/zoom/jquery.jqzoom-core.js");*/
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.easing.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/script.js");
-        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/magictoolbox/magiczoom/magiczoom.js");
-        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/magictoolbox/magicscroll/magicscroll.js");
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/magictoolbox/magiczoom/magiczoom.js");
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/magictoolbox/magicscroll/magicscroll.js");
 
 
 
@@ -84,7 +98,8 @@ $curPage = $APPLICATION->GetCurPage(true);
                     </div>
                     <div class="phone-region">
                         <ul>
-                            <li class="region" title="Выбор региона"><a class="modal-city" data-fancybox-type="ajax" href="/modal-city.php">Москва и
+                            <li class="region" title="Выбор региона"><a class="modal-city" data-fancybox-type="ajax"
+                                                                        href="/modal-city.php">Москва и
                                     Подмосковье</a></li>
                             <li class="call"><a class="modalbox call_btn" href="#inline">Заказать звонок</a></li>
                         </ul>
@@ -95,7 +110,7 @@ $curPage = $APPLICATION->GetCurPage(true);
                             </span>
                     </div>
                     <div class="clear"></div>
-                    <?$APPLICATION->IncludeComponent(
+                    <? $APPLICATION->IncludeComponent(
                         "bitrix:search.title",
                         "finland-watch",
                         array(
@@ -129,29 +144,29 @@ $curPage = $APPLICATION->GetCurPage(true);
                             "CURRENCY_ID" => "RUB"
                         ),
                         false
-                    );?>
+                    ); ?>
                 </div>
                 <div class="login-basket">
-                    <?$APPLICATION->IncludeComponent("bitrix:system.auth.form", "finland-watch", Array(
-                            "REGISTER_URL" => SITE_DIR . "login/",    // Страница регистрации
-                            "PROFILE_URL" => SITE_DIR . "personal/",    // Страница профиля
-                            "SHOW_ERRORS" => "N",    // Показывать ошибки
-                        ),
+                    <? $APPLICATION->IncludeComponent("bitrix:system.auth.form", "finland-watch", Array(
+                        "REGISTER_URL" => SITE_DIR . "login/",    // Страница регистрации
+                        "PROFILE_URL" => SITE_DIR . "personal/",    // Страница профиля
+                        "SHOW_ERRORS" => "N",    // Показывать ошибки
+                    ),
                         false
-                    );?>
+                    ); ?>
                     <div class="clear"></div>
-                    <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "finland-watch", Array(
-                            "PATH_TO_BASKET" => SITE_DIR . "personal/cart/",    // Страница корзины
-                            "PATH_TO_PERSONAL" => SITE_DIR . "personal/",    // Персональный раздел
-                            "SHOW_PERSONAL_LINK" => "N",    // Отображать персональный раздел
-                            "SHOW_NUM_PRODUCTS" => "Y",    // Показывать количество товаров
-                            "SHOW_TOTAL_PRICE" => "Y",    // Показывать общую сумму по товарам
-                            "SHOW_PRODUCTS" => "N",    // Показывать список товаров
-                            "POSITION_FIXED" => "N",    // Отображать корзину поверх шаблона
-                            "SHOW_EMPTY_VALUES" => 'Y'
-                        ),
+                    <? $APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "finland-watch", Array(
+                        "PATH_TO_BASKET" => SITE_DIR . "personal/cart/",    // Страница корзины
+                        "PATH_TO_PERSONAL" => SITE_DIR . "personal/",    // Персональный раздел
+                        "SHOW_PERSONAL_LINK" => "N",    // Отображать персональный раздел
+                        "SHOW_NUM_PRODUCTS" => "Y",    // Показывать количество товаров
+                        "SHOW_TOTAL_PRICE" => "Y",    // Показывать общую сумму по товарам
+                        "SHOW_PRODUCTS" => "N",    // Показывать список товаров
+                        "POSITION_FIXED" => "N",    // Отображать корзину поверх шаблона
+                        "SHOW_EMPTY_VALUES" => 'Y'
+                    ),
                         false
-                    );?>
+                    ); ?>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -159,44 +174,43 @@ $curPage = $APPLICATION->GetCurPage(true);
     </section>
     <section>
         <div id="main-menu-top">
-            <?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"finland_top_menu", 
-	array(
-		"ROOT_MENU_TYPE" => "top",
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_TIME" => "36000000",
-		"MENU_CACHE_USE_GROUPS" => "N",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MAX_LEVEL" => "1",
-		"USE_EXT" => "N",
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MENU_THEME" => "site"
-	),
-	false
-);?>
+            <? $APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "finland_top_menu",
+                array(
+                    "ROOT_MENU_TYPE" => "top",
+                    "MENU_CACHE_TYPE" => "A",
+                    "MENU_CACHE_TIME" => "36000000",
+                    "MENU_CACHE_USE_GROUPS" => "N",
+                    "MENU_CACHE_GET_VARS" => array(),
+                    "MAX_LEVEL" => "1",
+                    "USE_EXT" => "N",
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "left",
+                    "DELAY" => "N",
+                    "MENU_THEME" => "site"
+                ),
+                false
+            ); ?>
         </div>
     </section>
 
 
-<? if ($curPage != SITE_DIR . "index.php"):?>
+<? if ($curPage != SITE_DIR . "index.php"): ?>
     <div id="main-content">
     <section>
-        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
-                "START_FROM" => "1",
-                "PATH" => "",
-                "SITE_ID" => "-"
-            ),
+        <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
+            "START_FROM" => "1",
+            "PATH" => "",
+            "SITE_ID" => "-"
+        ),
             false,
             Array('HIDE_ICONS' => 'Y')
-        );?>
-        <?if (str_replace("/catalog/",'',$curPage)==$curPage):?>
+        ); ?>
+        <? if (str_replace("/catalog/", '', $curPage) == $curPage): ?>
             <h1>
                 <?= $APPLICATION->ShowTitle(false); ?>
             </h1>
-        <?endif?>
+        <? endif ?>
     </section>
 <? endif ?>
