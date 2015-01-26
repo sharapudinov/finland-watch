@@ -893,6 +893,13 @@
     padding-left: 10px;
     border: 1px solid #c0c0c0;
 }
+.form-sign-in input[type=password] {
+    width: 420px;
+    height: 32px;
+    padding-left: 10px;
+    border: 1px solid #c0c0c0;
+}
+
 
 /*.form-sign-in*/ p label, p .gray{
     display: inline-block;

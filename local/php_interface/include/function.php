@@ -14,6 +14,7 @@ function user_dump($var, $all = false, $die = false)
 
 function test_dump($var)
 {
+
     ?>
     <pre><? var_dump($var) ?></pre>
     <?

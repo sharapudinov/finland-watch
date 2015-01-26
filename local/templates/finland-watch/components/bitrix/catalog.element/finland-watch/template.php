@@ -1,5 +1,20 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 //test_dump($arResult);
+/*CModule::IncludeModule('catalog');
+$dbDisc=CCatalogDiscount::GetDiscount(
+    $arResult['ID'],
+    2,
+    array(),
+    array(),
+    "N",
+    false,
+    false,
+    true,
+    false
+);
+
+user_dump($dbDisc);*/
+
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
