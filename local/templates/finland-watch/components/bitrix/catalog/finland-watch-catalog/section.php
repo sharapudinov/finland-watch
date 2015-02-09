@@ -204,7 +204,7 @@ switch ($sort) {
         break;
 }
 
-$page_element_count = !is_set($_REQUEST['PAGE_ELEMENT_COUNT']) ? 10 : $_REQUEST['PAGE_ELEMENT_COUNT'];
+$page_element_count = !is_set($_REQUEST['PAGE_ELEMENT_COUNT']) ? 15 : $_REQUEST['PAGE_ELEMENT_COUNT'];
 $page_element_count = $page_element_count == 'all' ? '' : $page_element_count;
 GLOBAL $main_filter;
 if (is_set($_REQUEST['SPORT'])) $main_filter['PROPERTY_SPORT'] = $_REQUEST['SPORT'];
@@ -306,14 +306,14 @@ $intSectionID = $APPLICATION->IncludeComponent(
 
         <ul>
             <li class="po">показывать по</li>
-            <li class="link-more left <?= $page_element_count == '10' ? 'active' : '' ?>"><a
-                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>10))?>">10</a></li>
+            <li class="link-more left <?= $page_element_count == '15' ? 'active' : '' ?>"><a
+                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>15))?>">15</a></li>
             <li class="link-more <?= $page_element_count == '30' ? 'active' : '' ?>"><a
                     href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>30))?>">30</a></li>
             <li class="link-more <?= $page_element_count == '50' ? 'active' : '' ?>"><a
-                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>50))?>">50</a></li>
+                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>45))?>">45</a></li>
             <li class="link-more <?= $page_element_count == '100' ? 'active' : '' ?>"><a
-                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>100))?>">100</a></li>
+                    href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>90))?>">90</a></li>
             <li class="link-more right <?= $page_element_count == '' ? 'active' : '' ?>"><a
                     href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>'all'))?>">Все</a></li>
         </ul>
