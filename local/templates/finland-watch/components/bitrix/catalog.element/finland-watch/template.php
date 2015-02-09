@@ -51,7 +51,7 @@ $this->setFrameMode(true);
                     <!-- Thumbnails -->
                     <? foreach ($arResult["MORE_PHOTO"] as $key => $PHOTO): ?>
 
-                        <a href="<?= $PHOTO['SRC'] ?>" rel="zoom-id: zoom;"
+                        <a  href="<?= $PHOTO['SRC'] ?>" rel="zoom-id: zoom;"
                            rev="<?= $arResult['RESIZED_MAIN_PHOTOS'][$key]['src'] ?>">
                             <img src="<?= $arResult["RESIZED_PHOTOS"][$key]["src"] ?>"/>
                         </a>
@@ -59,7 +59,7 @@ $this->setFrameMode(true);
                     <? endforeach ?>
                 </div>
 
-                <a href="<?= $arResult["PREVIEW_PICTURE"]["SRC"] ?>" class="MagicZoom" id="zoom">
+                <a href="<?= $arResult["PREVIEW_PICTURE"]["SRC"] ?>" class="MagicZoomPlus" id="zoom">
                     <img src="<?= $arResult["RESIZED_MAIN_PREVIEW"]["src"] ?>"/>
                 </a>
                 <span class="discounts"></span>
@@ -87,7 +87,7 @@ $this->setFrameMode(true);
                         2 => "2",
                         3 => "3",
                         4 => "4",
-                        5 => "",
+                        5 => "5",
                     ),
                     "SET_STATUS_404" => "N",
                     "CACHE_TYPE" => "A",
@@ -106,7 +106,7 @@ $this->setFrameMode(true);
             </ul>
             <div class="clear"></div>
             <div class="lines-card"></div>
-            <? if ($arResult["CAN_BUY"]): ?>
+
                 <form action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
                     <div class="card-price">
                         <p>Цена:
@@ -141,8 +141,8 @@ $this->setFrameMode(true);
 
                     </p>
                 </div>
-            <? endif ?>
         </div>
+
         <div class="block-discount-gift-timer">
             <div class="slider-discount">
                 <div class="jcarousel-wrapper wrap">
@@ -456,25 +456,30 @@ $this->setFrameMode(true);
     });
 </script>
 <script type="text/javascript">
-    MagicZoom.options = {
+    MagicZoomPlus.options = {
         'hint': false,
         'selectors-mouseover-delay': 200,
         'zoom-width': 400,
         'zoom-height': 400,
         'zoom-distance': 5,
         'show-title': 'false',
-        'opacity': 70,
-        'selectors-class' : 'selected'
+        'opacity': 20,
+        'selectors-class' : 'selected',
+        'drag-mode' : 'false',
+        'slideshow-effect' : 'fade',
+        'expand-size' : 'original'
+
     };
     MagicScroll.options = {
         'duration': 500,
         'step': 2,
         'step': 2,
-        'items': 4,
+        'items': <?=count($arResult['MORE_PHOTO'])>=3?4:count($arResult['MORE_PHOTO'])+1?>,
         'direction': 'top'
     };
     MagicScroll.extraOptions.outside = {
         'arrows': 'outside',
         'arrows-opacity' : 100
     };
+
 </script>

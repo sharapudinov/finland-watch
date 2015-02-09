@@ -17,12 +17,12 @@ $this->setFrameMode(true);
 if($arParams["DISPLAY_AS_RATING"] == "vote_avg")
 {
 	if($arResult["PROPERTIES"]["vote_count"]["VALUE"])
-		$votesValue = round($arResult["PROPERTIES"]["vote_sum"]["VALUE"]/$arResult["PROPERTIES"]["vote_count"]["VALUE"], 2);
+		$votesValue = 5;//round($arResult["PROPERTIES"]["vote_sum"]["VALUE"]/$arResult["PROPERTIES"]["vote_count"]["VALUE"], 2);
 	else
 		$votesValue = 0;
 }
 else
-	$votesValue = intval($arResult["PROPERTIES"]["rating"]["VALUE"]);
+	$votesValue = 5;//intval($arResult["PROPERTIES"]["rating"]["VALUE"]);
 
 $votesCount = intval($arResult["PROPERTIES"]["vote_count"]["VALUE"]);
 

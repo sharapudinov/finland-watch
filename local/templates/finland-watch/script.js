@@ -52,28 +52,7 @@ jQuery(document).ready(function () {
     jQuery(".modal-card").fancybox({
             afterShow: function () {
                 MagicScroll.init();
-                MagicZoom.start();
-                MagicZoom.options = {
-                    'hint': false,
-                    'selectors-mouseover-delay': 200,
-                    'zoom-width': 400,
-                    'zoom-height': 400,
-                    'zoom-distance': 5,
-                    'show-title': 'false',
-                    'opacity': 70,
-                    'selectors-class' : 'selected'
-                };
-                MagicScroll.options = {
-                    'duration': 500,
-                    'step': 2,
-                    'step': 2,
-                    'items': 4,
-                    'direction': 'top'
-                };
-                MagicScroll.extraOptions.outside = {
-                    'arrows': 'outside',
-                    'arrows-opacity' : 100
-                };
+                MagicZoomPlus.start();
                 jQuery('.accordion-tabs').children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
                 jQuery('.accordion-tabs').on('click', 'li > a', function (event) {
                     if (!jQuery(this).hasClass('is-active')) {

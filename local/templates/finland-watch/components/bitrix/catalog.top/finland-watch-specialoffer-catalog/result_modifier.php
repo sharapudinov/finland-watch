@@ -52,4 +52,8 @@ foreach($arResult["ITEMS"] as $cell=>$arElement)
 		}
 	}
 }
+foreach($arResult["ITEMS"] as $cell=>$arElement){
+	$file = CFile::ResizeImageGet($arElement["PREVIEW_PICTURE"], array('width' => 148, 'height' => 174), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+	$arResult["ITEMS"][$cell]["RESIZED_PREVIEW"] = $file;
+}
 ?>

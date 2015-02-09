@@ -3077,3 +3077,52 @@
  .block-video-card {
     
  }
+
+
+
+.slider-discount-one-two {
+    background-image:url("../sliders/gift.png") ;
+    background-repeat: no-repeat;
+    min-height: 145px;
+
+}
+
+.discount-login-not {
+    padding-top: 15px;
+    min-height: 130px;
+
+}
+
+.discount-login-not p{
+    font-family: 'GloberBoldFree';
+}
+
+.block-discount-gift-timer .discount-login-not .login-not-text {
+    font-size: 12px !important;
+    color: #2d2d2d;
+
+    padding-left: 23px;
+}
+
+.block-discount-gift-timer .discount-login-not .login-not-text .red{
+    color: #ed1c24;
+    font-size: 14px;
+    margin-right: 5px;
+    text-transform: uppercase !important;
+
+}
+
+
+.login-not-price-num {
+    text-align: center;
+    font-size: 30px;
+    line-height: 65px;
+    width: 293px;
+    background-image:url("../images/price.png") ;
+    background-repeat: no-repeat;
+}
+
+.login-not-price-num .rouble {
+    font-size: 25px;
+}
+

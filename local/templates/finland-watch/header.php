@@ -17,7 +17,7 @@ $curPage = $APPLICATION->GetCurPage(true);
         echo '<meta http-equiv="Content-Type" content="text/html; charset=' . LANG_CHARSET . '"' . (true ? ' /' : '') . '>' . "\n";
 
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/js/magictoolbox/magicscroll/magicscroll.css');
-        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/js/magictoolbox/magicscroll/magiczoom.css');
+        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/js/magictoolbox/magiczoomplus/magiczoomplus.css');
 /*        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/contact-slider.css');*/
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jcarousel.responsive.css');
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jquery-ui.css');
@@ -48,7 +48,7 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.cookie.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.easing.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/script.js");
-        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/magictoolbox/magiczoom/magiczoom.js");
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/magictoolbox/magiczoomplus/magiczoomplus.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/magictoolbox/magicscroll/magicscroll.js");
 
 

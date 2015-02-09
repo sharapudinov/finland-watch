@@ -1,4 +1,6 @@
-
+.slider-content a {
+    text-decoration: none;
+}
 
 #main-wrapper, #main-header, #main-slider, #main-content,
 #main-footer, #main-menu-top {

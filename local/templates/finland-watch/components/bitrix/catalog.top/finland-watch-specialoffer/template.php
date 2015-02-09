@@ -33,7 +33,7 @@ $this->setFrameMode(true);?>
                          <p class="title-mini">
                              <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>"><?= $arItem["NAME"] ?></a>
                          </p>
-                         <img src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" width="160" height="187" title="" alt=""/>
+                         <img src="<?= $arItem['RESIZED_PREVIEW']['src'] ?>"  height="187" title="" alt=""/>
 
                          <p class="old-price">Старая цена <br/>
                              <span class="summ"><?=$arItem['MIN_PRICE']['PRINT_VALUE'] ?></span>

@@ -21,7 +21,7 @@ $this->setFrameMode(true);?>
              <? foreach ($arResult["ITEMS"] as $key => $arItem): ?>
                  <li>
                      <div class="content-mini">
-                         <img src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" width="148" height="174" />
+                         <img src="<?= $arItem['RESIZED_PREVIEW']['src'] ?>" height="174" />
                          <p class="title-mini">
                              <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
                                  <?= $arItem["NAME"] ?>

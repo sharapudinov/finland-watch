@@ -38,7 +38,7 @@ $cell = 0;
             </a>
 
             <div class="lines"></div>
-            <p class="name-goods"><a href="#"><?= $arElement["NAME"] ?></a></p>
+            <p class="name-goods"><a href="<?=$arElement['DETAIL_PAGE_URL']?>"><?= $arElement["NAME"] ?></a></p>
 
             <?$APPLICATION->IncludeComponent(
                 "bitrix:iblock.vote",
@@ -55,7 +55,7 @@ $cell = 0;
                         2 => "2",
                         3 => "3",
                         4 => "4",
-                        5 => "",
+                        5 => "5",
                     ),
                     "SET_STATUS_404" => "N",
                     "CACHE_TYPE" => "A",
