@@ -310,9 +310,9 @@ $intSectionID = $APPLICATION->IncludeComponent(
                     href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>15))?>">15</a></li>
             <li class="link-more <?= $page_element_count == '30' ? 'active' : '' ?>"><a
                     href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>30))?>">30</a></li>
-            <li class="link-more <?= $page_element_count == '50' ? 'active' : '' ?>"><a
+            <li class="link-more <?= $page_element_count == '45' ? 'active' : '' ?>"><a
                     href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>45))?>">45</a></li>
-            <li class="link-more <?= $page_element_count == '100' ? 'active' : '' ?>"><a
+            <li class="link-more <?= $page_element_count == '90' ? 'active' : '' ?>"><a
                     href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>90))?>">90</a></li>
             <li class="link-more right <?= $page_element_count == '' ? 'active' : '' ?>"><a
                     href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>'all'))?>">Все</a></li>

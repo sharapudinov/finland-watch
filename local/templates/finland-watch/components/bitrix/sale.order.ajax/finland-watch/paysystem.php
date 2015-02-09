@@ -63,7 +63,7 @@ if ($arResult["PAY_FROM_ACCOUNT"] == "Y") {
                class="<? if ($arResult["USER_VALS"]["PAY_CURRENT_ACCOUNT"] == "Y") echo "selected" ?>">
 
         </label><? GetMessage("SOA_TEMPL_PAY_ACCOUNT") ?>
-        <br><span class="gray">
+        <br><span class="gray payment-description">
 								<?= GetMessage("SOA_TEMPL_PAY_ACCOUNT1") . " <b>" . $arResult["CURRENT_BUDGET_FORMATED"] ?></b>
             <? if ($arParams["ONLY_FULL_PAY_FROM_ACCOUNT"] == "Y"): ?>
                 <?= GetMessage("SOA_TEMPL_PAY_ACCOUNT3") ?>
@@ -101,10 +101,11 @@ foreach ($arResult["PAY_SYSTEM"] as $arPaySystem) {
                        onclick="BX('ID_PAY_SYSTEM_ID_<?= $arPaySystem["ID"] ?>').checked=true;changePaySystem();">
                 </label>
 
+                <span class="payment_name_margin">
                 <? if ($arParams["SHOW_PAYMENT_SERVICES_NAMES"] != "N"): ?>
                     <?= $arPaySystem["PSA_NAME"]; ?>
                 <? endif; ?>
-                <br><span class="gray">
+                <br><span class="gray payment-description">
 										<?
                                         if (intval($arPaySystem["PRICE"]) > 0)
                                             echo str_replace("#PAYSYSTEM_PRICE#", SaleFormatCurrency(roundEx($arPaySystem["PRICE"], SALE_VALUE_PRECISION), $arResult["BASE_LANG_CURRENCY"]), GetMessage("SOA_TEMPL_PAYSYSTEM_PRICE"));
@@ -112,6 +113,7 @@ foreach ($arResult["PAY_SYSTEM"] as $arPaySystem) {
                                             echo $arPaySystem["DESCRIPTION"];
                                         ?>
 									</span>
+                    </span>
 
             </p>
         <?
@@ -136,10 +138,11 @@ foreach ($arResult["PAY_SYSTEM"] as $arPaySystem) {
                 <label for="ID_PAY_SYSTEM_ID_<?= $arPaySystem["ID"] ?>"
                        onclick="BX('ID_PAY_SYSTEM_ID_<?= $arPaySystem["ID"] ?>').checked=true;changePaySystem();">
                 </label>
+                 <span class="payment_name_margin">
                 <? if ($arParams["SHOW_PAYMENT_SERVICES_NAMES"] != "N"): ?>
                     <?= $arPaySystem["PSA_NAME"]; ?>
                 <? endif; ?>
-                <br><span class="gray">
+                <br><span class="gray payment-description">
 										<?
                                         if (intval($arPaySystem["PRICE"]) > 0)
                                             echo str_replace("#PAYSYSTEM_PRICE#", SaleFormatCurrency(roundEx($arPaySystem["PRICE"], SALE_VALUE_PRECISION), $arResult["BASE_LANG_CURRENCY"]), GetMessage("SOA_TEMPL_PAYSYSTEM_PRICE"));
@@ -147,6 +150,7 @@ foreach ($arResult["PAY_SYSTEM"] as $arPaySystem) {
                                             echo $arPaySystem["DESCRIPTION"];
                                         ?>
 									</span>
+                     </span>
 
             </p>
         <?
@@ -175,14 +179,16 @@ foreach ($arResult["PAY_SYSTEM"] as $arPaySystem) {
                 <label for="ID_PAY_SYSTEM_ID_<?= $arPaySystem["ID"] ?>"
                        onclick="BX('ID_PAY_SYSTEM_ID_<?= $arPaySystem["ID"] ?>').checked=true;changePaySystem();">
                 </label>
+                 <span class="payment_name_margin">
                 <?= $arPaySystem["PSA_NAME"]; ?>
 
-                <br><span class="gray"><?
+                <br><span class="gray payment-description"><?
                     if (intval($arPaySystem["PRICE"]) > 0)
                         echo str_replace("#PAYSYSTEM_PRICE#", SaleFormatCurrency(roundEx($arPaySystem["PRICE"], SALE_VALUE_PRECISION), $arResult["BASE_LANG_CURRENCY"]), GetMessage("SOA_TEMPL_PAYSYSTEM_PRICE"));
                     else
                         echo $arPaySystem["DESCRIPTION"];
                     ?></span>
+                     </span>
             </p>
         <?
         } else // more than one
@@ -205,7 +211,7 @@ foreach ($arResult["PAY_SYSTEM"] as $arPaySystem) {
                 <label for="ID_PAY_SYSTEM_ID_<?= $arPaySystem["ID"] ?>"
                        onclick="BX('ID_PAY_SYSTEM_ID_<?= $arPaySystem["ID"] ?>').checked=true;changePaySystem();">
                 </label>
-
+ <span class="payment_name_margin">
                 <? if ($arParams["SHOW_PAYMENT_SERVICES_NAMES"] != "N"): ?>
 
                     <? if ($arParams["SHOW_PAYMENT_SERVICES_NAMES"] != "N"): ?>
@@ -215,7 +221,7 @@ foreach ($arResult["PAY_SYSTEM"] as $arPaySystem) {
                     <?endif; ?>
 
                 <? endif; ?>
-                <br><span class="gray">
+                <br><span class="gray payment-description">
                     <?
                     if (intval($arPaySystem["PRICE"]) > 0)
                         echo str_replace("#PAYSYSTEM_PRICE#", SaleFormatCurrency(roundEx($arPaySystem["PRICE"], SALE_VALUE_PRECISION), $arResult["BASE_LANG_CURRENCY"]), GetMessage("SOA_TEMPL_PAYSYSTEM_PRICE"));
@@ -223,7 +229,7 @@ foreach ($arResult["PAY_SYSTEM"] as $arPaySystem) {
                         echo $arPaySystem["DESCRIPTION"];
                     ?>
                                 </span>
-
+</span>
             </p>
         <?
         }

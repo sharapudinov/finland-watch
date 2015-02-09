@@ -1,4 +1,4 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 //test_dump($arResult);
 /** @var array $arParams */
 /** @var array $arResult */
@@ -86,31 +86,38 @@ $this->setFrameMode(true);
                 <p>C функцией:</p>
 
                 <div class="filter-check">
+                    <?$counter=0?>
                     <ul>
                         <?
                         foreach ($arResult["ITEMS"] as $key => $arItem):
-                            if (!empty($arItem["VALUES"]) && $arItem["CODE"] == "FUNCTIONS"): ?>
-                                <? foreach ($arItem["VALUES"] as $val => $ar): ?>
-                                    <li>
-                                        <p class="check-calcul">
-                                            <input
-                                                type="checkbox"
-                                                value="<? echo $ar["HTML_VALUE"] ?>"
-                                                name="<? echo $ar["CONTROL_NAME"] ?>"
-                                                id="<? echo $ar["CONTROL_ID"] ?>"
-                                                <? echo $ar["CHECKED"] ? 'checked="checked"' : '' ?>
-                                                />
-                                            <label for="<? echo $ar["CONTROL_ID"] ?>"></label><? echo $ar["VALUE"]; ?>
-                                        </p>
-                                    </li>
-                                <? endforeach; ?>
-                            <?endif;
-                        endforeach;?>
+                        if (!empty($arItem["VALUES"]) && $arItem["CODE"] == "FUNCTIONS"): ?>
+                        <? foreach ($arItem["VALUES"] as $val => $ar): ?>
+                        <li>
+                            <p class="check-calcul">
+                                <input
+                                    type="checkbox"
+                                    value="<? echo $ar["HTML_VALUE"] ?>"
+                                    name="<? echo $ar["CONTROL_NAME"] ?>"
+                                    id="<? echo $ar["CONTROL_ID"] ?>"
+                                    <? echo $ar["CHECKED"] ? 'checked="checked"' : '' ?>
+                                    />
+                                <label for="<? echo $ar["CONTROL_ID"] ?>"></label><? echo $ar["VALUE"]; ?>
+                            </p>
+                        </li>
+
+                        <? $counter++;
+                        if (($counter + 1) - (round(count($arResult) / 2)) == 0): ?>
+                    </ul>
+                    <ul>
+                        <? endif ?>
+                        <? endforeach; ?>
+                        <?endif;
+                        endforeach; ?>
                     </ul>
                     <div class="clear"></div>
 
                 </div>
-                <?foreach ($arResult["ITEMS"] as $key => $arItem):
+                <? foreach ($arResult["ITEMS"] as $key => $arItem):
                     $key = md5($key);
                     if (isset($arItem["PRICE"])):
                         if (!$arItem["VALUES"]["MIN"]["VALUE"] || !$arItem["VALUES"]["MAX"]["VALUE"] || $arItem["VALUES"]["MIN"]["VALUE"] == $arItem["VALUES"]["MAX"]["VALUE"])
@@ -201,13 +208,14 @@ $this->setFrameMode(true);
 
                         </script>
                     <?endif;
-                endforeach;?>
+                endforeach; ?>
             </div>
             <div class="clear"></div>
 
             <div class="filter-btn">
                 <p>
-                    <input type="submit" id="set_filter" name="set_filter" value="<?= GetMessage("CT_BCSF_SET_FILTER") ?>"/>
+                    <input type="submit" id="set_filter" name="set_filter"
+                           value="<?= GetMessage("CT_BCSF_SET_FILTER") ?>"/>
                 </p>
             </div>
         </div>
