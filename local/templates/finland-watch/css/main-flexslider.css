@@ -48,7 +48,7 @@
 
 #main-slider .slides  li {
     height: 400px;
-    width: 1750px;
+    width: 100%;
     padding-top: 0 !important;
     margin-top: 0 !important;
     position: relative;

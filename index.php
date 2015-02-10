@@ -40,7 +40,7 @@ GLOBAL $arFilter;
                 "SECTION_ID_VARIABLE" => "SECTION_ID",
                 "CACHE_TYPE" => "A",
                 "CACHE_TIME" => "36000000",
-                "CACHE_GROUPS" => "Y",
+                "CACHE_GROUPS" => "N",
                 "DISPLAY_COMPARE" => "N",
                 "CACHE_FILTER" => "Y",
                 "PRICE_CODE" => array(
@@ -78,7 +78,7 @@ GLOBAL $arFilter;
                 "IBLOCK_BINDING" => "element",
                 "CACHE_TYPE" => "A",
                 "CACHE_TIME" => "36000",
-                "CACHE_GROUPS" => "Y"
+                "CACHE_GROUPS" => "N"
             ),
             false
         );?>
@@ -90,10 +90,10 @@ GLOBAL $arFilter;
                         <a href="#">Только оригинальные<br/> финские часы,<br/> никаких подделок!</a>
                     </li>
                     <li class="d">
-                        <a href="#">БЕСПЛАТНАЯ<br/> доставка</a>
+                        <a href="/about/delivery">БЕСПЛАТНАЯ<br/> доставка</a>
                     </li>
                     <li class="ga">
-                        <a href="#">Гарантия качества.<br/> Обмен и возврат в<br/> течении 15 дней</a>
+                        <a href="/about/guaranty">Гарантия качества.<br/> Обмен и возврат в<br/> течении 15 дней</a>
                     </li>
                     <li class="di">
                         <a href="#">Лучшие цены и<br/> большие скидки!</a>
@@ -131,7 +131,7 @@ GLOBAL $arFilter;
 		"SECTION_URL" => "",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "Y",
+		"CACHE_GROUPS" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y"
 	),
 	false
@@ -230,7 +230,7 @@ GLOBAL $arFilter;
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"CACHE_TYPE" => "Y",
 		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "Y",
+		"CACHE_GROUPS" => "N",
 		"DISPLAY_COMPARE" => "N",
 		"CACHE_FILTER" => "Y",
 		"PRICE_CODE" => array(
@@ -303,7 +303,7 @@ GLOBAL $arFilter;
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "Y",
+		"CACHE_GROUPS" => "N",
 		"DISPLAY_COMPARE" => "N",
 		"CACHE_FILTER" => "Y",
 		"PRICE_CODE" => array(
@@ -347,7 +347,7 @@ GLOBAL $arFilter;
 		"HIDE_NOT_AVAILABLE" => "N",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "Y",
+		"CACHE_GROUPS" => "N",
 		"SAVE_IN_SESSION" => "Y",
 		"INSTANT_RELOAD" => "N",
 		"PRICE_CODE" => array(
@@ -422,7 +422,7 @@ GLOBAL $arFilter;
                             "CACHE_TYPE" => "A",
                             "CACHE_TIME" => "36000000",
                             "CACHE_FILTER" => "Y",
-                            "CACHE_GROUPS" => "Y",
+                            "CACHE_GROUPS" => "N",
                             "DISPLAY_TOP_PAGER" => "N",
                             "DISPLAY_BOTTOM_PAGER" => "N",
                             "PAGER_TITLE" => "Новости",

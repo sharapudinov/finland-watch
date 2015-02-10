@@ -1,10 +1,20 @@
+.slider-home .name-goods a {
+    min-height: 32px;
+}
+
+.author-site {
+    padding-bottom: 10px;
+}
+
 .slider-content a {
     text-decoration: none;
 }
 
 #main-wrapper, #main-header, #main-slider, #main-content,
 #main-footer, #main-menu-top {
+/*
 	display: inline-table;
+*/
 }
 
 .title-tab-link h1 {

@@ -17,13 +17,13 @@ $this->setFrameMode(true); ?>
         <ul class="">
             <? foreach ($arResult["ITEMS"] as $key => $arItem): ?>
                 <li>
-                    <div class="bg two">
+                    <div class="bg  <? if ($arItem['PRICES']['BASE']['PRINT_DISCOUNT_DIFF']): ?>two<? endif ?>">
                         <span class="browsing">
                             <a class="modal-card" href="/catalog/card-product-modal.php?ID=<?= $arItem['ID'] ?>"
                                data-fancybox-type="ajax">просмотр</a>
                         </span>
                         <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
-                            <img src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" width="219" height="219"/>
+                            <img src="<?= $arItem["RESIZED_PREVIEW"]['src'] ?>" width="219px"/>
                         </a>
 
                         <div class="lines"></div>
@@ -60,22 +60,29 @@ $this->setFrameMode(true); ?>
                         <? if ($arItem["CAN_BUY"]): ?>
                             <p class="summ-goods">
                                 <span class="black">
-                                    <?= $arItem['PRICES']['BASE']['PRINT_VALUE'] ?>
-                                    <span class="rouble">a</span>
+                                    <? if ($arItem['PRICES']['BASE']['PRINT_DISCOUNT_DIFF']): ?>
+
+                                        <?= $arItem['PRICES']['BASE']['PRINT_VALUE'] ?>
+                                        <span class="rouble">a</span>
+                                    <? endif ?>
                                 </span>
                                 <span class="red">
                                     <?= $arItem['PRICES']['BASE']["PRINT_DISCOUNT_VALUE"] ?>
                                     <span class="rouble">a</span>
                                 </span>
                             </p>
-                            <p class="profit">
-                                Выгода
-                                <span class="red">
+                            <? if ($arItem['PRICES']['BASE']['PRINT_DISCOUNT_DIFF']): ?>
+                                <p class="profit">
+
+                                    Выгода
+                                    <span class="red">
                                     <?= $arItem['PRICES']['BASE']['PRINT_DISCOUNT_DIFF'] ?>
-                                    <span class="rouble">a</span>
+                                        <span class="rouble">a</span>
                                     (<?= $arItem['PRICES']['BASE']['DISCOUNT_DIFF_PERCENT'] ?>%)
                                 </span>
-                            </p>
+
+                                </p>
+                            <? endif ?>
                             <span id="<?= $arItem['ID'] . '_' . rand() ?>" class="basket-home"></span>
                         <? endif ?>
                     </div>

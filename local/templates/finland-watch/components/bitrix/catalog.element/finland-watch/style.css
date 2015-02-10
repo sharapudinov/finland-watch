@@ -1,3 +1,10 @@
 .catalog-price {
 	 color:red;
 }
+.safeguards-card li a {
+	text-decoration: none;
+}
+
+.no-price-link {
+	height: 35px;
+}

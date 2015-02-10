@@ -54,5 +54,9 @@ foreach($arResult["ITEMS"] as $cell=>$arElement)
     else
         $arResult["ITEMS"][$cell]['DISCOUNT_DIFF_VALUE']=$arElement['VALUE']-$arElement['DISCOUNT_VALUE'];
 }
+foreach($arResult["ITEMS"] as $cell=>$arElement){
+	$file = CFile::ResizeImageGet($arElement["PREVIEW_PICTURE"], array('width' => 219, 'height' => 219), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+	$arResult["ITEMS"][$cell]["RESIZED_PREVIEW"] = $file;
+}
 
 ?>

@@ -1,3 +1,7 @@
+.content-mini .old-price {
+	min-height: 35px;
+}
+
 .bx_slider_section{
 	position:relative;
 	overflow:hidden;

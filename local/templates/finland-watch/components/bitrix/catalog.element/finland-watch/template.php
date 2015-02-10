@@ -32,6 +32,7 @@ $this->setFrameMode(true);
     .MagicScroll {
         float: left;
     }
+
     .MagicScrollItem {
         padding: 2px;
     }
@@ -51,7 +52,7 @@ $this->setFrameMode(true);
                     <!-- Thumbnails -->
                     <? foreach ($arResult["MORE_PHOTO"] as $key => $PHOTO): ?>
 
-                        <a  href="<?= $PHOTO['SRC'] ?>" rel="zoom-id: zoom;"
+                        <a href="<?= $PHOTO['SRC'] ?>" rel="zoom-id: zoom;"
                            rev="<?= $arResult['RESIZED_MAIN_PHOTOS'][$key]['src'] ?>">
                             <img src="<?= $arResult["RESIZED_PHOTOS"][$key]["src"] ?>"/>
                         </a>
@@ -107,23 +108,24 @@ $this->setFrameMode(true);
             <div class="clear"></div>
             <div class="lines-card"></div>
 
-                <form action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
-                    <div class="card-price">
-                        <p>Цена:
+            <form action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
+                <div class="card-price">
+                    <p>Цена:
                         <span class="summ-card">
                             <?= $arResult['PRICES']['BASE']["DISCOUNT_VALUE"] ?>
                             <span class="rouble">a</span>
                         </span>
-                            <input type="hidden" name="<? echo $arParams["ACTION_VARIABLE"] ?>" value="BUY">
-                            <input type="hidden" name="<? echo $arParams["PRODUCT_ID_VARIABLE"] ?>"
-                                   value="<? echo $arResult["ID"] ?>">
-                            <input class="buy-card" type="submit" name="<? echo $arParams["ACTION_VARIABLE"] . "BUY" ?>"
-                                   value="<? echo GetMessage("CATALOG_BUY") ?>">
+                        <input type="hidden" name="<? echo $arParams["ACTION_VARIABLE"] ?>" value="BUY">
+                        <input type="hidden" name="<? echo $arParams["PRODUCT_ID_VARIABLE"] ?>"
+                               value="<? echo $arResult["ID"] ?>">
+                        <input class="buy-card" type="submit" name="<? echo $arParams["ACTION_VARIABLE"] . "BUY" ?>"
+                               value="<? echo GetMessage("CATALOG_BUY") ?>">
 
-                    </div>
-                </form>
-                <div class="no-price-link">
-                    <p>Старая цена: <br/>
+                </div>
+            </form>
+            <div class="no-price-link">
+                <? if ($arResult['PRICES']['BASE']["PRINT_DISCOUNT_DIFF"]): ?>
+                <p>Старая цена: <br/>
                         <span class="summ-card red">
                             <?= $arResult['PRICES']['BASE']["PRINT_VALUE"] ?>
                             <span class="rouble">a</span>
@@ -137,81 +139,89 @@ $this->setFrameMode(true);
                                 </span>
                             </span>
                         </span>
-                        <a href="#buy-one-cleek" class="buy-card one-cleek">купить в 1 клик</a>
+                    <? endif ?>
+                    <a href="#buy-one-cleek" class="buy-card one-cleek">купить в 1 клик</a>
 
-                    </p>
-                </div>
+                </p>
+            </div>
         </div>
+        <div class="discount-login-not">
+            <span class="discount-login-not-bg"></span> <!-- Белая подложка -->
+            <p class="login-not-text"><span class="red">Только сегодня!</span> Цена при регистрации:</p>
+            <p class="login-not-price-num">19160 <span class="rouble">a</span></p>
 
-        <div class="block-discount-gift-timer">
-            <div class="slider-discount">
-                <div class="jcarousel-wrapper wrap">
-                    <p class="radio"><input id="pass-card" type="radio"
-                                            name="radio-card" <?= empty($arResult['PRESENTS']) ? 'disabled' : '' ?>
-                                            value=""/>
-                        <label for="pass-card"></label></p>
 
-                    <div class="corner white"></div>
-                    <div class="jcarousel slider-two">
-                        <ul>
-                            <? if (!empty($arResult['PRESENTS'])):
-                                foreach ($arResult['PRESENTS'] as $key => $arItem) {
-                                    ?>
-                                    <li id='<?= "present_" . $key ?>'>
-                                        <a id="<?= 'present_' . $arItem['ID'] ?>" href="#"><img
-                                                src="<?= $arItem['RESIZE']['src'] ?>"/></a>
-
-                                        <p class="red">+ подарок</p>
-                                    </li>
-                                <?
-                                }
-                            endif;
-                            ?>
-                        </ul>
-
-                        <div class="clear"></div>
-                    </div>
-                    <a href="#" class="jcarousel-control-prev"></a>
-                    <a href="#" class="jcarousel-control-next"></a>
-
-                    <p class="jcarousel-pagination" style="display: none"></p>
-                </div>
-            </div>
-            <div class="slider-discount">
-                <div class="jcarousel-wrapper wrap">
-                    <p class="radio"><input id="pass-card2" type="radio" name="radio-card" value=""/>
-                        <label for="pass-card2"></label></p>
-
-                    <div class="corner blue"></div>
-                    <div class="jcarousel slider-two slider-blue">
-                        <ul class="">
-                            <li>
-                                <p class="nums">5099</p>
-
-                                <p class="text-star">рублей</p>
-
-                                <div class="gradient">
-                                    <p>скидка на второй товар</p>
-
-                                </div>
-                            </li>
-
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                    <a href="#" class="jcarousel-control-prev"></a>
-                    <a href="#" class="jcarousel-control-next"></a>
-                </div>
-            </div>
-            <div class="block-timer">
-                <p>До конца акции:</p>
-
-                <div class="timer" style="border: 1px solid #cccccc;">
-                </div>
-            </div>
-            <? endif ?>
-            <div class="clear"></div>
         </div>
+        <?endif?>
+        <!--        <div class="block-discount-gift-timer">-->
+<!--            <div class="slider-discount">-->
+<!--                <div class="jcarousel-wrapper wrap">-->
+<!--                    <p class="radio"><input id="pass-card" type="radio"-->
+<!--                                            name="radio-card" --><?//= empty($arResult['PRESENTS']) ? 'disabled' : '' ?>
+<!--                                            value=""/>-->
+<!--                        <label for="pass-card"></label></p>-->
+<!---->
+<!--                    <div class="corner white"></div>-->
+<!--                    <div class="jcarousel slider-two">-->
+<!--                        <ul>-->
+<!--                            --><?// if (!empty($arResult['PRESENTS'])):
+//                                foreach ($arResult['PRESENTS'] as $key => $arItem) {
+//                                    ?>
+<!--                                    <li id='--><?//= "present_" . $key ?><!--'>-->
+<!--                                        <a id="--><?//= 'present_' . $arItem['ID'] ?><!--" href="#"><img-->
+<!--                                                src="--><?//= $arItem['RESIZE']['src'] ?><!--"/></a>-->
+<!---->
+<!--                                        <p class="red">+ подарок</p>-->
+<!--                                    </li>-->
+<!--                                --><?//
+//                                }
+//                            endif;
+//                            ?>
+<!--                        </ul>-->
+<!---->
+<!--                        <div class="clear"></div>-->
+<!--                    </div>-->
+<!--                    <a href="#" class="jcarousel-control-prev"></a>-->
+<!--                    <a href="#" class="jcarousel-control-next"></a>-->
+<!---->
+<!--                    <p class="jcarousel-pagination" style="display: none"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="slider-discount">-->
+<!--                <div class="jcarousel-wrapper wrap">-->
+<!--                    <p class="radio"><input id="pass-card2" type="radio" name="radio-card" value=""/>-->
+<!--                        <label for="pass-card2"></label></p>-->
+<!---->
+<!--                    <div class="corner blue"></div>-->
+<!--                    <div class="jcarousel slider-two slider-blue">-->
+<!--                        <ul class="">-->
+<!--                            <li>-->
+<!--                                <p class="nums">5099</p>-->
+<!---->
+<!--                                <p class="text-star">рублей</p>-->
+<!---->
+<!--                                <div class="gradient">-->
+<!--                                    <p>скидка на второй товар</p>-->
+<!---->
+<!--                                </div>-->
+<!--                            </li>-->
+<!---->
+<!--                        </ul>-->
+<!--                        <div class="clear"></div>-->
+<!--                    </div>-->
+<!--                    <a href="#" class="jcarousel-control-prev"></a>-->
+<!--                    <a href="#" class="jcarousel-control-next"></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block-timer">-->
+<!--                <p>До конца акции:</p>-->
+<!---->
+<!--                <div class="timer" style="border: 1px solid #cccccc;">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            --><?// endif ?>
+<!--            <div class="clear"></div>-->
+<!--        </div>-->
         </form>
         <div class="lines-card"></div>
     </div>
@@ -231,8 +241,10 @@ $this->setFrameMode(true);
         <? if ($arResult["CAN_BUY"]): ?>
 
             <ul class="safeguards-card">
-                <li class="icon-b"><span class="blue">БЕСПЛАТНАЯ </span><br/>доставка</li>
-                <li class="icon-g"><span class="blue">ГАРАНТИЯ КАЧЕСТВА</span><br/> Обмен и возврат в течении 15 дней
+                <li class="icon-b"><a href="/about/delivery/"><span class="blue"> БЕСПЛАТНАЯ </span><br/>доставка</a>
+                </li>
+                <li class="icon-g"><a href="/about/guaranty/"><span class="blue">ГАРАНТИЯ КАЧЕСТВА</span></a><br/> Обмен
+                    и возврат в течении 15 дней
                 </li>
                 <li class="icon-k"><a href="#">КУПИТЬ В КРЕДИТ</a><br/> на выгодных условиях</li>
             </ul>
@@ -464,10 +476,10 @@ $this->setFrameMode(true);
         'zoom-distance': 5,
         'show-title': 'false',
         'opacity': 20,
-        'selectors-class' : 'selected',
-        'drag-mode' : 'false',
-        'slideshow-effect' : 'fade',
-        'expand-size' : 'original'
+        'selectors-class': 'selected',
+        'drag-mode': 'false',
+        'slideshow-effect': 'fade',
+        'expand-size': 'original'
 
     };
     MagicScroll.options = {
@@ -479,7 +491,7 @@ $this->setFrameMode(true);
     };
     MagicScroll.extraOptions.outside = {
         'arrows': 'outside',
-        'arrows-opacity' : 100
+        'arrows-opacity': 100
     };
 
 </script>
