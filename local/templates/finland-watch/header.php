@@ -10,7 +10,7 @@ $curPage = $APPLICATION->GetCurPage(true);
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width">
+ <!--       <meta name="viewport" content="initial-scale=1.0, width=device-width">-->
         <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_DIR ?>/favicon.ico"/>
         <script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
         <? //$APPLICATION->ShowHead();

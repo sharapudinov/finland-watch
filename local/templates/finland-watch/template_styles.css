@@ -1,3 +1,13 @@
+#block-main-news-about > section + section{
+    overflow:hidden;
+}
+
+.card-item-price{
+     overflow:hidden;
+ }
+
+
+
 .slider-home .name-goods a {
     min-height: 32px;
 }
