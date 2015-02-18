@@ -1,0 +1,154 @@
+Host: suuto.ru:80
+Date: 2015-02-18 11:12:15
+Module: main
+File: /home/bitrix/www/bitrix/modules/catalog/mysql/catalog.php<br>Line: 105 MySql Query Error: SELECT  CI.IBLOCK_ID as IBLOCK_ID, CI.YANDEX_EXPORT as YANDEX_EXPORT, CI.SUBSCRIPTION as SUBSCRIPTION, CI.VAT_ID as VAT_ID, CI.PRODUCT_IBLOCK_ID as PRODUCT_IBLOCK_ID, CI.SKU_PROPERTY_ID as SKU_PROPERTY_ID, OFFERS.SKU_PROPERTY_ID as OFFERS_PROPERTY_ID, OFFERS.IBLOCK_ID as OFFERS_IBLOCK_ID, I.ID as ID, I.IBLOCK_TYPE_ID as IBLOCK_TYPE_ID, I.ACTIVE as IBLOCK_ACTIVE, I.LID as LID, I.NAME as NAME FROM b_catalog_iblock CI LEFT JOIN b_catalog_iblock OFFERS ON (CI.IBLOCK_ID = OFFERS.PRODUCT_IBLOCK_ID) INNER JOIN b_iblock I ON (CI.IBLOCK_ID = I.ID) [No database selected]
+    CDatabaseMysql::Query < CCatalog::GetList < include < CBitrixComponentTemplate::__IncludeMutatorFile < CBitrixComponentTemplate::IncludeTemplate
+	/home/bitrix/www/bitrix/modules/catalog/mysql/catalog.php:105
+	/home/bitrix/www/local/templates/finland-watch/components/bitrix/search.title/finland-watch/result_modifier.php:18
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:634
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:557
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:12:30
+Module: main
+File: /home/bitrix/www/bitrix/modules/catalog/mysql/catalog.php<br>Line: 105 MySql Query Error: SELECT  CI.IBLOCK_ID as IBLOCK_ID, CI.YANDEX_EXPORT as YANDEX_EXPORT, CI.SUBSCRIPTION as SUBSCRIPTION, CI.VAT_ID as VAT_ID, CI.PRODUCT_IBLOCK_ID as PRODUCT_IBLOCK_ID, CI.SKU_PROPERTY_ID as SKU_PROPERTY_ID, OFFERS.SKU_PROPERTY_ID as OFFERS_PROPERTY_ID, OFFERS.IBLOCK_ID as OFFERS_IBLOCK_ID, I.ID as ID, I.IBLOCK_TYPE_ID as IBLOCK_TYPE_ID, I.ACTIVE as IBLOCK_ACTIVE, I.LID as LID, I.NAME as NAME FROM b_catalog_iblock CI LEFT JOIN b_catalog_iblock OFFERS ON (CI.IBLOCK_ID = OFFERS.PRODUCT_IBLOCK_ID) INNER JOIN b_iblock I ON (CI.IBLOCK_ID = I.ID) [No database selected]
+    CDatabaseMysql::Query < CCatalog::GetList < include < CBitrixComponentTemplate::__IncludeMutatorFile < CBitrixComponentTemplate::IncludeTemplate
+	/home/bitrix/www/bitrix/modules/catalog/mysql/catalog.php:105
+	/home/bitrix/www/local/templates/finland-watch/components/bitrix/search.title/finland-watch/result_modifier.php:18
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:634
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:557
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:12:33
+Module: main
+File: /home/bitrix/www/bitrix/modules/pull/classes/general/pull_stack.php<br>Line: 16 MySql Query Error: 
+				SELECT ps.ID, ps.MESSAGE
+				FROM b_pull_stack ps LEFT JOIN b_pull_channel pc ON pc.CHANNEL_ID = ps.CHANNEL_ID
+				WHERE ps.CHANNEL_ID = '5724080c10ae6ea99e0d2078ee220422' AND ps.ID > pc.LAST_ID [No database selected]
+    CDatabaseMysql::Query < CAllPullStack::Get < include < include_once < ExecuteModuleEventEx
+	/home/bitrix/www/bitrix/modules/pull/classes/general/pull_stack.php:16
+	/home/bitrix/www/bitrix/components/bitrix/pull.request/ajax.php:80
+	/home/bitrix/www/bitrix/modules/pull/ajax_hit.php:6
+	/home/bitrix/www/bitrix/modules/main/classes/general/module.php:443
+	/home/bitrix/www/bitrix/modules/main/classes/general/main.php:3575
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:12:43
+Module: main
+File: /home/bitrix/www/bitrix/modules/pull/classes/general/pull_stack.php<br>Line: 16 MySql Query Error: 
+				SELECT ps.ID, ps.MESSAGE
+				FROM b_pull_stack ps LEFT JOIN b_pull_channel pc ON pc.CHANNEL_ID = ps.CHANNEL_ID
+				WHERE ps.CHANNEL_ID = '5724080c10ae6ea99e0d2078ee220422' AND ps.ID > pc.LAST_ID [No database selected]
+    CDatabaseMysql::Query < CAllPullStack::Get < include < include_once < ExecuteModuleEventEx
+	/home/bitrix/www/bitrix/modules/pull/classes/general/pull_stack.php:16
+	/home/bitrix/www/bitrix/components/bitrix/pull.request/ajax.php:80
+	/home/bitrix/www/bitrix/modules/pull/ajax_hit.php:6
+	/home/bitrix/www/bitrix/modules/main/classes/general/module.php:443
+	/home/bitrix/www/bitrix/modules/main/classes/general/main.php:3575
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:33:49
+Module: Composite was rejected
+Reason: /local/templates/finland-watch/components/bitrix/map.google.system/finland-watch-main/template.php
+Request URI: /about/contacts/
+Script: /about/contacts/index.php
+    Bitrix\Main\Data\StaticHtmlCache::applyComponentFrameMode < CBitrixComponentTemplate::__IncludePHPTemplate < CBitrixComponentTemplate::IncludeTemplate < CBitrixComponent::showComponentTemplate < CBitrixComponent::includeComponentTemplate
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:516
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:588
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:542
+	/home/bitrix/www/bitrix/components/bitrix/map.google.system/component.php:98
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:33:49
+Module: Composite was rejected
+Reason: /local/templates/finland-watch/components/bitrix/map.google.system/finland-watch-samovivoz/template.php
+Request URI: /about/contacts/
+Script: /about/contacts/index.php
+    Bitrix\Main\Data\StaticHtmlCache::applyComponentFrameMode < CBitrixComponentTemplate::__IncludePHPTemplate < CBitrixComponentTemplate::IncludeTemplate < CBitrixComponent::showComponentTemplate < CBitrixComponent::includeComponentTemplate
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:516
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:588
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:542
+	/home/bitrix/www/bitrix/components/bitrix/map.google.system/component.php:98
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:33:52
+Module: Composite was rejected
+Reason: /local/templates/finland-watch/components/bitrix/map.google.system/finland-watch-main/template.php
+Request URI: /about/contacts/
+Script: /about/contacts/index.php
+    Bitrix\Main\Data\StaticHtmlCache::applyComponentFrameMode < CBitrixComponentTemplate::__IncludePHPTemplate < CBitrixComponentTemplate::IncludeTemplate < CBitrixComponent::showComponentTemplate < CBitrixComponent::includeComponentTemplate
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:516
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:588
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:542
+	/home/bitrix/www/bitrix/components/bitrix/map.google.system/component.php:98
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:33:52
+Module: Composite was rejected
+Reason: /local/templates/finland-watch/components/bitrix/map.google.system/finland-watch-samovivoz/template.php
+Request URI: /about/contacts/
+Script: /about/contacts/index.php
+    Bitrix\Main\Data\StaticHtmlCache::applyComponentFrameMode < CBitrixComponentTemplate::__IncludePHPTemplate < CBitrixComponentTemplate::IncludeTemplate < CBitrixComponent::showComponentTemplate < CBitrixComponent::includeComponentTemplate
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:516
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:588
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:542
+	/home/bitrix/www/bitrix/components/bitrix/map.google.system/component.php:98
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:33:54
+Module: Composite was rejected
+Reason: /local/templates/finland-watch/components/bitrix/map.google.system/finland-watch-main/template.php
+Request URI: /about/contacts/
+Script: /about/contacts/index.php
+    Bitrix\Main\Data\StaticHtmlCache::applyComponentFrameMode < CBitrixComponentTemplate::__IncludePHPTemplate < CBitrixComponentTemplate::IncludeTemplate < CBitrixComponent::showComponentTemplate < CBitrixComponent::includeComponentTemplate
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:516
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:588
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:542
+	/home/bitrix/www/bitrix/components/bitrix/map.google.system/component.php:98
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:33:54
+Module: Composite was rejected
+Reason: /local/templates/finland-watch/components/bitrix/map.google.system/finland-watch-samovivoz/template.php
+Request URI: /about/contacts/
+Script: /about/contacts/index.php
+    Bitrix\Main\Data\StaticHtmlCache::applyComponentFrameMode < CBitrixComponentTemplate::__IncludePHPTemplate < CBitrixComponentTemplate::IncludeTemplate < CBitrixComponent::showComponentTemplate < CBitrixComponent::includeComponentTemplate
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:516
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:588
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:542
+	/home/bitrix/www/bitrix/components/bitrix/map.google.system/component.php:98
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:33:55
+Module: Composite was rejected
+Reason: /local/templates/finland-watch/components/bitrix/map.google.system/finland-watch-main/template.php
+Request URI: /about/contacts/
+Script: /about/contacts/index.php
+    Bitrix\Main\Data\StaticHtmlCache::applyComponentFrameMode < CBitrixComponentTemplate::__IncludePHPTemplate < CBitrixComponentTemplate::IncludeTemplate < CBitrixComponent::showComponentTemplate < CBitrixComponent::includeComponentTemplate
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:516
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:588
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:542
+	/home/bitrix/www/bitrix/components/bitrix/map.google.system/component.php:98
+----------
+Host: suuto.ru:80
+Date: 2015-02-18 11:33:55
+Module: Composite was rejected
+Reason: /local/templates/finland-watch/components/bitrix/map.google.system/finland-watch-samovivoz/template.php
+Request URI: /about/contacts/
+Script: /about/contacts/index.php
+    Bitrix\Main\Data\StaticHtmlCache::applyComponentFrameMode < CBitrixComponentTemplate::__IncludePHPTemplate < CBitrixComponentTemplate::IncludeTemplate < CBitrixComponent::showComponentTemplate < CBitrixComponent::includeComponentTemplate
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:516
+	/home/bitrix/www/bitrix/modules/main/classes/general/component_template.php:588
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:593
+	/home/bitrix/www/bitrix/modules/main/classes/general/component.php:542
+	/home/bitrix/www/bitrix/components/bitrix/map.google.system/component.php:98
+----------

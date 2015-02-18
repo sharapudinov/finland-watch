@@ -1,1 +1,1 @@
-<?="© 2005 - 2014 «finland-watch.ru»";
+© 2005 - 2014 «finland-watch.ru»

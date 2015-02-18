@@ -1,6 +1,7 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 //test_dump($arParams);
+$this->setFrameMode(true);
 
 $arAllMapOptions = array_merge($arResult['ALL_MAP_OPTIONS'], $arResult['ALL_MAP_CONTROLS']);
 $arMapOptions = array_merge($arParams['OPTIONS'], $arParams['CONTROLS']);

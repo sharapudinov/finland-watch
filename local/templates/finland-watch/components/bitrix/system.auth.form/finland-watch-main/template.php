@@ -1,4 +1,6 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+$this->setFrameMode(true);
+?>
 <div class="form-sign-in">
     <p class="top-sign-in">Если Вы помните свой логин и пароль, то введите их в соответствующие поля:</p>
 
