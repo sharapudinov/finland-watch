@@ -63,7 +63,7 @@ $this->setFrameMode(true);
             </li>
         <?
         else: ?>
-            <li class="link-p active"><a
+            <li class="link-p"><a
                     href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= $arResult["nStartPage"] ?>"><?= $arResult["nStartPage"] ?></a>
             </li>
         <?endif ?>

@@ -1,4 +1,4 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 //test_dump($arParams);
 /** @var array $arParams */
 /** @var array $arResult */
@@ -38,9 +38,9 @@ $cell = 0;
             </a>
 
             <div class="lines"></div>
-            <p class="name-goods"><a href="<?=$arElement['DETAIL_PAGE_URL']?>"><?= $arElement["NAME"] ?></a></p>
+            <p class="name-goods"><a href="<?= $arElement['DETAIL_PAGE_URL'] ?>"><?= $arElement["NAME"] ?></a></p>
 
-            <?$APPLICATION->IncludeComponent(
+            <? $APPLICATION->IncludeComponent(
                 "bitrix:iblock.vote",
                 "finland-watch-stars",
                 array(
@@ -63,34 +63,33 @@ $cell = 0;
                     "DISPLAY_AS_RATING" => "rating"
                 ),
                 false
-            );?>
+            ); ?>
             <div class="lines"></div>
             <? foreach ($arElement["PRICES"] as $code => $arPrice): ?>
                 <? if ($arPrice["CAN_ACCESS"]): ?>
-                    <? if ($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]): ?>
+
                         <p class="summ-goods">
+                    <? if ($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]): ?>
                             <span class="black">
                                 <?= $arPrice["PRINT_VALUE"] ?>
                                 <span class="rouble">a</span>
                             </span>
+                        <?endif?>
                             <span class="red">
                                 <?= $arPrice["PRINT_DISCOUNT_VALUE"] ?>
                                 <span class="rouble">a</span>
                             </span>
                         </p>
+                    <? if ($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]): ?>
                         <p class="profit">
                             Выгода
                         <span class="red">
                             <?= $arPrice["PRINT_DISCOUNT_DIFF"] ?>
-                            <span class="rouble">a</span> (15%)
+                            <span class="rouble">a</span> (<?= $arPrice["DISCOUNT_DIFF_PERCENT"] ?>%)
                         </span>
                         </p>
-                    <? else: ?>
-                        <span class="red">
-                        <?= $arPrice["PRINT_DISCOUNT_VALUE"] ?>
-                            <span class="rouble">a</span>
-                        </span>
-                    <?endif; ?>
+
+                    <? endif; ?>
                 <? endif; ?>
                 <? if ($arElement["CAN_BUY"]): ?>
                     <noindex>
@@ -101,13 +100,13 @@ $cell = 0;
                     </noindex>
                 <? elseif ((count($arResult["PRICES"]) > 0) || is_array($arElement["PRICE_MATRIX"])): ?>
                     <?= GetMessage("CATALOG_NOT_AVAILABLE") ?>
-                <?endif ?>
+                <? endif ?>
             <? endforeach; ?>
 
         </div>
 
     </li>
-    <?$cell++;
+    <? $cell++;
     if ($cell % $arParams["LINE_ELEMENT_COUNT"] == 0):?>
         </ul>
         </div>

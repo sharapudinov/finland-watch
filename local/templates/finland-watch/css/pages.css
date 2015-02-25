@@ -1,4 +1,18 @@
 
+.bx-composite-btn {
+    opacity: 0;
+}
+
+.search-page input[type="text"]{
+    margin-top: 10px;
+}
+ #main-content .search-page input[type="submit"] {
+    margin-top: 0;
+}
+.search-page {
+    width: 72%;
+}
+
 .bread-crumbs {
     width: 960px;
     margin: 0 auto;
@@ -2392,7 +2406,7 @@
 
 .page-next-link ul {
     width: 60%;
-    margin-left: 260px;
+    margin-left: 250px;
     margin-bottom: 30px;
 }
 

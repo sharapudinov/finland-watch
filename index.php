@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
+$APPLICATION->SetTitle("Интернет-магазин спортивных часов 'Suunto'");
 GLOBAL $arFilter;
 ?><!--=========== Мини слайдер ========-->
 <section>

@@ -205,7 +205,7 @@ switch ($sort) {
 }
 
 $page_element_count = !is_set($_REQUEST['PAGE_ELEMENT_COUNT']) ? 15 : $_REQUEST['PAGE_ELEMENT_COUNT'];
-$page_element_count = $page_element_count == 'all' ? '' : $page_element_count;
+$page_element_count = $page_element_count == 'all' ? 1000 : $page_element_count;
 GLOBAL $main_filter;
 if (is_set($_REQUEST['SPORT'])) $main_filter['PROPERTY_SPORT'] = $_REQUEST['SPORT'];
 if ($_REQUEST['PRESENTS'] == 'Y') $main_filter['!PROPERTY_PRESENTS'] = false;

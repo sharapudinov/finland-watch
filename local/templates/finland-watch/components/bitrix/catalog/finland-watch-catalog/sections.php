@@ -312,5 +312,4 @@ $this->setFrameMode(true);
         <img src="<?=SITE_TEMPLATE_PATH?>/img/clock-c.png" width="391" height="242" title="" alt="" />
         <div class="clear"></div>
     </div>
-
 </div>
