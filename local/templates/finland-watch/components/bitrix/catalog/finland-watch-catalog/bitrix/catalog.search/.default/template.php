@@ -46,6 +46,9 @@ $this->setFrameMode(false);
             ),
             $component
         );
+
+        $page_element_count = !is_set($_REQUEST['PAGE_ELEMENT_COUNT']) ? 15 : $_REQUEST['PAGE_ELEMENT_COUNT'];
+        $page_element_count = $page_element_count == 'all' ? 1000 : $page_element_count;
         if (!empty($arElements) && is_array($arElements)) {
             global $searchFilter;
             $searchFilter = array(
@@ -53,7 +56,7 @@ $this->setFrameMode(false);
             );
             $APPLICATION->IncludeComponent(
                 "bitrix:catalog.section",
-                "finland-watch",
+                "finland-watch-search",
                 array(
                     "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
                     "IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -61,7 +64,7 @@ $this->setFrameMode(false);
                     "ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
                     "ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
                     "ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
-                    "PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
+                    "PAGE_ELEMENT_COUNT" =>$page_element_count,
                     "LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
                     "PROPERTY_CODE" => $arParams["PROPERTY_CODE"],
                     "OFFERS_CART_PROPERTIES" => $arParams["OFFERS_CART_PROPERTIES"],
@@ -143,5 +146,26 @@ $this->setFrameMode(false);
             echo GetMessage("CT_BCSE_NOT_FOUND");
         }
         ?>
+        <section class="floatleft">
+            <div class="page-nav-count-link">
+
+                <ul>
+                    <li class="po">показывать по</li>
+                    <li class="link-more left <?= $page_element_count == '15' ? 'active' : '' ?>"><a
+                            href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>15))?>">15</a></li>
+                    <li class="link-more <?= $page_element_count == '30' ? 'active' : '' ?>"><a
+                            href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>30))?>">30</a></li>
+                    <li class="link-more <?= $page_element_count == '45' ? 'active' : '' ?>"><a
+                            href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>45))?>">45</a></li>
+                    <li class="link-more <?= $page_element_count == '90' ? 'active' : '' ?>"><a
+                            href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>90))?>">90</a></li>
+                    <li class="link-more right <?= $page_element_count == '' ? 'active' : '' ?>"><a
+                            href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT'=>'all'))?>">Все</a></li>
+                </ul>
+
+                <div class="clear"></div>
+            </div>
+
+        </section>
     </section>
 </div>

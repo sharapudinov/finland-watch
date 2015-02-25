@@ -1,3 +1,10 @@
+.banner_left {
+    width: 230px;
+    height: auto;
+    float: left;
+}
+
+
 .content-mini .title-mini {
     margin-left: -35px;
 }
