@@ -87,7 +87,7 @@ GLOBAL $arFilter;
             <div class="advantages">
                 <ul>
                     <li class="cl">
-                        <a href="#">Только оригинальные<br/> финские часы,<br/> никаких подделок!</a>
+                        <a href="/about/">Только оригинальные<br/> финские часы,<br/> никаких подделок!</a>
                     </li>
                     <li class="d">
                         <a href="/about/delivery">БЕСПЛАТНАЯ<br/> доставка</a>

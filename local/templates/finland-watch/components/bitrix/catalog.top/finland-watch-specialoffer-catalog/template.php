@@ -85,9 +85,9 @@ $this->setFrameMode(true); ?>
                             <? endif ?>
                         </p>
 
-                        <p class="link-sm"><a href="#buy-one-cleek" class="one-cleek">купить в 1 клик</a><a
-                                id="<?= $arItem['ID'] . '_' . rand() ?>" href="#" class="buy">купить</a></p>
-
+                        <p class="link-sm"><a href="/ajax/one_click.php?name=<?=str_replace(' ','+',$arItem['NAME'])?>&price=<?=$arItem['MIN_PRICE']["DISCOUNT_VALUE"]?>&picture=<?=$arItem['PREVIEW_PICTURE']['SRC']?>" class="one-cleek">купить в 1 клик</a>
+                            <a class="add_to_basket" id="<?= $arItem['ID'] . '_' . rand() ?>" href="#" class="buy">купить</a>
+                        </p>
                         <p class="catch red">Успей заказать сегодня!</p>
 
                         <div class="clear"></div>

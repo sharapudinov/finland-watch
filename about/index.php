@@ -17,9 +17,9 @@ $APPLICATION->SetTitle("О магазине");
         <div id="dynamic-block">
             <div class="dynamic-block">
                 <ul>
-                    <li class="active"><a href="#">СЕРВИС</a></li>
-                    <li><a href="#">НАШИ КЛИЕНТЫ</a></li>
-                    <li><a href="#">ОТЗЫВЫ</a></li>
+                    <li class="active"><a href="/about/service/">СЕРВИС</a></li>
+                    <li><a href="/about/clients/">НАШИ КЛИЕНТЫ</a></li>
+                    <li><a href="/reviews/ ">ОТЗЫВЫ</a></li>
                 </ul>
                 <div class="clear"></div>
             </div>

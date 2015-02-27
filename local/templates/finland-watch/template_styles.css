@@ -1,3 +1,7 @@
+.no-price-link {
+    z-index: 5;
+}
+
 .banner_left {
     width: 230px;
     height: auto;

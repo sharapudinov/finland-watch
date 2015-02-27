@@ -140,7 +140,7 @@ $this->setFrameMode(true);
                             </span>
                         </span>
                     <? endif ?>
-                    <a href="#buy-one-cleek" class="buy-card one-cleek">купить в 1 клик</a>
+                    <a href="/ajax/one_click.php?name=<?=str_replace(' ','+',$arResult['NAME'])?>&price=<?=$arResult['PRICES']['BASE']["DISCOUNT_VALUE"]?>&picture=<?=$arResult["RESIZED_MAIN_PREVIEW"]["src"]?>" class="buy-card one-cleek">купить в 1 клик</a>
 
                 </p>
             </div>

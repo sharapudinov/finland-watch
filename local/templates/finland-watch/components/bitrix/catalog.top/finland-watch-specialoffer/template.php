@@ -45,7 +45,7 @@ $this->setFrameMode(true); ?>
                         </p>
 
                         <p class="link-sm">
-                            <a id="<?= $arItem['ID'] . '_' . rand() ?>" href="#">купить</a>
+                            <a class="add_to_basket" id="<?= $arItem['ID'] . '_' . rand() ?>" href="#">купить</a>
                         </p>
 
                         <div class="clear"></div>

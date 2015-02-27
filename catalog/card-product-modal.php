@@ -127,6 +127,6 @@
             "SET_META_KEYWORDS" => "Y",
             "SET_META_DESCRIPTION" => "Y"
         ),
-        $component
+        false
     );?>
 </div>

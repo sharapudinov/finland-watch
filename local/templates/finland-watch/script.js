@@ -45,7 +45,7 @@ jQuery(document).ready(function () {
 
     jQuery('.fancybox').fancybox();
 
-    jQuery('.one-cleek').fancybox();
+    jQuery('.one-cleek').fancybox({type: 'ajax'});
     jQuery('.two-cleek').fancybox();
     jQuery(".modalbox").fancybox();
     jQuery(".modalbox-two").fancybox();
@@ -148,7 +148,7 @@ jQuery(document).ready(function () {
 
     });
 
-    jQuery('.basket-home, .link-sm a').on('click',function(e){
+    jQuery('.basket-home, .link-sm a.add_to_basket').on('click',function(e){
         e.preventDefault();
         add2basket(jQuery(this).attr('id'));
     })
