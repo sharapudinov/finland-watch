@@ -112,7 +112,7 @@ $this->setFrameMode(true);
                 <div class="card-price">
                     <p>Цена:
                         <span class="summ-card">
-                            <?= $arResult['PRICES']['BASE']["DISCOUNT_VALUE"] ?>
+                            <?= $arResult['PRICES']['BASE']["PRINT_DISCOUNT_VALUE"] ?>
                             <span class="rouble">a</span>
                         </span>
                         <input type="hidden" name="<? echo $arParams["ACTION_VARIABLE"] ?>" value="BUY">

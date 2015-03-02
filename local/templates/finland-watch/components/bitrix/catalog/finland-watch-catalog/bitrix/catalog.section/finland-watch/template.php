@@ -14,6 +14,7 @@
 $this->setFrameMode(true);
 $cell = 0;
 ?>
+
 <? foreach ($arResult["ITEMS"] as $cell => $arElement): ?>
     <?
     $this->AddEditAction($arElement['ID'], $arElement['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -62,7 +63,7 @@ $cell = 0;
                     "CACHE_TIME" => "3600",
                     "DISPLAY_AS_RATING" => "rating"
                 ),
-                false
+                $component
             ); ?>
             <div class="lines"></div>
             <? foreach ($arElement["PRICES"] as $code => $arPrice): ?>

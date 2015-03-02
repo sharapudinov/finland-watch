@@ -1,3 +1,7 @@
+.teble-name.basket-my-table table .table-text .name-clock {
+    max-width: 250px;
+}
+
 .no-price-link {
     z-index: 5;
 }

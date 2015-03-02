@@ -10,7 +10,7 @@ $curPage = $APPLICATION->GetCurPage(true);
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
- <!--       <meta name="viewport" content="initial-scale=1.0, width=device-width">-->
+        <!--       <meta name="viewport" content="initial-scale=1.0, width=device-width">-->
         <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_DIR ?>/favicon.ico"/>
         <script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
         <? //$APPLICATION->ShowHead();
@@ -18,7 +18,7 @@ $curPage = $APPLICATION->GetCurPage(true);
 
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/js/magictoolbox/magicscroll/magicscroll.css');
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/js/magictoolbox/magiczoomplus/magiczoomplus.css');
-/*        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/contact-slider.css');*/
+        /*        $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/contact-slider.css');*/
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jcarousel.responsive.css');
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jquery-ui.css');
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.css');
@@ -34,7 +34,7 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/fancybox/jquery.fancybox.css?v=2.1.5');
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/pages.css');
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/zoom/jquery.jqzoom.css');
-        
+
         $APPLICATION->ShowMeta("robots", false, true);
         $APPLICATION->ShowMeta("keywords", false, true);
         $APPLICATION->ShowMeta("description", false, true);
@@ -198,19 +198,21 @@ $curPage = $APPLICATION->GetCurPage(true);
 
 <? if ($curPage != SITE_DIR . "index.php"): ?>
     <div id="main-content">
-    <section>
-        <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
-            "START_FROM" => "1",
-            "PATH" => "",
-            "SITE_ID" => "-"
-        ),
-            false,
-            Array('HIDE_ICONS' => 'Y')
-        ); ?>
-        <? if (str_replace("/catalog/", '', $curPage) == $curPage): ?>
+    <? if (str_replace("/catalog/", '', $curPage) == $curPage): ?>
+        <section>
+            <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
+                "START_FROM" => "1",
+                "PATH" => "",
+                "SITE_ID" => "s1"
+            ),
+                false,
+                Array('HIDE_ICONS' => 'Y')
+            ); ?>
+
             <h1>
                 <?= $APPLICATION->ShowTitle(false); ?>
             </h1>
-        <? endif ?>
-    </section>
+
+        </section>
+    <? endif ?>
 <? endif ?>

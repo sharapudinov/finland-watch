@@ -29,6 +29,13 @@ if (empty($arResult))
                 case '/catalog/':
                     $secondLevel='catalog';
                     break;
+                case '/series/':
+                    $secondLevel='series';
+                    break;
+
+                case '/about/delivery/':
+                    $secondLevel='delivery';
+                    break;
                 default : $secondLevel='';
             }
        ?>

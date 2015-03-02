@@ -27,7 +27,7 @@ $strTitle = "";
                             $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "SECTION_EDIT"));
                             $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
                             if ($arSection['DEPTH_LEVEL'] == 1):?>
-                                <option value="<?= $arSection['CODE'] ?>/"><?= $arSection['NAME'] ?></option>
+                                <option value="<?= $arSection['CODE'] ?>"><?= $arSection['NAME'] ?></option>
                             <?endif;
                         }?>
                     </select>

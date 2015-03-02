@@ -14,7 +14,16 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);?>
-
+<section>
+    <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
+        "START_FROM" => "1",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    ),
+        $component,
+        Array('HIDE_ICONS' => 'Y')
+    ); ?>
+</section>
 <div class="content content-basket">
 
 <section class="main-block">

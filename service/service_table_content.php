@@ -3,7 +3,6 @@ if(!CModule::IncludeModule("Main")) die;
 $sectionCode = $_REQUEST['SECTION_CODE'];
 // создаем объект
 $obCache = new CPHPCache;
-
 // время кеширования
 $life_time = 360000000;
 
@@ -28,7 +27,6 @@ else :
         );
     }
 endif;
-
 // начинаем буферизирование вывода
 if ($obCache->StartDataCache()):?>
     <tr>
@@ -37,6 +35,7 @@ if ($obCache->StartDataCache()):?>
         <th>Програмное <br/>обеcпечение</th>
     </tr>
     <?while ($item = $dbRes->GetNext()):
+        test_dump($item);
         ?>
         <tr>
             <td>
