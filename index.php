@@ -183,8 +183,7 @@ GLOBAL $arFilter;
             <div class="bread-crumbs home">
                 <ul class="bread-crumbs-link">
                     <li class="icon-link-home"><a href="#"></a></li>
-                    <li>НОВИНКИ МАГАЗИНА</li>
-
+                    <li><a href="/catalog/newproducts/">НОВИНКИ МАГАЗИНА</a></li>
                 </ul>
 
             </div>
@@ -258,8 +257,7 @@ GLOBAL $arFilter;
             <div class="bread-crumbs home">
                 <ul class="bread-crumbs-link">
                     <li class="icon-link-home"><a href="#"></a></li>
-                    <li>Хиты продаж</li>
-
+                    <li><a href="/catalog/saleleads/">Хиты продаж</a></li>
                 </ul>
             </div>
             <div class="slider-home">

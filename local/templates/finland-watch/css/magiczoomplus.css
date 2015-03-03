@@ -17,7 +17,7 @@
 /* Style of the small image link */
 .MagicZoomPlus, .MagicZoomPlus:hover {
     display: inline-block;
-    cursor: url(graphics/zoomin.cur), pointer;
+    cursor: url(../graphics/zoomin.cur), pointer;
     outline: 0 !important;
     font-size: 0 !important;
     line-height: 100% !important;

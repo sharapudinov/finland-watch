@@ -168,6 +168,7 @@ function BasketResult(arResult){
     if (arResult.STATUS === 'OK')
     {
         BX.onCustomEvent('OnBasketChange');
+        window.location="/personal/cart/?backurl="+window.location.pathname;
     }
     else alert (arResult.ERROR)
 }

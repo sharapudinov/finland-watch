@@ -119,9 +119,9 @@ $cell = 0;
 <? endforeach; // foreach($arResult["ITEMS"] as $arElement):?>
 
 <? if ($cell % $arParams["LINE_ELEMENT_COUNT"] != 0): ?>
-    <? while (($cell++) % $arParams["LINE_ELEMENT_COUNT"] != 0): ?>
-        <li>&nbsp;</li>
-    <? endwhile; ?>
+<!--    --><?// while (($cell++) % $arParams["LINE_ELEMENT_COUNT"] != 0): ?>
+<!--        <li>&nbsp;</li>-->
+<!--    --><?// endwhile; ?>
     </ul>
     </div>
     </div>

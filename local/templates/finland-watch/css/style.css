@@ -897,11 +897,15 @@ h6 {
     padding-top: 5px;
 }
 
- .bread-crumbs.home li{
+ .bread-crumbs.home li,.bread-crumbs.home li a{
     font-family: 'GloberBoldFree', sans-serif;
     font-size: 20px;
     color: #000000;
     text-transform: uppercase;
+}
+
+.bread-crumbs.home ul li a:after {
+    content:"";
 }
 
 .bread-crumbs.home ul li.icon-link-home a {

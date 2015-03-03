@@ -409,7 +409,7 @@
 
 
 .slider-home .jcarousel-control-prev {
-    left: -35px;
+    left: 0;
     background-position: 0 0;
 }
 
@@ -418,7 +418,7 @@
 }
 
 .jcarousel-control-next {
-    right: -35px;
+    right: 0;
     background-position: right 0;
 }
 

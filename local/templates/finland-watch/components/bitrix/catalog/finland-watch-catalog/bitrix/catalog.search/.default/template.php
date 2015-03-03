@@ -65,7 +65,7 @@ $this->setFrameMode(false);
                     "ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
                     "ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
                     "PAGE_ELEMENT_COUNT" =>$page_element_count,
-                    "LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
+                    "LINE_ELEMENT_COUNT" => 4,
                     "PROPERTY_CODE" => $arParams["PROPERTY_CODE"],
                     "OFFERS_CART_PROPERTIES" => $arParams["OFFERS_CART_PROPERTIES"],
                     "OFFERS_FIELD_CODE" => $arParams["OFFERS_FIELD_CODE"],

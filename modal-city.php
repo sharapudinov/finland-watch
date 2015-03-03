@@ -5,7 +5,7 @@ $sectionId = $_REQUEST['SECTION_ID'];
 $obCache = new CPHPCache;
 
 // время кеширования
-$life_time = 360000000;
+$life_time = 3600000;
 
 // формируем идентификатор кеша в зависимости от всех параметров
 // которые могут повлиять на результирующий HTML
@@ -24,7 +24,7 @@ else :
             "COUNTRY_NAME_LANG" => "ASC",
             "CITY_NAME_LANG" => "ASC"
         ),
-        array("LID" => LANGUAGE_ID, "COUNTRY_ID" => 4, "!CITY_NAME" => ''),
+        array("LID" => LANGUAGE_ID, "COUNTRY" => 1, "!CITY_NAME" => ''),
         false,
         false,
         array()

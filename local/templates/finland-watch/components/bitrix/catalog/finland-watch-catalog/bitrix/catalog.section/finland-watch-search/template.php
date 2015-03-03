@@ -113,19 +113,15 @@ $cell = 0;
         </div>
         </div>
         </section>
-        <div class="banner_left">
-            <?if ($cell == $arParams["LINE_ELEMENT_COUNT"]):?>
-                <img width="100%" src="<?=SITE_TEMPLATE_PATH?>/img/banner.jpg"/>
-            <?endif?>
-        </div>
+
     <? endif ?>
 
 <? endforeach; // foreach($arResult["ITEMS"] as $arElement):?>
 
 <? if ($cell % $arParams["LINE_ELEMENT_COUNT"] != 0): ?>
-    <? while (($cell++) % $arParams["LINE_ELEMENT_COUNT"] != 0): ?>
+   <!-- <?/* while (($cell++) % $arParams["LINE_ELEMENT_COUNT"] != 0): */?>
         <li>&nbsp;</li>
-    <? endwhile; ?>
+    --><?/* endwhile; */?>
     </ul>
     </div>
     </div>
@@ -133,8 +129,8 @@ $cell = 0;
     </section>
 
 <? endif ?>
-</section>
-
+<!--</section>
+-->
 <? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
     <section class="floatleft">
         <div class="page-next-link">

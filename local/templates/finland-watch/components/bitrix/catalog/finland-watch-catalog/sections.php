@@ -12,6 +12,7 @@ GLOBAL $arFilter;
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
 ?>
 <div class="content">
     <section>
@@ -52,8 +53,7 @@ $this->setFrameMode(true);
         <div class="bread-crumbs home">
             <ul class="bread-crumbs-link">
                 <li class="icon-link-home"><a href="#"></a></li>
-                <li>СПЕЦПЕРДЛОЖЕНИЯ</li>
-
+                <li><a href="/catalog/specialoffers/">СПЕЦПЕРДЛОЖЕНИЯ</a></li>
             </ul>
 
         </div>
@@ -126,10 +126,8 @@ $this->setFrameMode(true);
         <div class="bread-crumbs home">
             <ul class="bread-crumbs-link">
                 <li class="icon-link-home"><a href="#"></a></li>
-                <li>НОВИНКИ</li>
-
+                <li><a href="/catalog/newproducts/">НОВИНКИ</a></li>
             </ul>
-
         </div>
         <div class="slider-home">
             <? $arFilter = array("PROPERTY_NEWPRODUCT" => 1) ?>
@@ -196,10 +194,8 @@ $this->setFrameMode(true);
         <div class="bread-crumbs home">
             <ul class="bread-crumbs-link">
                 <li class="icon-link-home"><a href="#"></a></li>
-                <li>ХИТЫ ПРОДАЖ</li>
-
+                <li><a href="/catalog/saleleads/">ХИТЫ ПРОДАЖ</a></li>
             </ul>
-
         </div>
         <div class="slider-home">
             <? $arFilter = array("PROPERTY_SALELEAD" => 20) ?>

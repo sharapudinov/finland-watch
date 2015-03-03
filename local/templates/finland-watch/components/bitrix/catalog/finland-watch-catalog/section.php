@@ -1,6 +1,6 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 //добавляем название раздела
-//test_dump($arResult);
+
 $dbRes = CIBlockSection::GetList(
     array(),
     array("CODE" => $arResult['VARIABLES']["SECTION_CODE"]),
@@ -11,6 +11,9 @@ $dbRes = CIBlockSection::GetList(
 $res = $dbRes->GetNext();
 $arResult['SECTION'] = $res;
 $arResult['SECTION']['RESIZED_PICTURE'] = CFile::ResizeImageGet($res['PICTURE'], array("width" => 391, "height" => 242), BX_RESIZE_IMAGE_PROPORTIONAL);
+
+
+//test_dump($arResult);
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -27,6 +30,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
 GLOBAL ${$arParams['FILTER_NAME']};
+GLOBAL $main_filter;
 ${$arParams['FILTER_NAME']} = array();
 $this->setFrameMode(true); ?>
 <section>
@@ -41,7 +45,41 @@ $this->setFrameMode(true); ?>
                 </a>
             </li>
             <li>
-                <?=is_array($arResult['SECTION'])?$arResult['SECTION']['NAME']:(($arResult['VARIABLES']["SECTION_CODE"]=='all')?"Все модели":'') ?>
+                <? if (isset($arResult['SECTION']['NAME'])) {
+                    $section = $arResult['SECTION']['NAME'];
+                    $APPLICATION->SetPageProperty('title', 'Suunto ' . $arResult['SECTION']['NAME'] . ' — Каталог умных часов Suunto —
+купить часы ' . $arResult['SECTION']['NAME'] . ' в Москве с доставкой по всей России ');
+
+                } else switch ($arResult['VARIABLES']["SECTION_CODE"]):
+                    case 'all':
+                        $section = "Все модели";
+                        $APPLICATION->SetPageProperty('title', 'Каталог часов – все модели');
+                        break;
+                    case 'saleleads':
+                        $main_filter = array("SALELEAD" => 20);
+                        $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
+                        $APPLICATION->SetPageProperty('title', 'Каталог часов – Хиты продаж');
+                        $section = "Хиты продаж";
+                        break;
+                    case 'newproducts':
+                        $main_filter = array("PROPERTY_NEWPRODUCT" => 1);
+                        $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
+                        $APPLICATION->SetPageProperty('title', 'Каталог часов – Новинки');
+                        $section = 'Новинки';
+                        break;
+                    case 'specialoffers':
+                        $main_filter = array("PROPERTY_SPECIALOFFER" => 3);
+                        $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
+                        $APPLICATION->SetPageProperty('title', 'Каталог часов – Спецпредложения');
+                        $section = 'Спецпредложения';
+                        break;
+                    case 'discounts':
+                        $main_filter=array("PROPERTY_DISCOUNT" => 37);
+                        $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
+                        $APPLICATION->SetPageProperty('title', 'Каталог часов – Товары со скидками');
+                        $section = 'Товары со скидками';
+                endswitch; ?>
+                <?= $section ?>
             </li>
         </ul>
     </div>
@@ -227,7 +265,7 @@ $this->setFrameMode(true); ?>
 
         $page_element_count = !is_set($_REQUEST['PAGE_ELEMENT_COUNT']) ? 15 : $_REQUEST['PAGE_ELEMENT_COUNT'];
         $page_element_count = $page_element_count == 'all' ? 1000 : $page_element_count;
-        GLOBAL $main_filter;
+
         if (is_set($_REQUEST['SPORT'])) $main_filter['PROPERTY_SPORT'] = $_REQUEST['SPORT'];
         if ($_REQUEST['PRESENTS'] == 'Y') $main_filter['!PROPERTY_PRESENTS'] = false;
         $intSectionID = 0;
