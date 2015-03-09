@@ -29,7 +29,7 @@ if (empty($arResult))
                 case '/catalog/':
                     $secondLevel='catalog';
                     break;
-                case '/series/':
+                case '#/series/':
                     $secondLevel='series';
                     break;
 

@@ -261,7 +261,7 @@ GLOBAL $arFilter;
                 </ul>
             </div>
             <div class="slider-home">
-                <? $arFilter = array("SALELEAD" => 20) ?>
+                <? $arFilter = array("PROPERTY_SALELEAD" => 20) ?>
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:catalog.top",
                     "finland-watch-newproduct",

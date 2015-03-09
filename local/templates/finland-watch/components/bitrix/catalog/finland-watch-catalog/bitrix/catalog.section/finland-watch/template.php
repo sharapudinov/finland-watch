@@ -128,6 +128,7 @@ $cell = 0;
     </div>
     </section>
 <? endif ?>
+<div class="clearfix"></div>
 <? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
     <section class="floatleft">
         <div class="page-next-link">

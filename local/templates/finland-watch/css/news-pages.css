@@ -1,0 +1,147 @@
+﻿
+.content-news {
+    padding-bottom: 30px;
+    
+}
+            
+.news-block {
+    margin-top: 40px;
+    
+}
+
+.lines-news {
+    height: 1px;
+    margin: 0 15px;
+    background-color: #dfdfdf;
+}
+
+.news {
+    float: left;
+    min-height: 365px;
+    width: 231px;
+    margin-right: 9px;
+    margin-bottom: 12px;
+    border-bottom: 3px solid #ffffff;
+    
+}
+
+.news img {
+    width: 231px;
+    height: 153px;
+}
+
+.news:hover {
+    border-color: #0ab5fa;
+}
+
+.news-block .news {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.news-block .news .social-card {
+    float: none !important;
+    padding-top: 15px;
+    margin-left: 15px;
+}
+
+.news a.news-a {
+    min-height: 310px;
+    text-decoration: none;
+    
+}
+
+.news-block .news img, .news-block .news p {
+    margin-bottom: 15px;
+}
+
+.news-block .news p{
+    margin-left: 13px;
+}
+
+
+.dates-news {
+    font-size: 14px;
+    color: #909090 !important;
+}
+
+.title-news {
+    font-size: 18px;
+    color: #000000;
+}
+
+.news-block.news-text {
+    margin-top: 20px;
+   /* background-image:url("../img/news-img.png") ;
+    background-repeat: no-repeat;
+    background-position: right 130px;*/
+}
+
+.date-title-news {
+    min-height: 75px;
+    border-top: 1px solid #d9dadc;
+    border-bottom: 4px solid #d9dadc;
+}
+
+.ul-news {
+    font-family: 'GothamPro', sans-serif;
+}
+
+.ul-news li{
+    line-height: 75px;
+    float: left;
+    
+}
+
+.date-title-news .date-news-li {
+    min-width: 155px;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #000000;
+    border-right: 1px solid #d9dadc;
+}
+
+
+.date-title-news .title-news-li{
+    padding-left: 25px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.block-news-text {
+    width: 490px;
+    margin: 40px 0 0 170px;
+}
+
+.block-news-text p{
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #2e2e2e;
+    text-align: justify;
+}
+
+/*=================== Модальное окно новостей =======================*/
+
+
+.news-news {
+    min-width: 500px;
+    max-width: 800px;
+    padding: 20px 0;
+}
+
+#modal_news.modal-news {
+    padding: 20px 40px;
+    display: none;
+}
+
+.news-news img{    
+    float: left;
+    margin: 0 20px 10px 0;
+}
+
+.news-news p {
+    margin-bottom: 10px;
+    line-height: 1.3;
+}

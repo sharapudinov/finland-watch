@@ -27,6 +27,9 @@ $this->setFrameMode(true);
                     <p>Я хочу:</p>
 
                     <p>Часы для:</p>
+
+                    <p>Серия:</p>
+
                 </div>
                 <div class="select-option">
                     <div class="box visible">
@@ -67,6 +70,32 @@ $this->setFrameMode(true);
                             </div>
                         </div>
                     </div>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:catalog.section.list",
+                        "finland-watch-select-filter",
+                        array(
+                            "IBLOCK_TYPE" => "catalog",
+                            "IBLOCK_ID" => "2",
+                            "SECTION_ID" => "",
+                            "SECTION_CODE" => "",
+                            "COUNT_ELEMENTS" => "Y",
+                            "TOP_DEPTH" => "2",
+                            "SECTION_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SECTION_USER_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SECTION_URL" => "",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "36000000",
+                            "CACHE_GROUPS" => "Y",
+                            "ADD_SECTIONS_CHAIN" => "Y"
+                        ),
+                        false
+                    ); ?>
                     <script type="text/javascript">
                         jQuery.noConflict();
                         jQuery(document).ready(function () {

@@ -155,10 +155,15 @@
                                 "EDIT_TEMPLATE" => "standard.php"
                             ),
                             false
-                        );?></p>
+                        );?>
+                    </p>
+                    <div class="payment-sys">
+                        <img src="<?=SITE_TEMPLATE_PATH?>/images/card.png"/>
+                    </div>
                     <div class="author-site">
-                        <a href="http://webvbi.ru/">webvbi.ru</a>
-
+                        <a target="_blank" href="http://webvbi.ru/">webvbi.ru
+                            <img src="<?=SITE_TEMPLATE_PATH?>/images/web-vbi.png">
+                        </a>
                     </div>
                 </div>
             </div>

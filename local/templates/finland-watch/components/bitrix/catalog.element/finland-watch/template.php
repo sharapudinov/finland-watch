@@ -265,7 +265,7 @@ $this->setFrameMode(true);
                     <a href="#" class="is-active a-tab">Обзор</a>
 
                     <div class="text-tabs">
-                        <h5 class="icon-d"><a href="<?= CFile::GetPath($arResult['PROPERTIES']['MANUAL']['VALUE']) ?>">Скачайте
+                        <h5 class="icon-d"><a target="_blank" href="<?= CFile::GetPath($arResult['PROPERTIES']['MANUAL']['VALUE']) ?>">Скачайте
                                 инструкцию для ваших часов</a></h5>
                         <? if ($arResult["PREVIEW_TEXT"]): ?>
                             <?= $arResult["PREVIEW_TEXT"] ?>

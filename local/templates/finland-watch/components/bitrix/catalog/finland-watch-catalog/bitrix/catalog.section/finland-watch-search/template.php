@@ -20,7 +20,7 @@ $cell = 0;
     $this->AddDeleteAction($arElement['ID'], $arElement['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BCS_ELEMENT_DELETE_CONFIRM')));
     ?>
     <? if ($cell % $arParams["LINE_ELEMENT_COUNT"] == 0): ?>
-        <section class="floatleft">
+        <section>
         <div class="slider-home catalog">
         <div class="wrap-catalog">
         <div class="slider-two">
@@ -129,6 +129,8 @@ $cell = 0;
     </section>
 
 <? endif ?>
+
+<div class="clearfix"></div>
 <!--</section>
 -->
 <? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>

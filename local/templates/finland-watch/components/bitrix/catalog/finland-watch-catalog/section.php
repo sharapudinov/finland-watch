@@ -56,7 +56,7 @@ $this->setFrameMode(true); ?>
                         $APPLICATION->SetPageProperty('title', 'Каталог часов – все модели');
                         break;
                     case 'saleleads':
-                        $main_filter = array("SALELEAD" => 20);
+                        $main_filter = array("PROPERTY_SALELEAD" => 20);
                         $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
                         $APPLICATION->SetPageProperty('title', 'Каталог часов – Хиты продаж');
                         $section = "Хиты продаж";

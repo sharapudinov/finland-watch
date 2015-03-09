@@ -1,3 +1,30 @@
+.author-site {
+    margin-top: 20px;
+    right: 0px;
+    padding-right: 0px;
+}
+
+.block-copyright p.copyright {
+    width: 45%;
+    float: left;
+}
+
+.payment-sys {
+    float: left;
+    margin-top: 10px;
+}
+
+.logo {
+    margin-top: 10px;
+}
+
+.block-logo {
+    height: 125px;
+}
+.block-logo p {
+    line-height: 30px;
+}
+
 .teble-name.basket-my-table table .table-text .name-clock {
     max-width: 250px;
 }

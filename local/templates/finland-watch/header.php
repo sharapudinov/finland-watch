@@ -34,6 +34,9 @@ $curPage = $APPLICATION->GetCurPage(true);
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/fancybox/jquery.fancybox.css?v=2.1.5');
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/pages.css');
         $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/zoom/jquery.jqzoom.css');
+        if (str_replace("/news/",'',$APPLICATION->GetCurDir())!=$APPLICATION->GetCurDir()){
+            $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/news-pages.css');
+        }
 
         $APPLICATION->ShowMeta("robots", false, true);
         $APPLICATION->ShowMeta("keywords", false, true);

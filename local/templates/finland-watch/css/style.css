@@ -1335,7 +1335,7 @@ h6 {
 /*====================== Калькулятор ===========================*/
 
 .calculator-main {
-    height: 254px;
+    height: 290px;
     margin-bottom: 30px;
     background-color: #2d2d2d;
 }
@@ -1718,7 +1718,7 @@ ul.link-social li a {
     font-family: Tahoma, sans-serif;
     color: #2d2d2d;
     font-size: 14px;
-    line-height: 90px;
+    line-height: 65px;
 }
 
 .author-site {
@@ -1726,10 +1726,16 @@ ul.link-social li a {
     right: 55px;
     bottom: 35px;
     padding: 6px 0;
+/*
     background:url("../images/web-vbi.png")no-repeat right 0 ;
+*/
     padding-right: 55px;
 }
+.author-site a img {
+    vertical-align: middle;
 
+    margin-left: 10px;
+}
 .author-site a{
     font-family: Arial, sans-serif;
     color: #2d2d2d;

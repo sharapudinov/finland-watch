@@ -2749,6 +2749,7 @@
 }
 
 .social-card li {
+    float: left;
     margin-right: 5px;
 }
 
