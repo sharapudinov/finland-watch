@@ -201,10 +201,10 @@ $curPage = $APPLICATION->GetCurPage(true);
 
 <? if ($curPage != SITE_DIR . "index.php"): ?>
     <div id="main-content">
-    <? if (str_replace("/catalog/", '', $curPage) == $curPage): ?>
+    <? if (str_replace("/catalog/", '', $curPage) == $curPage && str_replace("/news/", '', $curPage) == $curPage): ?>
         <section>
             <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
-                "START_FROM" => "1",
+                "START_FROM" => "0",
                 "PATH" => "",
                 "SITE_ID" => "s1"
             ),

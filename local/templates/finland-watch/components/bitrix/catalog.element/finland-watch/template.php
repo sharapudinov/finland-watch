@@ -334,7 +334,7 @@ $this->setFrameMode(true);
                                                     "CACHE_TIME" => "3600",
                                                     "DISPLAY_AS_RATING" => "rating"
                                                 ),
-                                                false
+                                                $component
                                             ); ?>
                                         </div>
 

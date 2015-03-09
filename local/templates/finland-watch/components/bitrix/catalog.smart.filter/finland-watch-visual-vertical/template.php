@@ -19,11 +19,13 @@ $this->setFrameMode(true);
         <p>Фильтр:</p>
 
     </div>
-    <form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" action="/catalog/all/"
+    <form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" action="<?=$APPLICATION->GetCurDir()?>"
           method="get">
         <? foreach ($arResult["HIDDEN"] as $arItem): ?>
+            <?if($arItem['CONTROL_NAME']!="SECTION_CODE"):?>
             <input type="hidden" name="<? echo $arItem["CONTROL_NAME"] ?>" id="<? echo $arItem["CONTROL_ID"] ?>"
                    value="<? echo $arItem["HTML_VALUE"] ?>"/>
+            <?endif?>
         <? endforeach; ?>
         <div class="block-filter">
 
@@ -74,6 +76,37 @@ $this->setFrameMode(true);
                         </div>
                     </div>
                 </div>
+                <p>Серия :</p>
+
+                <div class="select-option">
+
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:catalog.section.list",
+                        "finland-watch-select-filter",
+                        array(
+                            "IBLOCK_TYPE" => "catalog",
+                            "IBLOCK_ID" => "2",
+                            "SECTION_ID" => "",
+                            "SECTION_CODE" => "",
+                            "COUNT_ELEMENTS" => "Y",
+                            "TOP_DEPTH" => "2",
+                            "SECTION_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SECTION_USER_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SECTION_URL" => "",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "36000000",
+                            "CACHE_GROUPS" => "Y",
+                            "ADD_SECTIONS_CHAIN" => "Y"
+                        ),
+                        $component
+                    ); ?>
+                </div>
                 <script type="text/javascript">
                     jQuery.noConflict();
                     jQuery(document).ready(function () {
@@ -86,7 +119,7 @@ $this->setFrameMode(true);
                 <p>C функцией:</p>
 
                 <div class="filter-check">
-                    <?$counter=0?>
+                    <? $counter = 0 ?>
                     <ul>
                         <?
                         foreach ($arResult["ITEMS"] as $key => $arItem):

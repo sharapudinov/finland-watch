@@ -28,6 +28,7 @@ $arResult['SECTION']['RESIZED_PICTURE'] = CFile::ResizeImageGet($res['PICTURE'],
 /** @var CBitrixComponent $component */
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
+$section_code=isset($_REQUEST['SECTION_CODE'])?$_REQUEST['SECTION_CODE']:'all';
 
 GLOBAL ${$arParams['FILTER_NAME']};
 GLOBAL $main_filter;
@@ -40,12 +41,20 @@ $this->setFrameMode(true); ?>
                 <a href="'.SITE_DIR.'index.php"></a>
             </li>
             <li>
+                <a href="/">
+                    Главная
+                </a>
+            </li>
+            <li>
                 <a href="/catalog/">
                     Каталог
                 </a>
             </li>
             <li>
-                <? if (isset($arResult['SECTION']['NAME'])) {
+
+                <?
+
+                if (isset($arResult['SECTION']['NAME'])) {
                     $section = $arResult['SECTION']['NAME'];
                     $APPLICATION->SetPageProperty('title', 'Suunto ' . $arResult['SECTION']['NAME'] . ' — Каталог умных часов Suunto —
 купить часы ' . $arResult['SECTION']['NAME'] . ' в Москве с доставкой по всей России ');
@@ -57,29 +66,26 @@ $this->setFrameMode(true); ?>
                         break;
                     case 'saleleads':
                         $main_filter = array("PROPERTY_SALELEAD" => 20);
-                        $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
                         $APPLICATION->SetPageProperty('title', 'Каталог часов – Хиты продаж');
                         $section = "Хиты продаж";
                         break;
                     case 'newproducts':
                         $main_filter = array("PROPERTY_NEWPRODUCT" => 1);
-                        $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
                         $APPLICATION->SetPageProperty('title', 'Каталог часов – Новинки');
                         $section = 'Новинки';
                         break;
                     case 'specialoffers':
                         $main_filter = array("PROPERTY_SPECIALOFFER" => 3);
-                        $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
                         $APPLICATION->SetPageProperty('title', 'Каталог часов – Спецпредложения');
                         $section = 'Спецпредложения';
                         break;
                     case 'discounts':
                         $main_filter=array("PROPERTY_DISCOUNT" => 37);
-                        $arResult["VARIABLES"]["SECTION_CODE"] = 'all';
                         $APPLICATION->SetPageProperty('title', 'Каталог часов – Товары со скидками');
                         $section = 'Товары со скидками';
-                endswitch; ?>
-                <?= $section ?>
+                endswitch;
+                $arResult["VARIABLES"]["SECTION_CODE"] = $section_code;?>
+                <?= $section ; ?>
             </li>
         </ul>
     </div>

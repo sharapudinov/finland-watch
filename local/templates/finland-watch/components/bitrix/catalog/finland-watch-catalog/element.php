@@ -16,7 +16,7 @@ use Bitrix\Main\ModuleManager;
 $this->setFrameMode(true);?>
 <section>
     <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
-        "START_FROM" => "1",
+        "START_FROM" => "0",
         "PATH" => "",
         "SITE_ID" => "s1"
     ),

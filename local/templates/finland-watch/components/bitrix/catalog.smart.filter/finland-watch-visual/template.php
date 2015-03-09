@@ -94,7 +94,7 @@ $this->setFrameMode(true);
                             "CACHE_GROUPS" => "Y",
                             "ADD_SECTIONS_CHAIN" => "Y"
                         ),
-                        false
+                        $component
                     ); ?>
                     <script type="text/javascript">
                         jQuery.noConflict();

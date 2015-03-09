@@ -24,7 +24,7 @@ $this->setFrameMode(true);
         </div>
         <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.smart.filter", 
-	"finland-watch-visual", 
+	"finland-watch-visual",
 	array(
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "2",

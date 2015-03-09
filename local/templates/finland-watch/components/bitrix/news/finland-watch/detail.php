@@ -1,6 +1,16 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 ?>
+<section>
+    <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    ),
+        $component,
+        Array('HIDE_ICONS' => 'Y')
+    ); ?>
+</section>
 <div class="content content-news">
 
     <section class="main-block">
@@ -24,6 +34,7 @@ $this->setFrameMode(true);
                 "SET_STATUS_404" => $arParams["SET_STATUS_404"],
                 "INCLUDE_IBLOCK_INTO_CHAIN" => $arParams["INCLUDE_IBLOCK_INTO_CHAIN"],
                 "ADD_SECTIONS_CHAIN" => $arParams["ADD_SECTIONS_CHAIN"],
+                "ADD_ELEMENT_CHAIN" =>  $arParams["ADD_ELEMENT_CHAIN"],
                 "ACTIVE_DATE_FORMAT" => $arParams["DETAIL_ACTIVE_DATE_FORMAT"],
                 "CACHE_TYPE" => $arParams["CACHE_TYPE"],
                 "CACHE_TIME" => $arParams["CACHE_TIME"],

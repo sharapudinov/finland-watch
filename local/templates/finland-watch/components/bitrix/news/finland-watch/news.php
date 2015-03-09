@@ -1,16 +1,30 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 ?>
+<section>
+    <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "finland-watch", array(
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    ),
+        $component,
+        Array('HIDE_ICONS' => 'Y')
+    ); ?>
+    <h1>
+        <?= $APPLICATION->ShowTitle(false); ?>
+    </h1>
+
+</section>
 <div class="content content-news">
-        <? if ($arParams["USE_RSS"] == "Y"): ?>
-            <?
+       <!-- <?/* if ($arParams["USE_RSS"] == "Y"): */?>
+            <?/*
             if (method_exists($APPLICATION, 'addheadstring'))
                 $APPLICATION->AddHeadString('<link rel="alternate" type="application/rss+xml" title="' . $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["rss"] . '" href="' . $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["rss"] . '" />');
-            ?>
-            <a href="<?= $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["rss"] ?>" title="rss" target="_self"><img
-                    alt="RSS" src="<?= $templateFolder ?>/images/gif-light/feed-icon-16x16.gif" border="0" align="right"
+            */?>
+            <a href="<?/*= $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["rss"] */?>" title="rss" target="_self"><img
+                    alt="RSS" src="<?/*= $templateFolder */?>/images/gif-light/feed-icon-16x16.gif" border="0" align="right"
                     style="margin-top: 1px; margin-right: 1px;"/></a>
-        <? endif ?>
+        --><?/* endif */?>
 
         <? if ($arParams["USE_SEARCH"] == "Y"): ?>
             <?= GetMessage("SEARCH_LABEL") ?><? $APPLICATION->IncludeComponent(
@@ -42,13 +56,17 @@ $this->setFrameMode(true);
 ?>
 <br />
 <?endif*/ ?>
-        <? $APPLICATION->IncludeComponent(
+        <? $page_element_count = !is_set($_REQUEST['PAGE_ELEMENT_COUNT']) ? 15 : $_REQUEST['PAGE_ELEMENT_COUNT'];
+        $page_element_count = $page_element_count == 'all' ? 1000 : $page_element_count;
+
+
+        $APPLICATION->IncludeComponent(
             "bitrix:news.list",
             "finland-watch",
             Array(
                 "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
                 "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-                "NEWS_COUNT" => $arParams["NEWS_COUNT"],
+                "NEWS_COUNT" => $page_element_count,
                 "SORT_BY1" => $arParams["SORT_BY1"],
                 "SORT_ORDER1" => $arParams["SORT_ORDER1"],
                 "SORT_BY2" => $arParams["SORT_BY2"],
@@ -86,4 +104,25 @@ $this->setFrameMode(true);
             ),
             $component
         ); ?>
+    <section class="floatleft">
+        <div class="page-nav-count-link">
+
+            <ul>
+                <li class="po">показывать по</li>
+                <li class="link-more left <?= $page_element_count == '15' ? 'active' : '' ?>"><a
+                        href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT' => 15)) ?>">15</a></li>
+                <li class="link-more <?= $page_element_count == '30' ? 'active' : '' ?>"><a
+                        href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT' => 30)) ?>">30</a></li>
+                <li class="link-more <?= $page_element_count == '45' ? 'active' : '' ?>"><a
+                        href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT' => 45)) ?>">45</a></li>
+                <li class="link-more <?= $page_element_count == '90' ? 'active' : '' ?>"><a
+                        href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT' => 90)) ?>">90</a></li>
+                <li class="link-more right <?= $page_element_count == '' ? 'active' : '' ?>"><a
+                        href="<?= requestUriAddGetParams(array('PAGE_ELEMENT_COUNT' => 'all')) ?>">Все</a></li>
+            </ul>
+
+            <div class="clear"></div>
+        </div>
+
+    </section>
 </div>

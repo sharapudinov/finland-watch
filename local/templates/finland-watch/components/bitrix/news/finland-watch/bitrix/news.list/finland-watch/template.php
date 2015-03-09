@@ -32,7 +32,7 @@ $this->setFrameMode(true);
         </div>
     </section>
 
-<section>
+<section class="floatleft">
     <div class="page-next-link">
     <? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
         <?= $arResult["NAV_STRING"] ?>
