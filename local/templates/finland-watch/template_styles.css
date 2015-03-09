@@ -1,3 +1,21 @@
+.return {
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #ed1c24;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 735px;
+    margin-bottom: 15px;
+    padding: 7px 10px 7px 10px;
+    font: normal normal normal 13.3333330154419px/normal Arial;
+}
+
+.checkout input[type=submit] {
+    text-transform: uppercase;
+}
+
 .author-site {
     margin-top: 20px;
     right: 0px;
@@ -21,6 +39,7 @@
 .block-logo {
     height: 125px;
 }
+
 .block-logo p {
     line-height: 30px;
 }
@@ -39,21 +58,17 @@
     float: left;
 }
 
-
 .content-mini .title-mini {
     margin-left: -35px;
 }
 
-
-#block-main-news-about > section + section{
-    overflow:hidden;
+#block-main-news-about > section + section {
+    overflow: hidden;
 }
 
-.card-item-price{
-     overflow:hidden;
- }
-
-
+.card-item-price {
+    overflow: hidden;
+}
 
 .slider-home .name-goods a {
     min-height: 32px;
@@ -69,11 +84,11 @@
 
 #main-wrapper, #main-header, #main-slider, #main-content,
 #main-footer, #main-menu-top {
-	display: inline-table;
+    display: inline-table;
 }
 
 .title-tab-link h1 {
-    width: 100%!important;
+    width: 100% !important;
 }
 
 div.article {
@@ -112,6 +127,7 @@ div.city-list {
     width: 300px;
     float: left;
 }
+
 .clientage-text {
     height: 130px;
     overflow: hidden;
@@ -148,7 +164,7 @@ div.city-list {
 }
 
 .buy-card {
-    margin-top: 0!important;
+    margin-top: 0 !important;
 }
 
 .checkout .as-credit {

@@ -24,6 +24,7 @@ $arBasketJSParams = array(
 
 <div class="content content-basket">
     <section class="main-block">
+		<a href="<?=$_REQUEST['backurl']?>" class="return">Вернуться к покупкам</a>
 
 
         <?

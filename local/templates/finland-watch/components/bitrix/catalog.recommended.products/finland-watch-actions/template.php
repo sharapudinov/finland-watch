@@ -50,7 +50,7 @@ $this->setFrameMode(true);?>
                                  </p>
                              <? endif ?>
                              <? if ($arItem['CAN_BUY']): ?>
-                                 <p class="link-buy"><a href="#">купить</a></p>
+                                 <p class="link-buy" id="<?=$arItem['ID']?>"><a href="#">купить</a></p>
                              <? endif ?>
 
                            </span>

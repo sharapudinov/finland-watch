@@ -1,5 +1,6 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+$APPLICATION->AddHeadScript($templateFolder."script.js");
 /**
  * Bitrix vars
  *
@@ -12,6 +13,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 ?>
 <div class="form-block">
     <h1 class="h-one">Купить в один клик</h1>
+
     <p class="top-text">Заполните форму и мы обязательно свяжемся с вами!</p>
     <? if (!empty($arResult["ERROR_MESSAGE"])) {
         foreach ($arResult["ERROR_MESSAGE"] as $v)
@@ -23,7 +25,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     }
     ?>
 
-    <form action="<?= POST_FORM_ACTION_URI ?>" method="POST">
+    <form action="<?= POST_FORM_ACTION_URI ?>" method="POST" id="formx">
+        <input type="hidden" name="submit" value="отпр">
         <?= bitrix_sessid_post() ?>
         <p><label>Введите Ваше имя:</label><br/>
             <input type="text" name="user_name" value="<?= $arResult["AUTHOR_NAME"] ?>">
@@ -31,7 +34,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
         <p><label>Введите e-mail: <span class="red">*</span></label><br/>
             <input type="text" name="user_email" value="<?= $arResult["AUTHOR_EMAIL"] ?>"
-            placeholder="info@mail.ru"/>
+                   placeholder="info@mail.ru"/>
         </p>
 
         <p><label>Введите телефон: <span class="red">*</span></label><br/>
@@ -49,7 +52,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
             </div>
         <? endif; ?>
         <input type="hidden" name="PARAMS_HASH" value="<?= $arResult["PARAMS_HASH"] ?>">
-        <p class="button-submit"><input type="submit" name="submit" value="отпр" /></p>
+
+        <p class="button-submit"><input id="one-click-submit_form" type="submit" name="submit" value="отпр"/></p>
     </form>
 
     <div class="clear"></div>

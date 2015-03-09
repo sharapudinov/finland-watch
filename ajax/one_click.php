@@ -6,7 +6,9 @@
  * Time: 10:31
  */
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
+
 ?>
+
 <div class="buy-one-cleek">
     <div class="clock-block">
         <img src="<?= $_REQUEST['picture'] ?>" width="219" height="219" title="" alt=""/>
@@ -15,9 +17,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.
 
         <p class="modal-summ"><?= $_REQUEST['price'] ?><span class="rouble">a</span></p>
     </div>
-    <? if ($_REQUEST['submit'] == 'yes') : ?>
-        <p>Ваша заявка принята</p>
-    <? else: ?>
+
         <? $APPLICATION->IncludeComponent("bitrix:main.feedback", "finland-watch-oneclick", Array(
                 "USE_CAPTCHA" => "Y",
                 "OK_TEXT" => "Спасибо, ваше сообщение принято.",
@@ -26,6 +26,5 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.
                 "EVENT_MESSAGE_ID" => Array("5")
             )
         ); ?>
-    <? endif ?>
     <div class="clear"></div>
 </div>

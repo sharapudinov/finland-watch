@@ -8,7 +8,7 @@ $this->IncludeLangFile('template.php');
 		<span class="number-basket"><a href="<?=$arParams['PATH_TO_BASKET']?>"><?=$arResult['NUM_PRODUCTS']?></a></span>
 	<?endif?>
     <p class="basket-link">
-        <a href="<?=$arParams['PATH_TO_BASKET']?>">Корзина</a>
+        <a href="<?=$arParams['PATH_TO_BASKET']?>?backurl=<?=$APPLICATION->GetCurPage()?>">Корзина</a>
     </p>
     <?if ($arParams['SHOW_TOTAL_PRICE'] == 'Y'):?>
 <!--		<br>-->

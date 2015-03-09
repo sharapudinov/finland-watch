@@ -45,7 +45,7 @@ jQuery(document).ready(function () {
 
     jQuery('.fancybox').fancybox();
 
-    jQuery('.one-cleek').fancybox({type: 'ajax'});
+
     jQuery('.two-cleek').fancybox();
     jQuery(".modalbox").fancybox();
     jQuery(".modalbox-two").fancybox();
@@ -148,15 +148,15 @@ jQuery(document).ready(function () {
 
     });
 
-    jQuery('.basket-home, .link-sm a.add_to_basket').on('click',function(e){
+    jQuery('.basket-home, .link-sm a.add_to_basket, .link-buy').on('click', function (e) {
         e.preventDefault();
         add2basket(jQuery(this).attr('id'));
     })
 });
-var add2basketUrl='/personal/cart/add2basket.php';
-function add2basket(id){
-    id=parseInt(id);
-    var basketParams={"ID": id}
+var add2basketUrl = '/personal/cart/add2basket.php';
+function add2basket(id) {
+    id = parseInt(id);
+    var basketParams = {"ID": id}
     BX.ajax.loadJSON(
         add2basketUrl,
         basketParams,
@@ -164,11 +164,10 @@ function add2basket(id){
     );
 }
 
-function BasketResult(arResult){
-    if (arResult.STATUS === 'OK')
-    {
+function BasketResult(arResult) {
+    if (arResult.STATUS === 'OK') {
         BX.onCustomEvent('OnBasketChange');
-        window.location="/personal/cart/?backurl="+window.location.pathname;
+        window.location = "/personal/cart/?backurl=" + window.location.pathname;
     }
-    else alert (arResult.ERROR)
+    else alert(arResult.ERROR)
 }

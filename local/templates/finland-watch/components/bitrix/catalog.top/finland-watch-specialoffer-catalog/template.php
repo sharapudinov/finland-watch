@@ -84,15 +84,41 @@ $this->setFrameMode(true); ?>
                              </span>
                             <? endif ?>
                         </p>
-
-                        <p class="link-sm"><a href="/ajax/one_click.php?name=<?=str_replace(' ','+',$arItem['NAME'])?>&price=<?=$arItem['MIN_PRICE']["DISCOUNT_VALUE"]?>&picture=<?=$arItem['PREVIEW_PICTURE']['SRC']?>" class="one-cleek">купить в 1 клик</a>
+                        <? $action_uri = "/ajax/one_click.php?name=" . str_replace(' ', '+', $arItem['NAME']) . "&price=" . $arItem['MIN_PRICE']["DISCOUNT_VALUE"] . "&picture=" . $arItem['PREVIEW_PICTURE']['SRC'] ?>
+                        <?$id="one_click". $arItem['ID'] . '_' . rand() ?>"
+                        <p class="link-sm"><a href=<?= $action_uri ?> class="one-cleek" id="<?=$id?>">купить в 1 клик</a>
                             <a class="add_to_basket" id="<?= $arItem['ID'] . '_' . rand() ?>" href="#" class="buy">купить</a>
                         </p>
+
                         <p class="catch red">Успей заказать сегодня!</p>
 
                         <div class="clear"></div>
                     </div>
                 </li>
+                <script>
+                    var  recFunc=function(){
+                        jQuery("#one-click-submit_form").on('click', function (e) {
+                            e.preventDefault();
+                            var msg = jQuery('#formx').serialize();
+                            jQuery.ajax({
+                                type: 'POST',
+                                url: '<?=$action_uri?>',
+                                data: msg,
+                                success: function(data) {
+                                    jQuery('.fancybox-inner').html(data);
+                                    recFunc();
+                                },
+                                error:  function(xhr, str){
+                                    alert('Возникла ошибка: ' + xhr.responseCode);
+                                }
+                            });
+                        })
+                    }
+                    jQuery('#<?=$id?>').fancybox({
+                        type: 'ajax',
+                        afterShow: recFunc
+                    });
+                </script>
             <? endforeach; ?>
         </ul>
     </div>
@@ -117,4 +143,5 @@ $this->setFrameMode(true); ?>
         left: 'slideleft',
         right: 'slideright'
     });
+
 </script>
