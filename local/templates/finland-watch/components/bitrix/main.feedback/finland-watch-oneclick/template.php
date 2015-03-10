@@ -14,7 +14,7 @@ $APPLICATION->AddHeadScript($templateFolder."script.js");
 <div class="form-block">
     <h1 class="h-one">Купить в один клик</h1>
 
-    <p class="top-text">Заполните форму и мы обязательно свяжемся с вами!</p>
+
     <? if (!empty($arResult["ERROR_MESSAGE"])) {
         foreach ($arResult["ERROR_MESSAGE"] as $v)
             ShowError($v);
@@ -22,9 +22,10 @@ $APPLICATION->AddHeadScript($templateFolder."script.js");
     if (strlen($arResult["OK_MESSAGE"]) > 0) {
         ?>
         <div class="mf-ok-text"><?= $arResult["OK_MESSAGE"] ?></div><?
+        die();
     }
     ?>
-
+    <p class="top-text">Заполните форму и мы обязательно свяжемся с вами!</p>
     <form action="<?= POST_FORM_ACTION_URI ?>" method="POST" id="formx">
         <input type="hidden" name="submit" value="отпр">
         <?= bitrix_sessid_post() ?>

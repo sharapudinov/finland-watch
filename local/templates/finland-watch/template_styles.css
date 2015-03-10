@@ -1,3 +1,12 @@
+.digits {
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.discount-login-not p {
+    width: 62%;
+    float: left;
+}
+
 .return {
     border: none;
     border-radius: 5px;

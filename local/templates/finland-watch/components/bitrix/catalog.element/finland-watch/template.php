@@ -152,7 +152,39 @@ $this->setFrameMode(true);
                 <span class="discount-login-not-bg"></span> <!-- Белая подложка -->
                 <p class="login-not-text"><span class="red">Только сегодня!</span> Цена при регистрации:</p>
                 <p class="login-not-price-num"> <?= round($arPrice["RESULT_PRICE"]["DISCOUNT_PRICE"])?> <span class="rouble">a</span></p>
-            <? endif ?>
+                    <?$APPLICATION->IncludeComponent(
+                        "orion:trigger.deadline",
+                        "finland-watch",
+                        array(
+                            "IBLOCK_TYPE" => "catalog",
+                            "IBLOCK_ID" => "2",
+                            "IBLOCK_ELEMENT_ID" => $arResult['ID'],
+                            "ACTION_BEGIN_PROP" => "",
+                            "ACTION_END_PROP" => "",
+                            "ACTION_BEGIN_VAL" => "00:00:00",
+                            "ACTION_END_VAL" => "23:59:59",
+                            "ACTION_INTERVAL" => "Y",
+                            "VIEW_CAP_NAME" => "До окончания акции:",
+                            "VIEW_CAP_END_NAME" => "До окончания акции:",
+                            "VIEW_CAP_POS" => "UP",
+                            "VIEW_DESC" => "N",
+                            "VIEW_DESC_POS" => "DOWN",
+                            "VIEW_FORMAT" => "3",
+                            "VIEW_SIZE_PROP" => "SMALL",
+                            "VIEW_TYPE_PROP" => "2",
+                            "START_UNTIL_BEGIN_ACTION" => "N",
+                            "COMPONENT_ID" => "",
+                            "IN_CACHE_CONT" => "N",
+                            "VIEW_COLOR_PROP" => "BLACK",
+                            "VIEW_SPEED" => "1",
+                            "ACTION_INTERVAL_VALUE" => "1",
+                            "ACTION_INTERVAL_TYPE" => "d",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "0"
+                        ),
+                        $component
+                    );?>
+                <? endif ?>
             <?endif?>
         </div>
         <? endif ?>

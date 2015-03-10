@@ -59,32 +59,35 @@ $this->setFrameMode(true); ?>
                     $APPLICATION->SetPageProperty('title', 'Suunto ' . $arResult['SECTION']['NAME'] . ' — Каталог умных часов Suunto —
 купить часы ' . $arResult['SECTION']['NAME'] . ' в Москве с доставкой по всей России ');
 
-                } else switch ($arResult['VARIABLES']["SECTION_CODE"]):
-                    case 'all':
-                        $section = "Все модели";
-                        $APPLICATION->SetPageProperty('title', 'Каталог часов – все модели');
-                        break;
-                    case 'saleleads':
-                        $main_filter = array("PROPERTY_SALELEAD" => 20);
-                        $APPLICATION->SetPageProperty('title', 'Каталог часов – Хиты продаж');
-                        $section = "Хиты продаж";
-                        break;
-                    case 'newproducts':
-                        $main_filter = array("PROPERTY_NEWPRODUCT" => 1);
-                        $APPLICATION->SetPageProperty('title', 'Каталог часов – Новинки');
-                        $section = 'Новинки';
-                        break;
-                    case 'specialoffers':
-                        $main_filter = array("PROPERTY_SPECIALOFFER" => 3);
-                        $APPLICATION->SetPageProperty('title', 'Каталог часов – Спецпредложения');
-                        $section = 'Спецпредложения';
-                        break;
-                    case 'discounts':
-                        $main_filter=array("PROPERTY_DISCOUNT" => 37);
-                        $APPLICATION->SetPageProperty('title', 'Каталог часов – Товары со скидками');
-                        $section = 'Товары со скидками';
-                endswitch;
-                $arResult["VARIABLES"]["SECTION_CODE"] = $section_code;?>
+                } else {
+                    switch ($arResult['VARIABLES']["SECTION_CODE"]):
+                        case 'all':
+                            $section = "Все модели";
+                            $APPLICATION->SetPageProperty('title', 'Каталог часов – все модели');
+                            break;
+                        case 'saleleads':
+                            $main_filter = array("PROPERTY_SALELEAD" => 20);
+                            $APPLICATION->SetPageProperty('title', 'Каталог часов – Хиты продаж');
+                            $section = "Хиты продаж";
+                            break;
+                        case 'newproducts':
+                            $main_filter = array("PROPERTY_NEWPRODUCT" => 1);
+                            $APPLICATION->SetPageProperty('title', 'Каталог часов – Новинки');
+                            $section = 'Новинки';
+                            break;
+                        case 'specialoffers':
+                            $main_filter = array("PROPERTY_SPECIALOFFER" => 3);
+                            $APPLICATION->SetPageProperty('title', 'Каталог часов – Спецпредложения');
+                            $section = 'Спецпредложения';
+                            break;
+                        case 'discounts':
+                            $main_filter=array("PROPERTY_DISCOUNT" => 37);
+                            $APPLICATION->SetPageProperty('title', 'Каталог часов – Товары со скидками');
+                            $section = 'Товары со скидками';
+                    endswitch;
+                $arResult["VARIABLES"]["SECTION_CODE"] = $section_code;
+                }
+                ?>
                 <?= $section ; ?>
             </li>
         </ul>
@@ -169,7 +172,8 @@ $this->setFrameMode(true); ?>
         <section>
             <div class="catalog-slider-cleek-buy">
                 <!--=========== Мини слайдер в каталоге ========-->
-                <? $arFilter = array("PROPERTY_SPECIALOFFER" => 3);
+                <?GLOBAL $arFilter;
+                $arFilter = array("PROPERTY_SPECIALOFFER" => 3);
                 $APPLICATION->IncludeComponent("bitrix:catalog.top", "finland-watch-specialoffer-catalog", array(
                     "IBLOCK_TYPE" => "catalog",
                     "IBLOCK_ID" => "2",

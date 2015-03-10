@@ -1,0 +1,1 @@
+<?  $APPLICATION->AddHeadScript('/bitrix/js/orion.misc/countdown/jquery.countdown.min.js');?>

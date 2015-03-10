@@ -1,0 +1,42 @@
+.deadline .red{color: red;}
+.deadline .hide{display: none;}
+.deadline .clearfix{clear: both;}
+.deadline .cntSeparator{font-family: Arial;}
+.deadline .overflow{overflow:hidden;}
+.deadline .cap{font-weight: bold;}
+.deadline .cap.left{float:left; padding-right:5px;}
+.deadline.big .cap.left{padding-top: 55px; }
+.deadline.middle .cap.left{padding-top: 37px; }
+.deadline.small .cap.left{padding-top: 21px; font-weight: normal;}
+
+.deadline.big .cntSeparator{font-size: 54px;	line-height: 54px; margin: 10px 7px;	color: #000;}
+.deadline.middle .cntSeparator{font-size: 36px;	line-height: 36px;	margin: 6px 4px;	color: #000;}
+.deadline.small .cntSeparator{font-size: 18px;	line-height: 18px;	margin: 3px 2px;	color: #000;}
+
+.deadline .desc {margin: 7px 3px;}
+.deadline .desc div {
+	float: left;
+	font-family: Arial;	
+	font-weight: bold;	
+	color: #000;	
+}
+
+.deadline.big .desc div {
+	width: 70px;
+	margin-right: 65px;
+	font-size: 13px;
+}
+
+.deadline.middle .desc div {
+	width: 70px;
+	margin-right: 20px;
+	font-size: 13px;
+}
+.deadline.middle .desc {margin: 3px 3px;}
+
+.deadline.small .desc div {
+	width: 44px;
+	margin-right: 0px;
+	font-size: 10px;
+}
+.deadline.small .desc {margin: 0px;}

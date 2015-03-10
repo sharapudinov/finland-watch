@@ -85,7 +85,7 @@ $this->setFrameMode(true); ?>
                             <? endif ?>
                         </p>
                         <? $action_uri = "/ajax/one_click.php?name=" . str_replace(' ', '+', $arItem['NAME']) . "&price=" . $arItem['MIN_PRICE']["DISCOUNT_VALUE"] . "&picture=" . $arItem['PREVIEW_PICTURE']['SRC'] ?>
-                        <?$id="one_click". $arItem['ID'] . '_' . rand() ?>"
+                        <?$id="one_click". $arItem['ID'] . '_' . rand() ?>
                         <p class="link-sm"><a href=<?= $action_uri ?> class="one-cleek" id="<?=$id?>">купить в 1 клик</a>
                             <a class="add_to_basket" id="<?= $arItem['ID'] . '_' . rand() ?>" href="#" class="buy">купить</a>
                         </p>
@@ -96,7 +96,7 @@ $this->setFrameMode(true); ?>
                     </div>
                 </li>
                 <script>
-                    var  recFunc=function(){
+                    var  recFunc<?=$id?>=function(){
                         jQuery("#one-click-submit_form").on('click', function (e) {
                             e.preventDefault();
                             var msg = jQuery('#formx').serialize();
@@ -106,7 +106,7 @@ $this->setFrameMode(true); ?>
                                 data: msg,
                                 success: function(data) {
                                     jQuery('.fancybox-inner').html(data);
-                                    recFunc();
+                                    recFunc<?=$id?>();
                                 },
                                 error:  function(xhr, str){
                                     alert('Возникла ошибка: ' + xhr.responseCode);
@@ -116,7 +116,7 @@ $this->setFrameMode(true); ?>
                     }
                     jQuery('#<?=$id?>').fancybox({
                         type: 'ajax',
-                        afterShow: recFunc
+                        afterShow: recFunc<?=$id?>
                     });
                 </script>
             <? endforeach; ?>
