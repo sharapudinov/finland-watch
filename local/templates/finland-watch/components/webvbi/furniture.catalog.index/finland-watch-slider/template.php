@@ -20,8 +20,8 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0):
 
                             <div class="slider-content">
                                 <a href="<?= $arItem['DETAIL_TEXT'] ?>">
-                                    <img src="<?= $arItem['PREVIEW_PICTURE']['src'] ?>" title="" alt=""/>
-                                    <span class="title-slider"><?= $arItem['NAME'] ?></span>
+                                    <!--<img src="<?/*= $arItem['PREVIEW_PICTURE']['src'] */?>" title="" alt=""/>
+                                    <span class="title-slider"><?/*= $arItem['NAME'] */?></span>-->
 
                                     <p><?= $arItem['PREVIEW_TEXT'] ?></p>
                                 </a>

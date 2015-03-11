@@ -152,7 +152,9 @@ $this->setFrameMode(true);
                 <span class="discount-login-not-bg"></span> <!-- Белая подложка -->
                 <p class="login-not-text"><span class="red">Только сегодня!</span> Цена при регистрации:</p>
                 <p class="login-not-price-num"> <?= round($arPrice["RESULT_PRICE"]["DISCOUNT_PRICE"])?> <span class="rouble">a</span></p>
-                    <?$APPLICATION->IncludeComponent(
+
+                    <?$day=date('d').'.'.date('m').'.'.date('Y');
+                    $APPLICATION->IncludeComponent(
                         "orion:trigger.deadline",
                         "finland-watch",
                         array(
@@ -161,11 +163,11 @@ $this->setFrameMode(true);
                             "IBLOCK_ELEMENT_ID" => $arResult['ID'],
                             "ACTION_BEGIN_PROP" => "",
                             "ACTION_END_PROP" => "",
-                            "ACTION_BEGIN_VAL" => "00:00:00",
-                            "ACTION_END_VAL" => "23:59:59",
-                            "ACTION_INTERVAL" => "Y",
+                            "ACTION_BEGIN_VAL" => $day." 00:00:00",
+                            "ACTION_END_VAL" => $day." 23:59:59",
+                            "ACTION_INTERVAL" => "N",
                             "VIEW_CAP_NAME" => "До окончания акции:",
-                            "VIEW_CAP_END_NAME" => "До окончания акции:",
+                            "VIEW_CAP_END_NAME" => "Акция завершена:",
                             "VIEW_CAP_POS" => "UP",
                             "VIEW_DESC" => "N",
                             "VIEW_DESC_POS" => "DOWN",

@@ -108,6 +108,7 @@ GLOBAL $arFilter;
     <div class="content">
         <section>
             <div class="block-option">
+                <div class="select-option one">
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:catalog.section.list",
                     "finland-watch-select",
@@ -136,6 +137,7 @@ GLOBAL $arFilter;
                     ),
                     false
                 ); ?>
+                    </div>
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "finland_watch_select_menu",
@@ -155,18 +157,35 @@ GLOBAL $arFilter;
                     false
                 ); ?>
                 <div class="select-option">
-                    <div class="box visible">
-                        <div class="section">
-                            <div class="sec">
-                                <select class="select-section" data-placeholder="Часы на каждый день">
-                                    <option></option>
-                                    <option>Серия-1</option>
-                                    <option>Серия-2</option>
-                                </select>
-                            </div>
-                        </div>
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:catalog.section.list",
+                    "finland-watch-select-series",
+                    array(
+                        "IBLOCK_TYPE" => "catalog",
+                        "IBLOCK_ID" => "2",
+                        "SECTION_ID" => "",
+                        "SECTION_CODE" => "",
+                        "COUNT_ELEMENTS" => "Y",
+                        "TOP_DEPTH" => "1",
+                        "SECTION_FIELDS" => array(
+                            0 => "",
+                            1 => "",
+                        ),
+                        "SECTION_USER_FIELDS" => array(
+                            0 => "UF_ED",
+                            1 => "",
+                        ),
+                        "VIEW_MODE" => "LINE",
+                        "SHOW_PARENT_NAME" => "Y",
+                        "SECTION_URL" => "",
+                        "CACHE_TYPE" => "A",
+                        "CACHE_TIME" => "36000000",
+                        "CACHE_GROUPS" => "N",
+                        "ADD_SECTIONS_CHAIN" => "Y"
+                    ),
+                    false
+                ); ?>
                     </div>
-                </div>
             </div>
         </section>
 
@@ -263,65 +282,66 @@ GLOBAL $arFilter;
             <div class="slider-home">
                 <? $arFilter = array("PROPERTY_SALELEAD" => 20) ?>
                 <? $APPLICATION->IncludeComponent(
-                    "bitrix:catalog.top",
-                    "finland-watch-newproduct",
-                    array(
-                        "IBLOCK_TYPE" => "catalog",
-                        "IBLOCK_ID" => "2",
-                        "ELEMENT_SORT_FIELD" => "sort",
-                        "ELEMENT_SORT_ORDER" => "desc",
-                        "ELEMENT_SORT_FIELD2" => "id",
-                        "ELEMENT_SORT_ORDER2" => "desc",
-                        "FILTER_NAME" => "arFilter",
-                        "HIDE_NOT_AVAILABLE" => "N",
-                        "ELEMENT_COUNT" => "5",
-                        "LINE_ELEMENT_COUNT" => "5",
-                        "PROPERTY_CODE" => array(
-                            0 => "NEWPRODUCT",
-                            1 => "",
-                        ),
-                        "OFFERS_FIELD_CODE" => array(
-                            0 => "PREVIEW_PICTURE",
-                            1 => "",
-                        ),
-                        "OFFERS_PROPERTY_CODE" => array(
-                            0 => "",
-                            1 => "",
-                        ),
-                        "OFFERS_SORT_FIELD" => "sort",
-                        "OFFERS_SORT_ORDER" => "asc",
-                        "OFFERS_SORT_FIELD2" => "id",
-                        "OFFERS_SORT_ORDER2" => "desc",
-                        "OFFERS_LIMIT" => "5",
-                        "ROTATE_TIMER" => "30",
-                        "SECTION_URL" => "",
-                        "DETAIL_URL" => "",
-                        "SECTION_ID_VARIABLE" => "SECTION_ID",
-                        "CACHE_TYPE" => "A",
-                        "CACHE_TIME" => "36000000",
-                        "CACHE_GROUPS" => "N",
-                        "DISPLAY_COMPARE" => "N",
-                        "CACHE_FILTER" => "Y",
-                        "PRICE_CODE" => array(
-                            0 => "BASE",
-                        ),
-                        "USE_PRICE_COUNT" => "N",
-                        "SHOW_PRICE_COUNT" => "1",
-                        "PRICE_VAT_INCLUDE" => "Y",
-                        "CONVERT_CURRENCY" => "N",
-                        "BASKET_URL" => "/personal/basket.php",
-                        "ACTION_VARIABLE" => "action",
-                        "PRODUCT_ID_VARIABLE" => "id",
-                        "USE_PRODUCT_QUANTITY" => "N",
-                        "ADD_PROPERTIES_TO_BASKET" => "N",
-                        "PRODUCT_QUANTITY_VARIABLE" => "quantity",
-                        "PRODUCT_PROPS_VARIABLE" => "prop",
-                        "PARTIAL_PRODUCT_PROPERTIES" => "Y",
-                        "PRODUCT_PROPERTIES" => array(),
-                        "OFFERS_CART_PROPERTIES" => ""
-                    ),
-                    false
-                ); ?>
+	"bitrix:catalog.top", 
+	"finland-watch-newproduct", 
+	array(
+		"IBLOCK_TYPE" => "catalog",
+		"IBLOCK_ID" => "2",
+		"ELEMENT_SORT_FIELD" => "sort",
+		"ELEMENT_SORT_ORDER" => "asc",
+		"ELEMENT_SORT_FIELD2" => "id",
+		"ELEMENT_SORT_ORDER2" => "desc",
+		"FILTER_NAME" => "arFilter",
+		"HIDE_NOT_AVAILABLE" => "N",
+		"ELEMENT_COUNT" => "15",
+		"LINE_ELEMENT_COUNT" => "15",
+		"PROPERTY_CODE" => array(
+			0 => "NEWPRODUCT",
+			1 => "",
+		),
+		"OFFERS_FIELD_CODE" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "",
+		),
+		"OFFERS_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"OFFERS_SORT_FIELD" => "sort",
+		"OFFERS_SORT_ORDER" => "asc",
+		"OFFERS_SORT_FIELD2" => "id",
+		"OFFERS_SORT_ORDER2" => "desc",
+		"OFFERS_LIMIT" => "5",
+		"ROTATE_TIMER" => "30",
+		"SECTION_URL" => "",
+		"DETAIL_URL" => "",
+		"SECTION_ID_VARIABLE" => "SECTION_ID",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000000",
+		"CACHE_GROUPS" => "N",
+		"DISPLAY_COMPARE" => "N",
+		"CACHE_FILTER" => "Y",
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
+		"USE_PRICE_COUNT" => "N",
+		"SHOW_PRICE_COUNT" => "1",
+		"PRICE_VAT_INCLUDE" => "Y",
+		"CONVERT_CURRENCY" => "N",
+		"BASKET_URL" => "/personal/basket.php",
+		"ACTION_VARIABLE" => "action",
+		"PRODUCT_ID_VARIABLE" => "id",
+		"USE_PRODUCT_QUANTITY" => "N",
+		"ADD_PROPERTIES_TO_BASKET" => "N",
+		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
+		"PRODUCT_PROPS_VARIABLE" => "prop",
+		"PARTIAL_PRODUCT_PROPERTIES" => "Y",
+		"PRODUCT_PROPERTIES" => array(
+		),
+		"OFFERS_CART_PROPERTIES" => ""
+	),
+	false
+); ?>
             </div>
         </section>
         <section>

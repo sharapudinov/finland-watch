@@ -11,14 +11,14 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-
+//test_dump($arResult);
 $strTitle = "";
 ?>
 
         <div class="box visible">
             <div class="section">
                 <div class="sec">
-                    <select class="select-sport" data-placeholder="Выберите серию">
+                    <select class="select-sport" data-placeholder="Часы на каждый день">
                         <option></option>
                         <?
                         $TOP_DEPTH = $arResult["SECTION"]["DEPTH_LEVEL"];
@@ -26,7 +26,7 @@ $strTitle = "";
                         foreach ($arResult["SECTIONS"] as $arSection) {
                             $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "SECTION_EDIT"));
                             $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
-                            if ($arSection['DEPTH_LEVEL'] == 1):?>
+                            if ($arSection['DEPTH_LEVEL'] == 1 && isset($arSection['UF_ED'])):?>
                                 <option value="<?= $arSection['CODE'] ?>/"><?= $arSection['NAME'] ?></option>
                             <?endif;
                         }?>

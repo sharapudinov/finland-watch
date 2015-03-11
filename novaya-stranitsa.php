@@ -16,7 +16,7 @@ $APPLICATION->SetTitle("Новая страница");
 		"ACTION_END_PROP" => "",
 		"ACTION_BEGIN_VAL" => "10.03.2015 12:42:00",
 		"ACTION_END_VAL" => "10.03.2015 23:42:00",
-		"ACTION_INTERVAL" => "Y",
+		"ACTION_INTERVAL" => "N",
 		"VIEW_CAP_NAME" => "До окончания акции осталось:",
 		"VIEW_CAP_END_NAME" => "Акция завершена!",
 		"VIEW_CAP_POS" => "UP",

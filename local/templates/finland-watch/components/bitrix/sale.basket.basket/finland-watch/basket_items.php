@@ -1,5 +1,5 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
-<?
+<? // test_dump($arResult);
 echo ShowError($arResult["ERROR_MESSAGE"]);
 
 $bDelayColumn = false;
@@ -86,8 +86,10 @@ if ($normalCount > 0):
                     <td class="price">
                 <span class="border">
                     <span class="no-summ">
-                        <?= $arItem['FULL_PRICE_FORMATED'] ?>
-                        <span class="rouble">a</span>
+                        <? if ($arItem["DISCOUNT_PRICE_PERCENT"]): ?>
+                            <?= $arItem['FULL_PRICE_FORMATED'] ?>
+                            <span class="rouble">a</span>
+                        <? endif?>
                     </span>
                 </span>
                 <span class="yes-summ">
@@ -138,7 +140,7 @@ if ($normalCount > 0):
                         <span class="rouble">a</span>
 
                     </td>
-                    <td> <a href="<?= str_replace("#ID#", $arItem["ID"], $arUrls["delete"]) ?>" class="close"></a></td>
+                    <td><a href="<?= str_replace("#ID#", $arItem["ID"], $arUrls["delete"]) ?>" class="close"></a></td>
                 </tr>
             <? endif ?>
         <? endforeach ?>
@@ -201,7 +203,7 @@ if ($normalCount > 0):
         <tr>
             <td class="tleft itog">Итого:</td>
             <td id="allSum_FORMATED" class="itog-summ">
-                <?=$arResult["allSum_FORMATED"]?>
+                <?= $arResult["allSum_FORMATED"] ?>
                 <span class="rouble">a</span>
             </td>
         </tr>
