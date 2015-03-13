@@ -21,7 +21,9 @@ $this->setFrameMode(true); ?>
             <? foreach ($arResult["ITEMS"] as $key => $arItem): ?>
                 <li>
                     <div class="content-mini">
-                        <img src="<?= $arItem['RESIZED_PREVIEW']['src'] ?>" width="148px"/>
+                        <a  class="floatleft" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
+                            <img src="<?= $arItem['RESIZED_PREVIEW']['src'] ?>" width="148px"/>
+                        </a>
 
                         <p class="title-mini">
                             <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
@@ -85,8 +87,9 @@ $this->setFrameMode(true); ?>
                             <? endif ?>
                         </p>
                         <? $action_uri = "/ajax/one_click.php?name=" . str_replace(' ', '+', $arItem['NAME']) . "&price=" . $arItem['MIN_PRICE']["DISCOUNT_VALUE"] . "&picture=" . $arItem['PREVIEW_PICTURE']['SRC'] ?>
-                        <?$id="one_click". $arItem['ID'] . '_' . rand() ?>
-                        <p class="link-sm"><a href=<?= $action_uri ?> class="one-cleek" id="<?=$id?>">купить в 1 клик</a>
+                        <? $id = "one_click" . $arItem['ID'] . '_' . rand() ?>
+                        <p class="link-sm"><a href=<?= $action_uri ?> class="one-cleek" id="<?= $id ?>">купить в 1
+                                клик</a>
                             <a class="add_to_basket" id="<?= $arItem['ID'] . '_' . rand() ?>" href="#" class="buy">купить</a>
                         </p>
 
@@ -96,7 +99,7 @@ $this->setFrameMode(true); ?>
                     </div>
                 </li>
                 <script>
-                    var  recFunc<?=$id?>=function(){
+                    var recFunc<?=$id?> = function () {
                         jQuery("#one-click-submit_form").on('click', function (e) {
                             e.preventDefault();
                             var msg = jQuery('#formx').serialize();
@@ -104,11 +107,11 @@ $this->setFrameMode(true); ?>
                                 type: 'POST',
                                 url: '<?=$action_uri?>',
                                 data: msg,
-                                success: function(data) {
+                                success: function (data) {
                                     jQuery('.fancybox-inner').html(data);
                                     recFunc<?=$id?>();
                                 },
-                                error:  function(xhr, str){
+                                error: function (xhr, str) {
                                     alert('Возникла ошибка: ' + xhr.responseCode);
                                 }
                             });

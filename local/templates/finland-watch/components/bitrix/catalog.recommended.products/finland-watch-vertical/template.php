@@ -6,6 +6,7 @@
 /** @global CDatabase $DB */
 
 $this->setFrameMode(true);?>
+
     <div class="sitebar-card">
         <section>
             <div class="bread-crumbs home">

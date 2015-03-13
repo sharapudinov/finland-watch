@@ -234,11 +234,7 @@ $this->setFrameMode(true);
                     <div class="text-tabs">
                         <h5 class="icon-d"><a target="_blank" href="<?= CFile::GetPath($arResult['PROPERTIES']['MANUAL']['VALUE']) ?>">Скачайте
                                 инструкцию для ваших часов</a></h5>
-                        <? if ($arResult["PREVIEW_TEXT"]): ?>
-                            <?= $arResult["PREVIEW_TEXT"] ?>
-                        <? elseif ($arResult["DETAIL_TEXT"]): ?>
                             <?= $arResult["DETAIL_TEXT"] ?>
-                        <? endif; ?>
                     </div>
                 </li>
                 <li class="tab-head-cont">
@@ -246,16 +242,18 @@ $this->setFrameMode(true);
 
                     <div class="text-tabs">
                         <h5>Характеристики</h5>
-                        <? foreach ($arResult["DISPLAY_PROPERTIES"] as $pid => $arProperty): ?>
-                            <b><?= $arProperty["NAME"] ?>:</b>&nbsp;<?
+
+                            <?= $arResult["PREVIEW_TEXT"] ?>
+                        <?/* foreach ($arResult["DISPLAY_PROPERTIES"] as $pid => $arProperty): */?><!--
+                            <b><?/*= $arProperty["NAME"] */?>:</b>&nbsp;<?/*
                             if (is_array($arProperty["DISPLAY_VALUE"])):
                                 echo implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);
                             elseif ($pid == "MANUAL"):
-                                ?><a href="<?= $arProperty["VALUE"] ?>"><?= GetMessage("CATALOG_DOWNLOAD") ?></a><?
+                                */?><a href="<?/*= $arProperty["VALUE"] */?>"><?/*= GetMessage("CATALOG_DOWNLOAD") */?></a><?/*
                             else:
-                                echo $arProperty["DISPLAY_VALUE"];?>
-                            <? endif ?><br/>
-                        <? endforeach ?>
+                                echo $arProperty["DISPLAY_VALUE"];*/?>
+                            <?/* endif */?><br/>
+                        --><?/* endforeach */?>
                     </div>
                 </li>
                 <li class="tab-head-cont">

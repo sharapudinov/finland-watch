@@ -1,3 +1,7 @@
+.content-mini a.img-link {
+    float: left;
+}
+
 .digits {
     margin-left: 15px;
     margin-top: 15px;

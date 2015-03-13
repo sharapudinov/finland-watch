@@ -33,14 +33,16 @@ $this->setFrameMode(true); ?>
                         <p class="title-mini">
                             <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>"><?= $arItem["NAME"] ?></a>
                         </p>
-                        <img src="<?= $arItem['RESIZED_PREVIEW']['src'] ?>" width="160px" title="" alt=""/>
+                        <a  class="img-link" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
+                            <img src="<?= $arItem['RESIZED_PREVIEW']['src'] ?>" width="160px" title="" alt=""/>
+                        </a>
 
                         <p class="old-price"><? if ($arItem['MIN_PRICE']['DISCOUNT_DIFF']): ?>
-                            Старая цена <br/>
+                                Старая цена <br/>
 
 
-                            <span class="summ"><?= $arItem['MIN_PRICE']['PRINT_VALUE'] ?></span>
-                            <span class="rouble">a</span>
+                                <span class="summ"><?= $arItem['MIN_PRICE']['PRINT_VALUE'] ?></span>
+                                <span class="rouble">a</span>
                             <? endif ?>
                         </p>
 
