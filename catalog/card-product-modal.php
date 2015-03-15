@@ -39,7 +39,7 @@
             "META_KEYWORDS" => "-",
             "META_DESCRIPTION" => "-",
             "BROWSER_TITLE" => "-",
-            "BASKET_URL" => "/persona/card",
+            "BASKET_URL" => "/personal/cart/",
             "ACTION_VARIABLE" => "action",
             "PRODUCT_ID_VARIABLE" => "code",
             "SECTION_ID_VARIABLE" => "SECTION_ID",

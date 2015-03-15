@@ -16,6 +16,7 @@
     height: 400px;
     z-index: 5000;
     display: block;
+    text-decoration: none;
     
 }
 
@@ -125,7 +126,9 @@
 }
 
 #main-slider .flex-direction-nav a {
+/*
 	display: none;
+*/
 	position: absolute;
 	margin: -270px 0 0 0;
 	width: 17px;
@@ -156,7 +159,7 @@
 }
 
 #main-slider .flex-direction-nav .flex-next {
-	right: 17%;
+	right: 30px;
     background-position: right 0;
 }
 
@@ -165,7 +168,7 @@
 }
 
 #main-slider .flex-direction-nav .flex-prev {
-	left: 17%;
+	left: 30px;
 
 }
 

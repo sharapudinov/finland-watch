@@ -53,7 +53,7 @@ body {
 #main-wrapper, #main-header, #main-slider, #main-content, 
 #main-footer, #main-menu-top {
     width: 100%;
-    min-width: 1000px;
+    /*min-width: 1000px;*/
     max-width: 100%;
 }
 
@@ -879,6 +879,10 @@ h6 {
     height: 60px;
     margin-bottom: 30px;
    
+}
+
+.select-filter .select-option {
+    width: 246px;
 }
 
 .select-option {

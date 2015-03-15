@@ -28,7 +28,8 @@ $arResult['SECTION']['RESIZED_PICTURE'] = CFile::ResizeImageGet($res['PICTURE'],
 /** @var CBitrixComponent $component */
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
-$section_code=isset($_REQUEST['SECTION_CODE'])?$_REQUEST['SECTION_CODE']:'all';
+
+$section_code = isset($_REQUEST['SECTION_CODE']) ? $_REQUEST['SECTION_CODE'] : 'all';
 
 GLOBAL ${$arParams['FILTER_NAME']};
 GLOBAL $main_filter;
@@ -54,11 +55,12 @@ $this->setFrameMode(true); ?>
 
                 <?
 
-                if (isset($arResult['SECTION']['NAME'])) {
+                if (isset($_REQUEST['SPORT'])) {
+                    $sportName = CIBlockPropertyEnum::GetByID($_REQUEST['SPORT']);
+                    $APPLICATION->SetPageProperty('title', 'Часы для ' . $sportName['VALUE'] . '-каталог электронных часов Suunto (Суунто) для ' . $sportName['VALUE']);
+                    $section = "Часы для " . $sportName['VALUE'];
+                } elseif (isset($arResult['SECTION']['NAME'])) {
                     $section = $arResult['SECTION']['NAME'];
-                    $APPLICATION->SetPageProperty('title', 'Suunto ' . $arResult['SECTION']['NAME'] . ' — Каталог умных часов Suunto —
-купить часы ' . $arResult['SECTION']['NAME'] . ' в Москве с доставкой по всей России ');
-
                 } else {
                     switch ($arResult['VARIABLES']["SECTION_CODE"]):
                         case 'all':
@@ -81,14 +83,14 @@ $this->setFrameMode(true); ?>
                             $section = 'Спецпредложения';
                             break;
                         case 'discounts':
-                            $main_filter=array("PROPERTY_DISCOUNT" => 37);
+                            $main_filter = array("PROPERTY_DISCOUNT" => 37);
                             $APPLICATION->SetPageProperty('title', 'Каталог часов – Товары со скидками');
                             $section = 'Товары со скидками';
                     endswitch;
-                $arResult["VARIABLES"]["SECTION_CODE"] = $section_code;
+                    $arResult["VARIABLES"]["SECTION_CODE"] = $section_code;
                 }
                 ?>
-                <?= $section ; ?>
+                <?= $section; ?>
             </li>
         </ul>
     </div>
@@ -172,7 +174,7 @@ $this->setFrameMode(true); ?>
         <section>
             <div class="catalog-slider-cleek-buy">
                 <!--=========== Мини слайдер в каталоге ========-->
-                <?GLOBAL $arFilter;
+                <? GLOBAL $arFilter;
                 $arFilter = array("PROPERTY_SPECIALOFFER" => 3);
                 $APPLICATION->IncludeComponent("bitrix:catalog.top", "finland-watch-specialoffer-catalog", array(
                     "IBLOCK_TYPE" => "catalog",

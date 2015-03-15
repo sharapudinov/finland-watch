@@ -1,3 +1,17 @@
+
+
+.main-menu-top ul {
+    left: 25px;
+}
+
+/*.header {
+    overflow: hidden;
+}*/
+
+.minislider-home #container-mini {
+    right: 50px;
+}
+
 .content-mini a.img-link {
     float: left;
 }
@@ -94,11 +108,11 @@
 .slider-content a {
     text-decoration: none;
 }
-
+/*
 #main-wrapper, #main-header, #main-slider, #main-content,
 #main-footer, #main-menu-top {
     display: inline-table;
-}
+}*/
 
 .title-tab-link h1 {
     width: 100% !important;
