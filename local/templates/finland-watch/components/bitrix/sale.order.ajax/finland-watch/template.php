@@ -1,4 +1,4 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 
 if ($USER->IsAuthorized() || $arParams["ALLOW_AUTO_REGISTER"] == "Y") {
@@ -43,7 +43,7 @@ CJSCore::Init(array('fx', 'popup', 'window', 'ajax'));
             if (!isset($array1["SORT"]) || !isset($array2["SORT"]))
                 return -1;
 
-            if ($array1["SORT"] > $array2["SORT"]) 
+            if ($array1["SORT"] > $array2["SORT"])
                 return 1;
 
             if ($array1["SORT"] < $array2["SORT"])
@@ -118,9 +118,9 @@ CJSCore::Init(array('fx', 'popup', 'window', 'ajax'));
                         submitForm();
                     }
                 </script>
-                <?if ($_POST["is_ajax_post"] != "Y")
+            <?if ($_POST["is_ajax_post"] != "Y")
             {
-                ?>
+            ?>
                 <form action="<?= $APPLICATION->GetCurPage(); ?>" method="POST" name="ORDER_FORM" id="ORDER_FORM"
                       enctype="multipart/form-data">
                     <?= bitrix_sessid_post() ?>
@@ -169,8 +169,8 @@ CJSCore::Init(array('fx', 'popup', 'window', 'ajax'));
 
                     <p class="checkout">
                         <input type="submit" onclick="submitForm('Y'); return false;"
-                                           id="ORDER_CONFIRM_BUTTON"
-                                           class="checkout" value="<?= GetMessage("SOA_TEMPL_BUTTON") ?>"
+                               id="ORDER_CONFIRM_BUTTON"
+                               class="checkout" value="<?= GetMessage("SOA_TEMPL_BUTTON") ?>"
                             />
                     </p>
 
@@ -179,7 +179,8 @@ CJSCore::Init(array('fx', 'popup', 'window', 'ajax'));
             if ($arParams["DELIVERY_NO_AJAX"] == "N")
             {
                 ?>
-                 <div   style="display:none;"><? $APPLICATION->IncludeComponent("bitrix:sale.ajax.delivery.calculator", "", array(), null, array('HIDE_ICONS' => 'Y')); ?></div>
+                <div
+                    style="display:none;"><? $APPLICATION->IncludeComponent("bitrix:sale.ajax.delivery.calculator", "", array(), null, array('HIDE_ICONS' => 'Y')); ?></div>
             <?
             }
             }

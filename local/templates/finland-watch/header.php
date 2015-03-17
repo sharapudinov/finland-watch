@@ -85,7 +85,7 @@ $curPage = $APPLICATION->GetCurPage(true);
                                 <? $APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR . "include/telephone3.php"), false); ?>
                             </span>
                     </li>
-                    <li><a class="modalbox" href="#inline">заказать звонок</a></li>
+                    <li><a class="modalbox" href="/ajax/callback.php">заказать звонок</a></li>
                 </ul>
 
             </div>
@@ -104,7 +104,7 @@ $curPage = $APPLICATION->GetCurPage(true);
                             <li class="region" title="Выбор региона"><a class="modal-city" data-fancybox-type="ajax"
                                                                         href="/modal-city.php">Москва и
                                     Подмосковье</a></li>
-                            <li class="call"><a class="modalbox call_btn" href="#inline">Заказать звонок</a></li>
+                            <li class="call"><a class="modalbox call_btn" href="/ajax/callback.php">Заказать звонок</a></li>
                         </ul>
 
                         <div class="clear"></div>

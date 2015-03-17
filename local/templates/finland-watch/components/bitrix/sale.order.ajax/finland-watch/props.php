@@ -27,7 +27,9 @@ include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 	</p>
 	<div id="sale_order_props" class="form-sign-in sign-in-info"?>
 		<?
+		//test_dump($arResult["ORDER_PROP"]["USER_PROPS_N"]);
 		PrintPropsForm($arResult["ORDER_PROP"]["USER_PROPS_N"], $arParams["TEMPLATE_LOCATION"]);
+		//test_dump($arResult["ORDER_PROP"]["USER_PROPS_Y"]);
 		PrintPropsForm($arResult["ORDER_PROP"]["USER_PROPS_Y"], $arParams["TEMPLATE_LOCATION"]);
 		?>
 	</div>

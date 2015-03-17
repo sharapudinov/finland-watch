@@ -2,7 +2,9 @@
 /*=================== �������� �������� ������ =====================*/
 
 .feedback {
-    display: none; 
+/*
+    display: none;
+*/
     width: 451px;
     padding: 30px 0 10px 0;
     background-color: #0ab5fa;

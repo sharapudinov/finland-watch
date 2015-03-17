@@ -47,7 +47,32 @@ jQuery(document).ready(function () {
 
 
     jQuery('.two-cleek').fancybox();
-    jQuery(".modalbox").fancybox();
+
+    var recCallback = function () {
+        jQuery("#callback_form_submit").on('click', function (e) {
+            e.preventDefault();
+            var msg = jQuery('#callback_form').serialize();
+            jQuery.ajax({
+                type: 'POST',
+                url: '/ajax/callback.php',
+                data: msg,
+                success: function (data) {
+                    jQuery('.fancybox-inner').html(data).height('auto').width('auto');
+
+                    recCallback();
+                },
+                error: function (xhr, str) {
+                    alert('Возникла ошибка: ' + xhr.responseCode);
+                }
+            });
+        })
+    }
+
+    jQuery(".modalbox").fancybox({
+        type: 'ajax',
+        afterShow: recCallback
+    });
+
     jQuery(".modalbox-two").fancybox();
     jQuery(".modal-card").fancybox({
             afterShow: function () {

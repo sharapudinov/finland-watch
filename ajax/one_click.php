@@ -18,7 +18,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.
         <p class="modal-summ"><?= $_REQUEST['price'] ?><span class="rouble">a</span></p>
     </div>
 
-        <? $APPLICATION->IncludeComponent("bitrix:main.feedback", "finland-watch-oneclick", Array(
+        <? $APPLICATION->IncludeComponent("webvbi:main.feedback", "finland-watch-oneclick", Array(
                 "USE_CAPTCHA" => "Y",
                 "OK_TEXT" => "Спасибо, ваше сообщение принято.",
                 "EMAIL_TO" => "my@email.com",

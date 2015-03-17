@@ -9,7 +9,7 @@ $life_time = 3600000;
 
 // формируем идентификатор кеша в зависимости от всех параметров
 // которые могут повлиять на результирующий HTML
-$cache_id = "select-city-cache";
+$cache_id = "select-city-cache1111111111181";
 
 // если кеш есть и он ещё не истек, то
 if ($obCache->InitCache($life_time, $cache_id, "/")):
@@ -18,18 +18,25 @@ if ($obCache->InitCache($life_time, $cache_id, "/")):
     $db_vars = $vars["db_vars"];
 else :
     // иначе обращаемся к базе
+    $db_vars = CSaleLocationGroup::GetLocationList(
+        array("LOCATION_GROUP_ID"=>'1')
+    );
+    while ($vars = $db_vars->Fetch()){
+        $locationFilter[]=$vars['LOCATION_ID'];
+    }
     $db_vars = CSaleLocation::GetList(
         array(
             "SORT" => "ASC",
-            "COUNTRY_NAME_LANG" => "ASC",
+            "ID" => "ASC",
             "CITY_NAME_LANG" => "ASC"
         ),
-        array("LID" => LANGUAGE_ID, "COUNTRY" => 1, "!CITY_NAME" => ''),
+        array("ID"=>$locationFilter),
         false,
         false,
         array()
     );
 endif;
+test_dump($locationFilter);
 // начинаем буферизирование вывода
 if ($obCache->StartDataCache()):?>
     <div id="modal">

@@ -171,25 +171,7 @@
     </section>
 <!--#min-wrapper-->
 </div>
-<!-- Заказать обратный звонок -->
-<?$APPLICATION->IncludeComponent(
-	"webvbi:callback", 
-	"finland-watch-callback", 
-	array(
-		"USE_CAPTCHA" => "N",
-		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
-		"EMAIL_TO" => "sale@www.ablout.ru",
-		"USE_MESSAGE_FIELD" => "N",
-		"SAVE_FORM_DATA" => "N",
-		"REQUIRED_FIELDS" => array(
-			0 => "NAME",
-			1 => "PHONE",
-		),
-		"EVENT_MESSAGE_ID" => "7"
-	),
-	false
-);?>
-<!-- Заказать обратный звонок конец -->
+
 <!-- Купить в один клик -->
 
 

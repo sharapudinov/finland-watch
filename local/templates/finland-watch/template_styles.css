@@ -1,5 +1,16 @@
 
+.fancybox-close{
+    right: 30px;
+}
 
+.error {
+    margin-left: 150px;
+}
+
+.errortext {
+    color: #ff0000;
+
+}
 .main-menu-top ul {
     left: 25px;
 }

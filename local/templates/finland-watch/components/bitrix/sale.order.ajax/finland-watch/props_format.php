@@ -51,7 +51,7 @@ if (!function_exists("showFilePropertyField"))
 }
 
 if (!function_exists("PrintPropsForm")) {
-    function PrintPropsForm($arSource = array(), $locationTemplate = ".default")
+    function PrintPropsForm($arSource = array(), $locationTemplate = "finland-watch-popup")
     {
         if (!empty($arSource)) {
             ?>
@@ -186,7 +186,7 @@ if (!function_exists("PrintPropsForm")) {
                                 "REGION_INPUT_NAME" => "REGION",
                                 "CITY_INPUT_NAME" => $arProperties["FIELD_NAME"],
                                 "CITY_OUT_LOCATION" => "Y",
-                                "LOCATION_VALUE" => $value,
+                                "LOCATION_VALUE" => strval($value),
                                 "ORDER_PROPS_ID" => $arProperties["ID"],
                                 "ONCITYCHANGE" => ($arProperties["IS_LOCATION"] == "Y" || $arProperties["IS_LOCATION4TAX"] == "Y") ? "submitForm()" : "",
                                 "SIZE1" => $arProperties["SIZE1"],
